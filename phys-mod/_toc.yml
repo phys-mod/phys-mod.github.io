@@ -22,4 +22,17 @@ chapters:
   - file: source/notebooks/03-suites-relations-recurrence/01-iteration
   - file: source/notebooks/03-suites-relations-recurrence/02-fonctions
   - file: source/notebooks/04-ajustement-modele/01-entrees-sorties
-
+- file: source/03-modelisation-numerique
+  sections:
+  - file: source/notebooks/02-demarche-de-modelisation/03-acceleration-constante
+  - file: source/notebooks/03-suites-relations-recurrence/03-suite-graphique
+  - file: source/notebooks/04-ajustement-modele/02-ajustement-modele
+  - file: source/notebooks/05-derivation-integration/01-derivation-integration-cours
+  - file: source/notebooks/06-equations-differentielles/01-equations-differentielles-cours
+- file: source/04-mini-projets
+  sections:
+  - file: source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars
+  - file: source/notebooks/03-suites-relations-recurrence/05-mini-projet-logistique
+  - file: source/notebooks/04-ajustement-modele/04-mini-projet-rechauffement-climatique
+  - file: source/notebooks/05-derivation-integration/03-mini-projet-digue
+  - file: source/notebooks/06-equations-differentielles/03-mini-projet-pendule
