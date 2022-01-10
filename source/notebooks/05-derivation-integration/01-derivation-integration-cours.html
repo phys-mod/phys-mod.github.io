@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dérivation et intégration numérique &#8212; phys-mod</title>
+    <title>Dérivation et intégration numérique</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -76,9 +76,12 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">phys-mod</h1>
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -88,11 +91,53 @@
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../01-base.html">
-   Python base
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -130,11 +175,11 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../02-intermediaire.html">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
    Python intermédiaire
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -167,11 +212,11 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../03-modelisation-numerique.html">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
    Modélisation numérique
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -204,11 +249,11 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../04-mini-projets.html">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
    Mini-projets
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -225,12 +270,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
-     Le réchauffement climatique
+     Mini-projet : le réchauffement climatique
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-mini-projet-digue.html">
-     Calcul des forces de pression sur une digue
+     Mini-projet: calcul des forces de pression sur une digue
     </a>
    </li>
    <li class="toctree-l2">
@@ -490,14 +535,14 @@ y'_i = \frac{y_{i+1}-y_{i}}{x_{i+1}-x_{i}}
 
 <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">derivee</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Point de coordonnées x =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;, y= cos(x) =&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Point de coordonnées x =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;, y = cos(x) =&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dérivée approximative dy/dx =&#39;</span><span class="p">,</span> <span class="n">derivee</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dérivée analytique -sin(x) =&quot;</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point de coordonnées x = 1.5 , y= cos(x) = 0.0707372016677029
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point de coordonnées x = 1.5 , y = cos(x) = 0.0707372016677029
 Dérivée approximative dy/dx = -0.9737680764296907
 Dérivée analytique -sin(x) = -0.9974949866040544
 </pre></div>
@@ -602,7 +647,7 @@ I(f) = \int_{a}^{b} f(x)\mathrm{d}x
 $<span class="math notranslate nohighlight">\(
 I(f) \approx  I_n(f) = \sum_{i=0}^{n-1} f(x_i)\Delta x 
 \)</span>$</p>
-<p><img alt="IntRect.png" src="source/notebooks/05-derivation-integration/attachment:IntRect.png" /></p>
+<p><img alt="IntRect.png" src="../../../_images/IntRect.png" /></p>
 <p>En exemple, nous allons calculer l’intégrale de <span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span> entre <span class="math notranslate nohighlight">\(0\)</span> et <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
