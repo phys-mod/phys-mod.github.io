@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Équations différentielles ordinaires (EDO) &#8212; phys-mod</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Mini-projets" href="../../04-mini-projets.html" />
+    <link rel="prev" title="Dérivation et intégration numérique" href="../05-derivation-integration/01-derivation-integration-cours.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">phys-mod</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
+     Première prise en main de Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/01-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/02-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../03-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/03-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/03-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/02-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/01-derivation-integration-cours.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/05-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/05-mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/03-mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/06-equations-differentielles/01-equations-differentielles-cours.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/06-equations-differentielles/01-equations-differentielles-cours.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-epaisseur-de-mousse-de-biere">
+   L’épaisseur de mousse de bière
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-formule-de-taylor">
+   La formule de Taylor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-methode-d-euler">
+   La méthode d’Euler
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erreur-d-integration">
+   Erreur d’intégration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particule-chargee">
+   Particule chargée
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-pendule-simple">
+   Le pendule simple
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Équations différentielles ordinaires (EDO)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-epaisseur-de-mousse-de-biere">
+   L’épaisseur de mousse de bière
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-formule-de-taylor">
+   La formule de Taylor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-methode-d-euler">
+   La méthode d’Euler
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erreur-d-integration">
+   Erreur d’intégration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particule-chargee">
+   Particule chargée
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-pendule-simple">
+   Le pendule simple
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="equations-differentielles-ordinaires-edo">
+<h1>Équations différentielles ordinaires (EDO)<a class="headerlink" href="#equations-differentielles-ordinaires-edo" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="l-epaisseur-de-mousse-de-biere">
+<h2>L’épaisseur de mousse de bière<a class="headerlink" href="#l-epaisseur-de-mousse-de-biere" title="Permalink to this headline">¶</a></h2>
+<p>Reprenons l’exemple de la <a class="reference external" href="https://www.tf.uni-kiel.de/matwis/amat/iss/kap_2/articles/beer_article.pdf">vitesse de décroissance de l’épaisseur de mousse de bière</a>. Cet article montre que la hauteur de la mousse <span class="math notranslate nohighlight">\(h(t)\)</span> suit une loi de décroissance :</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\text{d}h}{\text{d}t}(t) = -\frac{h(t)}{\tau}\]</div>
+<p>Afin de trouver une solution particulière à cette équation, nous spécifions la condition initiale suivante en <span class="math notranslate nohighlight">\(t_0 = 0\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[ h(t_0) = h_0 = 3 \ \text{cm}\]</div>
+<p>et la valeur du paramètre :</p>
+<div class="math notranslate nohighlight">
+\[ \tau = 123 \ \text{s} \]</div>
+<p>Créons des variables <code class="docutils literal notranslate"><span class="pre">h0</span></code> et <code class="docutils literal notranslate"><span class="pre">t0</span></code> qui contiennent les conditions initiales, et une variable <code class="docutils literal notranslate"><span class="pre">tau</span></code> qui contient le paramètre :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Condition initiale</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># s</span>
+<span class="n">h0</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># cm</span>
+
+<span class="c1"># Paramètre</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">123</span> <span class="c1"># s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comment trouver la fonction <span class="math notranslate nohighlight">\(h(t)\)</span> grâce à une méthode numérique ?</p>
+</div>
+<div class="section" id="la-formule-de-taylor">
+<h2>La formule de Taylor<a class="headerlink" href="#la-formule-de-taylor" title="Permalink to this headline">¶</a></h2>
+<p>La loi de décroissance nous donne la dérivée de la fonction <span class="math notranslate nohighlight">\(h(t)\)</span>. Nous savons que la dérivée en un point est le coefficient directeur de la tangente de la courbe en ce point. Nous pouvons donc utiliser la loi de décroissance pour connaître le coefficient directeur de la tangente au point initial.</p>
+<p>Pour cela, écrivons une fonction python qui représente la loi de décroissance :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loi de décroissance</span>
+<span class="k">def</span> <span class="nf">derivee_h</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Loi de décroissance dh/dt (t) = - h / tau</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span> <span class="n">tau</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>La variable t</strong></p>
+<p>Nous avons mis comme 2ème argument de la fonction <code class="docutils literal notranslate"><span class="pre">derivee_h(h,</span> <span class="pre">t)</span></code> le temps <span class="math notranslate nohighlight">\(t\)</span>, alors que la loi de décroissance ne dépend pas explicitement de <span class="math notranslate nohighlight">\(t\)</span>. Cependant, en toute généralité, il est possible que le temps intervienne explicitement dans l’expression de la dérivée, donc on prendra l’habitude de l’écrire explicitement dans les arguments de la fonction.</p>
+</div><p>La dérivée de <span class="math notranslate nohighlight">\(h\)</span> en <span class="math notranslate nohighlight">\((h_0,t_0)\)</span> est :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">derivee_h</span><span class="p">(</span><span class="n">h0</span><span class="p">,</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;cm/s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.024390243902439025 cm/s
+</pre></div>
+</div>
+</div>
+</div>
+<p>D’après la formule de Taylor, on peut écrire au voisinage de <span class="math notranslate nohighlight">\(t_0\)</span> :
+$<span class="math notranslate nohighlight">\( h(t) \approx h_0 + (t-t_0) \times \frac{\mathrm{d}h}{\mathrm{d}t} (t_0)\)</span>$</p>
+<p>Utilisons la formule de Taylor pour calculer la valeur de la fonction <span class="math notranslate nohighlight">\(h_1\)</span> en <span class="math notranslate nohighlight">\(t_1 = 10\mathrm{~s}\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># s</span>
+
+<span class="c1"># Application de la formule de Taylor</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="n">h0</span> <span class="o">+</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span> <span class="o">*</span> <span class="n">derivee_h</span><span class="p">(</span><span class="n">h0</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+
+<span class="c1"># Affichage de h1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.7560975609756095 cm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h3>
+<p>Appiquer la formule de Taylor au voisinage de <span class="math notranslate nohighlight">\(t_1\)</span> pour calculer la valeur <span class="math notranslate nohighlight">\(h_2\)</span> au temps <span class="math notranslate nohighlight">\(t=20\)</span> s.</p>
+<p>D’après la formule de Taylor, on peut écrire au voisinage de t1 :
+$<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times \frac{\text{d}h}{\text{d}t} (t_1)\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t2</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># s</span>
+
+<span class="c1"># Application de la formule de Taylor</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="n">h1</span> <span class="o">+</span> <span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">)</span> <span class="o">*</span> <span class="n">derivee_h</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>
+
+<span class="c1"># Affichage de h1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h2</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.532024588538568 cm
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="la-methode-d-euler">
+<h2>La méthode d’Euler<a class="headerlink" href="#la-methode-d-euler" title="Permalink to this headline">¶</a></h2>
+<p>On comprends alors qu’il est possible de calculer les valeurs de la fonction de proche en proche. Pour cela nous allons bien sûr utiliser une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>. C’est la méthode d’Euler.</p>
+<p>Pour les valeurs successives du temps <span class="math notranslate nohighlight">\(t\)</span>, nous allons utiliser un pas constant :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Paramètres</span>
+<span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># s</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mf">300.0</span>  <span class="c1"># s</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># s</span>
+
+<span class="c1"># Création du tableau temps</span>
+<span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+<span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous appliquons alors la formule de Taylor à chaque itération :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation du tableau h</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Condition initiale</span>
+<span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">h0</span> 
+
+<span class="c1"># Boucle for</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">h</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">derivee_h</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>Combien de pas ?</strong></p>
+<p>On remarque que le nombre de pas pour aller de <span class="math notranslate nohighlight">\(0\mathrm{~s}\)</span> à <span class="math notranslate nohighlight">\(300\mathrm{~s}\)</span> avec un pas de <span class="math notranslate nohighlight">\(10\mathrm{~s}\)</span> est égal à <span class="math notranslate nohighlight">\(30\)</span>, alors que le nombre d’éléments des tableaux <code class="docutils literal notranslate"><span class="pre">h</span></code> et <code class="docutils literal notranslate"><span class="pre">t</span></code> est <span class="math notranslate nohighlight">\(31\)</span>.</p>
+</div><p>Réprésentons graphiquement la fonction <span class="math notranslate nohighlight">\(h(t)\)</span> obtenue numériquement, et la solution analytique :</p>
+<div class="math notranslate nohighlight">
+\[ h(t) = h_0 \exp{\left(-\frac{t}{\tau}\right)} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Solution analytique</span>
+<span class="n">t_analytique</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">h_analytique</span> <span class="o">=</span> <span class="n">h0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t_analytique</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+
+<span class="c1"># Représentation graphique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_analytique</span><span class="p">,</span> <span class="n">h_analytique</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution analytique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution numérique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Hauteur [cm]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01-equations-differentielles-cours_21_0.png" src="../../../_images/01-equations-differentielles-cours_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="erreur-d-integration">
+<h2>Erreur d’intégration<a class="headerlink" href="#erreur-d-integration" title="Permalink to this headline">¶</a></h2>
+<p>Afin d’étudier l’erreur entre la solution numérique et la solution analytique, créons une fonction qui applique la méthode d’Euler pour des valeurs du pas différentes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Application de la méthode d&#39;Euler pour un pas `step` donné</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Paramètres</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># s</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="mf">300.0</span>  <span class="c1"># s</span>
+
+    <span class="c1"># Création du tableau temps</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+    <span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+
+    <span class="c1"># Initialisation du tableau h</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_points</span><span class="p">)</span>
+
+    <span class="c1"># Condition initiale</span>
+    <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">h0</span> 
+
+    <span class="c1"># Boucle for</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">derivee_h</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Argument de sortie</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">h</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>et une fonction qui calcule la solution analytique pour un temps <span class="math notranslate nohighlight">\(t\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fonction python qui représente la solution analytique</span>
+<span class="k">def</span> <span class="nf">h_analytique</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Solution analytique pour la hauteur de la mousse</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">h0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maintenant, calculons l’erreur relative entre les solutions analytique et numérique pour des valeurs du pas comprises entre <span class="math notranslate nohighlight">\(10^{-3}\mathrm{~s}\)</span> et <span class="math notranslate nohighlight">\(10\mathrm{~s}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Répartition logarithmique des valeurs de step</span>
+<span class="n">step</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># s</span>
+
+<span class="c1"># Boucle sur step</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">t_numerique</span><span class="p">,</span> <span class="n">h_numerique</span> <span class="o">=</span> <span class="n">Euler</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">erreur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">h_numerique</span> <span class="o">-</span> <span class="n">h_analytique</span><span class="p">(</span><span class="n">t_numerique</span><span class="p">))</span> <span class="o">/</span> <span class="n">h_analytique</span><span class="p">(</span><span class="n">t_numerique</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t_numerique</span><span class="p">,</span> <span class="n">erreur</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;pas = </span><span class="si">{:5.0e}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Erreur relative&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01-equations-differentielles-cours_27_0.png" src="../../../_images/01-equations-differentielles-cours_27_0.png" />
+</div>
+</div>
+<p>On voit que l’augmentation de l’erreur avec le temps ne dépend pas du pas, elle est proportionnelle à <span class="math notranslate nohighlight">\(t\)</span>. Pour un temps <span class="math notranslate nohighlight">\(t\)</span> donné, on voit que l’erreur est proportionnelle au pas.</p>
+</div>
+<div class="section" id="particule-chargee">
+<h2>Particule chargée<a class="headerlink" href="#particule-chargee" title="Permalink to this headline">¶</a></h2>
+<p>Considérons une particule chargée dans un champ magnétique uniforme constant <span class="math notranslate nohighlight">\(B\)</span>. On considère le système régissant les composantes <span class="math notranslate nohighlight">\(v_x(t)\)</span> et <span class="math notranslate nohighlight">\(v_y(t)\)</span>, dans le plan orthogonal au champ magnétique supposé dirigé suivant <span class="math notranslate nohighlight">\(z\)</span>, de la vitesse d’une particule de charge <span class="math notranslate nohighlight">\(q\)</span> et de masse <span class="math notranslate nohighlight">\(m\)</span> :</p>
+<p>\begin{eqnarray}
+\dfrac{\text{d} v_x}{\text{d}t} &amp;=&amp;  \omega v_y \[1em]
+\dfrac{\text{d} v_y}{\text{d}t} &amp;=&amp; -\omega v_x
+\end{eqnarray}</p>
+<p>où <span class="math notranslate nohighlight">\(\omega = qB/m\)</span> est la pulsation gyromagnétique. On prendra <span class="math notranslate nohighlight">\(\omega = 1\mathrm{~s^{-1}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paramètre</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># s^-1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons ici un système d’EDO couplées, qui peut être résolu de la même façon que l’EDO simple précédente. Il suffit d’appliquer la formule de Taylor aux deux équations. Prenons les temps</p>
+<div class="math notranslate nohighlight">
+\[t_i=t_0+i\Delta t \ ,\ i = 0,1,2, \dots, N\]</div>
+<p>où <span class="math notranslate nohighlight">\(\Delta t\)</span> est le pas, et <span class="math notranslate nohighlight">\(N\)</span> le nombre de pas. Alors :</p>
+<p>\begin{eqnarray}
+v_x (t_{i+1}) &amp;\approx&amp; v_x (t_i) + \Delta t \dfrac{\text{d} v_x}{\text{d}t} (t_i) \[1em]
+v_y (t_{i+1}) &amp;\approx&amp; v_y (t_i) + \Delta t \dfrac{\text{d} v_y}{\text{d}t} (t_i)
+\end{eqnarray}</p>
+<p>En définissant le vecteur <span class="math notranslate nohighlight">\(\vec{v} = (v_x,v_y)\)</span>, on peut écrire la formule de Taylor vectorielle :</p>
+<div class="math notranslate nohighlight">
+\[ \vec{v} (t_{i+1}) \approx \vec{v} (t_i) + \Delta t \dfrac{\text{d} \vec{v}}{\text{d}t} (t_i) \]</div>
+<p>On définit alors la fonction python :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># EDO</span>
+<span class="k">def</span> <span class="nf">derivee_v</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Soit v = (v0, v1)</span>
+<span class="sd">        Loi vectorielle sur la vitesse : d(v0, v1)/dt = omega * (v1, -v0)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Initialisation de la dérivée</span>
+    <span class="n">dv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    
+    <span class="c1"># Dérivée de la vitesse</span>
+    <span class="n">dv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">dv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">omega</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">dv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On définit alors la fonction qui applique la méthode d’Euler suivante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Application de la méthode d&#39;Euler</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Création du tableau temps</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+    <span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+
+    <span class="c1"># Initialisation du tableau v</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_points</span><span class="p">))</span>
+
+    <span class="c1"># Condition initiale</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_ini</span> 
+
+    <span class="c1"># Boucle for</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Argument de sortie</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit que maintenant on utilise un tableau de dimensions <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">num_points)</span></code> pour représenter le vecteur <span class="math notranslate nohighlight">\(\vec{v}(t)\)</span>, et donc il faut adapter le calcul de la formule de Taylor en conséquence. On peut aussi facilement adapter cette fonction pour un nombre de dimensions plus grand que 2.</p>
+<p>Résolvons maintenant cette EDO couplée pour des conditions initiales <span class="math notranslate nohighlight">\(\vec{v} = (0.1,0.0)\mathrm{~m\cdot s^{-1}}\)</span>, entre <span class="math notranslate nohighlight">\(0\)</span> et <span class="math notranslate nohighlight">\(10\mathrm{~s}\)</span>, et un pas de <span class="math notranslate nohighlight">\(0.001\mathrm{~s}\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditions initiales</span>
+<span class="n">v_ini</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span> <span class="c1"># m.s^-1</span>
+
+<span class="c1"># Méthode d&#39;Euler</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">Euler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee_v</span><span class="p">)</span>
+
+<span class="c1"># Représentation de la solution dans le plan (v_x, v_y)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$v_x$ [m/s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$v_y$ [m/s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span> <span class="c1"># Pour avoir des axes isométriques</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01-equations-differentielles-cours_36_0.png" src="../../../_images/01-equations-differentielles-cours_36_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="le-pendule-simple">
+<h2>Le pendule simple<a class="headerlink" href="#le-pendule-simple" title="Permalink to this headline">¶</a></h2>
+<p>On considère un pendule constitué par une particule de masse <span class="math notranslate nohighlight">\(m\)</span> fixée à l’extrémité d’une tige rigide de masse négligeable et de longueur <span class="math notranslate nohighlight">\(L\)</span> reliée à un support fixe.</p>
+<p>Au temps <span class="math notranslate nohighlight">\(t\)</span>, la force qui s’exerce sur la particule perpendiculairement à la tige est donnée par <span class="math notranslate nohighlight">\(F(t) = m g \sin \theta\)</span>, où <span class="math notranslate nohighlight">\(\theta\)</span> est l’angle entre la tige et la verticale. En posant <span class="math notranslate nohighlight">\(k = \sqrt{g / L}\)</span>, l’équation du mouvement de la particule est :</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{\text{d}^2 \theta}{\text{d}t^2} (t) = -  k^2 \sin \theta (t) 
+\]</div>
+<p>Dans la limite des petites oscillations <span class="math notranslate nohighlight">\(|\theta(t)| \ll 1\)</span>, on a <span class="math notranslate nohighlight">\(\sin \theta\approx\theta\)</span>. L’équation d’évolution devient :</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{\text{d}^2 \theta}{\text{d}t^2} (t) = -  k^2 \theta (t) 
+\]</div>
+<p>C’est une EDO d’ordre 2. Or, il est toujours possible, avec un changement de variable approprié, de ramener une EDO d’ordre <span class="math notranslate nohighlight">\(N\)</span> à un système de <span class="math notranslate nohighlight">\(N\)</span> EDO couplées d’ordre 1. Nous allons l’illustrer avec cet exemple.</p>
+<p>Posons :</p>
+<p>\begin{eqnarray}
+u_0 &amp;=&amp; \theta \
+u_1 &amp;=&amp; \dfrac{\text{d} \theta}{\text{d}t}
+\end{eqnarray}</p>
+<p>En appliquant ce changement de variables, l’équation d’évolution peut se réécrire de façon complètement équivalente :</p>
+<p>\begin{eqnarray}
+\frac{\text{d}u_0}{\text{d}t}&amp;=&amp; u_1 \[1em]
+\frac{\text{d}u_1}{\text{d}t} &amp;=&amp; -k^2 u_0
+\end{eqnarray}</p>
+<p>Ce système de 2 EDO couplées peut être résolu de la même façon que le problème précédent de la particule chargée. Il faut juste écrire la fonction dérivée correspondante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paramètre</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Longueur (m)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># Pesanteur (m.s^-2)</span>
+<span class="n">kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="n">L</span><span class="p">)</span>  <span class="c1"># Pulsation (notée k dans l&#39;énoncé)</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">kp</span> <span class="c1"># Période (s)</span>
+
+<span class="c1"># EDO</span>
+<span class="k">def</span> <span class="nf">derivee_u</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Soit u = (u0, u1)</span>
+<span class="sd">        Équation d&#39;évolution du pendule : d(u0, u1)/dt = (u1, -k ** 2 * u0)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Initialisation de la dérivée</span>
+    <span class="n">du</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    
+    <span class="c1"># Dérivée de la vitesse</span>
+    <span class="n">du</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">du</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">kp</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">du</span>
+
+<span class="c1"># Conditions initiales</span>
+<span class="n">u_ini</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+
+<span class="c1"># Méthode d&#39;Euler</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">Euler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.</span> <span class="o">*</span> <span class="n">Tp</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="n">u_ini</span><span class="p">,</span> <span class="n">derivee_u</span><span class="p">)</span>
+
+<span class="c1"># Représentation de la solution numérique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Angle [rad]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vitesse angulaire [rad/s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01-equations-differentielles-cours_38_0.png" src="../../../_images/01-equations-differentielles-cours_38_0.png" />
+</div>
+</div>
+<p>On note que dans l’approximation des petits angles, la quantité</p>
+<p>\begin{equation}
+C \approx \frac{ \dot{{\theta} }^2}{2} + k^2\frac{ \theta^2 }{2}
+\end{equation}</p>
+<p>est proportionelle à l’énergie, qui doit être conservée. La conservation de cette quantité peut être un premier critère de la qualité de l’algorithme de résolution numérique.</p>
+<p>Représentons cette quantité pour plusieurs valeurs du pas :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choix du tableau pour step = logarithmique</span>
+<span class="n">step</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># s</span>
+
+<span class="c1"># Boucle sur step</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">Euler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.</span> <span class="o">*</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">step</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u_ini</span><span class="p">,</span> <span class="n">derivee_u</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">kp</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;pas = </span><span class="si">{:5.0e}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01-equations-differentielles-cours_40_0.png" src="../../../_images/01-equations-differentielles-cours_40_0.png" />
+</div>
+</div>
+<p>On voit que plus le pas est petit et mieux l’énergie du système est conservée. De plus on voit que la non-conservation de l’énergie avec le temps augmente de façon exponentielle.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/06-equations-differentielles"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../05-derivation-integration/01-derivation-integration-cours.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Dérivation et intégration numérique</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../04-mini-projets.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mini-projets</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By P. Delva<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

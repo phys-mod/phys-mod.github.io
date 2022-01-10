@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcul des forces de pression sur une digue &#8212; phys-mod</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Le pendule" href="../06-equations-differentielles/03-mini-projet-pendule.html" />
+    <link rel="prev" title="Le réchauffement climatique" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">phys-mod</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
+     Première prise en main de Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/01-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/02-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/03-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/03-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/02-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-derivation-integration-cours.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/01-equations-differentielles-cours.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../04-mini-projets.html">
+   Mini-projets
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/05-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/05-mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/03-mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/05-derivation-integration/03-mini-projet-digue.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/05-derivation-integration/03-mini-projet-digue.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travail-a-la-maison">
+   Travail à la maison
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation">
+     Modélisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travail-en-seance">
+   Travail en séance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-des-digues-en-pentes-droites">
+     Cas des digues en pentes droites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-des-digues-convexes">
+     Cas des digues convexes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parenthese">
+   Parenthèse
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Calcul des forces de pression sur une digue</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travail-a-la-maison">
+   Travail à la maison
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation">
+     Modélisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travail-en-seance">
+   Travail en séance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-des-digues-en-pentes-droites">
+     Cas des digues en pentes droites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-des-digues-convexes">
+     Cas des digues convexes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parenthese">
+   Parenthèse
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="calcul-des-forces-de-pression-sur-une-digue">
+<h1>Calcul des forces de pression sur une digue<a class="headerlink" href="#calcul-des-forces-de-pression-sur-une-digue" title="Permalink to this headline">¶</a></h1>
+<p>Une digue est un petit barrage permettant de retenir une étendue d’eau (mer, lac, rivière) par exemple pour protéger des habitations ou des installations en zone inondable.</p>
+<p>Dans ce mini-projet vous allez calculer numériquement les forces appliquées à une digue de forme arbitraire.</p>
+<p><img alt="Digue.png" src="../../../_images/Digue.png" /></p>
+<div class="section" id="travail-a-la-maison">
+<h2>Travail à la maison<a class="headerlink" href="#travail-a-la-maison" title="Permalink to this headline">¶</a></h2>
+<p>La digue que nous allons modéliser est un bloc de béton (masse volumique : 3000 kg/m<span class="math notranslate nohighlight">\(^3\)</span>) posé sur le sol rocheux (coefficient de friction statique béton - roche : 0.5). D’un côté la digue retiens une masse d’eau de hauteur <span class="math notranslate nohighlight">\(H\)</span>, l’autre coté étant exposé à l’air. On prendra <span class="math notranslate nohighlight">\(H=10\)</span> m dans toute la suite.</p>
+<p>Nous ferons l’hypothèse que l’interface entre le sol et la digue est étanche à l’eau mais pas à l’air. Cette hypothèse permettra de simplifier le calcul en ne considérant que les forces de pression due à la hauteur d’eau.</p>
+<p>Pour simplifier, on se placera en deux dimensions (la digue est de longueur unitaire suivant l’axe perpendiculaire au schéma ci-dessus et on ne considérera pas les bords suivant cette direction).</p>
+<p>a. Faites un bilan des forces appliquées à la digue en 2D. Quelle force permet à la digue de ne pas glisser sur le sol rocheux ?</p>
+<p>b. Rappelez l’expression de la pression hydrostatique dans l’eau <span class="math notranslate nohighlight">\(P_{eau} (x)\)</span> en fonction de la hauteur par rapport au sol <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>c. Justifiez que nous pouvons considérer dans l’expression précédente que la constante est la contribution de la pression de l’air. Considérons pour l’instant que le barrage est à sec, que pourrions nous dire sur la résultante des forces de pression de l’air sur la digue ? Rappelons ici que l’air peut s’imiscer entre la digue et le sol (indice : que peux-t-on dire de la poussée d’archimède de l’air sur un bloc de béton). Ce résultat est-il modifié si le barrage retiens une hauteur d’eau ? En déduire que l’on peux se réduire à calculer seulement les forces de pression de l’eau en utilisant l’expression <span class="math notranslate nohighlight">\(P_{eau} (x) = \rho_e g (H-x)\)</span></p>
+<p>d. Rappelez la (les) équation(s) d’équilibre statique de la digue.</p>
+<div class="section" id="modelisation">
+<h3>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this headline">¶</a></h3>
+<p>Pour considérer une digue de forme arbitraire, on modélisera les pentes coté air et coté eau par des fonctions mathématiques. Dans ce projet nous allons intégrer des fonctions suivant la direction donnée par l’axe vertical <span class="math notranslate nohighlight">\(y\)</span>. Il sera donc plus pratique de définir les pentes de la digue comme étant <span class="math notranslate nohighlight">\(x\)</span> en fonction de <span class="math notranslate nohighlight">\(y\)</span> (schéma ci-dessous).</p>
+<p><img alt="DigueSchema.png" src="../../../_images/DigueSchema.png" /></p>
+<p>On définit donc :</p>
+<ul class="simple">
+<li><p>une fonction croissante <span class="math notranslate nohighlight">\(f_{air}(y)\)</span> représentant l’interface air-béton définie pour <span class="math notranslate nohighlight">\(0 \leq y \leq H\)</span> et allant de <span class="math notranslate nohighlight">\(x_a\)</span> à <span class="math notranslate nohighlight">\(0\)</span>,</p></li>
+<li><p>une autre fonction décroissante <span class="math notranslate nohighlight">\(f_{eau}(y)\)</span> représentant l’interface eau-béton définie sur le même intervalle et allant de <span class="math notranslate nohighlight">\(x_e\)</span> à <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+</ul>
+<p>On ne considérera ici que des fonctions monotones.</p>
+<p>On donne l’expression de la courbe coté eau pour une digue représentée par une fonction affine :</p>
+<div class="math notranslate nohighlight">
+\[
+f_{air}(y) = -\frac{x_a}{H}.(y-H)
+\]</div>
+<p>e. Donnez l’expression de la fonction coté air dans le cas d’une fonction affine, et tracez la avec le code suivant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ce code permet d&#39;afficher les courbes représentant la digue</span>
+
+<span class="n">H</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">xa</span><span class="o">=-</span><span class="mi">5</span>
+<span class="n">xe</span><span class="o">=+</span><span class="mi">5</span>
+
+
+<span class="c1"># on définit les fonctions coté eau et coté air, ici les courbes concaves</span>
+<span class="k">def</span> <span class="nf">fair</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">H</span><span class="p">)</span><span class="o">*</span><span class="n">xa</span><span class="o">/</span><span class="n">H</span>
+
+<span class="k">def</span> <span class="nf">feau</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span>  <span class="c1">## A remplir</span>
+
+<span class="c1"># on crée un tableau de y</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># on trace</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fair</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">)</span> 
+<span class="c1">#plt.plot(feau(y),y,&#39;-b&#39;)  ## Décommenter après avoir codé la fonction feau(x)</span>
+ 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xe</span><span class="p">,</span><span class="n">xa</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;-b&#39;</span><span class="p">)</span> <span class="c1"># bas de la digue</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x (m)&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xe</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;eau&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">xa</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;air&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span> <span class="c1"># permet d&#39;avoir un plot isométrique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-mini-projet-digue_12_0.png" src="../../../_images/03-mini-projet-digue_12_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="travail-en-seance">
+<h2>Travail en séance<a class="headerlink" href="#travail-en-seance" title="Permalink to this headline">¶</a></h2>
+<p>On rappelle que les forces de pressions s’exercent perpendiculairement à la surface d’application. Il faut donc pouvoir trouver un vecteur normal à la tangente de ces deux fonctions en tout point, qui sera le vecteur directeur de la force de pression locale.</p>
+<p><img alt="DigueAngles.png" src="../../../_images/DigueAngles.png" /></p>
+<p>On rappelle que l’angle <span class="math notranslate nohighlight">\(\theta\)</span> entre la tangente en un point et l’axe des abscisses (voir schéma ci-dessus) est relié à la dérivée de la courbe par :
+$<span class="math notranslate nohighlight">\(
+tan(\theta) = f'(y)
+\)</span>$</p>
+<p>Les vecteurs <span class="math notranslate nohighlight">\(\vec t\)</span> et <span class="math notranslate nohighlight">\(\vec n\)</span> sont alors donnés par :
+$<span class="math notranslate nohighlight">\(
+\vec t = \cos(\theta).\vec{u_y} + \sin(\theta).\vec{u_x}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\vec n = \sin(\theta).\vec{u_y} - \cos(\theta).\vec{u_x} 
+\)</span>$</p>
+<p>Pour pouvoir calculer la résultante des forces de pression sur une surface de forme arbitraire, il nous faut intégrer les forces infinitésimales <span class="math notranslate nohighlight">\(\vec{\mathrm{d}F}\)</span> s’appliquant à chaque élément de surface <span class="math notranslate nohighlight">\(\mathrm{d}S\)</span>. Comme nous somme en deux dimensions, nous pouvons simplifier le problème en considérant que l’élément de surface est <span class="math notranslate nohighlight">\(\mathrm{d}S = L \mathrm{d}l\)</span>, avec <span class="math notranslate nohighlight">\(L = 1\)</span> la longueur unitaire de la digue suivant <span class="math notranslate nohighlight">\(z\)</span>, ce qui nous ramène à une intégrale 1D (on n’écrira pas <span class="math notranslate nohighlight">\(L\)</span> dans la suite).</p>
+<p>On obtient donc, pour l’interfaces eau-béton :
+$<span class="math notranslate nohighlight">\(
+\vec{F} = \iint_S \vec{\mathrm{d}F} =\int_0^H P(y) \mathrm{d}l . \vec{n}
+\)</span>$</p>
+<p>avec <span class="math notranslate nohighlight">\(\vec{n}\)</span> le vecteur normal rentrant au point de coordonnées <span class="math notranslate nohighlight">\((f(y),y)\)</span>, et <span class="math notranslate nohighlight">\(\mathrm{d}l\)</span> la longueur infinitésimale de la courbe pour une variation <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span>. On montre facilement la relation avec l’angle <span class="math notranslate nohighlight">\(\theta\)</span> définit avant :</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}l = \frac{\mathrm{d}y}{\cos(\theta)}
+\]</div>
+<div class="section" id="cas-des-digues-en-pentes-droites">
+<h3>Cas des digues en pentes droites<a class="headerlink" href="#cas-des-digues-en-pentes-droites" title="Permalink to this headline">¶</a></h3>
+<p>a. Calculez le volume de la digue par intégration de la largeur de la digue en fonction de <span class="math notranslate nohighlight">\(y\)</span>. Comparez avec le calcul analytique (ici, l’aire du triangle multiplié par la longueur <span class="math notranslate nohighlight">\(L=1\)</span>). En déduire la force de gravité exercée sur la digue.</p>
+<p>b. Pour le cas des fonctions affines, calculez la résultante (vectorielle ! il y a une composante suivant <span class="math notranslate nohighlight">\(x\)</span> et une composante suivant <span class="math notranslate nohighlight">\(y\)</span>) des forces de pression coté eau. On prendra <span class="math notranslate nohighlight">\(x_a = -5\)</span>, <span class="math notranslate nohighlight">\(x_e = +5\)</span>, <span class="math notranslate nohighlight">\(H=10\)</span>. (On ne cherchera pas à faire le calcul analytique !)</p>
+<p>c. En supposant que la digue est en équilibre statique translationnel, calculez avec le principe fondamental de la dynamique les deux composantes (normale et tangentielle) de la force de réaction du sol, puis le rapport de ces composantes <span class="math notranslate nohighlight">\(T/N\)</span>. En considérant le coefficient de frottement roche/béton de 0.5, la digue est-elle en équilibre translationnel ?</p>
+<p>d. Reprenez le calcul du rapport <span class="math notranslate nohighlight">\(T/N\)</span> et du volume de béton en imposant <span class="math notranslate nohighlight">\(x_a=-5\)</span> et <span class="math notranslate nohighlight">\(x_e=0\)</span>. La digue est-elle stable ? (il sera utile d’écrire une fonction résumant les calculs des questions a. b. c.).</p>
+<p>e. Reprenez le calcul avec <span class="math notranslate nohighlight">\(x_a=0\)</span> et <span class="math notranslate nohighlight">\(x_e=+5\)</span>. Que constatez-vous ? Expliquez pourquoi la digue est stable dans un cas mais pas l’autre.</p>
+</div>
+<div class="section" id="cas-des-digues-convexes">
+<h3>Cas des digues convexes<a class="headerlink" href="#cas-des-digues-convexes" title="Permalink to this headline">¶</a></h3>
+<p>On considère maintenant que l’interface entre l’eau et le béton n’est plus une fonction affine mais une fonction de la forme :
+$<span class="math notranslate nohighlight">\(
+f_{eau} (y)=a \left(\frac{y}{H}\right)^2-(a+x_e)\left(\frac{y}{H}\right) +x_e
+\)</span>$</p>
+<p>on donne également la dérivée :</p>
+<div class="math notranslate nohighlight">
+\[
+f'_{eau} (y)=\frac{2a}{H^2}-\frac{a+x_e}{H}
+\]</div>
+<p>(on peut vérifier aisément que cette fonction relie bien les points de coordonées <span class="math notranslate nohighlight">\([x_e,0]\)</span> et <span class="math notranslate nohighlight">\([0,H]\)</span>). Dans la suite nous prendrons <span class="math notranslate nohighlight">\(a=3\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ce code permet d&#39;afficher les courbes représentant la digue</span>
+
+<span class="n">H</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">xe</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">xa</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c1"># on définit les fonctions coté eau et coté air, ici les courbes concaves</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">3</span>
+<span class="k">def</span> <span class="nf">feau</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">xe</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">+</span><span class="n">xe</span>
+<span class="k">def</span> <span class="nf">fair</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">H</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">xa</span><span class="o">/</span><span class="n">H</span>
+
+<span class="c1"># on crée un tableau de y</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># on trace</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">feau</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fair</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xe</span><span class="p">,</span><span class="n">xa</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;eau&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;air&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span> <span class="c1"># permet d&#39;avoir un plot isométrique</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="c1">#plt.axvline(0, color=&quot;black&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-mini-projet-digue_24_0.png" src="../../../_images/03-mini-projet-digue_24_0.png" />
+</div>
+</div>
+<p>e. Calculez, pour <span class="math notranslate nohighlight">\(a=3\)</span>, <span class="math notranslate nohighlight">\(x_a=0\)</span> et <span class="math notranslate nohighlight">\(x_e=5\)</span>, la résultante des forces de pression, le volume de béton, et le rapport <span class="math notranslate nohighlight">\(T/N\)</span> dans l’hypothèse de l’équilibre statique. La digue est-elle en équilibre translationnel ?</p>
+<p>f. Reprenons le calcul avec <span class="math notranslate nohighlight">\(x_e=6\)</span>. La digue est-elle en équilibre ? Comparez avec le cas de la pente affine avec <span class="math notranslate nohighlight">\(x_a=0\)</span> et <span class="math notranslate nohighlight">\(x_e=5\)</span> ? Laquelle est la plus favorable ?</p>
+<p>g. Utilisez une boucle pour calculer le volume et le rapport <span class="math notranslate nohighlight">\(T/N\)</span> pour en faisant varier <span class="math notranslate nohighlight">\(x_e\)</span> dans l’intervalle <span class="math notranslate nohighlight">\([5,6]\)</span>. On pourra ainsi tracer le rapport <span class="math notranslate nohighlight">\(T/N\)</span> en fonction du volume. Déterminez graphiquement le volume minimal pour garder le rapport <span class="math notranslate nohighlight">\(T/N\)</span> inférieur à 0.5 dans le cas courbe.</p>
+<p>h. Expliquez pourquoi la forme courbe de l’interface aide à réduire le volume de béton nécessaire à garder la digue en équilibre.</p>
+</div>
+</div>
+<div class="section" id="parenthese">
+<h2>Parenthèse<a class="headerlink" href="#parenthese" title="Permalink to this headline">¶</a></h2>
+<p>Nous avons ici omis la deuxième équation d’équilibre statique : le théorème du moment cinétique (ou équilibre du moment des forces dans le cas statique).</p>
+<p>Pour vérifier que la digue ne bascule pas sous la pression de l’eau, il faudrait en effet vérifier que le moment des forces qui s’applique à la digue soit nul.</p>
+<p>Pour cela, il faudrait :</p>
+<ul class="simple">
+<li><p>trouver le point d’application du poids (le centre de gravité de la digue),</p></li>
+<li><p>calculer le moment du poids par rapport à un point,</p></li>
+<li><p>calculer la résultante du moment des forces de pression par rapport au même point,</p></li>
+<li><p>trouver le point d’application de la réaction du sol qui annule la somme des moments des forces (par rapport à un point quelconque)</p></li>
+<li><p>vérifier que ce point d’application est bien situé quelque part entre la digue et le sol (sinon la digue bascule…)</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/05-derivation-integration"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Le réchauffement climatique</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../06-equations-differentielles/03-mini-projet-pendule.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Le pendule</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By P. Delva<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

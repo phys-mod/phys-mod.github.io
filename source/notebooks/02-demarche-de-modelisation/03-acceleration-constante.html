@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modèle de l’accélération constante &#8212; phys-mod</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Représentation graphique d’une suite mathématique" href="../03-suites-relations-recurrence/03-suite-graphique.html" />
+    <link rel="prev" title="Modélisation numérique" href="../../03-modelisation-numerique.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">phys-mod</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
+     Première prise en main de Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/01-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/02-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../03-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/03-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/02-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/01-derivation-integration-cours.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/01-equations-differentielles-cours.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/05-mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/03-mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/03-mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/02-demarche-de-modelisation/03-acceleration-constante.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/02-demarche-de-modelisation/03-acceleration-constante.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experience-de-chute-libre">
+   Expérience de chute libre
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-discrete-de-la-vitesse">
+   Représentation discrète de la vitesse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-graphique-de-la-vitesse">
+   Représentation graphique de la vitesse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-sous-la-forme-d-une-fonction">
+   Représentation sous la forme d’une fonction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-de-la-position">
+   Représentation de la position
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-du-mouvement">
+   Représentation du mouvement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representer-des-donnees">
+   Représenter des données
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modèle de l’accélération constante</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experience-de-chute-libre">
+   Expérience de chute libre
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-discrete-de-la-vitesse">
+   Représentation discrète de la vitesse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-graphique-de-la-vitesse">
+   Représentation graphique de la vitesse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-sous-la-forme-d-une-fonction">
+   Représentation sous la forme d’une fonction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-de-la-position">
+   Représentation de la position
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-du-mouvement">
+   Représentation du mouvement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representer-des-donnees">
+   Représenter des données
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="modele-de-l-acceleration-constante">
+<h1>Modèle de l’accélération constante<a class="headerlink" href="#modele-de-l-acceleration-constante" title="Permalink to this headline">¶</a></h1>
+<p><img alt="alt text" src="../../../_images/fl971126.jpg" /></p>
+<div class="section" id="experience-de-chute-libre">
+<h2>Expérience de chute libre<a class="headerlink" href="#experience-de-chute-libre" title="Permalink to this headline">¶</a></h2>
+<p>Nous allons illustrer le processus de modélisation avec une expérience simple : la <strong>chute libre à une dimension</strong>. Prenons un objet et laissons-le tomber d’une certaine hauteur, sans lui donner de vitesse initiale.</p>
+<p>Afin de modéliser cette expérience, il faut d’abord choisir un système de référence. Nous choisissons un axe vertical, dirigé dans le sens du mouvement de l’objet qui tombe. Appelons-le l’axe <span class="math notranslate nohighlight">\(z\)</span>. Nous choisissons l’origine de ce repère à l’endroit où on lâche l’objet, à <span class="math notranslate nohighlight">\(z=0\)</span>. L’objet est modélisé comme une particule ponctuelle.</p>
+<p>Nous savons que l’objet est soumis au champ de pesanteur terrestre, <span class="math notranslate nohighlight">\(g \approx 9.81 \mathrm{~m.s^{-2}}\)</span>. D’après les relations fondamentales de la dynamique et la loi de la gravitation universelle, il est donc soumis à une accélération constante :
+\begin{equation}
+a(t) = \frac{dv}{dt}(t) = g
+\end{equation}</p>
+<p>En intégrant cette équation, on obtient la vitesse du corps en fonction du temps :
+\begin{equation}
+v(t) = g t
+\end{equation}
+avec la constante d’intégration égale à <span class="math notranslate nohighlight">\(0\)</span> car la vitesse initiale est nulle.</p>
+<p>Le modèle mathématique de la vitesse physique du corps est une fonction à une variable <span class="math notranslate nohighlight">\(v:\mathbb{R}\to\mathbb{R}\)</span>. Nous pouvons représenter numériquement cette fonction de nombreuses façons différentes. Par exemple avec :</p>
+<ul class="simple">
+<li><p>deux tableaux Numpy à 1 dimension qui représentent la vitesse et le temps ;</p></li>
+<li><p>un tableau Numpy à 2 dimensions dont une colonne représente le temps, et l’autre colonne la vitesse ;</p></li>
+<li><p>un DataFrame Pandas dont l’index représente le temps, et une colonne représente la vitesse ;</p></li>
+<li><p>une fonction Python dont l’argument représente le temps, et la sortie de la fonction représente la vitesse.</p></li>
+</ul>
+<p>Nous allons illustrer ces différentes possibilités.</p>
+</div>
+<div class="section" id="representation-discrete-de-la-vitesse">
+<h2>Représentation discrète de la vitesse<a class="headerlink" href="#representation-discrete-de-la-vitesse" title="Permalink to this headline">¶</a></h2>
+<p>Alors que la fonction <span class="math notranslate nohighlight">\(v\)</span> est une fonction mathématique continue de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> dans <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, c’est-à-dire dont le domaine de définition contient un nombre infini de valeurs, un tableau Numpy ne peut contenir qu’un nombre fini de valeurs. Il faut donc choisir un nombre fini de valeurs du temps <span class="math notranslate nohighlight">\(t\)</span> pour lesquelles nous allons calculer la vitesse <span class="math notranslate nohighlight">\(v\)</span>. On appelle cela une <strong>représentation discrète</strong>.</p>
+<p>Choisissons de représenter la fonction <span class="math notranslate nohighlight">\(v\)</span> entre <span class="math notranslate nohighlight">\(t=0 \mathrm{~s}\)</span> et <span class="math notranslate nohighlight">\(t = 10 \mathrm{~s}\)</span>, avec un pas de <span class="math notranslate nohighlight">\(1 \mathrm{~s}\)</span>. Pour remplir le tableau Numpy, on peut utiliser la fonction <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> du module Numpy (voir <em>les fonctions de Numpy - Intervalles et pas</em>) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Paramètres de la discrétisation</span>
+<span class="n">temps_initial</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># s</span>
+<span class="n">temps_final</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># s</span>
+<span class="n">pas_temps</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># s</span>
+
+<span class="c1"># Création du tableau temps</span>
+<span class="n">intervalle</span> <span class="o">=</span> <span class="n">temps_final</span> <span class="o">-</span> <span class="n">temps_initial</span>
+<span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">intervalle</span> <span class="o">/</span> <span class="n">pas_temps</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># nombre d&#39;éléments</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">temps_initial</span><span class="p">,</span> <span class="n">temps_final</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Voyons ce que contient le tableau <code class="docutils literal notranslate"><span class="pre">temps</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il contient bien les valeurs du temps entre <span class="math notranslate nohighlight">\(0\)</span> et <span class="math notranslate nohighlight">\(10 \mathrm{~s}\)</span> avec un pas de <span class="math notranslate nohighlight">\(1 \mathrm{~s}\)</span>. Afin de calculer la vitesse pour ces temps il suffit d’appliquer la formule <span class="math notranslate nohighlight">\(v = gt\)</span> au tableau Numpy <code class="docutils literal notranslate"><span class="pre">temps</span></code>, pour créer le tableau Numpy <code class="docutils literal notranslate"><span class="pre">vitesse</span></code>. Cependant, pour que cela soit possible, il faut aussi créer une variable <code class="docutils literal notranslate"><span class="pre">pesanteur</span></code> qui contient la valeur de la pesanteur :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la variable pesanteur</span>
+<span class="n">pesanteur</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m.s**-2</span>
+
+<span class="c1"># Calcul du tableau vitesse</span>
+<span class="n">vitesse</span> <span class="o">=</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Voyons ce que contient le tableau <code class="docutils literal notranslate"><span class="pre">vitesse</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">vitesse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.    9.81 19.62 29.43 39.24 49.05 58.86 68.67 78.48 88.29 98.1 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le tableau <code class="docutils literal notranslate"><span class="pre">vitesse</span></code> contient les valeurs de la vitesse aux temps correspondant aux valeurs du tableau <code class="docutils literal notranslate"><span class="pre">temps</span></code>.</p>
+</div>
+<div class="section" id="representation-graphique-de-la-vitesse">
+<h2>Représentation graphique de la vitesse<a class="headerlink" href="#representation-graphique-de-la-vitesse" title="Permalink to this headline">¶</a></h2>
+<p>À partir des 2 tableaux Numpy <code class="docutils literal notranslate"><span class="pre">temps</span></code> et <code class="docutils literal notranslate"><span class="pre">vitesse</span></code>, qui sont une représentation numérique possible du temps et de la vitesse de l’objet qui chute, il est facile grâce au module Matplotlib d’obtenir une représentation graphique (voir <em>le module Matplotlib - Représentation graphique d’une fonction mathématique</em>) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module pyplot de matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Création de la figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">,</span> <span class="s1">&#39;-*&#39;</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;vitesse [m.s$^{-1}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-acceleration-constante_13_0.png" src="../../../_images/03-acceleration-constante_13_0.png" />
+</div>
+</div>
+<p>Sur la figure nous avons explicitement mis des points pour montrer la discrétisation de la fonction <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>Voyons maintenant comment modéliser le temps et la vitesse numériquement avec un objet <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> du module Pandas (voir le module <em>Dictionnaires et Pandas</em>). Nous allons d’abord créer un <em>index</em> contenant les temps du tableau <code class="docutils literal notranslate"><span class="pre">temps</span></code>. Pour cela, nous utilisons la fonction <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> de Pandas (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html">voir l’aide de cette fonction</a>) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Création de l&#39;index contenant les dates de la discrétisation</span>
+<span class="n">index_temps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">origin</span> <span class="o">=</span> <span class="s1">&#39;2020-03-14 13:45:00&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons spécifié l’unité de temps avec l’option <code class="docutils literal notranslate"><span class="pre">unit</span></code>, et la date correspondant au temps <span class="math notranslate nohighlight">\(t=0\)</span> s avec l’option <code class="docutils literal notranslate"><span class="pre">origin</span></code>. Nous pouvons alors créer le DataFrame <code class="docutils literal notranslate"><span class="pre">df_vitesse</span></code> avec la commande :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_vitesse</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">vitesse</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">index_temps</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;vitesse&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut afficher les premières lignes du DataFrame :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_vitesse</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>vitesse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-03-14 13:45:00</th>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2020-03-14 13:45:01</th>
+      <td>9.81</td>
+    </tr>
+    <tr>
+      <th>2020-03-14 13:45:02</th>
+      <td>19.62</td>
+    </tr>
+    <tr>
+      <th>2020-03-14 13:45:03</th>
+      <td>29.43</td>
+    </tr>
+    <tr>
+      <th>2020-03-14 13:45:04</th>
+      <td>39.24</td>
+    </tr>
+    <tr>
+      <th>2020-03-14 13:45:05</th>
+      <td>49.05</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Cette représentation numérique a l’avantage d’être située dans le temps de façon non ambiguë, avec des dates. Cela peut être très utile lorsque l’on veut représenter ou modéliser les données d’une expérience. Il suffit alors pour la représentation graphique d’écrire :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_vitesse</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;vitesse [m.s$^{-1}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-acceleration-constante_21_0.png" src="../../../_images/03-acceleration-constante_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="representation-sous-la-forme-d-une-fonction">
+<h2>Représentation sous la forme d’une fonction<a class="headerlink" href="#representation-sous-la-forme-d-une-fonction" title="Permalink to this headline">¶</a></h2>
+<p>Il est possible de représenter la vitesse du corps en chute libre sous la forme d’une fonction Python (voir le module <em>fonction</em>) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la fonction</span>
+<span class="k">def</span> <span class="nf">func_vitesse</span><span class="p">(</span><span class="n">temps</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Avec cette représentation nous pouvons alors calculer la vitesse pour n’importe quel temps. Cela est un avantage certain par rapport à la représentation discrète, où nous n’avons accès à la vitesse que pour des temps donnés. Cependant, il n’est possible de représenter une grandeur physique de cette façon <em>que</em> si on connaît sa forme analytique.</p>
+<p>Par exemple, la vitesse au temps <span class="math notranslate nohighlight">\(t = 34.76\)</span> s est :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">func_vitesse</span><span class="p">(</span><span class="mf">34.76</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>340.9956
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut aussi obtenir facilement un tableau Numpy des vitesses correspondant au tableau <code class="docutils literal notranslate"><span class="pre">temps</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">func_vitesse</span><span class="p">(</span><span class="n">temps</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.    9.81 19.62 29.43 39.24 49.05 58.86 68.67 78.48 88.29 98.1 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ainsi, grâce à la fonction, on n’est pas obligé de définir un tableau <code class="docutils literal notranslate"><span class="pre">vitesse</span></code> intermédiaire pour représenter graphiquement la fonction. On peut écrire simplement :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">func_vitesse</span><span class="p">(</span><span class="n">temps</span><span class="p">))</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;vitesse [m.s$^{-1}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-acceleration-constante_29_0.png" src="../../../_images/03-acceleration-constante_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="representation-de-la-position">
+<h2>Représentation de la position<a class="headerlink" href="#representation-de-la-position" title="Permalink to this headline">¶</a></h2>
+<p>En intégrant la vitesse de l’objet en chute par rapport au temps
+$<span class="math notranslate nohighlight">\( v(t) = \frac{dz}{dt}(t) = g t\)</span>$</p>
+<p>on obtient une nouvelle représentation du mouvement de la particule, sa position par rapport au temps :
+$<span class="math notranslate nohighlight">\(z(t) = \frac{1}{2}gt^2\)</span>$</p>
+<p>Afin de représenter numériquement cette nouvelle fonction du temps, il suffit de créer un nouveau tableau Numpy <code class="docutils literal notranslate"><span class="pre">position_z</span></code> avec :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau position_z</span>
+<span class="n">position_z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Voyons ce que contient ce tableau :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">position_z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  0.      4.905  19.62   44.145  78.48  122.625 176.58  240.345 313.92
+ 397.305 490.5  ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Représentons graphiquement les trois représentations du mouvement de l’objet en chute libre : accélération, vitesse et position. Afin de représenter numériquement l’accélération en fonction du temps, on crée un tableau Numpy constant <code class="docutils literal notranslate"><span class="pre">acceleration</span></code>, de la même taille que le tableau <code class="docutils literal notranslate"><span class="pre">temps</span></code>, avec la fonction <code class="docutils literal notranslate"><span class="pre">ones()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau acceleration</span>
+<span class="n">acceleration</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="n">pesanteur</span>
+
+<span class="c1"># Affichage du tableau</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9.81 9.81 9.81 9.81 9.81 9.81 9.81 9.81 9.81 9.81 9.81]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En affichant le tableau, nous vérifions que nous n’avons pas fait d’erreur. En effet, il est très important quand nous programmons de bien vérifier que chaque étape, chaque ligne qu’on écrit fait bien ce que l’on attend.</p>
+<p>Ensuite, mettons les trois représentations graphiques l’une en dessous de l’autre grâce à la fonction <code class="docutils literal notranslate"><span class="pre">subplot</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Représentation de l&#39;accélération</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">acceleration</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;acceleration [m.s$^{-2}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelbottom</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># Retire les labels de l&#39;axe x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Modèle de l&#39;accélération constante à 1D&quot;</span><span class="p">)</span>
+
+<span class="c1"># Représentation de la vitesse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;vitesse [m.s$^{-1}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelbottom</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># Retire les labels de l&#39;axe x</span>
+
+<span class="c1"># Représentation de la position z</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">position_z</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;position z [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span> <span class="c1"># Agrandit l&#39;espace entre les figures</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-acceleration-constante_37_0.png" src="../../../_images/03-acceleration-constante_37_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="representation-du-mouvement">
+<h2>Représentation du mouvement<a class="headerlink" href="#representation-du-mouvement" title="Permalink to this headline">¶</a></h2>
+<p>La pesanteur est dirigée le long de l’axe <span class="math notranslate nohighlight">\(z\)</span>. Nous savons donc que suivant les deux autres axes <span class="math notranslate nohighlight">\(x\)</span> et <span class="math notranslate nohighlight">\(y\)</span>, dans un référentiel inertiel, il n’y a pas de mouvement. Supposons qu’initialement <span class="math notranslate nohighlight">\(x=2\)</span> m. Nous voulons représenter le mouvement du corps en chute libre dans le plan <span class="math notranslate nohighlight">\((xOz)\)</span>. Nous allons d’abord créer le tableau constant représentant la position suivant l’axe <span class="math notranslate nohighlight">\(x\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Position suivant l&#39;axe x</span>
+<span class="n">position_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># m</span>
+
+<span class="c1"># Vérification du tableau</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">position_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous pouvons maintenant représenter graphiquement le mouvement de la particule grâce aux deux tableaux position :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Représentation graphique du mouvement</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">position_x</span><span class="p">,</span> <span class="o">-</span><span class="n">position_z</span><span class="p">,</span> <span class="s1">&#39;x-&#39;</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position -z [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/03-acceleration-constante_41_0.png" src="../../../_images/03-acceleration-constante_41_0.png" />
+</div>
+</div>
+<p>Nous avons sur la représentation graphique renversé l’axe <span class="math notranslate nohighlight">\(z\)</span> car nous avons plutôt l’habitude de voir les objets tomber de haut en bas plutôt que de bas en haut. La représentation discrète du mouvement, avec un pas de temps constant, nous permet de bien voir (avec les croix) l’effet de l’accéleration sur la position.</p>
+</div>
+<div class="section" id="representer-des-donnees">
+<h2>Représenter des données<a class="headerlink" href="#representer-des-donnees" title="Permalink to this headline">¶</a></h2>
+<p>Des étudiants ont effectué une expérience de chute libre dans l’Atrium : ils ont fait tomber un objet de chaque étage de l’Atrium, sans vitesse initiale, et ont mesuré à chaque fois le temps de chute <span class="math notranslate nohighlight">\(T\)</span> de l’objet ainsi que la hauteur de l’étage <span class="math notranslate nohighlight">\(H\)</span>. On reporte dans le tableau ci-dessous le résultat des mesures pour 4 groupes différents :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Étage</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hauteur de l’étage (m)</p></td>
+<td><p>7.40</p></td>
+<td><p>10.80</p></td>
+<td><p>14.20</p></td>
+<td><p>17.60</p></td>
+<td><p>20.95</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temps de chute (s) - groupe 1</p></td>
+<td><p>1.09</p></td>
+<td><p>1.39</p></td>
+<td><p>1.70</p></td>
+<td><p>2.05</p></td>
+<td><p>2.25</p></td>
+</tr>
+<tr class="row-even"><td><p>Temps de chute (s) - groupe 2</p></td>
+<td><p>1.17</p></td>
+<td><p>1.54</p></td>
+<td><p>1.72</p></td>
+<td><p>2.18</p></td>
+<td><p>2.40</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temps de chute (s) - groupe 3</p></td>
+<td><p>1.33</p></td>
+<td><p>1.68</p></td>
+<td><p>1.56</p></td>
+<td><p>2.19</p></td>
+<td><p>2.40</p></td>
+</tr>
+<tr class="row-even"><td><p>Temps de chute (s) - groupe 4</p></td>
+<td><p>0.95</p></td>
+<td><p>1.61</p></td>
+<td><p>1.49</p></td>
+<td><p>2.16</p></td>
+<td><p>2.18</p></td>
+</tr>
+</tbody>
+</table>
+<p>Selon le modèle de l’accélération constante, la relation entre la hauteur de l’étage <em>H</em> et le temps de chute <em>T</em> est :
+$<span class="math notranslate nohighlight">\( H = \frac{1}{2} g T^2 \)</span>$</p>
+<p>Représentons graphiquement le modèle (en ligne continue) et les données (avec des croix), grâce à des tableaux Numpy :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modèle</span>
+<span class="n">temps_chute_modele</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span> <span class="c1"># s</span>
+<span class="n">hauteur_etage_modele</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps_chute_modele</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="c1"># Mesures de la hauteur des étages</span>
+<span class="n">hauteur_etage_mesure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.40</span><span class="p">,</span> <span class="mf">10.80</span><span class="p">,</span> <span class="mf">14.20</span><span class="p">,</span> <span class="mf">17.60</span><span class="p">,</span> <span class="mf">20.95</span><span class="p">])</span> <span class="c1"># m</span>
+
+<span class="c1"># Mesures des temps de chute pour les 4 groupes</span>
+<span class="n">temps_chute_groupe1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.09</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">,</span> <span class="mf">1.70</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">])</span> <span class="c1"># s</span>
+<span class="n">temps_chute_groupe2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.17</span><span class="p">,</span> <span class="mf">1.54</span><span class="p">,</span> <span class="mf">1.72</span><span class="p">,</span> <span class="mf">2.18</span><span class="p">,</span> <span class="mf">2.40</span><span class="p">])</span> <span class="c1"># s</span>
+<span class="n">temps_chute_groupe3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.33</span><span class="p">,</span> <span class="mf">1.68</span><span class="p">,</span> <span class="mf">1.56</span><span class="p">,</span> <span class="mf">2.19</span><span class="p">,</span> <span class="mf">2.40</span><span class="p">])</span> <span class="c1"># s</span>
+<span class="n">temps_chute_groupe4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">1.49</span><span class="p">,</span> <span class="mf">2.16</span><span class="p">,</span> <span class="mf">2.18</span><span class="p">])</span> <span class="c1"># s</span>
+
+<span class="c1"># Représentation graphique du modèle</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_chute_modele</span><span class="p">,</span> <span class="n">hauteur_etage_modele</span><span class="p">)</span>
+
+<span class="c1"># Représentation graphique des données</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_chute_groupe1</span><span class="p">,</span> <span class="n">hauteur_etage_mesure</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_chute_groupe2</span><span class="p">,</span> <span class="n">hauteur_etage_mesure</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_chute_groupe3</span><span class="p">,</span> <span class="n">hauteur_etage_mesure</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_chute_groupe4</span><span class="p">,</span> <span class="n">hauteur_etage_mesure</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Expérience de chute libre&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temps de chute [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Hauteur de l&#39;étage [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s2">&quot;Mesures&quot;</span><span class="p">,</span> <span class="s2">&quot;Données groupe 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Données groupe 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Données groupe 3&quot;</span><span class="p">,</span> <span class="s2">&quot;Données groupe 4&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7feb6a8fad60&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/03-acceleration-constante_44_1.png" src="../../../_images/03-acceleration-constante_44_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/02-demarche-de-modelisation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../03-modelisation-numerique.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Modélisation numérique</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../03-suites-relations-recurrence/03-suite-graphique.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Représentation graphique d’une suite mathématique</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By P. Delva<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
