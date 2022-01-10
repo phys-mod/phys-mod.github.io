@@ -1,7 +1,7 @@
 # Modélisation Numérique en Physique
 
 [![jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=flat&logo=Jupyter)](https://jupyter.org/try)
-![workflow status](https://github.com/phys-mod/phys-mod.github.io/actions/workflows/deploy.yml/badge.svg)
+[![workflow status](https://github.com/phys-mod/phys-mod.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/phys-mod/phys-mod.github.io)
 [![licence](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
 [![saythanks](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/phys-mod)
 
