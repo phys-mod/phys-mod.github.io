@@ -7,7 +7,15 @@ options:  # The options key will be applied to all chapters, but not sub-section
   numbered: False
   maxdepth: 2
 chapters:
-- file: source/01-base
+- file: source/pages/part-informations-generales
+  sections:
+  - file: source/pages/info-pedagogie
+  - file: source/pages/info-competences
+  - file: source/pages/info-deroulement
+  - file: source/pages/info-evaluation
+  - file: source/pages/info-outils-numeriques
+  - file: source/pages/info-licence
+- file: source/pages/part-python-base
   sections:
   - file: source/notebooks/01-python-base/01-prise-en-main
   - file: source/notebooks/01-python-base/02-listes-python
@@ -15,21 +23,21 @@ chapters:
   - file: source/notebooks/01-python-base/04-module-numpy
   - file: source/notebooks/01-python-base/05-fonctions-numpy
   - file: source/notebooks/01-python-base/06-module-matplotlib
-- file: source/02-intermediaire
+- file: source/pages/part-python-intermediaire
   sections:
   - file: source/notebooks/02-demarche-de-modelisation/01-dictionnaires-pandas
   - file: source/notebooks/02-demarche-de-modelisation/02-logique-filtrage
   - file: source/notebooks/03-suites-relations-recurrence/01-iteration
   - file: source/notebooks/03-suites-relations-recurrence/02-fonctions
   - file: source/notebooks/04-ajustement-modele/01-entrees-sorties
-- file: source/03-modelisation-numerique
+- file: source/pages/part-modelisation-numerique
   sections:
   - file: source/notebooks/02-demarche-de-modelisation/03-acceleration-constante
   - file: source/notebooks/03-suites-relations-recurrence/03-suite-graphique
   - file: source/notebooks/04-ajustement-modele/02-ajustement-modele
   - file: source/notebooks/05-derivation-integration/01-derivation-integration-cours
   - file: source/notebooks/06-equations-differentielles/01-equations-differentielles-cours
-- file: source/04-mini-projets
+- file: source/pages/part-mini-projets
   sections:
   - file: source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars
   - file: source/notebooks/03-suites-relations-recurrence/05-mini-projet-logistique
