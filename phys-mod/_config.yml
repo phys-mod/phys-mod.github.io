@@ -1,0 +1,23 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: phys-mod
+author: P. Delva
+# logo: logo.png
+# Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
+exclude_patterns: ["**exercices**", "source/notebooks/02-demarche-de-modelisation/03-acceleration-constante*", "source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars*", "source/notebooks/03-suites-relations-recurrence/05-mini-projet-logistique*", "source/notebooks/04-ajustement-modele/02-ajustement-modele*", "source/notebooks/04-ajustement-modele/04-mini-projet-rechauffement-climatique*", "source/notebooks/03-suites-relations-recurrence/03-suite-graphique*"]
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: auto
+
+html:
+  home_page_in_navbar: false
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+

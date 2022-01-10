@@ -1,0 +1,33 @@
+# Modélisation Numérique en Physique
+
+## Modèles et données
+
+> "Essentially, all models are wrong, but some are useful."
+>
+> *George E. P. Box, statistician, 1919–2013.*
+
+Les modèles sont des *constructions mentales* qui forment la base des
+raisonnements du physicien. Ils sont construits à partir des théories physiques pour décrire un
+phénomène ou une situation particulière.
+
+En physique la conception des modèles, ou [modélisation](https://fr.wikipedia.org/wiki/Mod%C3%A9lisation), est souvent
+mise en oeuvre à l'aide des mathématiques et de l'informatique dans des [simulations numériques](https://fr.wikipedia.org/wiki/Simulation_informatique). La simulation numérique est un outil puissant pour *comprendre et
+prédire les phénomènes*. Elle intervient dans de nombreux domaines de la recherche et de l'industrie.
+
+Les simulations numériques doivent se nourrir et être confrontées à l'expérience. Cela nécessite *l'acquisition, la manipulation et
+l'interprétation des données* provenant d'expériences ou d'observations physiques. Cette science est souvent appelée
+[science des données](https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es).
+
+## Résumé du cours
+
+Dans la première partie du cours vous développerez les **compétences de programmation et de modélisation** nécessaires à la résolution
+de problèmes de physique variés. Vous apprendrez de manière active et autonome, à l'aide de diverses activités comme des exercices et
+mini-projets, accompagnés par vos enseignants et camarades.
+
+Nous utiliserons le langage Python qui est utilisé dans de nombreuses
+disciplines aussi bien dans le privé que dans le milieu académique. Les applications qui illustreront le cours
+s'appuieront sur des modèles et des notions de physique générale.
+
+Dans la deuxième partie du cours vous développerez un **projet en équipe**. Cela demande des compétences d'organisation,
+de relationnel et de communication. Vous serez autonomes aussi bien pour le choix du sujet que pour sa réalisation.
+Cependant vous serez suivi et conseillé de près par votre enseignant.

@@ -1,0 +1,25 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: source/intro
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: False
+  maxdepth: 2
+chapters:
+- file: source/01-base
+  sections:
+  - file: source/notebooks/01-python-base/01-prise-en-main
+  - file: source/notebooks/01-python-base/02-listes-python
+  - file: source/notebooks/01-python-base/03-fonctions-modules
+  - file: source/notebooks/01-python-base/04-module-numpy
+  - file: source/notebooks/01-python-base/05-fonctions-numpy
+  - file: source/notebooks/01-python-base/06-module-matplotlib
+- file: source/02-intermediaire
+  sections:
+  - file: source/notebooks/02-demarche-de-modelisation/01-dictionnaires-pandas
+  - file: source/notebooks/02-demarche-de-modelisation/02-logique-filtrage
+  - file: source/notebooks/03-suites-relations-recurrence/01-iteration
+  - file: source/notebooks/03-suites-relations-recurrence/02-fonctions
+  - file: source/notebooks/04-ajustement-modele/01-entrees-sorties
+
