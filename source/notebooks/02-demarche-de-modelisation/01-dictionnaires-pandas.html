@@ -144,7 +144,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
-     Première prise en main de Python
+     Première prise en main
     </a>
    </li>
    <li class="toctree-l2">
@@ -374,8 +374,24 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-dictionnaires">
+   <strong>
+    Vidéo
+   </strong>
+   : Dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#les-dictionnaires">
    Les dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-l-objet-dataframe">
+   <strong>
+    Vidéo
+   </strong>
+   : L’objet DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -469,8 +485,24 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-dictionnaires">
+   <strong>
+    Vidéo
+   </strong>
+   : Dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#les-dictionnaires">
    Les dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-l-objet-dataframe">
+   <strong>
+    Vidéo
+   </strong>
+   : L’objet DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -554,6 +586,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dictionnaires-et-pandas">
 <h1>Dictionnaires et Pandas<a class="headerlink" href="#dictionnaires-et-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-dictionnaires">
+<h2><strong>Vidéo</strong>: Dictionnaires<a class="headerlink" href="#video-dictionnaires" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=abf874a0-6e15-4fab-977c-ae1400dfa2bf&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="les-dictionnaires">
 <h2>Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permalink to this headline">¶</a></h2>
 <p>Un dictionnaire ressemble à une liste mais il est plus général. Alors que les indices d’une liste doivent être des entiers, dans un dictionnaire, les indices peuvent être de types différents.</p>
@@ -696,6 +736,14 @@
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="video-l-objet-dataframe">
+<h2><strong>Vidéo</strong>: L’objet DataFrame<a class="headerlink" href="#video-l-objet-dataframe" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c59d5c9e-97ab-45b3-b24d-adf900ff9859&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="pandas-dataframes">
@@ -1248,7 +1296,7 @@ Name: 23, dtype: object
 <li><p>Créer un objet <em>Series</em> contenant la colonne date d’adhésion</p></li>
 <li><p>Créer un objet <em>Series</em> contenant la ligne 12</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
 <span class="n">col_adhesion</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">]</span>
@@ -1552,7 +1600,7 @@ république tchèque
 <li><p>Extraire les date d’adhésion des pays avec les étiquettes 12 et 25</p></li>
 <li><p>Extraire la population du pays avec l’étiquette 6</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">])</span>
@@ -1830,9 +1878,6 @@ Name: 28, dtype: object
 Name: population, dtype: float64
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="id2">
@@ -1852,7 +1897,7 @@ Name: population, dtype: float64
 <li><p>Ajouter une nouvelle colonne au DataFrame <code class="docutils literal notranslate"><span class="pre">df_europe</span></code> avec le nom <code class="docutils literal notranslate"><span class="pre">'poids'</span></code> qui contient <span class="math notranslate nohighlight">\(\bar{N}_i\)</span></p></li>
 <li><p>Afficher les colonnes <code class="docutils literal notranslate"><span class="pre">'pays'</span></code> et <code class="docutils literal notranslate"><span class="pre">'poids'</span></code> du DataFrame <code class="docutils literal notranslate"><span class="pre">df_europe</span></code> pour les 20 premières lignes</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombre de siège par habitant</span>
 <span class="n">siege_pourcentage</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;sièges&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>

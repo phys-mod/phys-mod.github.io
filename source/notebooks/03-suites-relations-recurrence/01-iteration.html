@@ -144,7 +144,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
-     Première prise en main de Python
+     Première prise en main
     </a>
    </li>
    <li class="toctree-l2">
@@ -374,6 +374,14 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-instructions-while-et-for">
+   <strong>
+    Vidéo
+   </strong>
+   : Instructions while et for
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mise-a-jour-d-une-variable">
    Mise à jour d’une variable
   </a>
@@ -428,6 +436,14 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-iteration-sur-des-objets">
+   <strong>
+    Vidéo
+   </strong>
+   : Itération sur des objets
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iterer-sur-une-liste">
@@ -489,6 +505,14 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-instructions-while-et-for">
+   <strong>
+    Vidéo
+   </strong>
+   : Instructions while et for
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mise-a-jour-d-une-variable">
    Mise à jour d’une variable
   </a>
@@ -545,6 +569,14 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-iteration-sur-des-objets">
+   <strong>
+    Vidéo
+   </strong>
+   : Itération sur des objets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iterer-sur-une-liste">
    Itérer sur une liste
   </a>
@@ -595,6 +627,14 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="iteration">
 <h1>Itération<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h1>
 <p>L’itération est la capacité d’exécuter à plusieurs reprises un bloc d’instructions.</p>
+<div class="section" id="video-instructions-while-et-for">
+<h2><strong>Vidéo</strong>: Instructions while et for<a class="headerlink" href="#video-instructions-while-et-for" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c0312907-29eb-4e7a-b62c-ae1400df9455&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="mise-a-jour-d-une-variable">
 <h2>Mise à jour d’une variable<a class="headerlink" href="#mise-a-jour-d-une-variable" title="Permalink to this headline">¶</a></h2>
 <p>On parle de <strong>mise à jour</strong> de la variable lorsque la valeur de ré-affectation d’une variable dépend de son ancienne valeur. Par exemple :</p>
@@ -647,7 +687,7 @@ Partez !
 <div class="section" id="exercice">
 <h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h3>
 <p>Initialisez une variable appelée <code class="docutils literal notranslate"><span class="pre">x</span></code> à 40. Créer une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> qui, tant que <code class="docutils literal notranslate"><span class="pre">x</span></code> est supérieur à 1, divise <code class="docutils literal notranslate"><span class="pre">x</span></code> par 4. À la sortie de la boucle, afficher à l’écran la valeur de <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
@@ -698,7 +738,7 @@ Partez !
 <div class="section" id="id1">
 <h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Reprendre l’exercice précédent. Dans la boucle, ajouter une condition qui vérifie que <code class="docutils literal notranslate"><span class="pre">x</span></code> est un nombre pair. Si ce n’est pas le cas, afficher le message d’erreur <code class="docutils literal notranslate"><span class="pre">&quot;x</span> <span class="pre">doit</span> <span class="pre">être</span> <span class="pre">pair&quot;</span></code> et sortir de la boucle.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
@@ -789,7 +829,7 @@ Partez !
 <div class="section" id="id2">
 <h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Créer une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> qui affiche les multiples de 4 compris entre 1 et 20 (inclus).</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
@@ -806,7 +846,7 @@ Partez !
 </div>
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ou bien</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
@@ -825,7 +865,7 @@ Partez !
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ou bien</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
@@ -843,6 +883,14 @@ Partez !
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="video-iteration-sur-des-objets">
+<h2><strong>Vidéo</strong>: Itération sur des objets<a class="headerlink" href="#video-iteration-sur-des-objets" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b8b7e924-d52d-44a3-a11a-ae150110dd43&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="iterer-sur-une-liste">
@@ -922,7 +970,7 @@ taille pensée : 11.4 cm
 </div>
 </div>
 <p>En utilisant une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, afficher pour chaque pièce le numéro de la pièce (en commençant par 1), le nom de la pièce et sa superficie, sous la forme <code class="docutils literal notranslate"><span class="pre">Pièce</span> <span class="pre">n</span> <span class="pre">:</span> <span class="pre">nom</span> <span class="pre">(superficie)</span></code>. Par exemple, pour la première itération : <code class="docutils literal notranslate"><span class="pre">Pièce</span> <span class="pre">1</span> <span class="pre">:</span> <span class="pre">cuisine</span> <span class="pre">(18.0</span> <span class="pre">m**2)</span></code>.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">maison</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pièce &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; m**2)&quot;</span><span class="p">)</span>
@@ -1005,11 +1053,11 @@ pensée -- 11.4 cm
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-7
-8
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+8
+0
 </pre></div>
 </div>
 </div>
@@ -1201,7 +1249,7 @@ Name: pensée, dtype: float64
 <li><p>Créer une copie de cet objet appelée <code class="docutils literal notranslate"><span class="pre">df_europe_cp</span></code> avec <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html?highlight=copy#pandas.DataFrame.copy">la méthode</a> <code class="docutils literal notranslate"><span class="pre">.copy()</span></code></p></li>
 <li><p>À l’aide d’une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, écrire chaque pays et capitale sous la forme <code class="docutils literal notranslate"><span class="pre">Pays</span> <span class="pre">:</span> <span class="pre">Capitale</span></code> (avec une majuscule pour la première lettre, on peut utliser la méthode <code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code>). Par exemple pour la première itération : <code class="docutils literal notranslate"><span class="pre">Allemagne</span> <span class="pre">:</span> <span class="pre">Berlin</span></code>.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Copie du DataFrame</span>
 <span class="n">df_europe_cp</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># deep = True est optionnel mais c&#39;est toujours mieux de faire une copie profonde plutôt qu&#39;une copie superficielle</span>

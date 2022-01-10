@@ -142,7 +142,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
-     Première prise en main de Python
+     Première prise en main
     </a>
    </li>
    <li class="toctree-l2">
@@ -372,6 +372,14 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-lire-et-ecrire">
+   <strong>
+    Vidéo
+   </strong>
+   : Lire et écrire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lire-un-fichier-texte">
    Lire un fichier texte
   </a>
@@ -394,6 +402,14 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videos-outils-supplementaires">
+   <strong>
+    Vidéos
+   </strong>
+   : Outils supplémentaires
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lire-le-clavier">
@@ -443,6 +459,14 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-lire-et-ecrire">
+   <strong>
+    Vidéo
+   </strong>
+   : Lire et écrire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lire-un-fichier-texte">
    Lire un fichier texte
   </a>
@@ -465,6 +489,14 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videos-outils-supplementaires">
+   <strong>
+    Vidéos
+   </strong>
+   : Outils supplémentaires
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lire-le-clavier">
@@ -521,6 +553,14 @@ banksy.txt				       test.txt
 exo-write.txt				       verne-lune.txt
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="video-lire-et-ecrire">
+<h2><strong>Vidéo</strong>: Lire et écrire<a class="headerlink" href="#video-lire-et-ecrire" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7bf616ba-4e65-48b6-aa69-adb100bae47a&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="lire-un-fichier-texte">
@@ -648,7 +688,7 @@ A MM. LES MEMBRES DU BUREAU DE L&#39;OBSERVATOIRE DE CAMBRIDGE.
 <li><p>Afficher le fichier</p></li>
 <li><p>Fermer le fichier</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ouverture du fichier texte</span>
 <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;banksy.txt&#39;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
@@ -763,7 +803,7 @@ A MM. LES MEMBRES DU BUREAU DE L&#39;OBSERVATOIRE DE CAMBRIDGE.
 <li><p>Afficher la ligne 13 du fichier <em>verne-lune.txt</em>. Pour cela il faut exécuter 12 fois la méthode <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> sans <code class="docutils literal notranslate"><span class="pre">print()</span></code>, puis une treizième fois avec <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
 <li><p>Créez un fichier nommé <em>exo-write.txt</em> dans lequel vous écrirez tous les entiers entre 1 et 100 (avec un entier par ligne)</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Ouverture et lecture du fichier avec un gestionnaire de contexte</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;verne-lune.txt&#39;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -779,7 +819,7 @@ A MM. LES MEMBRES DU BUREAU DE L&#39;OBSERVATOIRE DE CAMBRIDGE.
 </div>
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Ouverture et écriture dans un fichier avec un gestionnaire de contexte</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exo-write.txt&#39;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -791,19 +831,46 @@ A MM. LES MEMBRES DU BUREAU DE L&#39;OBSERVATOIRE DE CAMBRIDGE.
 </div>
 </div>
 </div>
+<div class="section" id="videos-outils-supplementaires">
+<h2><strong>Vidéos</strong>: Outils supplémentaires<a class="headerlink" href="#videos-outils-supplementaires" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d0b75135-d38b-4641-98c2-adb100baec9f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="lire-le-clavier">
 <h2>Lire le clavier<a class="headerlink" href="#lire-le-clavier" title="Permalink to this headline">¶</a></h2>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">input()</span></code> lit tout ce qui est écrit au clavier comme une chaîne de caractères :</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lire ce qui est écrit au clavier (finir avec la touche entrée)</span>
-<span class="c1">#  (enlever le signe commentaire ci-dessous)</span>
-<span class="c1">#chaine = input(&quot;Entrez votre message avec input:\n&quot;)</span>
+<span class="n">chaine</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez votre message avec input:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Afficher ce qui a été écrit</span>
-<span class="c1">#  (enlever les signes commentaire ci-dessous)</span>
-<span class="c1">#print(&quot;Vous avez entré :&quot;, chaine)</span>
-<span class="c1">#print(type(chaine))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vous avez entré :&quot;</span><span class="p">,</span> <span class="n">chaine</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">chaine</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1944</span><span class="o">/</span><span class="mf">3091997120.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Lire ce qui est écrit au clavier (finir avec la touche entrée)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">chaine</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez votre message avec input:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Afficher ce qui a été écrit</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vous avez entré :&quot;</span><span class="p">,</span> <span class="n">chaine</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1004</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1006</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -815,16 +882,37 @@ A MM. LES MEMBRES DU BUREAU DE L&#39;OBSERVATOIRE DE CAMBRIDGE.
 <li><p>Convertir la variable <code class="docutils literal notranslate"><span class="pre">sn</span></code> en entier avec la fonction <code class="docutils literal notranslate"><span class="pre">int()</span></code>, et affecter la valeur à une variable <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
 <li><p>Afficher le carré de <code class="docutils literal notranslate"><span class="pre">n</span></code> à l’écran</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrée au clavier (enlever le signe commentaire ci-dessous)</span>
-<span class="c1">#sn = input(&quot;Entrer un entier :\n&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrée au clavier</span>
+<span class="n">sn</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrer un entier :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="c1"># Conversion en entier (enlever le signe commentaire ci-dessous)</span>
-<span class="c1">#n = int(sn)</span>
+<span class="c1"># Conversion en entier</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span>
 
-<span class="c1"># Afficher le carré de n (enlever le signe commentaire ci-dessous)</span>
-<span class="c1">#print(n * n)</span>
+<span class="c1"># Afficher le carré de n</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1944</span><span class="o">/</span><span class="mf">1662512968.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Entrée au clavier</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sn</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrer un entier :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Conversion en entier</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1004</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1006</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

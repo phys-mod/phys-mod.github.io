@@ -144,7 +144,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01-prise-en-main.html">
-     Première prise en main de Python
+     Première prise en main
     </a>
    </li>
    <li class="toctree-l2">
@@ -422,6 +422,14 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-les-modules">
+   <strong>
+    Vidéo
+   </strong>
+   : Les modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importer-un-module">
    Importer un module
   </a>
@@ -514,6 +522,14 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-les-modules">
+   <strong>
+    Vidéo
+   </strong>
+   : Les modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importer-un-module">
    Importer un module
   </a>
@@ -597,7 +613,7 @@
 <li><p>Vous prévoyez un voyage en France qui passe par les villes suivantes : Le Mans, Nantes, Limoges, Toulouse, Montpellier, Lyon, Dijon, Nancy. Créez une liste <code class="docutils literal notranslate"><span class="pre">villes</span></code> qui contient le nom de ces villes.</p></li>
 <li><p>À l’aide des fonctions <code class="docutils literal notranslate"><span class="pre">len()</span></code> et <code class="docutils literal notranslate"><span class="pre">print()</span></code>, affichez le nombre de villes que vous prévoyez de visiter à l’écran.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste de destinations</span>
 <span class="n">villes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Le Mans&quot;</span><span class="p">,</span> <span class="s2">&quot;Nantes&quot;</span><span class="p">,</span> <span class="s2">&quot;Limoges&quot;</span><span class="p">,</span> <span class="s2">&quot;Toulouse&quot;</span><span class="p">,</span> <span class="s2">&quot;Montpellier&quot;</span><span class="p">,</span> <span class="s2">&quot;Lyon&quot;</span><span class="p">,</span> <span class="s2">&quot;Dijon&quot;</span><span class="p">]</span>
@@ -716,7 +732,7 @@ print(...)
 <li><p>Afficher l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> et comprendre son fonctionnement. Note : un itérable (<em>iterable</em>) est un objet capable de renvoyer ses éléments un à un, comme les listes et les chaînes.</p></li>
 <li><p>Afficher à l’écran les villes contenues dans la liste <code class="docutils literal notranslate"><span class="pre">villes</span></code> créée plus haut dans un ordre alphabétique descendant (de z vers a), grâce à l’option <code class="docutils literal notranslate"><span class="pre">reverse</span> <span class="pre">=</span> <span class="pre">True</span></code> de la fonction <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>, et de la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aide de la fonction sorted()</span>
 <span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
@@ -735,7 +751,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 </div>
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage de la liste dans l&#39;ordre alphabétique inverse</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">villes</span><span class="p">,</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">))</span>
@@ -796,7 +812,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <li><p>Afficher le nom de la ville à l’écran avec la première lettre en capitale et le reste en minuscule</p></li>
 <li><p>Afficher à l’écran le nombre de fois que la lettre “o” apparaît dans le mot</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la chaîne</span>
 <span class="n">ville</span> <span class="o">=</span> <span class="s2">&quot;TOULOUSE&quot;</span>
@@ -873,7 +889,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <li><p>Retirer la chaîne <code class="docutils literal notranslate"><span class="pre">&quot;Limoges&quot;</span></code> de la liste <code class="docutils literal notranslate"><span class="pre">villes</span></code>, et ajouter <code class="docutils literal notranslate"><span class="pre">&quot;Paris&quot;</span></code> à la fin de la liste.</p></li>
 <li><p>Afficher la liste <code class="docutils literal notranslate"><span class="pre">villes</span></code> à l’écran.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
 <span class="n">villes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Le Mans&quot;</span><span class="p">,</span> <span class="s2">&quot;Nantes&quot;</span><span class="p">,</span> <span class="s2">&quot;Limoges&quot;</span><span class="p">,</span> <span class="s2">&quot;Toulouse&quot;</span><span class="p">,</span> <span class="s2">&quot;Montpellier&quot;</span><span class="p">,</span> <span class="s2">&quot;Lyon&quot;</span><span class="p">,</span> <span class="s2">&quot;Dijon&quot;</span><span class="p">]</span>
@@ -901,6 +917,14 @@ sorted(iterable, /, *, key=None, reverse=False)
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="video-les-modules">
+<h2><strong>Vidéo</strong>: Les modules<a class="headerlink" href="#video-les-modules" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a175b955-f706-49cb-8997-adb100bd4f2e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="importer-un-module">
@@ -978,7 +1002,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <li><p>Importer le module <code class="docutils literal notranslate"><span class="pre">random</span></code> en lui donnant le nom <code class="docutils literal notranslate"><span class="pre">rd</span></code>.</p></li>
 <li><p>Afficher à l’écran un chiffre aléatoire entre 0 et 1 à l’aide de <a class="reference external" href="https://docs.python.org/fr/3/library/random.html">la fonction <code class="docutils literal notranslate"><span class="pre">random()</span></code></a> du module <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import du module random</span>
 <span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
@@ -989,7 +1013,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.305587965543216
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.04678291283626501
 </pre></div>
 </div>
 </div>
@@ -1022,7 +1046,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <li><p>Créer une liste <code class="docutils literal notranslate"><span class="pre">nombres</span> <span class="pre">=</span> <span class="pre">[7.2,</span> <span class="pre">1.5,</span> <span class="pre">9.3,</span> <span class="pre">6.9,</span> <span class="pre">14.2,</span> <span class="pre">2.5,</span> <span class="pre">87.2]</span></code></p></li>
 <li><p>Afficher à l’écran la moyenne et la médiane de la liste <code class="docutils literal notranslate"><span class="pre">nombres</span></code>.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import des fonction mean() et median() du module statistics</span>
 <span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">mean</span><span class="p">,</span> <span class="n">median</span>

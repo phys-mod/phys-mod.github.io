@@ -144,7 +144,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01-prise-en-main.html">
-     Première prise en main de Python
+     Première prise en main
     </a>
    </li>
    <li class="toctree-l2">
@@ -374,6 +374,14 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-introduction">
+   <strong>
+    Vidéo
+   </strong>
+   : Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#le-tableau-numpy">
    Le tableau NumPy
   </a>
@@ -400,6 +408,14 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indexation-et-tranche">
    Indexation et tranche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-tableaux-a-2-dimensions">
+   <strong>
+    Vidéo
+   </strong>
+   : Tableaux à 2 dimensions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -437,6 +453,14 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-statistiques">
+   <strong>
+    Vidéo
+   </strong>
+   : Statistiques
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#statistiques">
@@ -471,6 +495,14 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-introduction">
+   <strong>
+    Vidéo
+   </strong>
+   : Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#le-tableau-numpy">
    Le tableau NumPy
   </a>
@@ -497,6 +529,14 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indexation-et-tranche">
    Indexation et tranche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-tableaux-a-2-dimensions">
+   <strong>
+    Vidéo
+   </strong>
+   : Tableaux à 2 dimensions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -536,6 +576,14 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-statistiques">
+   <strong>
+    Vidéo
+   </strong>
+   : Statistiques
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#statistiques">
    Statistiques
   </a>
@@ -558,6 +606,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="le-module-numpy">
 <h1>Le module NumPy<a class="headerlink" href="#le-module-numpy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-introduction">
+<h2><strong>Vidéo</strong>: Introduction<a class="headerlink" href="#video-introduction" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e994e302-1f87-42c2-82c4-adf900fd2325&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="le-tableau-numpy">
 <h2>Le tableau NumPy<a class="headerlink" href="#le-tableau-numpy" title="Permalink to this headline">¶</a></h2>
 <p>L’objet de base du <a class="reference external" href="https://numpy.org/">module NumPy</a> est un tableau à <span class="math notranslate nohighlight">\(N\)</span> dimensions (<em>ndarray</em>), que l’on appelera simplement tableau par la suite. Le plus simple pour créer un tableau est de convertir une liste en tableau. Pour cela, il faut utiliser la fonction <code class="docutils literal notranslate"><span class="pre">array()</span></code> du module NumPy :</p>
@@ -682,7 +738,7 @@
 <li><p>Créer un tableau NumPy <code class="docutils literal notranslate"><span class="pre">np_nombre_habitants</span></code> à partir de la liste <code class="docutils literal notranslate"><span class="pre">nombre_habitants</span></code>.</p></li>
 <li><p>Afficher le tableau créé et son attribut dtype.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import du module NumPy</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
@@ -782,7 +838,7 @@ int64
 <li><p>Calculer la densité de population de chaque ville en nombre d’habitants par <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>. Affecter le résultat à une variable <code class="docutils literal notranslate"><span class="pre">np_densite</span></code> et afficher le résultat. Note : une seule expression sur une seule ligne est nécessaire pour effectuer le calcul.</p></li>
 <li><p>Quel est le type des éléments du tableau <code class="docutils literal notranslate"><span class="pre">np_densité</span></code> (attribut dtype) ?</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul de la densité de population (hab/km**2)</span>
 <span class="n">np_densité</span> <span class="o">=</span> <span class="n">np_nombre_habitants</span> <span class="o">/</span> <span class="n">np_superficie</span>
@@ -891,6 +947,14 @@ float64
 </div>
 <p>En effet, si on ne spécifie pas de valeur pour <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> dans l’opérateur tranche <code class="docutils literal notranslate"><span class="pre">[m:n:step]</span></code>, par défaut <code class="docutils literal notranslate"><span class="pre">m</span></code> est l’indice du premier élément du tableau (<code class="docutils literal notranslate"><span class="pre">0</span></code>), et <code class="docutils literal notranslate"><span class="pre">n</span></code> est l’indice du dernier élément du tableau plus 1 (<code class="docutils literal notranslate"><span class="pre">A.size</span></code>).</p>
 </div>
+<div class="section" id="video-tableaux-a-2-dimensions">
+<h2><strong>Vidéo</strong>: Tableaux à 2 dimensions<a class="headerlink" href="#video-tableaux-a-2-dimensions" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=052edf18-a4bf-445f-bf4d-ae150110e192&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="tableau-a-2-dimensions">
 <h2>Tableau à 2 dimensions<a class="headerlink" href="#tableau-a-2-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>Un tableau Numpy peut avoir autant de dimensions que l’on veut. Nous avons manipulé jusqu’ici des tableaux à une dimension, généralement utilisés pour contenir un type d’information. Nous avons introduit 2 tableaux Numpy :</p>
@@ -925,7 +989,7 @@ float64
 <div class="section" id="id2">
 <h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Afficher les quatres attributs du tableau Numpy <code class="docutils literal notranslate"><span class="pre">np_villes</span></code> : nombre de dimensions, taille du tableau dans chaque dimension, nombre total d’éléments, type des éléments du tableau.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage des attributs du tableau</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>   <span class="c1"># Nombre de dimensions</span>
@@ -980,7 +1044,7 @@ float64
 <li><p>Afficher le nombre d’habitants de la ville de Toulouse</p></li>
 <li><p>Afficher les superficies des 4 dernières villes du tableau</p></li>
 </ul>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombre d&#39;habitants de la ville de Toulouse</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -1055,7 +1119,7 @@ A + B =  [[ 2 12  3]
 <li><p>Ajouter le tableau <code class="docutils literal notranslate"><span class="pre">evolution</span></code> à la première colonne du tableau <code class="docutils literal notranslate"><span class="pre">np_villes_2017</span></code>.</p></li>
 <li><p>Afficher les populations des villes en 2012 et en 2017 : le classement des villes les plus peuplées de France a-t-il changé ?</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau Numpy</span>
 <span class="n">np_evolution</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">evolution</span><span class="p">)</span>
@@ -1079,6 +1143,14 @@ A + B =  [[ 2 12  3]
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="video-statistiques">
+<h2><strong>Vidéo</strong>: Statistiques<a class="headerlink" href="#video-statistiques" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=10b573f7-244c-4154-a36c-ae150110d206&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="statistiques">
@@ -1122,7 +1194,7 @@ A + B =  [[ 2 12  3]
 <div class="math notranslate nohighlight">
 \[\hat{\sigma}_{XY} =\frac{1}{N}{\sum_{i=1}^N (x_i - \bar x)\cdot(y_i - \bar y)}\]</div>
 <p>et <span class="math notranslate nohighlight">\(\hat{\sigma}_X\)</span> et <span class="math notranslate nohighlight">\(\hat{\sigma}_Y\)</span> sont les écart-types des variables <span class="math notranslate nohighlight">\(X\)</span> et <span class="math notranslate nohighlight">\(Y\)</span>.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Moyenne du nombre d&#39;habitants</span>
 <span class="n">mean_villes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np_villes</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># axis = 0 permet de faire la moyenne sur la 1ère dimension (lignes)</span>

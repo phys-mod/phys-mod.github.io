@@ -144,7 +144,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01-prise-en-main.html">
-     Première prise en main de Python
+     Première prise en main
     </a>
    </li>
    <li class="toctree-l2">
@@ -374,6 +374,14 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-creation-de-tableaux">
+   <strong>
+    Vidéo
+   </strong>
+   : Création de tableaux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creer-des-tableaux-numpy">
    Créer des tableaux Numpy
   </a>
@@ -418,6 +426,14 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-manipuler-les-tableaux">
+   <strong>
+    Vidéo
+   </strong>
+   : Manipuler les tableaux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#manipulation-de-tableau">
    Manipulation de tableau
   </a>
@@ -425,6 +441,14 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#un-peu-de-tri">
    Un peu de tri
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-format-datetime64-et-fonctions-maths">
+   <strong>
+    Vidéo
+   </strong>
+   : format DateTime64 et fonctions maths
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -465,6 +489,14 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-creation-de-tableaux">
+   <strong>
+    Vidéo
+   </strong>
+   : Création de tableaux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creer-des-tableaux-numpy">
    Créer des tableaux Numpy
   </a>
@@ -509,6 +541,14 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-manipuler-les-tableaux">
+   <strong>
+    Vidéo
+   </strong>
+   : Manipuler les tableaux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#manipulation-de-tableau">
    Manipulation de tableau
   </a>
@@ -516,6 +556,14 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#un-peu-de-tri">
    Un peu de tri
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-format-datetime64-et-fonctions-maths">
+   <strong>
+    Vidéo
+   </strong>
+   : format DateTime64 et fonctions maths
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -546,6 +594,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="les-fonctions-de-numpy">
 <h1>Les fonctions de Numpy<a class="headerlink" href="#les-fonctions-de-numpy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-creation-de-tableaux">
+<h2><strong>Vidéo</strong>: Création de tableaux<a class="headerlink" href="#video-creation-de-tableaux" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8b879221-1151-42ec-972b-adb100bce1f6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="creer-des-tableaux-numpy">
 <h2>Créer des tableaux Numpy<a class="headerlink" href="#creer-des-tableaux-numpy" title="Permalink to this headline">¶</a></h2>
 <p>De nombreuses fonctions de Numpy sont dédiées à la construction de tableaux multidimensionnels. La <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html">liste complète des fonctions</a> pour la création de tableaux peut se trouver dans la documentation Numpy. Attention à bien choisir la documentation appropriée à votre version de Numpy, accessible avec :</p>
@@ -701,9 +757,9 @@ datatype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----
-[[4.68322689e-310 0.00000000e+000 4.68322658e-310]
- [1.43705439e-139 6.91340682e-310 4.68322658e-310]
- [7.96096139e+053 6.91340680e-310 3.95252517e-322]]
+[[4.63657572e-310 0.00000000e+000 6.91178391e-310]
+ [6.91178389e-310 6.91178444e-310 6.91178390e-310]
+ [6.91178341e-310 6.91178371e-310 1.02765654e-321]]
 shape: (3, 3)
 number of dimensions: 2
 datatype: float64
@@ -729,7 +785,7 @@ datatype: float64
 <li><p>Créer un tableau <code class="docutils literal notranslate"><span class="pre">A</span></code> de dimension 1, contenant 7 éléments tous égaux à <span class="math notranslate nohighlight">\(4.2\)</span> avec la fonction <code class="docutils literal notranslate"><span class="pre">ones()</span></code>. Afficher les attributs du tableau avec la fonction <code class="docutils literal notranslate"><span class="pre">arrayInfo()</span></code></p></li>
 <li><p>Créer un tableau vide B avec la fonction <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>, de même forme que A, sans écrire explicitement de <em>tuple</em> en argument de la fonction</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">7</span><span class="p">,))</span> <span class="o">*</span> <span class="mf">4.2</span>
@@ -894,7 +950,7 @@ datatype: int64
 <div class="section" id="id2">
 <h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>En vous aidant de l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">logspace()</span></code>, créer le tableau Numpy contenant toutes les puissances de <span class="math notranslate nohighlight">\(10\)</span> depuis <span class="math notranslate nohighlight">\(10^{-4}\)</span> à <span class="math notranslate nohighlight">\(10^{5}\)</span>, puis affichez les attributs du tableau avec arrayInfo.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># help(np.logspace)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -913,6 +969,14 @@ datatype: float64
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="video-manipuler-les-tableaux">
+<h2><strong>Vidéo</strong>: Manipuler les tableaux<a class="headerlink" href="#video-manipuler-les-tableaux" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=994343bb-6059-470b-888f-ae1400dff208&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="manipulation-de-tableau">
@@ -1121,6 +1185,14 @@ datatype: int64
 </div>
 </div>
 </div>
+<div class="section" id="video-format-datetime64-et-fonctions-maths">
+<h2><strong>Vidéo</strong>: format DateTime64 et fonctions maths<a class="headerlink" href="#video-format-datetime64-et-fonctions-maths" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b32af658-3e80-4675-bb92-ae150110ead8&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="quelle-est-la-date">
 <h2>Quelle est la date ?<a class="headerlink" href="#quelle-est-la-date" title="Permalink to this headline">¶</a></h2>
 <p>Afin de manipuler simplement des dates, Numpy a un type de données <code class="docutils literal notranslate"><span class="pre">datetime64</span></code>. On peut alors utiliser les fonctions vues plus haut sur ce nouveau type de données.</p>
@@ -1173,9 +1245,7 @@ La date est en septembre : True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. de jours : 106 days
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. de semaines : 15 weeks
+No. de semaines : 15 weeks
 </pre></div>
 </div>
 </div>
@@ -1226,15 +1296,16 @@ La date est en septembre : True
 <p>Ces fonctions appartiennent au module Numpy, il ne faut donc pas oublier d’écrire <code class="docutils literal notranslate"><span class="pre">np.func()</span></code> pour les appeler.</p>
 <div class="section" id="id3">
 <h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Un oscillateur amorti en régime libre à une dimension, lorsque le taux d’amortissement <span class="math notranslate nohighlight">\(\xi\)</span> est faible, se déplace suivant l’équation
-$<span class="math notranslate nohighlight">\( x(t) = C e^{-\xi\omega_0 t} \sin(\omega_d t+\phi) \)</span><span class="math notranslate nohighlight">\(
-avec \)</span>x<span class="math notranslate nohighlight">\( la position, \)</span>t<span class="math notranslate nohighlight">\( le temps, et \)</span>\omega_d=\omega_0\sqrt{1-\xi^2}<span class="math notranslate nohighlight">\(. Vous prendrez comme valeurs : \)</span>C=1~\mathrm{m}<span class="math notranslate nohighlight">\(, \)</span>\xi=0.1<span class="math notranslate nohighlight">\(, \)</span>\omega_0=1~\mathrm{s}^{-1}<span class="math notranslate nohighlight">\( et \)</span>\phi=0.2~\mathrm{rad}$.</p>
+<p>Un oscillateur amorti en régime libre à une dimension, lorsque le taux d’amortissement <span class="math notranslate nohighlight">\(\xi\)</span> est faible, se déplace suivant l’équation</p>
+<div class="math notranslate nohighlight">
+\[ x(t) = C e^{-\xi\omega_0 t} \sin(\omega_d t+\phi) \]</div>
+<p>avec <span class="math notranslate nohighlight">\(x\)</span> la position, <span class="math notranslate nohighlight">\(t\)</span> le temps, et <span class="math notranslate nohighlight">\(\omega_d=\omega_0\sqrt{1-\xi^2}\)</span>. Vous prendrez comme valeurs : <span class="math notranslate nohighlight">\(C=1~\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(\xi=0.1\)</span>, <span class="math notranslate nohighlight">\(\omega_0=1~\mathrm{s}^{-1}\)</span> et <span class="math notranslate nohighlight">\(\phi=0.2~\mathrm{rad}\)</span>.</p>
 <ol class="simple">
 <li><p>Créer le tableau Numpy <code class="docutils literal notranslate"><span class="pre">t</span></code> contenant 50 valeurs de <span class="math notranslate nohighlight">\(t\)</span> entre 0 et 10.</p></li>
 <li><p>Calculer alors le tableau Numpy <code class="docutils literal notranslate"><span class="pre">x</span></code> contenant les valeurs de <span class="math notranslate nohighlight">\(x\)</span> pour les valeurs correspondantes du tableau <code class="docutils literal notranslate"><span class="pre">t</span></code>, grâce à une unique expression</p></li>
 <li><p>Afficher le tableau des positions</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paramètres</span>
 <span class="n">C</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># m</span>
