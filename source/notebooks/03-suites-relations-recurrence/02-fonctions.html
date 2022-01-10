@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fonctions &#8212; phys-mod</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Entrées-sorties" href="../04-ajustement-modele/01-entrees-sorties.html" />
+    <link rel="prev" title="Itération" href="01-iteration.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">phys-mod</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
+     Première prise en main de Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../02-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/03-suites-relations-recurrence/02-fonctions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/03-suites-relations-recurrence/02-fonctions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-de-nouvelles-fonctions">
+   Créer de nouvelles fonctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-et-arguments">
+   Paramètres et arguments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retourner-une-valeur">
+   Retourner une valeur
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-multiples">
+   Paramètres multiples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retours-multiples">
+   Retours multiples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forme-lambda">
+   Forme Lambda
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fonctions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-de-nouvelles-fonctions">
+   Créer de nouvelles fonctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-et-arguments">
+   Paramètres et arguments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retourner-une-valeur">
+   Retourner une valeur
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-multiples">
+   Paramètres multiples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retours-multiples">
+   Retours multiples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forme-lambda">
+   Forme Lambda
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fonctions">
+<h1>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creer-de-nouvelles-fonctions">
+<h2>Créer de nouvelles fonctions<a class="headerlink" href="#creer-de-nouvelles-fonctions" title="Permalink to this headline">¶</a></h2>
+<p>Jusqu’à maintenant nous avons utilisé des fonctions déjà définies dans Python ou dans des modules. Cependant, il est possible de définir ses propres fonctions. Au minimum, la définition d’une fonction spécifie le <em>nom de la fonction</em>, et le <em>bloc d’instructions</em> à exécuter lorsque la fonction est appelée.</p>
+<p>Voici par exemple une fonction qui, lorsqu’on l’appelle, affiche la chaîne de caractères <code class="docutils literal notranslate"><span class="pre">&quot;en</span> <span class="pre">forme&quot;</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">state</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en forme
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour définir la fonction, on a utilisé l’instruction <code class="docutils literal notranslate"><span class="pre">def</span></code> suivie du nom de la fonction, <code class="docutils literal notranslate"><span class="pre">state</span></code>, de deux parenthèses et de deux points : c’est <strong>l’en-tête</strong> de la fonction, aussi appelé sa <strong>signature</strong>. Cet en-tête est suivi par le bloc d’instructions, qui est indenté, et peut contenir n’importe quel nombre d’instructions. La définition de la fonction se termine lorsque l’indentation est terminée.</p>
+<p>Pour appeler la fonction une fois qu’elle est définie, il suffit d’écrire son nom suivi de parenthèses, comme pour les fonctions pré-définies.</p>
+<p>Il est possible de créer de nouvelles variables à l’intérieur d’une fonction :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">():</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="s2">&quot;en forme&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_state</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">state</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Je suis en forme
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ici nous avons re-défini la fonction <code class="docutils literal notranslate"><span class="pre">state</span></code>, et à l’intérieur de cette fonction nous avons défini la variable <code class="docutils literal notranslate"><span class="pre">my_state</span></code>, qui est le résultat d’une concaténation de chaînes de caractères. Cette variable n’existe pas en dehors du <em>champ</em> de la fonction, elle est détruite à la fin de l’exécution du bloc d’instructions. Ainsi, le code suivant produit une erreur :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">():</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="s2">&quot;en forme&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_state</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">state</span><span class="p">()</span>
+
+<span class="c1"># Test de l&#39;usage de la variable my_state </span>
+<span class="c1"># (enlever le signe commentaire dans la ligne ci-dessous pour voir le message d&#39;erreur)</span>
+<span class="c1"># print(my_state)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Je suis en forme
+</pre></div>
+</div>
+</div>
+</div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">my_state</span></code> a donc une <strong>portée</strong> limitée (en anglais : <em>scope</em>) : elle n’existe que dans la fonction <code class="docutils literal notranslate"><span class="pre">state</span></code>. À l’inverse, une variable qui est définie en dehors d’une fonction a une portée dite <strong>globale</strong> : elle est accessible depuis n’importe quelle partie du programme, même depuis l’intérieur d’une fonction.</p>
+<div class="section" id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h3>
+<p>Créer une fonction nommée <code class="docutils literal notranslate"><span class="pre">cube</span></code>. Dans le bloc d’instructions, calculer le cube du nombre 3 (sans utiliser de fonction pré-définie) et affecter le résultat à une variable nommée <code class="docutils literal notranslate"><span class="pre">result</span></code>, puis afficher cette variable à l’écran. Tester votre fonction en l’appelant.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction cube</span>
+<span class="k">def</span> <span class="nf">cube</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">cube</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parametres-et-arguments">
+<h2>Paramètres et arguments<a class="headerlink" href="#parametres-et-arguments" title="Permalink to this headline">¶</a></h2>
+<p>La plupart des fonctions pré-définies que nous avons vues nécessitent des <em>arguments</em>. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>prend comme argument l’entier <code class="docutils literal notranslate"><span class="pre">2</span></code>. Lorsque l’on définit une fonction, les arguments sont <em>assignés</em> à des variables appelées <strong>paramètres</strong>. Définissons de nouveau la fonction <code class="docutils literal notranslate"><span class="pre">state</span></code> avec un paramètre :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_state</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">state</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Je suis en forme
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsque l’on appelle la fonction <code class="docutils literal notranslate"><span class="pre">state</span></code>, l’argument entre parenthèses, <code class="docutils literal notranslate"><span class="pre">&quot;en</span> <span class="pre">forme&quot;</span></code>, est assigné au paramètre <code class="docutils literal notranslate"><span class="pre">mot</span></code>. La partie de l’en-tête qui définit le nom de la fonction et son (ou ses) paramètre(s), ici <code class="docutils literal notranslate"><span class="pre">state(mot)</span></code>, est appelée la <strong>signature</strong> de la fonction.</p>
+<div class="section" id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Reprendre la fonction <code class="docutils literal notranslate"><span class="pre">cube</span></code>. Définir un paramètre appelé <code class="docutils literal notranslate"><span class="pre">x</span></code> afin de pouvoir mettre au cube n’importe quel nombre. La signature de la fonction est donc <code class="docutils literal notranslate"><span class="pre">cube(x)</span></code>. Tester la fonction avec le nombre 3.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction cube</span>
+<span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">cube</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="retourner-une-valeur">
+<h2>Retourner une valeur<a class="headerlink" href="#retourner-une-valeur" title="Permalink to this headline">¶</a></h2>
+<p>Nous avons vu que les fonctions pré-définies <em>retournent</em> généralement une valeur, que l’on peut affecter à une variable. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est souvent préférable lorsque l’on définit une fonction de retourner la valeur plutôt que l’afficher avec <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Pour cela, nous utilisons l’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code>. Reprenons notre fonction <code class="docutils literal notranslate"><span class="pre">state</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="k">return</span> <span class="n">my_state</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Je suis en forme
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grâce à l’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code>, nous avons pu affecter le résultat de la fonction à une nouvelle variable <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="section" id="id2">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Reprendre la fonction <code class="docutils literal notranslate"><span class="pre">cube</span></code> et remplacer l’instruction <code class="docutils literal notranslate"><span class="pre">print()</span></code> par <code class="docutils literal notranslate"><span class="pre">return</span></code>. Affecter le résultat de la fonction pour l’argument 3 à une nouvelle variable et l’afficher à l’écran (en dehors de la fonction).</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction cube</span>
+<span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<p>Nous avons vu précédemment qu’il est essentiel de commenter son code, pour les autres et soi-même. De la même façon, il est essentiel lorsque l’on crée une fonction de décrire son utilité. Pour cela nous utilisons les <strong>Docstrings</strong> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Affiche mon état à l&#39;écran &quot;&quot;&quot;</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="k">return</span> <span class="n">my_state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le Docstring s’écrit juste après l’en-tête de la fonction, entre triple guillemets. Cela sert de documentation à votre fonction.</p>
+<div class="section" id="id3">
+<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Reprendre la fonction cube et documenter cette fonction.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction cube</span>
+<span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Retourne le cube d&#39;une valeur &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parametres-multiples">
+<h2>Paramètres multiples<a class="headerlink" href="#parametres-multiples" title="Permalink to this headline">¶</a></h2>
+<p>Nous avons vu une fonction avec un seul paramètre. Cependant, il est possible de définir autant de paramètres que l’on veut. Voici la fonction <code class="docutils literal notranslate"><span class="pre">state</span></code> avec 2 paramètres, dont la signature est <code class="docutils literal notranslate"><span class="pre">state(mot,</span> <span class="pre">jour)</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">,</span> <span class="n">jour</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Affiche mon état à l&#39;écran &quot;&quot;&quot;</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Le &quot;</span> <span class="o">+</span> <span class="n">jour</span> <span class="o">+</span> <span class="s2">&quot;, je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="k">return</span> <span class="n">my_state</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">,</span> <span class="s2">&quot;lundi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le lundi, je suis en forme
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit qu’il faut faire attention à l’ordre dans lequel on écrit les arguments lors de l’appel de la fonction : les arguments sont assignés dans le même ordre aux paramètres.</p>
+<p>Il est possible de définir une valeur par défaut du (ou des) dernier(s) paramètre(s), avec le signe <code class="docutils literal notranslate"><span class="pre">=</span></code>. Lors de l’appel de la fonction, on n’est alors pas obligé de spécifier le deuxième argument, qui prend la valeur par défaut :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">,</span> <span class="n">jour</span> <span class="o">=</span> <span class="s2">&quot;lundi&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Affiche mon état à l&#39;écran &quot;&quot;&quot;</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Le &quot;</span> <span class="o">+</span> <span class="n">jour</span> <span class="o">+</span> <span class="s2">&quot;, je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="k">return</span> <span class="n">my_state</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="s2">&quot;fatigué&quot;</span><span class="p">,</span> <span class="s2">&quot;vendredi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le lundi, je suis en forme
+Le vendredi, je suis fatigué
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Écrire une fonction de signature <code class="docutils literal notranslate"><span class="pre">add(a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">1)</span></code> qui retourne la somme de <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code>. Par défaut, <code class="docutils literal notranslate"><span class="pre">b</span></code> est égal à 1. Tester et documenter la fonction.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction add</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retourne la somme des valeurs a et b passée en paramètres.</span>
+<span class="sd">    a est obligatoire, b est optionnel et vaut 1 par défaut.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Test de la fonction</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+12
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="retours-multiples">
+<h2>Retours multiples<a class="headerlink" href="#retours-multiples" title="Permalink to this headline">¶</a></h2>
+<p>Il est possible de retourner plusieurs valeurs avec l’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code>, en les séparant par des virgules. Les valeurs sont alors retournées sous la forme d’un tuple (voir le calepin sur le module Numpy) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">,</span> <span class="n">jour</span> <span class="o">=</span> <span class="s2">&quot;lundi&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Affiche à l&#39;écran mon état et le nombre de caractères &quot;&quot;&quot;</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Le &quot;</span> <span class="o">+</span> <span class="n">jour</span> <span class="o">+</span> <span class="s2">&quot;, je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="n">my_state_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_state</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">my_state</span><span class="p">,</span> <span class="n">my_state_length</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Le mercredi, je suis content&#39;, 28)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vérifions que l’objet retourné est bien un <em>tuple</em> avec 2 éléments :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans l’exemple, on a affecté le tuple à une nouvelle variable. Il est aussi possible d’affecter directement les 2 éléments du tuple dans deux nouvelles variables :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Appel de la fonction</span>
+<span class="n">s</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cette phrase contient&quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="s2">&quot;caractères&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le mercredi, je suis content
+Cette phrase contient 28 caractères
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Exercice<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Créer une fonction de signature <code class="docutils literal notranslate"><span class="pre">addmul(a,</span> <span class="pre">b)</span></code> qui retourne la somme et le produit de <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code>. Documenter et tester la fonction.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction addmul</span>
+<span class="k">def</span> <span class="nf">addmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Retourne la somme et le produit de a et b &quot;&quot;&quot;</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">produit</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">somme</span><span class="p">,</span> <span class="n">produit</span><span class="p">)</span>
+
+<span class="c1"># Test de la fonction</span>
+<span class="n">addmul</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8, 12)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="forme-lambda">
+<h2>Forme Lambda<a class="headerlink" href="#forme-lambda" title="Permalink to this headline">¶</a></h2>
+<p>Reprenons la fonction de signature <code class="docutils literal notranslate"><span class="pre">state(mot)</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction state</span>
+<span class="k">def</span> <span class="nf">state</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+    <span class="n">my_state</span> <span class="o">=</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+    <span class="k">return</span> <span class="n">my_state</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">state</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Je suis en forme&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>La forme <em>lambda</em> de cette fonction est :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forme lambda</span>
+<span class="k">lambda</span> <span class="n">mot</span> <span class="p">:</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(mot)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette expression est formée du mot-clef <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, de la variable <code class="docutils literal notranslate"><span class="pre">mot</span></code> et de l’instruction <code class="docutils literal notranslate"><span class="pre">&quot;Je</span> <span class="pre">suis</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">mot</span></code>. Vous notez que la forme lamda ici n’a pas de nom, contrairement à une fonction définie avec le mot-clef <code class="docutils literal notranslate"><span class="pre">def</span></code>. C’est une <em>fonction anonyme</em>.</p>
+<p>Ainsi, la syntaxe générale est:</p>
+<p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">nom_variable</span> <span class="pre">:</span> <span class="pre">instruction</span></code></p>
+<p>Pour donner une valeur d’entrée à la forme lambda, on écrit :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">mot</span> <span class="p">:</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span><span class="p">)(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Je suis en forme&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut aussi donner un nom à la forme lambda :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forme lambda</span>
+<span class="n">state_lambda</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">mot</span> <span class="p">:</span> <span class="s2">&quot;Je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span>
+
+<span class="c1"># Appel</span>
+<span class="n">state_lambda</span><span class="p">(</span><span class="s2">&quot;en forme&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Je suis en forme&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible de faire des formes lambda plus compliquées. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">mot</span><span class="p">,</span> <span class="n">jour</span> <span class="o">=</span> <span class="s2">&quot;lundi&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="s2">&quot;Le &quot;</span> <span class="o">+</span> <span class="n">jour</span> <span class="o">+</span> <span class="s2">&quot;, je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Le &quot;</span> <span class="o">+</span> <span class="n">jour</span> <span class="o">+</span> <span class="s2">&quot;, je suis &quot;</span> <span class="o">+</span> <span class="n">mot</span><span class="p">)))(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Le mercredi, je suis content&#39;, 28)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cependant, ce n’est pas lisible et une fonction classique est mieux adaptée dans ce cas.</p>
+<div class="section" id="id6">
+<h3>Exercice<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Créez une forme lambda qui retourne le carré d’un argument, et testez-la.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forme lambda</span>
+<span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/03-suites-relations-recurrence"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01-iteration.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Itération</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../04-ajustement-modele/01-entrees-sorties.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Entrées-sorties</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By P. Delva<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

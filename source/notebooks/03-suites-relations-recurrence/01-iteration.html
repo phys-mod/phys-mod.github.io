@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Itération &#8212; phys-mod</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Fonctions" href="02-fonctions.html" />
+    <link rel="prev" title="Logique, structures de contrôle et filtrage" href="../02-demarche-de-modelisation/02-logique-filtrage.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">phys-mod</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
+     Première prise en main de Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../02-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/03-suites-relations-recurrence/01-iteration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/03-suites-relations-recurrence/01-iteration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mise-a-jour-d-une-variable">
+   Mise à jour d’une variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-instruction-while">
+   L’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-instruction-break">
+   L’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-instruction-for">
+   L’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-une-liste">
+   Itérer sur une liste
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-un-dictionnaire">
+   Itérer sur un dictionnaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-un-tableau-numpy">
+   Itérer sur un tableau Numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-un-dataframe">
+   Itérer sur un
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataFrame
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Itération</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mise-a-jour-d-une-variable">
+   Mise à jour d’une variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-instruction-while">
+   L’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-instruction-break">
+   L’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-instruction-for">
+   L’instruction
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-une-liste">
+   Itérer sur une liste
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-un-dictionnaire">
+   Itérer sur un dictionnaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-un-tableau-numpy">
+   Itérer sur un tableau Numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterer-sur-un-dataframe">
+   Itérer sur un
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataFrame
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="iteration">
+<h1>Itération<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h1>
+<p>L’itération est la capacité d’exécuter à plusieurs reprises un bloc d’instructions.</p>
+<div class="section" id="mise-a-jour-d-une-variable">
+<h2>Mise à jour d’une variable<a class="headerlink" href="#mise-a-jour-d-une-variable" title="Permalink to this headline">¶</a></h2>
+<p>On parle de <strong>mise à jour</strong> de la variable lorsque la valeur de ré-affectation d’une variable dépend de son ancienne valeur. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création et affectation de la variable x (initialisation)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Mise à jour de la variable x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si on ajoute 1 à la valeur de la variable, on appelle cela une <strong>incrémentation</strong>. Si on enlève 1, c’est une <strong>décrémentation</strong>.</p>
+</div>
+<div class="section" id="l-instruction-while">
+<h2>L’instruction <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#l-instruction-while" title="Permalink to this headline">¶</a></h2>
+<p>L’instruction <code class="docutils literal notranslate"><span class="pre">while</span></code> signifie <em>tant que</em>. Elle est suivie d’une condition. C’est une façon de répéter une instruction <code class="docutils literal notranslate"><span class="pre">if</span></code>. Voici un exemple de compte à rebours :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Compte à rebours</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Partez !&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+Partez !
+</pre></div>
+</div>
+</div>
+</div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">n</span></code> est initialisée à 3. Lors de la première exécution de l’instruction <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code> vaut 3 et donc la condition <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> est vraie. Le bloc d’instructions (indenté) est alors exécuté : on affiche 3 à l’écran, et <code class="docutils literal notranslate"><span class="pre">n</span></code> est incrémenté. C’est la première <strong>itération</strong>. Lors de la deuxième itération, <code class="docutils literal notranslate"><span class="pre">n</span></code> vaut 2. La condition est toujours vraie donc le bloc d’instructions est exécuté une deuxième fois. Idem pour la troisième itération où <code class="docutils literal notranslate"><span class="pre">n</span></code> vaut 1. Lors de la quatrième itération, <code class="docutils literal notranslate"><span class="pre">n</span></code> vaut 0 donc la condition est fausse : le bloc d’instructions n’est pas exécuté et on passe à la première instruction qui n’est pas indentée après le <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>Le <em>flux d’exécution</em> pour une instruction <code class="docutils literal notranslate"><span class="pre">while</span></code> est :</p>
+<ol class="simple">
+<li><p>Déterminer si la condition est vraie ou fausse ;</p></li>
+<li><p>Si elle est fausse, passer le bloc d’instructions (indenté) suivant l’instruction <code class="docutils literal notranslate"><span class="pre">while</span></code>, et poursuivre l’exécution à l’instruction suivante ;</p></li>
+<li><p>Si la condition est vraie, exécuter le bloc d’instructions, puis retourner à l’étape 1.</p></li>
+</ol>
+<p>Ce type de flux est une <strong>boucle</strong> car l’étape 3 <em>reboucle</em> à l’étape 1. Le bloc d’instructions doit changer la valeur d’au moins une variable pour que la condition finisse par devenir fausse au bout d’un certain nombre d’itérations. Si ce n’est pas le cas, on aura alors une <strong>boucle infinie</strong>, car le bloc d’instructions sera répété à l’infini. Il faudra alors interrompre le programme d’une manière ou d’une autre.</p>
+<div class="section" id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h3>
+<p>Initialisez une variable appelée <code class="docutils literal notranslate"><span class="pre">x</span></code> à 40. Créer une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> qui, tant que <code class="docutils literal notranslate"><span class="pre">x</span></code> est supérieur à 1, divise <code class="docutils literal notranslate"><span class="pre">x</span></code> par 4. À la sortie de la boucle, afficher à l’écran la valeur de <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="c1"># Boucle while</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">4.0</span>
+
+<span class="c1"># Afficher le résultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.625
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="l-instruction-break">
+<h2>L’instruction <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#l-instruction-break" title="Permalink to this headline">¶</a></h2>
+<p>Il arrive que nous voulions arrêter la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> à l’intérieur du bloc d’instructions, si une certaine condition est vraie. Dans ce cas on ne laisse pas la boucle aller jusqu’au bout. Pour cela on peut utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">break</span></code> pour forcer à sortir de la boucle.</p>
+<p>Reprenons l’exemple du compte à rebours :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">5.8</span>
+
+<span class="c1"># Compte à rebours</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n doit être entier&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n doit être entier
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans cet exemple on vérifie si le compteur du compte à rebours est bien un entier, à l’intérieur de la boucle. Si ce n’est pas le cas, alors on n’exécute pas la boucle et on affiche un message d’erreur à l’utilisateur.</p>
+<div class="section" id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Reprendre l’exercice précédent. Dans la boucle, ajouter une condition qui vérifie que <code class="docutils literal notranslate"><span class="pre">x</span></code> est un nombre pair. Si ce n’est pas le cas, afficher le message d’erreur <code class="docutils literal notranslate"><span class="pre">&quot;x</span> <span class="pre">doit</span> <span class="pre">être</span> <span class="pre">pair&quot;</span></code> et sortir de la boucle.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="c1"># Boucle while</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># Vérification que x est pair</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x doit être pair&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">4.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x doit être pair
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>Bon usage</strong></p>
+<p>Bien que l’instruction <code class="docutils literal notranslate"><span class="pre">break</span></code> puisse être pratique, il est souvent recommandé de l’utiliser le moins possible. Cette instruction peut être la source d’erreurs difficiles à trouver. En effet, normalement, si on sort d’une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>, c’est parce que la condition n’est plus satisfaite ; et s’il y a plusieurs points où il est possible de sortir de la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>, il peut être (très) difficile de savoir quelle est la condition qui doit être vérifiée pour sortir, et donc de continuer à programmer. L’usage excessif de l’instruction <code class="docutils literal notranslate"><span class="pre">break</span></code> (ainsi que <code class="docutils literal notranslate"><span class="pre">continue</span></code>, ou le fameux <code class="docutils literal notranslate"><span class="pre">goto</span></code> qui n’existe pas en Python) est qualifié de <a class="reference external" href="https://fr.wikipedia.org/wiki/Programmation_spaghetti">programmation spaghetti</a>.</p>
+<p>Une meilleure solution de l’exercice précédent, sans <code class="docutils literal notranslate"><span class="pre">break</span></code>, est donc ceci :</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="c1"># Initialisation d&#39;une variable booléenne qui vaut True si x est pair</span>
+<span class="n">pair</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="c1"># Boucle while avec une unique condition de sortie</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">pair</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">4.0</span>
+    <span class="n">pair</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="c1"># Vérification que x est pair</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">pair</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x doit être pair&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x doit être pair
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="l-instruction-for">
+<h2>L’instruction <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#l-instruction-for" title="Permalink to this headline">¶</a></h2>
+<p>L’instruction <code class="docutils literal notranslate"><span class="pre">for</span></code> est utilisée lorsque le nombre d’itérations est connu à l’avance. Voici par exemple une version du compte à rebours utilisant une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Partez !&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+Partez !
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’instruction <code class="docutils literal notranslate"><span class="pre">range()</span></code> est un <a class="reference external" href="https://docs.python.org/fr/3/library/stdtypes.html?highlight=range#range">type de Python</a> qui représente une séquence immuable de nombres. Il s’utilise de la façon suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>où <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code> et <code class="docutils literal notranslate"><span class="pre">step</span></code> sont des entiers. La séquence créée contient alors des entiers dans l’intervalle semi-ouvert <code class="docutils literal notranslate"><span class="pre">[start,</span> <span class="pre">stop[</span></code> (stop est exclu), avec un pas égal à <code class="docutils literal notranslate"><span class="pre">step</span></code>. Pour transformer l’objet de type <code class="docutils literal notranslate"><span class="pre">range</span></code> en objet de type <code class="docutils literal notranslate"><span class="pre">list</span></code>, on peut utiliser la fonction <code class="docutils literal notranslate"><span class="pre">list()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 5, 8, 11]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Créer une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> qui affiche les multiples de 4 compris entre 1 et 20 (inclus).</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+8
+12
+16
+20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ou bien</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+8
+12
+16
+20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ou bien</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+8
+12
+16
+20
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterer-sur-une-liste">
+<h2>Itérer sur une liste<a class="headerlink" href="#iterer-sur-une-liste" title="Permalink to this headline">¶</a></h2>
+<p>Une particularité de Python est de pouvoir itérer sur de nombreux objets composés. En particulier, il est possible d’itérer sur les éléments d’une liste :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;une liste</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">5.897</span><span class="p">]</span>
+
+<span class="c1"># Itération sur les éléments de la liste</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b
+2
+True
+5.897
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible d’accéder aussi à l’indice de l’élément avec la fonction <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Itération sur les indices et les éléments de la liste</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;indice&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>indice 0 : b
+indice 1 : 2
+indice 2 : True
+indice 3 : 5.897
+</pre></div>
+</div>
+</div>
+</div>
+<p>ou bien encore d’itérer sur une liste de listes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;une liste de listes</span>
+<span class="n">taille_plantes</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span>  <span class="mf">7.5</span> <span class="p">],</span> 
+                  <span class="p">[</span><span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="mf">5.8</span> <span class="p">],</span>
+                  <span class="p">[</span><span class="s2">&quot;pensée&quot;</span><span class="p">,</span>    <span class="mf">11.4</span><span class="p">]]</span>
+
+<span class="c1"># Iteration</span>
+<span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">taille_plantes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;taille&#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>taille gentiane : 7.5 cm
+taille campanule : 5.8 cm
+taille pensée : 11.4 cm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Créons la liste de listes donnant les superficie en <span class="math notranslate nohighlight">\(\mathrm{m}^2\)</span> des pièces d’une maison :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maison</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;cuisine&quot;</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">],</span> 
+          <span class="p">[</span><span class="s2">&quot;salon&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">],</span> 
+          <span class="p">[</span><span class="s2">&quot;chambre&quot;</span><span class="p">,</span> <span class="mf">10.75</span><span class="p">],</span> 
+          <span class="p">[</span><span class="s2">&quot;salle de bains&quot;</span><span class="p">,</span> <span class="mf">9.50</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En utilisant une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, afficher pour chaque pièce le numéro de la pièce (en commençant par 1), le nom de la pièce et sa superficie, sous la forme <code class="docutils literal notranslate"><span class="pre">Pièce</span> <span class="pre">n</span> <span class="pre">:</span> <span class="pre">nom</span> <span class="pre">(superficie)</span></code>. Par exemple, pour la première itération : <code class="docutils literal notranslate"><span class="pre">Pièce</span> <span class="pre">1</span> <span class="pre">:</span> <span class="pre">cuisine</span> <span class="pre">(18.0</span> <span class="pre">m**2)</span></code>.</p>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">maison</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pièce &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; m**2)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pièce 1 : cuisine (18.0 m**2)
+Pièce 2 : salon (20.0 m**2)
+Pièce 3 : chambre (10.75 m**2)
+Pièce 4 : salle de bains (9.5 m**2)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterer-sur-un-dictionnaire">
+<h2>Itérer sur un dictionnaire<a class="headerlink" href="#iterer-sur-un-dictionnaire" title="Permalink to this headline">¶</a></h2>
+<p>Il est très simple d’itérer sur un dictionnaire avec la méthode <code class="docutils literal notranslate"><span class="pre">.items()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;un dictionnaire</span>
+<span class="n">dic_taille_plantes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;gentiane&quot;</span>  <span class="p">:</span> <span class="mf">7.5</span><span class="p">,</span> 
+                      <span class="s2">&quot;campanule&quot;</span> <span class="p">:</span> <span class="mf">5.8</span><span class="p">,</span>
+                      <span class="s2">&quot;pensée&quot;</span>    <span class="p">:</span> <span class="mf">11.4</span><span class="p">}</span>
+
+<span class="c1"># Itérer sur le dictionnaire</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">dic_taille_plantes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot; -- &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; cm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gentiane -- 7.5 cm
+campanule -- 5.8 cm
+pensée -- 11.4 cm
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterer-sur-un-tableau-numpy">
+<h2>Itérer sur un tableau Numpy<a class="headerlink" href="#iterer-sur-un-tableau-numpy" title="Permalink to this headline">¶</a></h2>
+<p>Pour itérer sur un tableau 1D c’est aussi simple que :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Création du tableau Numpy</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Itérer sur le tableau Numpy</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+6
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si on veut itérer sur tous les éléments d’un tableau 2D, on peut utiliser la fonction Numpy <code class="docutils literal notranslate"><span class="pre">nditer()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau Numpy à 2 dimensions</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Itérer sur tous les éléments du tableau 2D</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+7
+8
+0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterer-sur-un-dataframe">
+<h2>Itérer sur un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#iterer-sur-un-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Il est possible d’itérer sur les différentes lignes d’un DataFrame en utilisant la méthode <code class="docutils literal notranslate"><span class="pre">.iterrows()</span></code>.</p>
+<p>Par exemple, créons un DataFrame à partir d’un dictionnaire donnant les tailles de 3 de nos plantes pendant 4 jours, avec une observation par jour :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module Pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Création d&#39;un dictionnaire</span>
+<span class="n">dic_taille_plantes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;gentiane&quot;</span>  <span class="p">:</span> <span class="p">[</span><span class="mf">7.5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">],</span> 
+                      <span class="s2">&quot;campanule&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">5.8</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="mf">7.4</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">],</span>
+                      <span class="s2">&quot;pensée&quot;</span>    <span class="p">:</span> <span class="p">[</span><span class="mf">11.4</span><span class="p">,</span> <span class="mf">11.6</span><span class="p">,</span> <span class="mf">11.7</span><span class="p">,</span> <span class="mf">11.7</span><span class="p">]}</span>
+
+<span class="c1"># Création du DataFrame</span>
+<span class="n">df_taille_plantes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">dic_taille_plantes</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Voici notre DataFrame :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_taille_plantes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gentiane</th>
+      <th>campanule</th>
+      <th>pensée</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>7.5</td>
+      <td>5.8</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.8</td>
+      <td>6.6</td>
+      <td>11.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8.3</td>
+      <td>7.4</td>
+      <td>11.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8.4</td>
+      <td>8.3</td>
+      <td>11.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>sur lequel nous itérons chaque observation (une observation par jour, en commençant par le jour 1) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_taille_plantes</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jour&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jour 1
+gentiane      7.5
+campanule     5.8
+pensée       11.4
+Name: 1, dtype: float64
+
+jour 2
+gentiane      7.8
+campanule     6.6
+pensée       11.6
+Name: 2, dtype: float64
+
+jour 3
+gentiane      8.3
+campanule     7.4
+pensée       11.7
+Name: 3, dtype: float64
+
+jour 4
+gentiane      8.4
+campanule     8.3
+pensée       11.7
+Name: 4, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans la boucle, la variable <code class="docutils literal notranslate"><span class="pre">row</span></code> extrait avec la méthode <code class="docutils literal notranslate"><span class="pre">.iterrows()</span></code> est un objet de type <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Cet objet est construit avec comme Index le nom des colonnes, et comme nom l’Index de la ligne correspondante du DataFrame. Le tableau est en quelque sorte renversé pour produire une série d’observations pour chaque jour.</p>
+<p>Il est alors facile d’extraire les observations correspondant seulement à une plante donnée :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_taille_plantes</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jour &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jour 1 : 7.5
+jour 2 : 7.8
+jour 3 : 8.3
+jour 4 : 8.4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est aussi possible d’itérer sur les colonnes de l’objet DataFrame avec la méthode <code class="docutils literal notranslate"><span class="pre">.iteritems()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_taille_plantes</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Plante : &quot;</span> <span class="o">+</span> <span class="n">label</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plante : gentiane
+1    7.5
+2    7.8
+3    8.3
+4    8.4
+Name: gentiane, dtype: float64
+
+Plante : campanule
+1    5.8
+2    6.6
+3    7.4
+4    8.3
+Name: campanule, dtype: float64
+
+Plante : pensée
+1    11.4
+2    11.6
+3    11.7
+4    11.7
+Name: pensée, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit que la variable <code class="docutils literal notranslate"><span class="pre">col</span></code> est un objet <code class="docutils literal notranslate"><span class="pre">Series</span></code> contenant toutes les observations correspondant à une colonne donnée, c’est-à-dire à une plante donnée.</p>
+<div class="section" id="id4">
+<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Importons les données sauvées dans le fichier pickle contenant l’objet DataFrame sur les pays de l’Union Européenne :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_europe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;./europe.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Créer une copie de cet objet appelée <code class="docutils literal notranslate"><span class="pre">df_europe_cp</span></code> avec <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html?highlight=copy#pandas.DataFrame.copy">la méthode</a> <code class="docutils literal notranslate"><span class="pre">.copy()</span></code></p></li>
+<li><p>À l’aide d’une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, écrire chaque pays et capitale sous la forme <code class="docutils literal notranslate"><span class="pre">Pays</span> <span class="pre">:</span> <span class="pre">Capitale</span></code> (avec une majuscule pour la première lettre, on peut utliser la méthode <code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code>). Par exemple pour la première itération : <code class="docutils literal notranslate"><span class="pre">Allemagne</span> <span class="pre">:</span> <span class="pre">Berlin</span></code>.</p></li>
+</ol>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Copie du DataFrame</span>
+<span class="n">df_europe_cp</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># deep = True est optionnel mais c&#39;est toujours mieux de faire une copie profonde plutôt qu&#39;une copie superficielle</span>
+
+<span class="c1"># 2. Liste des pays et de leur capitale</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_europe_cp</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pays&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;capitale&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allemagne : Berlin
+Autriche : Vienne
+Belgique : Bruxelles
+Bulgarie : Sofia
+Chypre : Nicosie
+Croatie : Zagreb
+Danemark : Copenhague
+Espagne : Madrid
+Estonie : Tallinn
+Finlande : Helsinki
+France : Paris
+Grèce : Athènes
+Hongrie : Budapest
+Irlande : Dublin
+Italie : Rome
+Lettonie : Riga
+Lituanie : Vilnius
+Luxembourg : Luxembourg
+Malte : La valette
+Pays-bas : Amsterdam
+Pologne : Varsovie
+Portugal : Lisbonne
+République tchèque : Prague
+Roumanie : Bucarest
+Slovaquie : Bratislava
+Slovénie : Ljubljana
+Suède : Stockholm
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/03-suites-relations-recurrence"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../02-demarche-de-modelisation/02-logique-filtrage.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Logique, structures de contrôle et filtrage</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-fonctions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fonctions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By P. Delva<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
