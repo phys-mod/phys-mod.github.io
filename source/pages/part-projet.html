@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modélisation numérique</title>
+    <title>Description du projet</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Modèle de l’accélération constante" href="../notebooks/02-demarche-de-modelisation/03-acceleration-constante.html" />
-    <link rel="prev" title="Entrées-sorties" href="../notebooks/04-ajustement-modele/01-entrees-sorties.html" />
+    <link rel="prev" title="Le pendule" href="../notebooks/06-equations-differentielles/03-mini-projet-pendule.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -209,11 +208,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="part-modelisation-numerique.html">
    Modélisation numérique
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
@@ -283,8 +282,8 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="part-projet.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Description du projet
   </a>
  </li>
@@ -329,9 +328,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/source/pages/part-modelisation-numerique.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/source/pages/part-projet.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -354,6 +353,44 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-trois-phases-du-projet">
+   Les trois phases du projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suivi-de-l-enseignante">
+   Suivi de l’enseignant·e
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planification-du-projet-s1">
+   Planification du projet (S1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mise-en-oeuvre-du-projet-s2-3">
+   Mise en œuvre du projet (S2-3)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese-et-evaluation-du-projet-s4-5">
+   Synthèse et évaluation du projet (S4-5)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-de-sujets">
+   Exemples de sujets
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -361,27 +398,155 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Modélisation numérique</h1>
+                <h1>Description du projet</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-trois-phases-du-projet">
+   Les trois phases du projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suivi-de-l-enseignante">
+   Suivi de l’enseignant·e
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planification-du-projet-s1">
+   Planification du projet (S1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mise-en-oeuvre-du-projet-s2-3">
+   Mise en œuvre du projet (S2-3)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese-et-evaluation-du-projet-s4-5">
+   Synthèse et évaluation du projet (S4-5)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-de-sujets">
+   Exemples de sujets
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="modelisation-numerique">
-<h1>Modélisation numérique<a class="headerlink" href="#modelisation-numerique" title="Permalink to this headline">¶</a></h1>
-<p>Cette partie aborde la modélisation numérique sous 3 aspects: la <strong>représentation numérique</strong>, les <strong>modèles numériques</strong> et les <strong>méthodes numériques</strong>. Elle est composée de 5 calepins :</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/02-demarche-de-modelisation/03-acceleration-constante.html">Modèle de l’accélération constante</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/03-suites-relations-recurrence/03-suite-graphique.html">Représentation graphique d’une suite mathématique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/04-ajustement-modele/02-ajustement-modele.html">Ajuster un modèle aux données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/05-derivation-integration/01-derivation-integration-cours.html">Dérivation et intégration numérique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/06-equations-differentielles/01-equations-differentielles-cours.html">Équations différentielles ordinaires (EDO)</a></li>
+  <div class="section" id="description-du-projet">
+<h1>Description du projet<a class="headerlink" href="#description-du-projet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="les-trois-phases-du-projet">
+<h2>Les trois phases du projet<a class="headerlink" href="#les-trois-phases-du-projet" title="Permalink to this headline">¶</a></h2>
+<p>Le but du projet est d’aborder un problème de modélisation numérique. Il conduira à la production d’un compte-rendu
+du même type que les mini-projets, sur un sujet libre, ainsi qu’à une présentation orale du projet.
+Le projet se fait en binôme.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ce qui compte dans ce projet n’est pas tant le contenu que la façon dont il va se dérouler. C’est le moment
+d’acquérir des compétences d’organisation, de relationnel et de communication.</p>
+</div>
+<p>Le projet se déroule en trois phases (voir le calendrier en bas de page) :</p>
+<ul class="simple">
+<li><p><strong>Planification :</strong> lors de la Semaine 1, il faudra choisir votre binôme, le sujet et la problématique, ainsi que planifier et répartir les tâches de votre projet</p></li>
+<li><p><strong>Mise en œuvre :</strong> une fois les tâches bien définies, vous les réaliserez lors des Semaines 2 et 3. On peut pendant cette phase modifier les tâches si on se rend compte qu’il en manque ou qu’elles ne sont pas adaptées.</p></li>
+<li><p><strong>Synthèse et évaluation :</strong> en Semaine 4, il faudra synthétiser votre travail de recherche sous la forme d’un compte-rendu et d’une présentation orale. En Semaine 5 aura lieu la restitution orale du projet devant votre groupe.</p></li>
+</ul>
+<p>Le déroulement de ce projet se rapproche du fonctionnement d’un projet de recherche. Comme dans un projet
+de recherche, il est possible de s’inspirer et de reprendre des codes et des modules python développés par d’autres personnes et trouvés
+sur internet. Il faudra cependant aller plus loin que ces codes trouvés sur internet.
+Si vous utilisez des codes existants, il faut alors les citer et indiquer rigoureusement ce qui est original dans votre code.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Le manquement à un référencement clair et précis pourra entraîner une note de zéro à l’ensemble du projet.</p>
+</div>
+</div>
+<div class="section" id="suivi-de-l-enseignante">
+<h2>Suivi de l’enseignant·e<a class="headerlink" href="#suivi-de-l-enseignante" title="Permalink to this headline">¶</a></h2>
+<p>Au cours du projet vous serez suivi et aidé par votre enseignant·e. Chaque semaine, vous aurez un rendez-vous
+afin de rendre compte des tâches effectuées, et demander de l’aide. Vous pouvez aussi demander de l’aide en dehors
+de ces rendez-vous planifiés : par email, sur le forum moodle, par messagerie moodle, etc.</p>
+<p>Une séance de travail est à planifier chaque semaine (S1 à S4) avec votre enseignant·e.
+Cela peut se dérouler pendant les heures prévues pour l’UE dans l’emploi du temps, ou en
+dehors de ces heures si votre enseignant·e est d’accord et disponible.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si jamais vous avez un problème bloquant ou retardant l’avancée de votre projet, qu’il soit technique ou d’une autre
+nature (maladie, problème relationnel, familial, etc), il est de votre responsabilité de prévenir votre enseignant·e,
+le responsable de l’UE, ou toute autre personne pouvant vous aider.</p>
+</div>
+</div>
+<div class="section" id="planification-du-projet-s1">
+<h2>Planification du projet (S1)<a class="headerlink" href="#planification-du-projet-s1" title="Permalink to this headline">¶</a></h2>
+<p>Lors de la Semaine 1 vous devez réaliser les tâches suivantes :</p>
+<ul class="simple">
+<li><p><strong>choix de l’équipe :</strong> en binôme, ou en trinôme pour les groupes impairs.</p></li>
+<li><p><strong>choix et nom du projet :</strong> le sujet est libre. Si vous ne trouvez pas il y a des suggestions plus bas.</p></li>
+<li><p><strong>choix de la problématique :</strong> quel est le modèle à mettre en œuvre (objets, interactions, système, lois mathématiques, algorithme numérique à mettre en œuvre). Votre enseignant peut vous aider à savoir si la réalisation de votre projet est réaliste.</p></li>
+<li><p><strong>définition des étapes de résolution</strong>, de consolidation : définir une liste des tâches et la réprésenter sur Trello, attribuer les tâches aux membres de l’équipe</p></li>
+</ul>
+<p>L’ensemble de ces informations doivent être représentées et écrites dans un tableau Trello que vous aurez créé et partagé avec votre enseignant·e.
+Il vous faudra discuter de ces choix avec votre enseignant·e et les faire évoluer le cas échéant.</p>
+<p>Le sujet doit contenir une composante de modélisation. Il doit donc y avoir la simulation d’un système. Il
+peut aussi contenir les données d’une expérience, d’observations, afin de comparer la simulation aux données
+réelles. Il est même possible de trouver des expériences simples à faire à la maison et les simuler !</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ne soyez pas trop ambitieux, le projet est court et son bon déroulement, comme le fait d’être dans les temps,
+importe autant voire plus que le contenu.</p>
+</div>
+</div>
+<div class="section" id="mise-en-oeuvre-du-projet-s2-3">
+<h2>Mise en œuvre du projet (S2-3)<a class="headerlink" href="#mise-en-oeuvre-du-projet-s2-3" title="Permalink to this headline">¶</a></h2>
+<p>Pendant les semaines S2 et S3 vous réaliserez votre projet. Pour un binôme cela représente environ une trentaine d’heures
+de travail cumulées. N’oubliez pas :</p>
+<ul class="simple">
+<li><p>de programmer la réunion de travail hebdomadaire avec votre enseignant·e</p></li>
+<li><p>d’actualiser les tâches de votre Trello</p></li>
+<li><p>de demander de l’aide à votre enseignant·e, à vos camarades</p></li>
+</ul>
+</div>
+<div class="section" id="synthese-et-evaluation-du-projet-s4-5">
+<h2>Synthèse et évaluation du projet (S4-5)<a class="headerlink" href="#synthese-et-evaluation-du-projet-s4-5" title="Permalink to this headline">¶</a></h2>
+<p>Pendant la Semaine 4 il est temps de synthétiser votre travail avec les productions suivantes :</p>
+<ul class="simple">
+<li><p>Un compte-rendu sous la forme d’un calepin Jupyter Notebook, du même type que ceux réalisés pour les mini-projets</p></li>
+<li><p>Un exposé en vue d’une présentation orale</p></li>
+</ul>
+<p>En Semaine 5, vous présenterez votre projet devant les camarades de votre groupe. Vous trouverez
+<a class="reference external" href="info-evaluation.html#projet-en-equipe">la grille d’évaluation du projet sur cette page</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L’originalité du projet sera valorisée.
+Chaque groupe pourra élire un projet lors de la présentation orale. Une présentation des
+projets sélectionnés sera organisée pour tous les étudiant·es de l’UE.</p>
+</div>
+</div>
+<div class="section" id="exemples-de-sujets">
+<h2>Exemples de sujets<a class="headerlink" href="#exemples-de-sujets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>entrée d’un météoroı̈de dans l’atmosphère terrestre</p></li>
+<li><p>propagation d’une épidémie</p></li>
+<li><p>Automate cellulaire “jeu de la vie”</p></li>
+<li><p>Modélisation des bouchons sur une route</p></li>
+<li><p>Réaction chimique</p></li>
+<li><p>Collisions (billard, cratète d’impact, …)</p></li>
+<li><p>jeu vidéo avec pygame</p></li>
+<li><p>mouvements dans le système solaire</p></li>
+<li><p>manœuvres s’un satellite artificiel</p></li>
 </ul>
 </div>
 </div>
@@ -411,19 +576,12 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../notebooks/04-ajustement-modele/01-entrees-sorties.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../notebooks/06-equations-differentielles/03-mini-projet-pendule.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Entrées-sorties</p>
+            <p class="prev-next-title">Le pendule</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../notebooks/02-demarche-de-modelisation/03-acceleration-constante.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Modèle de l’accélération constante</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
