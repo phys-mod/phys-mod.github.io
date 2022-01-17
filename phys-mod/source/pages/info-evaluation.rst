@@ -38,7 +38,7 @@ Grille d'évaluation de l'apprentissage :
 
 Mini-projets individuels
 ------------------------
-Pour chacun des 6 mini-projets, vous pouvez rendre un compte-rendu qui sera évalué sur 10, selon la grille d'évaluation 
+Pour chacun des mini-projets, vous pouvez rendre un compte-rendu qui sera évalué sur 10, selon la grille d'évaluation 
 donnée dans les consignes ci-dessous. Les appréciations de votre enseignant·e vous permettront d'améliorer votre compte-rendu 
 afin d'obtenir une meilleure évaluation.
 
