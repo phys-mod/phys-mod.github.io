@@ -16,7 +16,9 @@ calepins sont utilisés en science des données pour explorer et analyser des
 données. Vous pouvez télécharger les calepins de l’UE en une fois
 avec le lien suivant:
 
-:download:`Télécharger tous les calepins de l'UE <../notebooks/calepins-etu.zip>`
+:download:`Télécharger tous les calepins de l'UE (fichier zip) <../notebooks/calepins-etu.zip>`
+
+:download:`Télécharger tous les calepins de l'UE (fichier tar) <../notebooks/calepins-etu.tar>`
 
 Pour travailler sur les calepins, vous avez de nombreuses solutions. Nous vous conseillons d'utiliser JupyterHub. L'avantage de JupyterHub est que vous n'avez rien à installer, vous avez accès à vos calepins personnels depuis n'importe quel navigateur de n'importe quel ordinateur qui dispose d'un accès à internet, vous utilisez les serveurs de la fac.
 
@@ -25,7 +27,7 @@ Pour cela il faut:
   1. Télécharger le fichier TAR contenant tous les calepins pour l'année
   2. Ouvrir JupyterHub avec le lien disponible sur la page d'accueil Moodle de l'UE (attention il faut être authentifié à Moodle pour que cela fonctionne)
   3. Cliquer sur le bouton "Start my server" si celui-ci n'est pas déjà démarré
-  4. Cliquer sur le bouton "Upload", chercher dans l'arborescence et sélectionner le fichier TAR téléchargé en 1
+  4. Cliquer sur le bouton "Upload", chercher dans l'arborescence et sélectionner le fichier TAR téléchargé en 1, puis cliquer sur "téléverser"
   5. Cliquer sur le bouton "New", puis sur "Terminal"
   6. Ecrire dans le terminal la commande "tar -xvf nom-du-fichier.tar"
   7. Fermer la fenêtre du terminal
