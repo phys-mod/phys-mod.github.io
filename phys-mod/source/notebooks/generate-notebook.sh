@@ -20,4 +20,5 @@ for rep in ./0*; do
 done
 # zip etu repertories and delete
 zip -r calepins-etu.zip etu*
+tar -cvf calepins-etu.tar etu*
 rm -r etu*
