@@ -37,6 +37,9 @@ chapters:
   - file: source/notebooks/04-ajustement-modele/02-ajustement-modele
   - file: source/notebooks/05-derivation-integration/01-derivation-integration-cours
   - file: source/notebooks/06-equations-differentielles/01-equations-differentielles-cours
+- file: source/pages/part-exercices
+  sections:
+  - file: source/notebooks/02-demarche-de-modelisation/04-exercices
 - file: source/pages/part-mini-projets
   sections:
   - file: source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars
