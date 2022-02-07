@@ -500,12 +500,11 @@
 <div class="section" id="travail-a-la-maison">
 <h2>Travail à la maison<a class="headerlink" href="#travail-a-la-maison" title="Permalink to this headline">¶</a></h2>
 <p>La digue que nous allons modéliser est un bloc de béton (masse volumique : 3000 kg/m<span class="math notranslate nohighlight">\(^3\)</span>) posé sur le sol rocheux (coefficient de friction statique béton - roche : 0.5). D’un côté la digue retient une masse d’eau de hauteur <span class="math notranslate nohighlight">\(H\)</span>, l’autre côté étant exposé à l’air. On prendra <span class="math notranslate nohighlight">\(H=10\)</span> m dans toute la suite.</p>
-<p>Nous ferons l’hypothèse que l’interface entre le sol et la digue est étanche à l’eau mais pas à l’air. Cette hypothèse permettra de simplifier le calcul en ne considérant que la force de pression due à la hauteur d’eau (cf question c.)</p>
 <p>Pour simplifier, on se placera en deux dimensions (la digue est de longueur unitaire suivant l’axe perpendiculaire au schéma ci-dessus et on ne considérera pas les bords suivant cette direction).</p>
+<p>De plus on ne considérera que les forces de pressions dues à la hauteur d’eau (la pression de l’air étant négligée).</p>
 <p>a. Faites un bilan des forces appliquées à la digue en 2D. Quelle force permet à la digue de ne pas glisser sur le sol rocheux ?</p>
 <p>b. Rappelez l’expression de la pression hydrostatique dans l’eau <span class="math notranslate nohighlight">\(P_{eau} (x)\)</span> en fonction de la hauteur par rapport au sol <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>c. Justifiez que nous pouvons considérer dans l’expression précédente que la constante est la contribution de la pression de l’air. Considérons pour l’instant que le barrage est à sec, que pourrions-nous dire sur la résultante des forces de pression de l’air sur la digue ? Rappelons ici que l’air peut s’imiscer entre la digue et le sol (indice : que peut-on dire de la poussée d’Archimède de l’air sur un bloc de béton ?) Ce résultat est-il modifié si le barrage retient une hauteur d’eau ? En déduire que l’on peut se limiter à calculer seulement les forces de pression de l’eau en utilisant l’expression <span class="math notranslate nohighlight">\(P_{eau} (x) = \rho_e g (H-x)\)</span></p>
-<p>d. Rappelez la (les) équation(s) d’équilibre statique de la digue.</p>
+<p>c. Rappelez la (les) équation(s) d’équilibre statique de la digue.</p>
 <div class="section" id="modelisation">
 <h3>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this headline">¶</a></h3>
 <p>Pour considérer une digue de forme arbitraire, on modélisera les pentes côté air et côté eau par des fonctions mathématiques. Dans ce projet nous allons intégrer des fonctions suivant la direction donnée par l’axe vertical <span class="math notranslate nohighlight">\(y\)</span>. Il sera donc plus pratique de définir les pentes de la digue comme étant <span class="math notranslate nohighlight">\(x\)</span> en fonction de <span class="math notranslate nohighlight">\(y\)</span> (schéma ci-dessous).</p>
@@ -521,7 +520,7 @@
 \[
 f_{air}(y) = -\frac{x_a}{H}.(y-H)
 \]</div>
-<p>e. Donnez l’expression de la fonction côté air dans le cas d’une fonction affine, et tracez-la avec le code suivant.</p>
+<p>d. Donnez l’expression de la fonction côté air dans le cas d’une fonction affine, et tracez-la avec le code suivant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -567,7 +566,7 @@ f_{air}(y) = -\frac{x_a}{H}.(y-H)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/03-mini-projet-digue_12_0.png" src="../../../_images/03-mini-projet-digue_12_0.png" />
+<img alt="../../../_images/03-mini-projet-digue_11_0.png" src="../../../_images/03-mini-projet-digue_11_0.png" />
 </div>
 </div>
 </div>
@@ -660,7 +659,7 @@ f'_{eau} (y)=\frac{2ay}{H^2}-\frac{a+x_e}{H}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/03-mini-projet-digue_24_0.png" src="../../../_images/03-mini-projet-digue_24_0.png" />
+<img alt="../../../_images/03-mini-projet-digue_23_0.png" src="../../../_images/03-mini-projet-digue_23_0.png" />
 </div>
 </div>
 <p>e. Calculez, pour <span class="math notranslate nohighlight">\(a=3\)</span>, <span class="math notranslate nohighlight">\(x_a=0\)</span> et <span class="math notranslate nohighlight">\(x_e=5\)</span>, la résultante des forces de pression, le volume de béton, et le rapport <span class="math notranslate nohighlight">\(T/N\)</span> dans l’hypothèse de l’équilibre statique. La digue est-elle en équilibre translationnel ?</p>
