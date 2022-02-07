@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/01-prise-en-main.html">
+     Première prise en main
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/01-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/02-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/03-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/03-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/02-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/01-derivation-integration-cours.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-equations-differentielles-cours.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-exercices.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/04-exercices.html">
+     Démarche de modélisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-demarche-de-modelisation/05-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/05-mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/03-mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../pages/part-projet.html">
+   Description du projet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/06-equations-differentielles/02-equations-differentielles-exercices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/06-equations-differentielles/02-equations-differentielles-exercices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-tasse-de-cafe">
+   La tasse de café
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-de-runge-kutta">
+   Méthodes de Runge-Kutta
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-de-runge-kutta-explicite-d-ordre-2-methodes-rk2">
+   Methodes de Runge-Kutta (explicite) d’ordre 2 (méthodes RK2) :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-de-runge-kutta-explicite-d-ordre-4-methode-rk4">
+   Methode de Runge-Kutta (explicite) d’ordre 4 (méthode RK4)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exercices</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-tasse-de-cafe">
+   La tasse de café
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-de-runge-kutta">
+   Méthodes de Runge-Kutta
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-de-runge-kutta-explicite-d-ordre-2-methodes-rk2">
+   Methodes de Runge-Kutta (explicite) d’ordre 2 (méthodes RK2) :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-de-runge-kutta-explicite-d-ordre-4-methode-rk4">
+   Methode de Runge-Kutta (explicite) d’ordre 4 (méthode RK4)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercices">
+<h1>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="la-tasse-de-cafe">
+<h2>La tasse de café<a class="headerlink" href="#la-tasse-de-cafe" title="Permalink to this headline">¶</a></h2>
+<p>Lorsque la différence <span class="math notranslate nohighlight">\(D(t)\)</span> entre la température du café au temps <span class="math notranslate nohighlight">\(t\)</span> et celle de l’air ambiant n’est pas trop grande, on peut considérer qu’elle varie selon la relation :</p>
+<p>\begin{equation}
+\frac{\text{d}D}{\text{d}t} = -r D(t)
+\end{equation}</p>
+<p>où <span class="math notranslate nohighlight">\(r=1/\tau\)</span> est un paramètre positif.</p>
+<ol class="simple">
+<li><p>Résoudre cette équation avec la méthode d’Euler entre <span class="math notranslate nohighlight">\(0\)</span> et <span class="math notranslate nohighlight">\(30\mathrm{~mn}\)</span>, pour la condition initiale <span class="math notranslate nohighlight">\(D(0) = 65.3\mathrm{~°C}\)</span> et la valeur du paramètre <span class="math notranslate nohighlight">\(r = 0.1\mathrm{~mn^{-1}}\)</span>. On prendra un pas de <span class="math notranslate nohighlight">\(0.5\mathrm{~mn}\)</span>.</p></li>
+<li><p>Comparer graphiquement la solution numérique avec la solution analytique :</p></li>
+</ol>
+<p>\begin{equation}
+D (t) = D_0 e^{-rt}
+\end{equation}</p>
+<ol class="simple">
+<li><p>Représenter graphiquement l’erreur relative entre les 2 méthodes</p></li>
+</ol>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Paramètres</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># mn^-1</span>
+<span class="n">ti</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># mn</span>
+<span class="n">te</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># mn</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># mn</span>
+<span class="n">ordre</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Conditions initiales</span>
+<span class="n">D_ini</span> <span class="o">=</span> <span class="mf">65.3</span> <span class="c1"># °C</span>
+
+<span class="c1"># Loi de décroissance</span>
+<span class="k">def</span> <span class="nf">derivee_D</span> <span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Loi de décroissance dD/dt = - r D</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">D</span>
+
+<span class="c1"># Méthode d&#39;Euler</span>
+<span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Application de la méthode d&#39;Euler</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Création du tableau temps</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+    <span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+
+    <span class="c1"># Initialisation du tableau v</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ordre</span><span class="p">,</span> <span class="n">num_points</span><span class="p">))</span>
+
+    <span class="c1"># Condition initiale</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_ini</span> 
+
+    <span class="c1"># Boucle for</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Argument de sortie</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="c1"># Méthode d&#39;Euler</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">Deu</span> <span class="o">=</span> <span class="n">Euler</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">te</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">D_ini</span><span class="p">,</span> <span class="n">derivee_D</span><span class="p">,</span> <span class="n">ordre</span><span class="p">)</span>
+
+<span class="c1"># Solution analytique</span>
+<span class="n">Da</span> <span class="o">=</span> <span class="n">D_ini</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Comparaison des solutions</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Da</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution analytique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Deu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution numérique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Température [deg]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Deu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">Da</span><span class="p">)</span> <span class="o">/</span> <span class="n">Da</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erreur relative&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [mn]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02-equations-differentielles-exercices_2_0.png" src="../../../_images/02-equations-differentielles-exercices_2_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="methodes-de-runge-kutta">
+<h2>Méthodes de Runge-Kutta<a class="headerlink" href="#methodes-de-runge-kutta" title="Permalink to this headline">¶</a></h2>
+<p>La méthode d’Euler est simple à programmer mais est toutefois peu précise au-delà des temps
+courts. Il existe de nombreuses méthodes pour y remédier.
+Une classe de méthodes couramment utilisées est la classe des méthodes de Runge-Kutta présentées ci-dessous.</p>
+<p>Considérons les  équations différentielles ordinaires d’ordre 1 de la forme :
+\begin{equation}
+u’(t) = F(u,t)
+\end{equation}
+avec une  condition initiale :
+\begin{equation}
+u(0) = U_0
+\end{equation}
+où <span class="math notranslate nohighlight">\(u\)</span> est une quantité scalaire ou vectorielle.</p>
+<p>L’intégration de l’EDO entre <span class="math notranslate nohighlight">\(t_k\)</span> et <span class="math notranslate nohighlight">\(t_{k+1}= t_k+\Delta t \)</span>
+donne formellement :
+\begin{equation}
+u(t_{k+1})-u(t_k) = \int_{t_k}^{t_k+\Delta t} , F(u(t),t),\text{d}t
+\end{equation}
+Dans la méthode d’Euler explicite, l’intégrale est approximée par
+\begin{equation}
+\int_{t_k}^{t_k+\Delta t} , F(u(t),t),\text{d}t = F(u(t_k),t_k) \Delta t
+\end{equation}
+À chaque pas l’erreur est de l’ordre de <span class="math notranslate nohighlight">\(M(\Delta t)^2/2\)</span> où <span class="math notranslate nohighlight">\(M\)</span> est l’ordre
+de grandeur de la dérivée de <span class="math notranslate nohighlight">\(F\)</span> par rapport à <span class="math notranslate nohighlight">\(t\)</span>.
+Au bout de <span class="math notranslate nohighlight">\(N\)</span> pas d’intégration, l’erreur cumulée est donc de l’ordre
+de <span class="math notranslate nohighlight">\(\Delta t\)</span> (et on voit facilement qu’il en sera de même pour la méthode implicite).
+D’où la qualification de méthode d’ordre 1 en <span class="math notranslate nohighlight">\(\Delta t\)</span> donnée à la méthode d’Euler.</p>
+</div>
+<div class="section" id="methodes-de-runge-kutta-explicite-d-ordre-2-methodes-rk2">
+<h2>Methodes de Runge-Kutta (explicite) d’ordre 2 (méthodes RK2) :<a class="headerlink" href="#methodes-de-runge-kutta-explicite-d-ordre-2-methodes-rk2" title="Permalink to this headline">¶</a></h2>
+<p>On peut améliorer l’estimation <span class="math notranslate nohighlight">\(u_{k+1}\)</span> de <span class="math notranslate nohighlight">\(u(t_{k+1})\)</span> en évaluant <span class="math notranslate nohighlight">\(F\)</span> à un point
+intermédiaire, par exemple le point milieu du pas d’intégration et refaire l’intégration
+de <span class="math notranslate nohighlight">\(u\)</span> à partir de <span class="math notranslate nohighlight">\(t_k\)</span> en utilisant cette évaluation de l’intégrande :</p>
+<p>\begin{eqnarray}
+d_1 &amp;=&amp; F(u_k, t_k) \
+u_{k,1} &amp;=&amp; u(t_k)+ d_1 \frac{\Delta t}{2} \
+d_2 &amp;=&amp; F\left(u_{k,1}, t_k + \frac{\Delta t}{2} \right) \<br />
+u_{k+1} &amp;=&amp;  u_k  + d_2 \Delta t ;.
+\end{eqnarray}</p>
+<p>D’où le nom de méthode RK2 du point milieu. On peut montrer que les erreurs cumulées sont d’ordre <span class="math notranslate nohighlight">\(\Delta t^2\)</span>,
+d’où le nom de méthode de Runge-Kutta d’ordre 2.</p>
+<ol class="simple">
+<li><p>Adapter le script de la méthode d’Euler ci-dessous pour appliquer la méthode RK2 et tester la méthode pour le problème du refroidissement de la tasse de café</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Méthode d&#39;Euler</span>
+<span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Application de la méthode d&#39;Euler</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Création du tableau temps</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+    <span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+
+    <span class="c1"># Initialisation du tableau v</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ordre</span><span class="p">,</span> <span class="n">num_points</span><span class="p">))</span>
+
+    <span class="c1"># Condition initiale</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_ini</span> 
+
+    <span class="c1"># Boucle for</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Argument de sortie</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk2</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Application de la méthode rk2</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Création du tableau temps</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+    <span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+
+    <span class="c1"># Initialisation du tableau v</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ordre</span><span class="p">,</span> <span class="n">num_points</span><span class="p">))</span>
+
+    <span class="c1"># Condition initiale</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_ini</span> 
+
+    <span class="c1"># Boucle for</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">v1</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d1</span>
+        <span class="n">d2</span> <span class="o">=</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d2</span>
+
+    <span class="c1"># Argument de sortie</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="c1"># Méthode rk2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">Drk2</span> <span class="o">=</span> <span class="n">rk2</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">te</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">D_ini</span><span class="p">,</span> <span class="n">derivee_D</span><span class="p">,</span> <span class="n">ordre</span><span class="p">)</span>
+
+<span class="c1"># Comparaison des solutions</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Da</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution analytique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Drk2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution numérique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [mn]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Température [deg]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02-equations-differentielles-exercices_6_0.png" src="../../../_images/02-equations-differentielles-exercices_6_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>Calculer l’erreur relative en fonction du temps et comparer à la méthode d’Euler</p></li>
+</ol>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparaison des méthodes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Deu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">Da</span><span class="p">)</span> <span class="o">/</span> <span class="n">Da</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Méthode d&#39;Euler&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Drk2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">Da</span><span class="p">)</span> <span class="o">/</span> <span class="n">Da</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Méthode rk2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erreur relative&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [mn]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02-equations-differentielles-exercices_8_0.png" src="../../../_images/02-equations-differentielles-exercices_8_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="methode-de-runge-kutta-explicite-d-ordre-4-methode-rk4">
+<h2>Methode de Runge-Kutta (explicite) d’ordre 4 (méthode RK4)<a class="headerlink" href="#methode-de-runge-kutta-explicite-d-ordre-4-methode-rk4" title="Permalink to this headline">¶</a></h2>
+<p>Nous nous limiterons au schéma d’intégration suivant, couramment  utilisé, basé sur une estimation de l’intégrale par la méthode de Simpson :</p>
+<p>\begin{eqnarray}
+d_1 &amp;=&amp;   F\left(t_k   , u_{k} \right) \nonumber    \<br />
+d_2 &amp;=&amp;   F\left(t_k + \frac{\Delta t}{2}  , u_{k} + \frac{\Delta t}{2} d_1 \right) \nonumber    \<br />
+d_3 &amp;=&amp;   F\left(t_k + \frac{\Delta t}{2}  , u_{k} + \frac{\Delta t}{2} d_2 \right) \nonumber    \
+d_4 &amp;=&amp;   F\left(t_k + \Delta t  , u_{k} + \Delta t d_3\right) \nonumber    \<br />
+u_{k+1} &amp;=&amp;  u_k  +  \frac{\Delta t}{6} \left[ d_1+ 2 d_2  + 2 d_3 + d_4 \right]
+\end{eqnarray}</p>
+<p>où l’erreur par pas est d’ordre <span class="math notranslate nohighlight">\(\Delta t^5\)</span> et l’erreur cumulée est  d’ordre <span class="math notranslate nohighlight">\(\Delta t^4\)</span>.</p>
+<ol class="simple">
+<li><p>Adapter la fonction de la méthode d’Euler de l’exercice précédent pour appliquer la méthode RK4, et tester la méthode pour le problème du refroidissement de la tasse de café</p></li>
+</ol>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Méthode rk4</span>
+<span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Application de la méthode rk4</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Création du tableau temps</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>                     <span class="c1"># Intervalle</span>
+    <span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Nombre d&#39;éléments</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>    <span class="c1"># Tableau temps t</span>
+
+    <span class="c1"># Initialisation du tableau v</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ordre</span><span class="p">,</span> <span class="n">num_points</span><span class="p">))</span>
+
+    <span class="c1"># Condition initiale</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_ini</span> 
+
+    <span class="c1"># Boucle for</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">d2</span> <span class="o">=</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d1</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">d3</span> <span class="o">=</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d2</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">d4</span> <span class="o">=</span> <span class="n">derivee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">d3</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span><span class="p">)</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="n">d1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">d3</span> <span class="o">+</span> <span class="n">d4</span><span class="p">)</span>
+
+    <span class="c1"># Argument de sortie</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="c1"># Méthode rk4</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">Drk4</span> <span class="o">=</span> <span class="n">rk4</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">te</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">D_ini</span><span class="p">,</span> <span class="n">derivee_D</span><span class="p">,</span> <span class="n">ordre</span><span class="p">)</span>
+
+<span class="c1"># Comparaison des solutions</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Da</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution analytique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Drk4</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Solution numérique&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Température [deg]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02-equations-differentielles-exercices_11_0.png" src="../../../_images/02-equations-differentielles-exercices_11_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>Calculer l’erreur relative en fonction du temps et comparer à la méthode d’Euler et à RK2</p></li>
+</ol>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparaison des méthodes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Deu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">Da</span><span class="p">)</span> <span class="o">/</span> <span class="n">Da</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Méthode d&#39;Euler&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Drk2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">Da</span><span class="p">)</span> <span class="o">/</span> <span class="n">Da</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Méthode rk2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">Drk4</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">Da</span><span class="p">)</span> <span class="o">/</span> <span class="n">Da</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Méthode rk4&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erreur relative&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps [mn]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02-equations-differentielles-exercices_13_0.png" src="../../../_images/02-equations-differentielles-exercices_13_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/06-equations-differentielles"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By P. Delva<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
