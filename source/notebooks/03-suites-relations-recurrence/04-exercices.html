@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercices</title>
+    <title>Suite de Fibonacci</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,22 +37,26 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Des exemples de modèle" href="../04-ajustement-modele/03-exercices.html" />
+    <link rel="prev" title="Démarche de modélisation" href="../02-demarche-de-modelisation/04-exercices.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +91,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../pages/part-informations-generales.html">
    Informations générales
@@ -246,19 +250,39 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../pages/part-exercices.html">
    Exercices
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../02-demarche-de-modelisation/04-exercices.html">
      Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-ajustement-modele/03-exercices.html">
+     Des exemples de modèle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/02-derivation-integration-exercices.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/02-equations-differentielles-exercices.html">
+     Méthodes d’Euler et de Runge-Kutta
     </a>
    </li>
   </ul>
@@ -388,19 +412,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#suite-de-fibonacci">
-   Suite de Fibonacci
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -408,41 +419,26 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercices</h1>
+                <h1>Suite de Fibonacci</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#suite-de-fibonacci">
-   Suite de Fibonacci
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercices">
-<h1>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="suite-de-fibonacci">
-<h2>Suite de Fibonacci<a class="headerlink" href="#suite-de-fibonacci" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="suite-de-fibonacci">
+<h1>Suite de Fibonacci<a class="headerlink" href="#suite-de-fibonacci" title="Permalink to this headline">¶</a></h1>
 <p>Leonardo Fibonacci (<em>circa</em> 1175 – 1250), mathématicien italien, proposa comme un exercice mathématique amusant le modèle suivant pour décrire la croissance naturelle d’une population de lapins. On suppose qu’on dispose d’un couple de lapins tout juste nés, maintenus isolés de leurs congénères. On suppose de plus que chaque mois, chaque couple âgé d’au moins deux mois engendre un nouveau couple de lapins. On ne tient pas compte de la mortalité naturelle des lapins. Le nombre <span class="math notranslate nohighlight">\(C_n\)</span> de couples de lapins suit par conséquent une relation de récurrence,</p>
 <div class="math notranslate nohighlight">
 \[
 C_0 = C_1 = 1 \ \ \ , \ \ \  C_n = C_{n-1}+C_{n-2}
 \]</div>
 <p>La suite d’entiers <span class="math notranslate nohighlight">\(C_n\)</span> est connue comme la suite de Fibonacci. On commence par inclure les paquets <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -453,7 +449,7 @@ C_0 = C_1 = 1 \ \ \ , \ \ \  C_n = C_{n-1}+C_{n-2}
 <ol class="simple">
 <li><p>Créez un tableau <code class="docutils literal notranslate"><span class="pre">ns</span></code> de 50 entiers de 0 à 49 inclus.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -464,7 +460,7 @@ C_0 = C_1 = 1 \ \ \ , \ \ \  C_n = C_{n-1}+C_{n-2}
 <ol class="simple">
 <li><p>En utilisant une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, la valeur des deux premiers termes <span class="math notranslate nohighlight">\(C_0\)</span> et <span class="math notranslate nohighlight">\(C_1\)</span>, et la relation de récurrence, calculez les 50 premières valeurs de cette suite, et stockez-les dans un tableau numpy <code class="docutils literal notranslate"><span class="pre">C</span></code>.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int64&#39;</span><span class="p">)</span>
 <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -478,7 +474,7 @@ C_0 = C_1 = 1 \ \ \ , \ \ \  C_n = C_{n-1}+C_{n-2}
 <ol class="simple">
 <li><p>Représentez l’évolution du nombre de couples de lapins en fonction du temps (exprimé en mois), pendant 50 mois. Pensez à ajouter un titre, à indiquer les axes et les unités.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="s1">&#39;b+-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Évolution du nombre de couples de lapins&quot;</span><span class="p">)</span>
@@ -489,7 +485,7 @@ C_0 = C_1 = 1 \ \ \ , \ \ \  C_n = C_{n-1}+C_{n-2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/04-exercices_9_0.png" src="../../../_images/04-exercices_9_0.png" />
+<img alt="../../../_images/04-exercices_8_01.png" src="../../../_images/04-exercices_8_01.png" />
 </div>
 </div>
 <ol class="simple">
@@ -498,7 +494,7 @@ $<span class="math notranslate nohighlight">\(
 r_n = \frac{C_{n + 1}}{C_n}
 \)</span>$</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Avec boucle :</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,))</span>
@@ -517,7 +513,7 @@ r_n = \frac{C_{n + 1}}{C_n}
 <ol class="simple">
 <li><p>Tracez le graphe de ce rapport <span class="math notranslate nohighlight">\(r_n\)</span> en fonction du mois <span class="math notranslate nohighlight">\(n\)</span>, pour <span class="math notranslate nohighlight">\(n\)</span> allant de 1 à 49 inclus.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">r</span><span class="p">,</span> <span class="s1">&#39;b+-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Suite de Fibonacci : rapport entre termes successifs&quot;</span><span class="p">)</span>
@@ -528,14 +524,14 @@ r_n = \frac{C_{n + 1}}{C_n}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/04-exercices_13_0.png" src="../../../_images/04-exercices_13_0.png" />
+<img alt="../../../_images/04-exercices_12_0.png" src="../../../_images/04-exercices_12_0.png" />
 </div>
 </div>
 <p>On peut montrer que le rapport <span class="math notranslate nohighlight">\(r_n\)</span> a pour limite le nombre d’or <span class="math notranslate nohighlight">\(\phi = \frac{1}{2} \left(1+\sqrt{5}\right)\)</span>. Pour des <span class="math notranslate nohighlight">\(n\)</span> suffisamment grands, la suite <span class="math notranslate nohighlight">\(C_n\)</span> tend donc vers une suite géométrique de la forme <span class="math notranslate nohighlight">\(D_n = A \phi^n\)</span>.</p>
 <ol class="simple">
 <li><p>Tracez les 50 premiers termes de la suite de Fibonacci sur un graphe semi-logarithmique (échelle log selon les ordonnées). La suite de Fibonacci tend-elle bien vers une suite géométrique ?</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="s1">&#39;b+-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Suite de Fibonacci&quot;</span><span class="p">)</span>
@@ -546,7 +542,7 @@ r_n = \frac{C_{n + 1}}{C_n}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/04-exercices_15_0.png" src="../../../_images/04-exercices_15_0.png" />
+<img alt="../../../_images/04-exercices_14_0.png" src="../../../_images/04-exercices_14_0.png" />
 </div>
 </div>
 <p>Comme <span class="math notranslate nohighlight">\(\displaystyle C_n\underset{n\to\infty}{\sim} D_n\)</span> et <span class="math notranslate nohighlight">\(\displaystyle \lim_{n\to\infty}C_n = +\infty\)</span>, on a :
@@ -556,11 +552,10 @@ $<span class="math notranslate nohighlight">\(
 <ol class="simple">
 <li><p>Calculez la suite <span class="math notranslate nohighlight">\(D_n\)</span> et stockez-la dans un tableau numpy.</p></li>
 </ol>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -590,7 +585,21 @@ $<span class="math notranslate nohighlight">\(
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../02-demarche-de-modelisation/04-exercices.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Démarche de modélisation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../04-ajustement-modele/03-exercices.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Des exemples de modèle</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

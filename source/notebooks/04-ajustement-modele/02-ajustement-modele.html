@@ -37,20 +37,22 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Dérivation et intégration numérique" href="../05-derivation-integration/01-derivation-integration-cours.html" />
@@ -261,6 +263,26 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../02-demarche-de-modelisation/04-exercices.html">
      Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/04-exercices.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-exercices.html">
+     Des exemples de modèle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/02-derivation-integration-exercices.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/02-equations-differentielles-exercices.html">
+     Méthodes d’Euler et de Runge-Kutta
     </a>
    </li>
   </ul>
@@ -725,22 +747,40 @@ S(a,b) = \sum_{i=0}^{N-1} [y_i - (a + b x_i)]^2
 S(a,b) = b^2 \sum_{i=0}^{N-1} x_i^2 + 2 a b \sum_{i=0}^{N-1} x_i + N a^2 - 2 b \sum_{i=0}^{N-1} x_i y_i - 2 a \sum_{i=0}^{N-1} y_i + \sum_{i=0}^{N-1} y_i^2
 \]</div>
 <p>Une condition nécessaire pour que <span class="math notranslate nohighlight">\(S\)</span> ait un minimum en <span class="math notranslate nohighlight">\((a_m,b_m)\)</span> est que le gradient de <span class="math notranslate nohighlight">\(S\)</span> s’annule au point <span class="math notranslate nohighlight">\((a_m,b_m)\)</span> :</p>
-<p>\begin{eqnarray*}
-\frac{\partial S}{\partial a} (a_m,b_m) &amp; = &amp; 0 ;;;; \Rightarrow ;;;; N a_m + b_m \sum_{i=0}^{N-1} x_i = \sum_{i=0}^{N-1} y_i\
-\frac{\partial S}{\partial b} (a_m,b_m) &amp; = &amp; 0 ;;;; \Rightarrow ;;;; a_m \sum_{i=0}^{N-1} x_i + b_m \sum_{i=0}^{N-1} x_i^2 = \sum_{i=0}^{N-1} x_i y_i
-\end{eqnarray*}</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial S}{\partial a} (a_m,b_m)  =  0 \;\;\;\; \Rightarrow \;\;\;\; N a_m + b_m \sum_{i=0}^{N-1} x_i = \sum_{i=0}^{N-1} y_i
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial S}{\partial b} (a_m,b_m)  =  0 \;\;\;\; \Rightarrow \;\;\;\; a_m \sum_{i=0}^{N-1} x_i + b_m \sum_{i=0}^{N-1} x_i^2 = \sum_{i=0}^{N-1} x_i y_i
+\]</div>
 <p>On obtient alors :</p>
-<p>\begin{eqnarray*}
-a_m &amp;=&amp; \bar{y}-b_m \bar{x}\
-b_m &amp;=&amp; \frac{\mathrm{cov}(x,y)}{\mathrm{var}(x)}
-\end{eqnarray*}</p>
+<div class="math notranslate nohighlight">
+\[
+a_m = \bar{y}-b_m \bar{x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+b_m = \frac{\mathrm{cov}(x,y)}{\mathrm{var}(x)}
+\]</div>
 <p>où</p>
-<p>\begin{eqnarray*}
-&amp; \bar{x} = \frac{1}{N} \sum_{i=0}^{N-1} x_{i} \
-&amp; \bar{y} = \frac{1}{N} \sum_{i=0}^{N-1} y_{i} \
-&amp; \mathrm{cov}(x,y) = \frac{1}{N} \sum_{i=0}^{N-1} (x_{i} - \bar{x}) (y_{i} - \bar{y_i}) = \left( \frac{1}{N} \sum_{i=0}^{N-1} x_{i} y_{i} \right) - \bar{x}\bar{y} \
-&amp; \mathrm{var}(x) = \frac{1}{N} \sum_{i=0}^{N-1} (x_{i} - \bar{x})^2 = \left( \frac{1}{N} \sum_{i=0}^{N-1} x_{i}^2 \right) - \bar{x}^2
-\end{eqnarray*}</p>
+<div class="math notranslate nohighlight">
+\[
+             \bar{x} = \frac{1}{N} \sum_{i=0}^{N-1} x_{i} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+             \bar{y} = \frac{1}{N} \sum_{i=0}^{N-1} y_{i} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+             \mathrm{cov}(x,y) = \frac{1}{N} \sum_{i=0}^{N-1} (x_{i} - \bar{x}) (y_{i} - \bar{y_i}) = \left( \frac{1}{N} \sum_{i=0}^{N-1} x_{i} y_{i} \right) - \bar{x}\bar{y} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+             \mathrm{var}(x) = \frac{1}{N} \sum_{i=0}^{N-1} (x_{i} - \bar{x})^2 = \left( \frac{1}{N} \sum_{i=0}^{N-1} x_{i}^2 \right) - \bar{x}^2
+\]</div>
 <p>La fonction suivante renvoie les paramètres <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> de la régression linéaire pour un jeu de données expérimentales :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

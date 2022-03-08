@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercices</title>
+    <title>Des exemples de modèle</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,22 +37,26 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="De nouvelles méthodes numériques" href="../05-derivation-integration/02-derivation-integration-exercices.html" />
+    <link rel="prev" title="Suite de Fibonacci" href="../03-suites-relations-recurrence/04-exercices.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +91,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../pages/part-informations-generales.html">
    Informations générales
@@ -246,19 +250,39 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../pages/part-exercices.html">
    Exercices
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../02-demarche-de-modelisation/04-exercices.html">
      Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-suites-relations-recurrence/04-exercices.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Des exemples de modèle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivation-integration/02-derivation-integration-exercices.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-equations-differentielles/02-equations-differentielles-exercices.html">
+     Méthodes d’Euler et de Runge-Kutta
     </a>
    </li>
   </ul>
@@ -439,7 +463,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercices</h1>
+                <h1>Des exemples de modèle</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -494,8 +518,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercices">
-<h1>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="des-exemples-de-modele">
+<h1>Des exemples de modèle<a class="headerlink" href="#des-exemples-de-modele" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="chute-libre">
 <h2>Chute libre<a class="headerlink" href="#chute-libre" title="Permalink to this headline">¶</a></h2>
 <p>Des étudiants ont effectué une expérience de chute libre : ils ont fait tomber un objet de chaque étage de l’Atrium, sans vitesse initiale, et ont mesuré à chaque fois le temps de chute <span class="math notranslate nohighlight">\(T\)</span> de l’objet ainsi que la hauteur de l’étage <span class="math notranslate nohighlight">\(H\)</span>. On reporte dans le tableau ci-dessous le résultat des mesures pour 4 groupes différents.</p>
@@ -513,7 +537,7 @@ H = g\times\dfrac{T^2}{2}
 </ol>
 <div class="section" id="correction">
 <h3>Correction<a class="headerlink" href="#correction" title="Permalink to this headline">¶</a></h3>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
@@ -591,9 +615,7 @@ H = g\times\dfrac{T^2}{2}
 <img alt="../../../_images/03-exercices_3_1.png" src="../../../_images/03-exercices_3_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Groupe 1 :
   g = 8.830251326645204 m/s^2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Groupe 2 :
+Groupe 2 :
   g = 7.833725959694802 m/s^2
 Groupe 3 :
   g = 7.738300675460513 m/s^2
@@ -601,7 +623,7 @@ Groupe 4 :
   g = 8.725650823609033 m/s^2
 </pre></div>
 </div>
-<img alt="../../../_images/03-exercices_3_4.png" src="../../../_images/03-exercices_3_4.png" />
+<img alt="../../../_images/03-exercices_3_3.png" src="../../../_images/03-exercices_3_3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeur Moyenne :
   g = 8.281982196352388
 </pre></div>
@@ -621,7 +643,7 @@ Groupe 4 :
 </ol>
 <div class="section" id="id1">
 <h3>Correction<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1</span>
 <span class="c1"># Importation des librairies</span>
@@ -656,7 +678,7 @@ L’échelle logarithmique permet de voir toutes les données dispersées sur pl
 <p><strong>Question 3</strong>
 De plus, si <span class="math notranslate nohighlight">\(T^2 = K R^3\)</span>, alors <span class="math notranslate nohighlight">\(\log(T) = \frac{3}{2} \log(R) + \frac{1}{2} \log(K)\)</span></p>
 <p>==&gt; On peut également tester la relation de proportionalité <em>via</em> un ajustement affine des distributions logarithmiques. On attend alors une pente de <span class="math notranslate nohighlight">\(1.5\)</span> et une ordonnée à l’origine égale à <span class="math notranslate nohighlight">\(0.5\mathrm{log}(K)\)</span>.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4</span>
 
@@ -689,8 +711,8 @@ De plus, si <span class="math notranslate nohighlight">\(T^2 = K R^3\)</span>, a
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1.4984474486188786 ; b =  -21.332684268430178
-K = 2.95573759848355e-19 s^2/m^3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1.4984474486443866 ; b =  -21.332684269056813
+K = 2.9557375947792144e-19 s^2/m^3
 </pre></div>
 </div>
 <img alt="../../../_images/03-exercices_8_1.png" src="../../../_images/03-exercices_8_1.png" />
@@ -716,7 +738,7 @@ K = 2.95573759848355e-19 s^2/m^3
 <p>On pourra remarquer qu’en plus des paramètres ajustés, un 2ème paramètre est retourné par la fonction <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>. Il s’agit de la matrice de covariance de ces paramètres (que l’on peut noter <code class="docutils literal notranslate"><span class="pre">pcov</span></code>, dont on peut extraire l’incertitude sur chacun des paramètres, donnée par  <code class="docutils literal notranslate"><span class="pre">perr</span> <span class="pre">=</span> <span class="pre">np.sqrt(np.diag(pcov))</span></code>.</p>
 <div class="section" id="id2">
 <h3>Correction<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1</span>
 
@@ -737,7 +759,7 @@ K = 2.95573759848355e-19 s^2/m^3
 <img alt="../../../_images/03-exercices_11_0.png" src="../../../_images/03-exercices_11_0.png" />
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2</span>
 
@@ -774,7 +796,7 @@ tau = 131.84298472262253 s
 <img alt="../../../_images/03-exercices_12_1.png" src="../../../_images/03-exercices_12_1.png" />
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#3</span>
 
@@ -805,8 +827,8 @@ tau = 131.84298472262253 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 13.23332627 147.97364463]
-tau = 147.97364463435574 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 13.23332627 147.9736446 ]
+tau = 147.97364459633604 s
 </pre></div>
 </div>
 <img alt="../../../_images/03-exercices_13_1.png" src="../../../_images/03-exercices_13_1.png" />
@@ -815,7 +837,7 @@ tau = 147.97364463435574 s
 <p>On remarquera que l’ajustements linéaire de <span class="math notranslate nohighlight">\(\mathrm{log}(h)\)</span> et l’ajustement exponentiel de <span class="math notranslate nohighlight">\(h\)</span> produisent des valeurs différentes de la constante de temps <span class="math notranslate nohighlight">\(\tau\)</span> caractéristique de la décroissance définie par <span class="math notranslate nohighlight">\(y = A_0 e^{-\frac{t}{\tau}}\)</span> : <span class="math notranslate nohighlight">\(131 \mathrm{~s}\)</span> contre <span class="math notranslate nohighlight">\(148 \mathrm{~s}\)</span>.</p>
 <p><strong>Question 4</strong></p>
 <p>L’évolution des deux phénomènes est modélisée par un phénomène sans mémoire (la désintégration des noyaux radioactifs ou l’éclatement des bulles). La loi est donc exponentielle.</p>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#5</span>
 
@@ -833,7 +855,7 @@ tau = 147.97364463435574 s
 <img alt="../../../_images/03-exercices_16_0.png" src="../../../_images/03-exercices_16_0.png" />
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#6</span>
 
@@ -866,8 +888,8 @@ tau = 147.97364463435574 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 13.999072208208222 +- 0.00980623948341942 cm
-tau = 123.23787106073566 +- 5.384389273019278 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 13.999072208210503 +- 0.009806239483446897 cm
+tau = 123.2378710599443 +- 5.384389252318669 s
 </pre></div>
 </div>
 <img alt="../../../_images/03-exercices_17_1.png" src="../../../_images/03-exercices_17_1.png" />
@@ -901,7 +923,21 @@ tau = 123.23787106073566 +- 5.384389273019278 s
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../03-suites-relations-recurrence/04-exercices.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Suite de Fibonacci</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05-derivation-integration/02-derivation-integration-exercices.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">De nouvelles méthodes numériques</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
