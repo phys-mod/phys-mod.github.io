@@ -40,6 +40,10 @@ chapters:
 - file: source/pages/part-exercices
   sections:
   - file: source/notebooks/02-demarche-de-modelisation/04-exercices
+  - file: source/notebooks/03-suites-relations-recurrence/04-exercices
+  - file: source/notebooks/04-ajustement-modele/03-exercices
+  - file: source/notebooks/05-derivation-integration/02-derivation-integration-exercices
+  - file: source/notebooks/06-equations-differentielles/02-equations-differentielles-exercices
 - file: source/pages/part-mini-projets
   sections:
   - file: source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars

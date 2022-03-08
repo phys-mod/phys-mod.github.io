@@ -6,7 +6,7 @@ title:
 author: P. Delva
 logo: simu_gw.jpg
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
-exclude_patterns: ["source/notebooks/05-derivation-integration/02-derivation-integration-exercices*", "source/pages/formatage-notebook*"]
+exclude_patterns: ["source/pages/formatage-notebook*"]
 # "**exercices**", "source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars*", "source/notebooks/03-suites-relations-recurrence/05-mini-projet-logistique*", "source/notebooks/04-ajustement-modele/02-ajustement-modele*", "source/notebooks/04-ajustement-modele/04-mini-projet-rechauffement-climatique*", "source/notebooks/03-suites-relations-recurrence/03-suite-graphique*"]
 
 # Force re-execution of notebooks on each build.
