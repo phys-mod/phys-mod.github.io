@@ -597,22 +597,26 @@ f_{air}(y) = -\frac{x_a}{H}.(y-H)
 <h2>Travail en séance<a class="headerlink" href="#travail-en-seance" title="Permalink to this headline">¶</a></h2>
 <p>On rappelle que les forces de pression s’exercent perpendiculairement à la surface d’application. Il faut donc pouvoir trouver un vecteur normal à la tangente de ces deux fonctions en tout point, qui sera le vecteur directeur de la force de pression locale.</p>
 <p><img alt="DigueAngles.png" src="../../../_images/DigueAngles.png" /></p>
-<p>On rappelle que l’angle <span class="math notranslate nohighlight">\(\theta\)</span> entre la tangente en un point et l’axe des abscisses (voir schéma ci-dessus) est relié à la dérivée de la courbe par :
-$<span class="math notranslate nohighlight">\(
+<p>On rappelle que l’angle <span class="math notranslate nohighlight">\(\theta\)</span> entre la tangente en un point et l’axe des abscisses (voir schéma ci-dessus) est relié à la dérivée de la courbe par :</p>
+<div class="math notranslate nohighlight">
+\[
 tan(\theta) = f'(y)
-\)</span>$</p>
-<p>Les vecteurs <span class="math notranslate nohighlight">\(\vec t\)</span> et <span class="math notranslate nohighlight">\(\vec n\)</span> sont alors donnés par :
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>Les vecteurs <span class="math notranslate nohighlight">\(\vec t\)</span> et <span class="math notranslate nohighlight">\(\vec n\)</span> sont alors donnés par :</p>
+<div class="math notranslate nohighlight">
+\[
 \vec t = \cos(\theta).\vec{u_y} + \sin(\theta).\vec{u_x}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \vec n = \sin(\theta).\vec{u_y} - \cos(\theta).\vec{u_x} 
-\)</span>$</p>
+\]</div>
 <p>Pour pouvoir calculer la résultante des forces de pression sur une surface de forme arbitraire, il nous faut intégrer les forces infinitésimales <span class="math notranslate nohighlight">\(\vec{\mathrm{d}F}\)</span> s’appliquant à chaque élément de surface <span class="math notranslate nohighlight">\(\mathrm{d}S\)</span>. Comme nous sommes en deux dimensions, nous pouvons simplifier le problème en considérant que l’élément de surface est <span class="math notranslate nohighlight">\(\mathrm{d}S = L \mathrm{d}l\)</span>, avec <span class="math notranslate nohighlight">\(L = 1\)</span> la longueur unitaire de la digue suivant <span class="math notranslate nohighlight">\(z\)</span>, ce qui nous ramène à une intégrale 1D (on n’écrira pas <span class="math notranslate nohighlight">\(L\)</span> dans la suite).</p>
-<p>On obtient donc, pour l’interface eau-béton :
-$<span class="math notranslate nohighlight">\(
+<p>On obtient donc, pour l’interface eau-béton :</p>
+<div class="math notranslate nohighlight">
+\[
 \vec{F} = \iint_S \vec{\mathrm{d}F} =\int_0^H P(y) \mathrm{d}l . \vec{n}
-\)</span>$</p>
+\]</div>
 <p>avec <span class="math notranslate nohighlight">\(\vec{n}\)</span> le vecteur normal rentrant au point de coordonnées <span class="math notranslate nohighlight">\((f(y),y)\)</span>, et <span class="math notranslate nohighlight">\(\mathrm{d}l\)</span> la longueur infinitésimale de la courbe pour une variation <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span>. On montre facilement la relation avec l’angle <span class="math notranslate nohighlight">\(\theta\)</span> défini avant :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -628,10 +632,11 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="section" id="cas-des-digues-convexes">
 <h3>Cas des digues convexes<a class="headerlink" href="#cas-des-digues-convexes" title="Permalink to this headline">¶</a></h3>
-<p>On considère maintenant que l’interface entre l’eau et le béton n’est plus une fonction affine mais une fonction de la forme :
-$<span class="math notranslate nohighlight">\(
+<p>On considère maintenant que l’interface entre l’eau et le béton n’est plus une fonction affine mais une fonction de la forme :</p>
+<div class="math notranslate nohighlight">
+\[
 f_{eau} (y)=a \left(\frac{y}{H}\right)^2-(a+x_e)\left(\frac{y}{H}\right) +x_e
-\)</span>$</p>
+\]</div>
 <p>on donne également la dérivée :</p>
 <div class="math notranslate nohighlight">
 \[
