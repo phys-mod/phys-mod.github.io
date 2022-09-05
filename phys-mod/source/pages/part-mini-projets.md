@@ -1,1 +1,4 @@
 # Mini-projets
+
+```{tableofcontents}
+```
