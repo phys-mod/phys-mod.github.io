@@ -1,5 +1,5 @@
 #!/bin/bash
-for rep in ./0*; do
+for rep in ./[adeps]*; do
 	# create etu repertory
 	echo creating rep: $eturep
 	echo --------------
