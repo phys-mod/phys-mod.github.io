@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Représentation graphique d’une suite mathématique</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Dérivation et intégration numérique" href="../derivation-integration/cours-derivation-integration.html" />
+    <link rel="prev" title="Modèle de l’accélération constante" href="../demarche-de-modelisation/cours-acceleration-constante.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/01-prise-en-main.html">
+     Première prise en main
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/03-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/04-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-exercices.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">
+     Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercices-suites-relations-recurrence.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
+     Méthodes d’Euler et de Runge-Kutta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
+     Des exemples de modèle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../pages/part-projet.html">
+   Description du projet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/suites-relations-recurrence/cours-suite-graphique.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/suites-relations-recurrence/cours-suite-graphique.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Représentation graphique d’une suite mathématique</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="representation-graphique-d-une-suite-mathematique">
+<h1>Représentation graphique d’une suite mathématique<a class="headerlink" href="#representation-graphique-d-une-suite-mathematique" title="Permalink to this headline">#</a></h1>
+<p>Nous introduisons la suite <span class="math notranslate nohighlight">\(a_n\)</span> définie par :</p>
+<div class="math notranslate nohighlight">
+\[
+a_n = \frac{3n-5}{2n+2}
+\]</div>
+<p>où <span class="math notranslate nohighlight">\(a_n\)</span> est un nombre réel et <span class="math notranslate nohighlight">\(n\)</span> un entier positif.</p>
+<p>Nous pouvons calculer la liste des <span class="math notranslate nohighlight">\(N\)</span> premiers éléments de cette suite avec une fonction et une compréhension de liste :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombre de termes</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="c1"># Définition de la fonction F</span>
+<span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Retourne l&#39;élément Sn de la suite &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Liste des éléments</span>
+<span class="n">liste_elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans ce cas, la suite n’est qu’une version discrète de la fonction <code class="docutils literal notranslate"><span class="pre">F</span></code>. Nous pouvons représenter sur un même graphique les éléments de la suite et la fonction :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import des modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Tracé de la fonction</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Tracé des éléments de la suite</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">liste_elements</span><span class="p">,</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/cours-suite-graphique_3_0.png" src="../../../_images/cours-suite-graphique_3_0.png" />
+</div>
+</div>
+<p>Pour illustrer la façon donc chaque élément est calculé, on peut relier l’argument de la fonction et son image par un segment :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tracé de la fonction</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Tracé des éléments de la suite</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">liste_elements</span><span class="p">,</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tracé de la ligne y = 0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tracé des segments</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">k</span><span class="p">)],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/cours-suite-graphique_5_0.png" src="../../../_images/cours-suite-graphique_5_0.png" />
+</div>
+</div>
+<p>Un peu plus intéressant, introduisons maintenant la suite <span class="math notranslate nohighlight">\(u_n\)</span> définie par récurrence :</p>
+<div class="math notranslate nohighlight">
+\[
+u_{n+1} = u_n - \ln{u_n}
+\]</div>
+<p>Une écriture équivalente est :</p>
+<div class="math notranslate nohighlight">
+\[
+u_{n+1} = G(u_n), \ \text{avec} \ G(x) = x - \ln{x}
+\]</div>
+<p>Ainsi, le terme <span class="math notranslate nohighlight">\(n+1\)</span> est trouvé en prenant l’image par la fonction <span class="math notranslate nohighlight">\(G\)</span> du terme <span class="math notranslate nohighlight">\(n\)</span>. Supposons que <span class="math notranslate nohighlight">\(u_0=10\)</span>, on peut alors calculer <span class="math notranslate nohighlight">\(u_1\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation de la suite</span>
+<span class="n">u0</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Définition de la fonction G</span>
+<span class="k">def</span> <span class="nf">G</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Calcul des termes suivants</span>
+<span class="n">u1</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">u0</span><span class="p">)</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">u1</span><span class="p">)</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.697414907005955
+5.656530360877892
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut illustrer cela sur le graphique suivant. D’abord, on trace la bissectrice <span class="math notranslate nohighlight">\(y=x\)</span> et la fonction <span class="math notranslate nohighlight">\(G\)</span>. Ensuite, pour trouver <span class="math notranslate nohighlight">\(u_1\)</span> :</p>
+<ol class="simple">
+<li><p>on place le point <span class="math notranslate nohighlight">\(U_0 \ (x=u_0, y=u_0)\)</span> sur la bissectrice</p></li>
+<li><p>on place le point <span class="math notranslate nohighlight">\(U_{01} \ (x=u_0, y=G(u_0)=u_1)\)</span> sur la fonction <span class="math notranslate nohighlight">\(G\)</span> en traçant une ligne verticale depuis le point <span class="math notranslate nohighlight">\(U_0\)</span></p></li>
+</ol>
+<p>Pour trouver le point suivant :</p>
+<ol class="simple">
+<li><p>on place le point <span class="math notranslate nohighlight">\(U_1 \ (x=u_1, y=u_1)\)</span> sur la bissectrice en traçant une ligne horizontale depuis le point <span class="math notranslate nohighlight">\(U_{01}\)</span></p></li>
+<li><p>on place le point <span class="math notranslate nohighlight">\(U_{12} \ (x=u_1, y=G(u_1)=u_2)\)</span> sur la fonction <span class="math notranslate nohighlight">\(G\)</span> en traçant une ligne verticale depuis le point <span class="math notranslate nohighlight">\(U_1\)</span></p></li>
+</ol>
+<p>et ainsi de suite …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Limites des abscisses</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="n">xe</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="c1"># Tracé de la bissectrice et de la fonction G</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xb</span><span class="p">,</span> <span class="n">xe</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">G</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Étape 1 : point U0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">],</span> <span class="p">[</span><span class="n">u0</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+
+<span class="c1"># Étape 2 : image du point U0 avec une ligne </span>
+<span class="c1">#   verticale -&gt; U_01</span>
+<span class="n">u1</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">u0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">,</span> <span class="n">u0</span><span class="p">],</span> <span class="p">[</span><span class="n">u0</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+
+<span class="c1"># Étape 3 : placer le point U1 sur la bissectrice </span>
+<span class="c1">#   avec une ligne horizontale depuis U_01</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u1</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+
+<span class="c1"># Étape 4 : image du point U1 avec une ligne </span>
+<span class="c1">#   verticale -&gt; U_12</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">u1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u1</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u1</span><span class="p">],</span> <span class="p">[</span><span class="n">u2</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/cours-suite-graphique_10_0.png" src="../../../_images/cours-suite-graphique_10_0.png" />
+</div>
+</div>
+<p>On voit que cette visualisation peut se généraliser à N points avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Limites des abscisses et nombre de récurrence</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="n">xe</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Tracé de la bissectrice et de la fonction G</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xb</span><span class="p">,</span> <span class="n">xe</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">G</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Initialisation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">],</span> <span class="p">[</span><span class="n">u0</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+
+<span class="c1"># Récurrence</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1"># Étape 2 : image du point U0 avec une ligne </span>
+    <span class="c1">#   verticale -&gt; U_01</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">u0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">,</span> <span class="n">u0</span><span class="p">],</span> <span class="p">[</span><span class="n">u0</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+    <span class="c1"># Étape 3 : placer le point U1 sur la bissectrice </span>
+    <span class="c1">#   avec une ligne horizontale depuis U_01</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u0</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">u1</span><span class="p">],</span> <span class="p">[</span><span class="n">u1</span><span class="p">],</span> <span class="s1">&#39;og&#39;</span><span class="p">)</span>
+    <span class="c1"># Récurrence :</span>
+    <span class="n">u0</span> <span class="o">=</span> <span class="n">u1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/cours-suite-graphique_12_0.png" src="../../../_images/cours-suite-graphique_12_0.png" />
+</div>
+</div>
+<p>On voit que la suite tend vers une limite finie.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/suites-relations-recurrence"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../demarche-de-modelisation/cours-acceleration-constante.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Modèle de l’accélération constante</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../derivation-integration/cours-derivation-integration.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dérivation et intégration numérique</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

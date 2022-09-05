@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Démarche de modélisation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Suite de Fibonacci" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html" />
+    <link rel="prev" title="Exercices" href="../../pages/part-exercices.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/01-prise-en-main.html">
+     Première prise en main
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/03-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/04-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cours-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/part-exercices.html">
+   Exercices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
+     Méthodes d’Euler et de Runge-Kutta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
+     Des exemples de modèle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mini-projet-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../pages/part-projet.html">
+   Description du projet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/demarche-de-modelisation/exercices-demarche-de-modelisation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/demarche-de-modelisation/exercices-demarche-de-modelisation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pile-ou-face">
+   Pile ou face
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tir-a-l-arc">
+   Tir à l’arc
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Démarche de modélisation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pile-ou-face">
+   Pile ou face
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tir-a-l-arc">
+   Tir à l’arc
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="demarche-de-modelisation">
+<h1>Démarche de modélisation<a class="headerlink" href="#demarche-de-modelisation" title="Permalink to this headline">#</a></h1>
+<p>Le but de ces exercices est d’appliquer le modèle de l’accéleration constante à 1D à de nouvelles situations, de complexifier le modèle et d’explorer ses limitations.</p>
+<section id="pile-ou-face">
+<h2>Pile ou face<a class="headerlink" href="#pile-ou-face" title="Permalink to this headline">#</a></h2>
+<p>On joue à pile ou face avec une pièce de monnaie. Connaissant les conditions initiales du lancer de la pièce, on aimerait connaître sa trajectoire.</p>
+<p>Les trois représentations du mouvement de la pièce de monnaie sont l’accélération <span class="math notranslate nohighlight">\(a\)</span>, la vitesse <span class="math notranslate nohighlight">\(v\)</span> et la position <span class="math notranslate nohighlight">\(z\)</span> selon l’axe <span class="math notranslate nohighlight">\(z\)</span> :
+$<span class="math notranslate nohighlight">\(
+\left\{
+    \begin{array}{lll}
+        a(t) &amp;=&amp; g \\
+        v(t) &amp;=&amp; gt + v_0\\
+        z(t) &amp;=&amp; \dfrac{1}{2} gt^2 + v_0 t + z_0
+    \end{array}
+\right.
+\)</span>$</p>
+<p>Vous choisirez pour cet exercice de représenter numériquement les fonctions par des tableaux Numpy 1D (représentation discrète). Vous choisirez vous-même l’intervalle et le pas de temps pour la représentation discrète.</p>
+<ol class="simple">
+<li><p>Représenter graphiquement, l’un au-dessous de l’autre grâce à la fonction <code class="docutils literal notranslate"><span class="pre">subplot()</span></code>, l’accélération, la vitesse et la position <span class="math notranslate nohighlight">\(z\)</span> de la pièce, pour <span class="math notranslate nohighlight">\(v_0 = -3.2 \mathrm{~m.s^{-1}}\)</span> et <span class="math notranslate nohighlight">\(z_0 = -1.5 \mathrm{~m}\)</span>. Choisir l’intervalle de temps de façon à ce que la pièce dépasse de peu la position <span class="math notranslate nohighlight">\(z=0\)</span>.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation des modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Paramètres du problème</span>
+<span class="n">pesanteur</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m.s**-2</span>
+<span class="n">vitesse_initiale</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.2</span> <span class="c1"># m.s**-1</span>
+<span class="n">position_z_initiale</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span> <span class="c1"># m</span>
+<span class="n">temps_initial</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># s</span>
+<span class="n">temps_final</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># s</span>
+<span class="n">pas_temps</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># s</span>
+
+<span class="c1"># Création du tableau temps (discrétisation)</span>
+<span class="n">intervalle</span> <span class="o">=</span> <span class="n">temps_final</span> <span class="o">-</span> <span class="n">temps_initial</span>
+<span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">intervalle</span> <span class="o">/</span> <span class="n">pas_temps</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># Nombre d&#39;éléments</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">temps_initial</span><span class="p">,</span> <span class="n">temps_final</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+
+<span class="c1"># Création des autres tableaux</span>
+<span class="n">acceleration</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="n">pesanteur</span>
+<span class="n">vitesse</span> <span class="o">=</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">+</span> <span class="n">vitesse_initiale</span>
+<span class="n">position_z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">vitesse_initiale</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">+</span> <span class="n">position_z_initiale</span>
+
+<span class="c1"># Représentation de l&#39;accélération</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">acceleration</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accélération [m.s$^{-2}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelbottom</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># Retire les labels de l&#39;axe x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Modèle de l&#39;accélération constante à 1D avec vitesse initiale&quot;</span><span class="p">)</span>
+
+<span class="c1"># Représentation de la vitesse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;vitesse [m.s$^{-1}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelbottom</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># Retire les labels de l&#39;axe x</span>
+
+<span class="c1"># Représentation de la position z</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">position_z</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;position z [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;temps [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span> <span class="c1"># Agrandit l&#39;espace entre les figures</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/exercices-demarche-de-modelisation_2_0.png" src="../../../_images/exercices-demarche-de-modelisation_2_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>Représenter le mouvement de l’objet dans le plan <span class="math notranslate nohighlight">\((x0z)\)</span>, pour <span class="math notranslate nohighlight">\(x_0 = 4 \mathrm{~m}\)</span>. Sur cette représentation, placer un point rouge à l’endroit de la position initiale de l’objet.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paramètres du problème</span>
+<span class="n">position_x_initiale</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># m</span>
+
+<span class="c1"># Création du tableau position x</span>
+<span class="n">position_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="n">position_x_initiale</span>
+
+<span class="c1"># Représentation graphique du mouvement</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">position_x</span><span class="p">,</span> <span class="o">-</span><span class="n">position_z</span><span class="p">,</span> <span class="s1">&#39;x-&#39;</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position -z [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Position initiale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">position_x_initiale</span><span class="p">,</span> <span class="o">-</span><span class="n">position_z_initiale</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/exercices-demarche-de-modelisation_4_0.png" src="../../../_images/exercices-demarche-de-modelisation_4_0.png" />
+</div>
+</div>
+</section>
+<section id="tir-a-l-arc">
+<h2>Tir à l’arc<a class="headerlink" href="#tir-a-l-arc" title="Permalink to this headline">#</a></h2>
+<p>Pour un tir à l’arc, nous souhaitons modéliser la trajectoire de la flèche, en utilisant le modèle de l’accélération constante. Nous modélisons la flèche par une particule ponctuelle. La cible se trouve à <span class="math notranslate nohighlight">\(40 \mathrm{~m}\)</span> du tireur, à une hauteur de <span class="math notranslate nohighlight">\(1,\!5 \mathrm{~m}\)</span>, et fait <span class="math notranslate nohighlight">\(50 \mathrm{~cm}\)</span> de diamètre.</p>
+<p>Pour un mouvement à 2D suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, nous avons les équations suivantes pour les vitesses suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, respectivement :
+$<span class="math notranslate nohighlight">\(
+\left\{
+    \begin{array}{lll}
+        v_z(t) &amp;=&amp; gt + v_0^z\\
+        v_x(t) &amp;=&amp; v_0^x
+    \end{array}
+\right.
+\)</span>$</p>
+<p>et pour les positions suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, respectivement :
+$<span class="math notranslate nohighlight">\(
+\left\{
+    \begin{array}{lll}
+        z(t) &amp;=&amp; \dfrac{1}{2} gt^2 + v_0^z t + z_0\\
+        x(t) &amp;=&amp; v_0^x t + x_0
+    \end{array}
+\right.
+\)</span>$</p>
+<ol class="simple">
+<li><p>Créer un DataFrame Pandas pour représenter le mouvement. Vous choisirez vous-même la discrétisation des fonctions. L’index du DataFrame doit représenter le temps. Vous allez ensuite créer 5 colonnes pour le DataFrame, représentant : l’accélération, la vitesse suivant l’axe <span class="math notranslate nohighlight">\(z\)</span>, la vitesse suivant l’axe <span class="math notranslate nohighlight">\(x\)</span>, la position suivant l’axe <span class="math notranslate nohighlight">\(z\)</span>, et la position suivant l’axe <span class="math notranslate nohighlight">\(x\)</span>. Les paramètres du problème sont :
+$<span class="math notranslate nohighlight">\(
+\left\{
+ \begin{array}{lll}
+     v_0^z = -1.3 \ \mathrm{m.s^{-1}}\\
+     v_0^x = 99.6 \ \mathrm{m.s^{-1}}\\
+     z_0 = -1.5 \ \mathrm{m}\\
+     x_0 = 0.0 \ \mathrm{m}
+ \end{array}
+\right.
+\)</span>$</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation des modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Paramètres du problème</span>
+<span class="n">pesanteur</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m.s**-2</span>
+<span class="n">vitesse_z_initiale</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.3</span> <span class="c1"># m.s**-1</span>
+<span class="n">position_z_initiale</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span> <span class="c1"># m</span>
+<span class="n">vitesse_x_initiale</span> <span class="o">=</span> <span class="mf">99.6</span> <span class="c1"># m.s**-1</span>
+<span class="n">position_x_initiale</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># m</span>
+<span class="n">temps_initial</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># s</span>
+<span class="n">temps_final</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># s</span>
+<span class="n">pas_temps</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># s</span>
+
+<span class="c1"># Création du tableau temps (discrétisation)</span>
+<span class="n">intervalle</span> <span class="o">=</span> <span class="n">temps_final</span> <span class="o">-</span> <span class="n">temps_initial</span>
+<span class="n">num_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">intervalle</span> <span class="o">/</span> <span class="n">pas_temps</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># Nombre d&#39;éléments</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">temps_initial</span><span class="p">,</span> <span class="n">temps_final</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+
+<span class="c1"># Création du DataFrame avec une colonne accélération</span>
+<span class="n">acceleration</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="n">pesanteur</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">acceleration</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">temps</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">])</span>
+
+<span class="c1"># Création des autres colonnes</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;vitesse_z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">+</span> <span class="n">vitesse_z_initiale</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;vitesse_x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vitesse_x_initiale</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;position_z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pesanteur</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">vitesse_z_initiale</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">+</span> <span class="n">position_z_initiale</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;position_x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vitesse_x_initiale</span> <span class="o">*</span> <span class="n">temps</span> <span class="o">+</span> <span class="n">position_x_initiale</span>
+
+<span class="c1"># Affichage du tableau pour vérification</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>acceleration</th>
+      <th>vitesse_z</th>
+      <th>vitesse_x</th>
+      <th>position_z</th>
+      <th>position_x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.00</th>
+      <td>9.81</td>
+      <td>-1.3000</td>
+      <td>99.6</td>
+      <td>-1.500000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>0.01</th>
+      <td>9.81</td>
+      <td>-1.2019</td>
+      <td>99.6</td>
+      <td>-1.512509</td>
+      <td>0.996</td>
+    </tr>
+    <tr>
+      <th>0.02</th>
+      <td>9.81</td>
+      <td>-1.1038</td>
+      <td>99.6</td>
+      <td>-1.524038</td>
+      <td>1.992</td>
+    </tr>
+    <tr>
+      <th>0.03</th>
+      <td>9.81</td>
+      <td>-1.0057</td>
+      <td>99.6</td>
+      <td>-1.534585</td>
+      <td>2.988</td>
+    </tr>
+    <tr>
+      <th>0.04</th>
+      <td>9.81</td>
+      <td>-0.9076</td>
+      <td>99.6</td>
+      <td>-1.544152</td>
+      <td>3.984</td>
+    </tr>
+    <tr>
+      <th>0.05</th>
+      <td>9.81</td>
+      <td>-0.8095</td>
+      <td>99.6</td>
+      <td>-1.552738</td>
+      <td>4.980</td>
+    </tr>
+    <tr>
+      <th>0.06</th>
+      <td>9.81</td>
+      <td>-0.7114</td>
+      <td>99.6</td>
+      <td>-1.560342</td>
+      <td>5.976</td>
+    </tr>
+    <tr>
+      <th>0.07</th>
+      <td>9.81</td>
+      <td>-0.6133</td>
+      <td>99.6</td>
+      <td>-1.566966</td>
+      <td>6.972</td>
+    </tr>
+    <tr>
+      <th>0.08</th>
+      <td>9.81</td>
+      <td>-0.5152</td>
+      <td>99.6</td>
+      <td>-1.572608</td>
+      <td>7.968</td>
+    </tr>
+    <tr>
+      <th>0.09</th>
+      <td>9.81</td>
+      <td>-0.4171</td>
+      <td>99.6</td>
+      <td>-1.577269</td>
+      <td>8.964</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Représenter le mouvement de l’objet dans le plan <span class="math notranslate nohighlight">\((x0z)\)</span>, pour <span class="math notranslate nohighlight">\(z\in [0,2] \mathrm{~m}\)</span> et <span class="math notranslate nohighlight">\(x\in [0,40] \mathrm{~m}\)</span>. Sur cette représentation, placer un point rouge à l’endroit de la position initiale de l’objet.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation des modules</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Représentation graphique du mouvement</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;position_x&quot;</span><span class="p">],</span> <span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;position_z&quot;</span><span class="p">],</span> <span class="s1">&#39;x-&#39;</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position -z [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Position initiale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">position_x_initiale</span><span class="p">,</span> <span class="o">-</span><span class="n">position_z_initiale</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/exercices-demarche-de-modelisation_8_0.png" src="../../../_images/exercices-demarche-de-modelisation_8_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>En choississant mieux les limites des axes pour la représentation du mouvement, déterminez si le tireur atteint la cible.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Représentation graphique du mouvement</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;position_x&quot;</span><span class="p">],</span> <span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;position_z&quot;</span><span class="p">],</span> <span class="s1">&#39;x-&#39;</span><span class="p">)</span>
+
+<span class="c1"># Style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position -z [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.5</span> <span class="o">+</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># On voit que le tireur n&#39;atteint pas sa cible</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/exercices-demarche-de-modelisation_10_0.png" src="../../../_images/exercices-demarche-de-modelisation_10_0.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>En réflechissant aux limites de votre modèle, est-ce que la conclusion de cette étude pourrait être changée ? Comment améliorer le modèle ?</p></li>
+</ol>
+<p>Le modèle de particule ponctuelle pour une flèche n’est sûrement pas adapté. En effet, la flèche, de par sa longueur et son empenage, est optimisée pour garder une trajectoire horizontale. Il faudrait adapter notre modèle de flèche pour prendre en compte son extension, et notre modèle d’interaction pour prendre en compte les frottements de l’air.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/demarche-de-modelisation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../pages/part-exercices.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercices</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Suite de Fibonacci</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

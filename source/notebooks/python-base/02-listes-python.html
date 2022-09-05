@@ -1,0 +1,1551 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Les listes Python</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Fonctions et modules" href="03-fonctions-modules.html" />
+    <link rel="prev" title="Première prise en main" href="01-prise-en-main.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-prise-en-main.html">
+     Première prise en main
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/03-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/04-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-exercices.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">
+     Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
+     Méthodes d’Euler et de Runge-Kutta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
+     Des exemples de modèle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../pages/part-projet.html">
+   Description du projet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/python-base/02-listes-python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/python-base/02-listes-python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-elements-de-base">
+   <strong>
+    Vidéo
+   </strong>
+   : Éléments de base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-une-liste">
+   Créer une liste
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liste-de-listes">
+   Liste de listes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifier-une-liste">
+   Modifier une liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-listes">
+   Opérations sur listes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-sous-listes-et-tranches">
+   <strong>
+    Vidéo
+   </strong>
+   : Sous-listes et tranches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tranches-de-liste">
+   Tranches de liste
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexation-et-tranche-de-liste-de-listes">
+   Indexation et tranche de liste de listes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-manipuler-les-listes">
+   <strong>
+    Vidéo
+   </strong>
+   : Manipuler les listes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supprimer-un-element">
+   Supprimer un élément
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-chaines">
+   Les chaînes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objets-et-valeurs">
+   Objets et valeurs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aliasing">
+   Aliasing
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Les listes Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-elements-de-base">
+   <strong>
+    Vidéo
+   </strong>
+   : Éléments de base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-une-liste">
+   Créer une liste
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liste-de-listes">
+   Liste de listes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifier-une-liste">
+   Modifier une liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-listes">
+   Opérations sur listes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-sous-listes-et-tranches">
+   <strong>
+    Vidéo
+   </strong>
+   : Sous-listes et tranches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tranches-de-liste">
+   Tranches de liste
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexation-et-tranche-de-liste-de-listes">
+   Indexation et tranche de liste de listes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-manipuler-les-listes">
+   <strong>
+    Vidéo
+   </strong>
+   : Manipuler les listes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supprimer-un-element">
+   Supprimer un élément
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-chaines">
+   Les chaînes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objets-et-valeurs">
+   Objets et valeurs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aliasing">
+   Aliasing
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="les-listes-python">
+<h1>Les listes Python<a class="headerlink" href="#les-listes-python" title="Permalink to this headline">#</a></h1>
+<section id="video-elements-de-base">
+<h2><strong>Vidéo</strong>: Éléments de base<a class="headerlink" href="#video-elements-de-base" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3f7ad3ca-b863-42b4-ba5a-adb201017e95&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="creer-une-liste">
+<h2>Créer une liste<a class="headerlink" href="#creer-une-liste" title="Permalink to this headline">#</a></h2>
+<p>Une <em>liste</em> est une séquence de valeurs, comme une chaîne. Dans une chaîne, ces valeurs sont des caractères. Dans une liste, les valeurs peuvent être de n’importe quel type.</p>
+<p>Les valeurs dans une liste sont appelées <em>éléments</em>.</p>
+<p>Le plus simple pour créer une liste est d’entourer les éléments par des crochets <code class="docutils literal notranslate"><span class="pre">[</span></code> et <code class="docutils literal notranslate"><span class="pre">]</span></code>. Voici une liste, nommée <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>, qui contient des valeurs des trois types que l’on a introduits dans l’activité “Première prise en main de Python”. Saurez-vous les reconnaître ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
+
+<span class="c1"># Affichage de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3.0, &#39;a&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Créer trois variables nommées <code class="docutils literal notranslate"><span class="pre">plante1</span></code>, <code class="docutils literal notranslate"><span class="pre">plante2</span></code> et <code class="docutils literal notranslate"><span class="pre">plante3</span></code>, contenant respectivement les valeurs <code class="docutils literal notranslate"><span class="pre">&quot;gentiane&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;campanule&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;pensée&quot;</span></code>.</p></li>
+<li><p>Créer une liste nommée <code class="docutils literal notranslate"><span class="pre">plantes</span></code>, à partir des noms des 3 variables créées en 1, qui contient les noms des trois plantes.</p></li>
+<li><p>Vous possédez ces trois plantes chez vous, et vous voulez suivre leur croissance. Créez une nouvelle liste nommée <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> qui contient le nom des trois plantes, et juste après le nom de chaque plante, sa taille (valeur de type <em>float</em>). La gentiane fait 7.5 cm, la campanule 5.8 cm et la pensée 11.4 cm.</p></li>
+<li><p>Afficher le contenu des 2 listes à l’écran avec la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création des variables</span>
+<span class="n">plante1</span> <span class="o">=</span> <span class="s2">&quot;gentiane&quot;</span>
+<span class="n">plante2</span> <span class="o">=</span> <span class="s2">&quot;campanule&quot;</span>
+<span class="n">plante3</span> <span class="o">=</span> <span class="s2">&quot;pensée&quot;</span>
+
+<span class="c1"># Création de la liste plantes</span>
+<span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="n">plante1</span><span class="p">,</span> <span class="n">plante2</span><span class="p">,</span> <span class="n">plante3</span><span class="p">]</span>
+
+<span class="c1"># Création de la liste taille_plantes</span>
+<span class="n">taille_plantes</span> <span class="o">=</span> <span class="p">[</span><span class="n">plante1</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="n">plante2</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="n">plante3</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">]</span>
+
+<span class="c1"># Affichage des deux listes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;, &#39;pensée&#39;]
+[&#39;gentiane&#39;, 7.5, &#39;campanule&#39;, 5.8, &#39;pensée&#39;, 11.4]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="liste-de-listes">
+<h2>Liste de listes<a class="headerlink" href="#liste-de-listes" title="Permalink to this headline">#</a></h2>
+<p>Une liste peut contenir une autre liste. On dit alors que la liste est <em>imbriquée</em>. Dans l’exemple suivant, on crée une liste de trois listes imbriquées :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taille_plantes</span> <span class="o">=</span> <span class="p">[[</span><span class="n">plante1</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">],</span> 
+                  <span class="p">[</span><span class="n">plante2</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">],</span>
+                  <span class="p">[</span><span class="n">plante3</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Afficher le contenu de la liste <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> à l’écran.</p></li>
+<li><p>Afficher le type de la liste avec la fonction <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage de la liste taille_plantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">)</span>
+
+<span class="c1"># Affichage du type de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;gentiane&#39;, 7.5], [&#39;campanule&#39;, 5.8], [&#39;pensée&#39;, 11.4]]
+&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>Classe et type</strong></p>
+<p>On retrouve ici le mot <em>class</em>, que l’on peut traduire par classe. Dans Python 3 les concepts de classe et de type sont équivalents.</p>
+</div></section>
+</section>
+<section id="modifier-une-liste">
+<h2>Modifier une liste<a class="headerlink" href="#modifier-une-liste" title="Permalink to this headline">#</a></h2>
+<p>On peut accéder à un élément de la liste en utilisant l’opérateur <code class="docutils literal notranslate"><span class="pre">[]</span></code> d’indexation :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accès à un élément de la liste</span>
+<span class="n">plante_choisie</span> <span class="o">=</span> <span class="n">plantes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Affichage de la plante choisie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plante_choisie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gentiane
+</pre></div>
+</div>
+</div>
+</div>
+<p>La première instruction sélectionne l’élément numéroté par 0 de la liste <code class="docutils literal notranslate"><span class="pre">plantes</span></code> et l’affecte à la variable <code class="docutils literal notranslate"><span class="pre">plante_choisie</span></code>. L’expression entre crochets s’appelle un <em>indice</em>.</p>
+<div class="alert alert-warning">
+<p><strong>Attention</strong></p>
+<p>Le premier élément de la liste est numéroté avec l’entier <code class="docutils literal notranslate"><span class="pre">0</span></code>, le deuxième élement avec l’entier <code class="docutils literal notranslate"><span class="pre">1</span></code>, et ainsi de suite.</p>
+</div><p>Les listes sont <em>modifiables</em>. Lorsque l’opérateur d’indexation apparaît du côté gauche de l’affectation, il indique l’élément de la liste auquel la valeur sera affectée :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+
+<span class="c1"># Modification d&#39;un élément de la liste</span>
+<span class="n">plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;digitale&quot;</span>
+
+<span class="c1"># Affichage de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;digitale&#39;, &#39;pensée&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le deuxième élément de la liste (indice 1), qui avait la valeur <code class="docutils literal notranslate"><span class="pre">&quot;campanule&quot;</span></code>, a maintenant la valeur <code class="docutils literal notranslate"><span class="pre">&quot;digitale&quot;</span></code>.</p>
+<p>Voici quelques règles d’indexation :</p>
+<ul class="simple">
+<li><p>toute expression entière peut être utilisée comme indice</p></li>
+<li><p>si un indice a une valeur négative, il compte en sens inverse, à partir de la fin de la liste</p></li>
+<li><p>si vous essayez de lire ou d’écrire un élément qui n’existe pas, vous obtenez une erreur</p></li>
+</ul>
+<p>Voici une illustration de ces trois règles :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accès à un élement de liste avec une expression</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pensée
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accès à un élément de liste depuis la fin</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>digitale
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accès à un élément de liste qui n&#39;existe pas : message d&#39;erreur</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Accès à un élément de liste qui n&#39;existe pas : message d&#39;erreur</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operations-sur-listes">
+<h2>Opérations sur listes<a class="headerlink" href="#operations-sur-listes" title="Permalink to this headline">#</a></h2>
+<p>L’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> concatène 2 listes, alors que l’opérateur <code class="docutils literal notranslate"><span class="pre">*</span></code> répète une liste un certain nombre de fois :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+
+<span class="c1"># Concaténation</span>
+<span class="n">plantes2</span> <span class="o">=</span> <span class="n">plantes</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;marguerite&quot;</span><span class="p">,</span> <span class="s2">&quot;oseille&quot;</span><span class="p">]</span>
+
+<span class="c1"># Affichage de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;, &#39;pensée&#39;, &#39;marguerite&#39;, &#39;oseille&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Répétition de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;, &#39;pensée&#39;, &#39;gentiane&#39;, &#39;campanule&#39;, &#39;pensée&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut aussi effectuer des calculs en utilisant directement des éléments de la liste. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">taille_plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">]</span>
+
+<span class="c1"># Calcul de la taille totale</span>
+<span class="n">taille_totale</span> <span class="o">=</span> <span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">taille_plantes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">taille_plantes</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Affichage du résultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_totale</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.700000000000003
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Après une semaine, vos plantes ont poussé. Modifier la liste <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> avec les tailles 8.3 cm, 6.4 cm et 13.2 cm pour respectivement les plantes gentiane, campanule et pensée.</p></li>
+<li><p>Afficher la liste avec <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modification des éléments de la liste</span>
+<span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">8.3</span>
+<span class="n">taille_plantes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">6.4</span>
+<span class="n">taille_plantes</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mf">13.2</span>
+
+<span class="c1"># Affichage de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, 8.3, &#39;campanule&#39;, 6.4, &#39;pensée&#39;, 13.2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="video-sous-listes-et-tranches">
+<h2><strong>Vidéo</strong>: Sous-listes et tranches<a class="headerlink" href="#video-sous-listes-et-tranches" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5504058e-ba2e-49ad-a303-adb100bb4fa6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="tranches-de-liste">
+<h2>Tranches de liste<a class="headerlink" href="#tranches-de-liste" title="Permalink to this headline">#</a></h2>
+<p>Il est possible de sélectionner plusieurs éléments d’une liste en utilisant l’opérateur <em>tranche</em> <code class="docutils literal notranslate"><span class="pre">[m:n]</span></code>, où <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> sont des expression entières. L’opérateur de tranche inclut l’élément de départ, mais <strong>exclut l’élément de fin de la tranche</strong>. Ainsi, l’opérateur <code class="docutils literal notranslate"><span class="pre">[0:2]</span></code> revient à sélectionner les élements d’indice <code class="docutils literal notranslate"><span class="pre">0</span></code> et <code class="docutils literal notranslate"><span class="pre">1</span></code>. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+
+<span class="c1"># Affichage d&#39;une tranche de liste : l&#39;élément de fin de tranche EST EXCLUT</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si vous omettez le premier indice, la tranche commence au début de la liste. Si vous omettez le second indice, la tranche s’étend jusqu’à la  fin de la liste. Si vous omettez les deux indices, la liste entière est sélectionnée :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Omission du 1er indice : commence à l&#39;élément 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Omission du dernier indice : va jusqu&#39;à la fin de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;campanule&#39;, &#39;pensée&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Omission de 2 indices : tous les éléments de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">[:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;, &#39;pensée&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible de modifier plusieurs éléments en même temps en utilisant l’opérateur tranche à gauche de l’opérateur affection. Il faut alors mettre à droite de l’opérateur affectation <strong>une liste de longueur quelconque qui va remplacer la tranche sélectionnée</strong>. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+
+<span class="c1"># Modification d&#39;une tranche</span>
+<span class="n">plantes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;marguerite&quot;</span><span class="p">,</span> <span class="s2">&quot;oseille&quot;</span><span class="p">,</span> <span class="s2">&quot;saxifrage&quot;</span><span class="p">]</span>
+
+<span class="c1"># Affichage de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;marguerite&#39;, &#39;oseille&#39;, &#39;saxifrage&#39;, &#39;pensée&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On a remplacé les deux premiers éléments de la liste par une liste de trois éléments. La taille de la liste a donc changé.</p>
+<section id="id3">
+<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">,</span> <span class="s2">&quot;marguerite&quot;</span><span class="p">,</span> <span class="s2">&quot;oseille&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Dans la liste <code class="docutils literal notranslate"><span class="pre">plantes</span></code> créée ci-dessus, remplacer les chaînes <code class="docutils literal notranslate"><span class="pre">&quot;campanule&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;pensée&quot;</span></code> par les chaînes <code class="docutils literal notranslate"><span class="pre">&quot;saxifrage&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;primevère&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;orchis&quot;</span></code> à l’aide de l’opérateur tranche.</p></li>
+<li><p>Afficher la liste avec <code class="docutils literal notranslate"><span class="pre">print()</span></code> pour vérifier le résultat.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remplacer les éléments de la liste</span>
+<span class="n">plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;saxifrage&quot;</span><span class="p">,</span> <span class="s2">&quot;primevère&quot;</span><span class="p">,</span> <span class="s2">&quot;orchis&quot;</span><span class="p">]</span>
+
+<span class="c1"># Afficher la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;saxifrage&#39;, &#39;primevère&#39;, &#39;orchis&#39;, &#39;marguerite&#39;, &#39;oseille&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="indexation-et-tranche-de-liste-de-listes">
+<h2>Indexation et tranche de liste de listes<a class="headerlink" href="#indexation-et-tranche-de-liste-de-listes" title="Permalink to this headline">#</a></h2>
+<p>On a vu qu’une liste peut contenir d’autres listes (listes imbriquées). Il est possible d’utiliser l’opérateur d’indexation sur les listes de listes. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
+<span class="n">taille_plantes</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span>   <span class="mf">7.5</span><span class="p">],</span> 
+                  <span class="p">[</span><span class="s2">&quot;campanule&quot;</span><span class="p">,</span>  <span class="mf">5.8</span><span class="p">],</span>
+                  <span class="p">[</span><span class="s2">&quot;pensée&quot;</span><span class="p">,</span>     <span class="mf">11.4</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;une liste imbriquée</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;campanule&#39;, 5.8]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;un élement dans la liste imbriquée</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>campanule
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le premier opérateur sélectionne la liste (dans l’exemple la liste d’indice 1), et le deuxième opérateur sélectionne l’élément dans la liste sélectionnée (dans l’exemple celui d’indice 0).</p>
+<p>On peut aussi utiliser l’opérateur tranche :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;une tranche de listes imbriquées</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;campanule&#39;, 5.8], [&#39;pensée&#39;, 11.4]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;une tranche de la liste imbriquée</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;campanule&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>La première instruction sélectionne les listes d’indices 1 et 2 et retourne une liste de listes. La deuxième instruction sélectionne l’élément d’indice 0 dans la liste d’indice 1.</p>
+<section id="id4">
+<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Quelle est la difference entre les instructions <code class="docutils literal notranslate"><span class="pre">taille_plantes[1][0]</span></code> et <code class="docutils literal notranslate"><span class="pre">taille_plantes[1][0:1]</span></code> ? Vous pouvez utiliser l’opérateur <code class="docutils literal notranslate"><span class="pre">type()</span></code> pour vérifier cette différence.</p>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="video-manipuler-les-listes">
+<h2><strong>Vidéo</strong>: Manipuler les listes<a class="headerlink" href="#video-manipuler-les-listes" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=74d9ddaf-66ac-4405-8b91-adb100bb6549&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="supprimer-un-element">
+<h2>Supprimer un élément<a class="headerlink" href="#supprimer-un-element" title="Permalink to this headline">#</a></h2>
+<p>Il existe deux possibilités pour supprimer un élément d’une liste : en utilisant l’instruction <code class="docutils literal notranslate"><span class="pre">del()</span></code> ou bien en insérant une liste vide <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plantes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">,</span> <span class="s2">&quot;marguerite&quot;</span><span class="p">,</span> <span class="s2">&quot;oseille&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span><span class="p">(</span><span class="n">plantes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> <span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;, &#39;marguerite&#39;, &#39;oseille&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span> <span class="nb">print</span><span class="p">(</span><span class="n">plantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;oseille&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans la deuxième ligne, on a supprimé l’élément d’indice 2. On remarque alors que les indices des élements de la liste changent. Dans la troisième ligne, on a supprimé grâce à l’opérateur tranche les élements 1 et 2, en introduisant à la place une liste vide.</p>
+<div class="alert alert-info">
+<p><strong>Le point-virgule</strong></p>
+<p>Ici nous avons utilisé un point-virgule à la fin d’une instruction pour pouvoir écrire deux instructions sur la même ligne.</p>
+<p>Il est tout de même conseillé de ne pas le faire, pour que le code soit plus lisible, mais sachez que c’est possible.</p>
+</div></section>
+<section id="les-chaines">
+<h2>Les chaînes<a class="headerlink" href="#les-chaines" title="Permalink to this headline">#</a></h2>
+<p>On a vu que les chaînes sont constituées d’une séquence de caractères. Comme pour les listes, on peut utiliser les opérateurs indexation et tranche pour accéder à certains caractères de la chaîne. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la chaîne</span>
+<span class="n">plante1</span> <span class="o">=</span> <span class="s2">&quot;gentiane&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;un caractère</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plante1</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;une tranche</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plante1</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tia
+</pre></div>
+</div>
+</div>
+</div>
+<p>Par contre, contrairement aux listes, les chaînes sont <em>immuables</em>, ce qui signifie que l’on ne peut pas modifier une chaîne existante. Si on essaye, on a alors un message d’erreur :</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plante1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [37],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plante1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>Objet</strong></p>
+<p>La chaîne de caractères <code class="docutils literal notranslate"><span class="pre">&quot;gentiane&quot;</span></code> est un objet dont les éléments sont les caractères de la chaîne, qui sont aussi des objets. De manière générale, un objet est <em>quelque chose</em> auquel une variable peut se référer. Ici, la variable <code class="docutils literal notranslate"><span class="pre">plante1</span></code> se réfère à l’objet <code class="docutils literal notranslate"><span class="pre">&quot;gentiane&quot;</span></code>.</p>
+</div><div class="alert alert-info">
+<p><strong>Muable</strong></p>
+<p>Un objet muable est un objet qui peut être modifié, comme les listes. À l’inverse, un objet immuable ne peut pas être modifié, comme les chaînes.</p>
+</div></section>
+<section id="objets-et-valeurs">
+<h2>Objets et valeurs<a class="headerlink" href="#objets-et-valeurs" title="Permalink to this headline">#</a></h2>
+<p>Effectuons les affectations suivantes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plante1</span> <span class="o">=</span> <span class="s2">&quot;gentiane&quot;</span>
+<span class="n">plante2</span> <span class="o">=</span> <span class="s2">&quot;gentiane&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans cet exemple on a créé une variable <code class="docutils literal notranslate"><span class="pre">plante1</span></code> qui se réfère à un objet “gentiane”, et une variable <code class="docutils literal notranslate"><span class="pre">plante2</span></code> qui se réfère à un objet “gentiane”. Python a-t-il créé deux objets “gentiane” ou un seul ? Autrement dit, les variables <code class="docutils literal notranslate"><span class="pre">plante1</span></code> et <code class="docutils literal notranslate"><span class="pre">plante2</span></code> se réfèrent-elles à deux objets différents ou bien à un seul objet commun ?</p>
+<p>Pour vérifier si deux variables font référence au même objet, nous pouvons utiliser l’opérateur <code class="docutils literal notranslate"><span class="pre">is</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plante1</span> <span class="ow">is</span> <span class="n">plante2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette instruction nous renvoie la valeur <code class="docutils literal notranslate"><span class="pre">True</span></code>, c’est-à-dire Vrai. Donc les deux variables se réfèrent bien au même objet chaîne.</p>
+<p>Cependant, ce n’est pas le cas lorsque l’on crée deux listes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plantes1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+<span class="n">plantes2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plantes1</span> <span class="ow">is</span> <span class="n">plantes2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans ce cas, les deux listes sont <em>équivalentes</em>, parce qu’elles ont les mêmes éléments, mais pas <em>identiques</em>, car il ne s’agit pas d’un même objet.</p>
+<div class="alert alert-info">
+<p><strong>Valeur d’un objet</strong></p>
+<p>Une variable se réfère à un objet, qui a une certaine valeur. En évaluant <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, on obtient un objet liste dont la valeur est une séquence d’entiers. Si une autre liste a les mêmes éléments, on dit qu’elle a la même valeur, mais ce n’est pas le même objet.</p>
+</div></section>
+<section id="aliasing">
+<h2>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this headline">#</a></h2>
+<p>Créons une variable <code class="docutils literal notranslate"><span class="pre">plantes1</span></code> qui se réfère à un objet et écrivons <code class="docutils literal notranslate"><span class="pre">plantes2</span> <span class="pre">=</span> <span class="pre">plantes1</span></code>. Alors les 2 variable <code class="docutils literal notranslate"><span class="pre">plantes1</span></code> et <code class="docutils literal notranslate"><span class="pre">plantes2</span></code> se réfèrent au même objet. Pour le vérifier, utilisons l’opérateur <code class="docutils literal notranslate"><span class="pre">is</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plantes1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+<span class="n">plantes2</span> <span class="o">=</span> <span class="n">plantes1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Les deux variables se réfèrent au même objet</span>
+<span class="n">plantes2</span> <span class="ow">is</span> <span class="n">plantes1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’association entre une variable et un objet s’appelle une <em>référence</em>. Dans l’exemple il existe deux références vers le même objet <code class="docutils literal notranslate"><span class="pre">[&quot;gentiane&quot;,</span> <span class="pre">&quot;campanule&quot;,</span> <span class="pre">&quot;pensée&quot;]</span></code>. Comme l’objet est une liste, il est <em>muable</em>, c’est-à-dire qu’on peut le modifier. Alors les modifications faites à un alias (une référence) affectent l’autre :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On modifie l&#39;objet auquel se réfère plante2</span>
+<span class="n">plantes2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;primevère&quot;</span>
+
+<span class="c1"># L&#39;objet auquel se réfère plantes1 est aussi modifié, car c&#39;est le même objet</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;primevère&#39;, &#39;pensée&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ce comportement, appelé <em>aliasing</em>, peut être source d’erreur. Pour éviter cela, vous pouvez copier de façon <em>superficielle</em> l’objet à l’aide de <code class="docutils literal notranslate"><span class="pre">list()</span></code> ou de <code class="docutils literal notranslate"><span class="pre">[:]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plantes1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gentiane&quot;</span><span class="p">,</span> <span class="s2">&quot;campanule&quot;</span><span class="p">,</span> <span class="s2">&quot;pensée&quot;</span><span class="p">]</span>
+
+<span class="c1"># Copie superficielle de la liste : version 1</span>
+<span class="n">plantes2</span> <span class="o">=</span> <span class="n">plantes1</span><span class="p">[:]</span>
+
+<span class="c1"># Copie superficielle de la liste : version 2</span>
+<span class="n">plantes3</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">plantes1</span><span class="p">)</span>
+
+<span class="c1"># Les variables plantes2 et plantes3 ne se réfèrent pas au même objet que la variable plantes1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes2</span> <span class="ow">is</span> <span class="n">plantes1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plantes3</span> <span class="ow">is</span> <span class="n">plantes1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/python-base"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01-prise-en-main.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Première prise en main</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03-fonctions-modules.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fonctions et modules</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

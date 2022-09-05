@@ -1,0 +1,1442 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Le module NumPy</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Les fonctions de Numpy" href="05-fonctions-numpy.html" />
+    <link rel="prev" title="Fonctions et modules" href="03-fonctions-modules.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-prise-en-main.html">
+     Première prise en main
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/03-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/04-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-exercices.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">
+     Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
+     Méthodes d’Euler et de Runge-Kutta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
+     Des exemples de modèle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../pages/part-projet.html">
+   Description du projet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/python-base/04-module-numpy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/python-base/04-module-numpy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-introduction">
+   <strong>
+    Vidéo
+   </strong>
+   : Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-tableau-numpy">
+   Le tableau NumPy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-les-tableaux">
+   Opérations sur les tableaux
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexation-et-tranche">
+   Indexation et tranche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-tableaux-a-2-dimensions">
+   <strong>
+    Vidéo
+   </strong>
+   : Tableaux à 2 dimensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tableau-a-2-dimensions">
+   Tableau à 2 dimensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexation-et-tranche-2d">
+   Indexation et tranche 2D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-tableaux-2d">
+   Opérations sur tableaux 2D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-statistiques">
+   <strong>
+    Vidéo
+   </strong>
+   : Statistiques
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistiques">
+   Statistiques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Le module NumPy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-introduction">
+   <strong>
+    Vidéo
+   </strong>
+   : Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-tableau-numpy">
+   Le tableau NumPy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-les-tableaux">
+   Opérations sur les tableaux
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexation-et-tranche">
+   Indexation et tranche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-tableaux-a-2-dimensions">
+   <strong>
+    Vidéo
+   </strong>
+   : Tableaux à 2 dimensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tableau-a-2-dimensions">
+   Tableau à 2 dimensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexation-et-tranche-2d">
+   Indexation et tranche 2D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-tableaux-2d">
+   Opérations sur tableaux 2D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-statistiques">
+   <strong>
+    Vidéo
+   </strong>
+   : Statistiques
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistiques">
+   Statistiques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="le-module-numpy">
+<h1>Le module NumPy<a class="headerlink" href="#le-module-numpy" title="Permalink to this headline">#</a></h1>
+<section id="video-introduction">
+<h2><strong>Vidéo</strong>: Introduction<a class="headerlink" href="#video-introduction" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e994e302-1f87-42c2-82c4-adf900fd2325&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="le-tableau-numpy">
+<h2>Le tableau NumPy<a class="headerlink" href="#le-tableau-numpy" title="Permalink to this headline">#</a></h2>
+<p>L’objet de base du <a class="reference external" href="https://numpy.org/">module NumPy</a> est un tableau à <span class="math notranslate nohighlight">\(N\)</span> dimensions (<em>ndarray</em>), que l’on appelera simplement tableau par la suite. Le plus simple pour créer un tableau est de convertir une liste en tableau. Pour cela, il faut utiliser la fonction <code class="docutils literal notranslate"><span class="pre">array()</span></code> du module NumPy :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import du module NumPy avec un alias np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Création de la liste</span>
+<span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">9.6</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">56.8</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+
+<span class="c1"># Création du tableau NumPy</span>
+<span class="n">mon_tableau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+
+<span class="c1"># Affichage du tableau et de son type</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2.2  6.1  9.6  1.3 56.8  8. ]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons une nouvelle classe (ou type d’objet, c’est équivalent) : le <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, ou tableau NumPy. Comme toute classe, il a des fonctions (appelées « méthodes ») et des opérateurs associés.</p>
+<p>En Python, un objet a des attributs (des variables internes) auxquels on peut accéder en écrivant le nom de l’objet, suivi d’un point et du nom de l’attribut. Voici la liste des attributs d’un tableau NumPy :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>attribut</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>t.ndim</p></td>
+<td><p>nombre de dimensions</p></td>
+</tr>
+<tr class="row-odd"><td><p>t.shape</p></td>
+<td><p>taille du tableau dans chaque dimension</p></td>
+</tr>
+<tr class="row-even"><td><p>t.size</p></td>
+<td><p>nombre total d’éléments</p></td>
+</tr>
+<tr class="row-odd"><td><p>t.dtype</p></td>
+<td><p>type des éléments du tableau</p></td>
+</tr>
+</tbody>
+</table>
+<p>Regardons quelques attributs de <code class="docutils literal notranslate"><span class="pre">mon_tableau</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Attribut nombre de dimensions (ndim)</span>
+<span class="n">mon_tableau</span><span class="o">.</span><span class="n">ndim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Attribut taille (size)</span>
+<span class="n">mon_tableau</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Attribut forme (shape) -&gt; résultat sous la forme d&#39;un tuple</span>
+<span class="n">mon_tableau</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>tuple</strong></p>
+<p>Un <a class="reference external" href="https://docs.python.org/fr/3/library/stdtypes.html#tuple">tuple</a> est un <a class="reference external" href="https://docs.python.org/fr/3/library/stdtypes.html#sequence-types-list-tuple-range">type de données séquentiel</a> comme les listes. Cependant, alors que les listes sont muables (modifiables), les tuples sont immuables (non modifiables). On peut créer un tuple comme une liste, mais en utilisant une paire de parenthèses plutôt que des crochets, par exemple <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">(2,</span> <span class="pre">4,</span> <span class="pre">3)</span></code>. Pour différencier un tuple à un élément d’une simple paire de parenthèses, on ajoute une virgule après le chiffre, par exemple <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">(2,)</span></code>.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Attribut type des éléments (dtype)</span>
+<span class="n">mon_tableau</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;float64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p><strong>dtype</strong></p>
+<p>Numpy contient un nombre de types numériques beaucoup plus important que les types natifs de Python. De plus, il est possible de créer facilement de nouveaux types de données structurées. C’est pourquoi NumPy est adpaté au calcul scientifique. Le type par défaut d’un réel lorsque l’on crée un tableau est <code class="docutils literal notranslate"><span class="pre">float64</span></code>. Ce type est équivalent (en précision) au type <code class="docutils literal notranslate"><span class="pre">float</span></code> natif de Python. 64 bits correspond à la place que prend un scalaire en mémoire. On peut trouver une <a class="reference external" href="https://numpy.org/doc/1.18/reference/arrays.scalars.html#arrays-scalars-built-in">liste des types natifs de NumPy</a>.</p>
+</div><section id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">#</a></h3>
+<p>La liste suivante contient le nombre d’habitants des 8 villes de France les plus peuplées : Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Strasbourg et Montpellier (<a class="reference external" href="https://fr.wikipedia.org/wiki/Liste_des_communes_de_France_les_plus_peupl%C3%A9es#Communes_de_plus_de_30_000_habitants">chiffres INSEE 2012</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_habitants</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2240621</span><span class="p">,</span> <span class="mi">852516</span><span class="p">,</span> <span class="mi">496343</span><span class="p">,</span> <span class="mi">453317</span><span class="p">,</span> <span class="mi">343629</span><span class="p">,</span> <span class="mi">291604</span><span class="p">,</span> <span class="mi">274394</span><span class="p">,</span> <span class="mi">268456</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Importer le module <code class="docutils literal notranslate"><span class="pre">numpy</span></code> sans alias.</p></li>
+<li><p>Créer un tableau NumPy <code class="docutils literal notranslate"><span class="pre">np_nombre_habitants</span></code> à partir de la liste <code class="docutils literal notranslate"><span class="pre">nombre_habitants</span></code>.</p></li>
+<li><p>Afficher le tableau créé et son attribut dtype.</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import du module NumPy</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="c1"># Création du tableau NumPy</span>
+<span class="n">np_nombre_habitants</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nombre_habitants</span><span class="p">)</span>
+
+<span class="c1"># Afficher le tableau et son attribut dtype</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_nombre_habitants</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_nombre_habitants</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2240621  852516  496343  453317  343629  291604  274394  268456]
+int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operations-sur-les-tableaux">
+<h2>Opérations sur les tableaux<a class="headerlink" href="#operations-sur-les-tableaux" title="Permalink to this headline">#</a></h2>
+<p>Un grand intérêt des tableaux NumPy par rapport aux listes Python est la possibilité de les utiliser dans des expressions avec des opérateurs arithmétiques.</p>
+<p>Les opérateurs arithmétiques que l’on a vus pour les types scalaires en Python (addition, soustraction, multiplication, etc) s’appliquent <strong>terme à terme</strong> sur les tableaux.</p>
+<p>Par exemple, si on multiplie un tableau par un scalaire, chaque élément du tableau est multiplié :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau</span>
+<span class="n">mon_tableau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">9.6</span><span class="p">])</span>
+
+<span class="c1"># Multiplication par un scalaire</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">mon_tableau</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.1 3.  4.8]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut aussi utiliser des opérateurs arithmétiques dans des expressions avec <strong>des tableaux de même forme</strong>. Les opérations sont alors effectuées <strong>terme à terme</strong> : le 1er élément du 1er tableau avec le 1er élément du 2ème tableau, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de 2 tableaux</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Addition terme à terme</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2 10  4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut former des expressions avec des tableaux de types numériques différents. Le résultat correspond alors au type le plus général ou le plus précis (propriété appelée <em>upcasting</em>).</p>
+<p>Par exemple, si on multiplie un tableau d’entiers avec un tableau de réels :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;un tableau de réels</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+<span class="c1"># Création d&#39;un tableau d&#39;entiers</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+
+<span class="c1"># Multiplication terme à terme</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+
+<span class="c1"># Type des éléments du tableau résultant</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Reprenons le tableau <code class="docutils literal notranslate"><span class="pre">np_nombre_habitants</span></code>, donnant le nombre d’habitants des 8 villes de France les plus peuplées (Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Strasbourg et Montpellier). On définit un tableau donnant la superficie de ces mêmes villes (en <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>), dans le même ordre :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np_superficie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">105.40</span><span class="p">,</span> <span class="mf">240.62</span><span class="p">,</span> <span class="mf">47.87</span><span class="p">,</span> <span class="mf">118.30</span><span class="p">,</span> <span class="mf">71.92</span><span class="p">,</span> <span class="mf">65.19</span><span class="p">,</span> <span class="mf">78.26</span><span class="p">,</span> <span class="mf">56.88</span><span class="p">])</span> <span class="c1"># km**2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Calculer la densité de population de chaque ville en nombre d’habitants par <span class="math notranslate nohighlight">\(\mathrm{km}^2\)</span>. Affecter le résultat à une variable <code class="docutils literal notranslate"><span class="pre">np_densite</span></code> et afficher le résultat. Note : une seule expression sur une seule ligne est nécessaire pour effectuer le calcul.</p></li>
+<li><p>Quel est le type des éléments du tableau <code class="docutils literal notranslate"><span class="pre">np_densité</span></code> (attribut dtype) ?</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul de la densité de population (hab/km**2)</span>
+<span class="n">np_densité</span> <span class="o">=</span> <span class="n">np_nombre_habitants</span> <span class="o">/</span> <span class="n">np_superficie</span>
+
+<span class="c1"># Afficher le résultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_densité</span><span class="p">)</span>
+
+<span class="c1"># Attribut dtype du résultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_densité</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[21258.26375712  3542.99725709 10368.56068519  3831.92730347
+  4777.93381535  4473.14005216  3506.18451316  4719.69057665]
+float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="indexation-et-tranche">
+<h2>Indexation et tranche<a class="headerlink" href="#indexation-et-tranche" title="Permalink to this headline">#</a></h2>
+<p>Comme pour les listes, on peut utiliser les opérateurs indexation <code class="docutils literal notranslate"><span class="pre">[]</span></code> et tranche <code class="docutils literal notranslate"><span class="pre">[m:n]</span></code> avec les tableaux Numpy.</p>
+<p>Rappelons les règles d’indexation :</p>
+<ul class="simple">
+<li><p>toute expression entière peut être utilisée comme indice</p></li>
+<li><p>si un indice a une valeur négative, il compte en sens inverse, à partir de la fin de la liste</p></li>
+<li><p>si vous essayez de lire ou d’écrire un élément qui n’existe pas, vous obtenez une erreur</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="c1"># Sélection de l&#39;élément d&#39;indice 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-warning">
+<p><strong>Attention</strong></p>
+<p>Comme pour les listes, le premier élément de la liste est numéroté avec l’indice <code class="docutils literal notranslate"><span class="pre">0</span></code>, le deuxième élément avec l’indice <code class="docutils literal notranslate"><span class="pre">1</span></code>, et ainsi de suite.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;une tranche du tableau</span>
+<span class="n">tranche</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tranche</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1 23  3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-warning">
+<p><strong>Attention</strong></p>
+<p>Comme pour les listes, l’élément de fin de la tranche est exclu.</p>
+</div><p>Avec l’opérateur tranche, on peut décider de sauter des éléments, en écrivant <code class="docutils literal notranslate"><span class="pre">[m:n:step]</span></code>. Par exemple, si on ne veut prendre qu’un élément sur deux :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="c1"># Sélection d&#39;un élément sur deux</span>
+<span class="n">tranche</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tranche</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4 1 3 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou de manière équivalente :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sélection d&#39;un élément sur deux</span>
+<span class="n">tranche</span> <span class="o">=</span> <span class="n">A</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tranche</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4 1 3 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En effet, si on ne spécifie pas de valeur pour <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> dans l’opérateur tranche <code class="docutils literal notranslate"><span class="pre">[m:n:step]</span></code>, par défaut <code class="docutils literal notranslate"><span class="pre">m</span></code> est l’indice du premier élément du tableau (<code class="docutils literal notranslate"><span class="pre">0</span></code>), et <code class="docutils literal notranslate"><span class="pre">n</span></code> est l’indice du dernier élément du tableau plus 1 (<code class="docutils literal notranslate"><span class="pre">A.size</span></code>).</p>
+</section>
+<section id="video-tableaux-a-2-dimensions">
+<h2><strong>Vidéo</strong>: Tableaux à 2 dimensions<a class="headerlink" href="#video-tableaux-a-2-dimensions" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=052edf18-a4bf-445f-bf4d-ae150110e192&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="tableau-a-2-dimensions">
+<h2>Tableau à 2 dimensions<a class="headerlink" href="#tableau-a-2-dimensions" title="Permalink to this headline">#</a></h2>
+<p>Un tableau Numpy peut avoir autant de dimensions que l’on veut. Nous avons manipulé jusqu’ici des tableaux à une dimension, généralement utilisés pour contenir un type d’information. Nous avons introduit 2 tableaux Numpy :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np_nombre_habitants</span></code> qui contient le nombre d’habitants des 8 villes de France les plus peuplées</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np_superficie</span></code> qui contient les superficies de ces 8 villes</p></li>
+</ul>
+<p>Nous allons maintenant structurer ces informations en utilisant un tableau à 2 dimensions :</p>
+<ul class="simple">
+<li><p>la première dimension (lignes) donne pour une ville donnée son nombre d’habitants et sa superficie</p></li>
+<li><p>la deuxième dimension (colonnes) donne pour toutes les villes une information donnée (son nombre d’habitants <em>ou</em> sa superficie)</p></li>
+</ul>
+<p>Nous allons créer le tableau Numpy à deux dimensions à partir d’une liste de listes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de liste contenant les informations : nombre d&#39;habitants et superficie (km**2)</span>
+<span class="n">villes</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2240621</span><span class="p">,</span> <span class="mf">105.40</span><span class="p">],</span>    <span class="c1"># Paris</span>
+        <span class="p">[</span><span class="mi">852516</span><span class="p">,</span> <span class="mf">240.62</span><span class="p">],</span>       <span class="c1"># Marseille</span>
+        <span class="p">[</span><span class="mi">496343</span><span class="p">,</span> <span class="mf">47.87</span><span class="p">],</span>        <span class="c1"># Lyon</span>
+        <span class="p">[</span><span class="mi">453317</span><span class="p">,</span> <span class="mf">118.30</span><span class="p">],</span>       <span class="c1"># Toulouse</span>
+        <span class="p">[</span><span class="mi">343629</span><span class="p">,</span> <span class="mf">71.92</span><span class="p">],</span>        <span class="c1"># Nice</span>
+        <span class="p">[</span><span class="mi">291604</span><span class="p">,</span> <span class="mf">65.19</span><span class="p">],</span>        <span class="c1"># Nantes</span>
+        <span class="p">[</span><span class="mi">274394</span><span class="p">,</span> <span class="mf">78.26</span><span class="p">],</span>        <span class="c1"># Strasbourg</span>
+        <span class="p">[</span><span class="mi">268456</span><span class="p">,</span> <span class="mf">56.88</span><span class="p">]]</span>        <span class="c1"># Montpellier</span>
+
+<span class="c1"># Création du tableau Numpy à 2 dimensions</span>
+<span class="n">np_villes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">villes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Afficher les quatres attributs du tableau Numpy <code class="docutils literal notranslate"><span class="pre">np_villes</span></code> : nombre de dimensions, taille du tableau dans chaque dimension, nombre total d’éléments, type des éléments du tableau.</p>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage des attributs du tableau</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>   <span class="c1"># Nombre de dimensions</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># Taille du tableau dans chaque dimension</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>   <span class="c1"># Nombre total d&#39;éléments</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c1"># Type des éléments du tableau</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+(8, 2)
+16
+float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le tableau Numpy est de dimension 2, contient 8 lignes et 2 colonnes, pour 16 éléments.</p>
+<p>Nous remarquons qu’il est de type <code class="docutils literal notranslate"><span class="pre">float64</span></code>, alors que le nombre d’habitants est un entier. En effet, nous avons vu qu’un tableau Numpy ne peut contenir qu’un seul type de données. Par défaut, il transforme tous les nombres en réel <code class="docutils literal notranslate"><span class="pre">float64</span></code>, selon le principe de l’<em>upcasting</em> vu plus haut.</p>
+</section>
+</section>
+<section id="indexation-et-tranche-2d">
+<h2>Indexation et tranche 2D<a class="headerlink" href="#indexation-et-tranche-2d" title="Permalink to this headline">#</a></h2>
+<p>Les opérateurs d’indexation et de tranche s’utilisent de la même façon que pour un tableau à une dimension, mais il faut les spécifier pour chaque dimension :</p>
+<ul class="simple">
+<li><p>le premier opérateur agit sur la première dimension (lignes)</p></li>
+<li><p>le deuxième opérateur agit sur la deuxième dimension (colonnes)</p></li>
+</ul>
+<p>L’avantage du tableau Numpy 2D sur une liste de listes est qu’il devient très facile d’extraire une information donnée pour toutes les villes. Par exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les superficies pour toutes les villes à partir du tableau Numpy 2D</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Extraire les superficies pour toutes les villes à partir de la liste de listes</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">villes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">villes</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[105.4  240.62  47.87 118.3   71.92  65.19  78.26  56.88]
+[105.4, 240.62, 47.87, 118.3, 71.92, 65.19, 78.26, 56.88]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>À partir du tableau Numpy <code class="docutils literal notranslate"><span class="pre">np_villes</span></code> :</p>
+<ul class="simple">
+<li><p>Afficher le nombre d’habitants de la ville de Toulouse</p></li>
+<li><p>Afficher les superficies des 4 dernières villes du tableau</p></li>
+</ul>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombre d&#39;habitants de la ville de Toulouse</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Superficies des 4 dernières villes du tableau</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>453317.0
+[71.92 65.19 78.26 56.88]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operations-sur-tableaux-2d">
+<h2>Opérations sur tableaux 2D<a class="headerlink" href="#operations-sur-tableaux-2d" title="Permalink to this headline">#</a></h2>
+<p>Comme pour les tableaux 1D, il est possible d’utiliser les tableaux 2D dans des expressions avec des opérateurs arithmétiques. Les opérateurs arithmétiques s’appliquent <strong>terme à terme</strong> sur des tableaux de même forme (<em>shape</em>).</p>
+<p>Cependant, il est possible de former des expressions avec des tableaux de formes différentes. Il faut alors que le tableau 1D soit de la même taille que les tableaux à l’intérieur du tableau 2D (deuxième dimension, ou nombre de colonnes) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A * B = &#39;</span><span class="p">,</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A + B = &#39;</span><span class="p">,</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A * B =  [[-3 36  0]
+ [12 12  0]]
+A + B =  [[ 2 12  3]
+ [ 7  8  8]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est aussi possible de former des expressions à l’aide des opérateurs de tranche et d’indexation :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2 12  3]
+[2 7]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Le tableau suivant donne l’évolution de la population entre 2012 et 2017 pour chacune des villes du tableau <code class="docutils literal notranslate"><span class="pre">np_villes</span></code> utilisé précédemment :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">53095</span><span class="p">,</span> <span class="mi">10794</span><span class="p">,</span> <span class="mi">19749</span><span class="p">,</span> <span class="mi">26236</span><span class="p">,</span> <span class="o">-</span><span class="mi">3612</span><span class="p">,</span> <span class="mi">17742</span><span class="p">,</span> <span class="mi">6572</span><span class="p">,</span> <span class="mi">16665</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Créer un tableau Numpy <code class="docutils literal notranslate"><span class="pre">np_evolution</span></code> à partir du tableau <code class="docutils literal notranslate"><span class="pre">evolution</span></code>.</p></li>
+<li><p>Copier le tableau <code class="docutils literal notranslate"><span class="pre">np_villes</span></code> dans un tableau <code class="docutils literal notranslate"><span class="pre">np_villes_2017</span></code> avec la fonction Numpy <code class="docutils literal notranslate"><span class="pre">copy()</span></code> (pour éviter l’aliasing, voir cours sur les listes).</p></li>
+<li><p>Ajouter le tableau <code class="docutils literal notranslate"><span class="pre">evolution</span></code> à la première colonne du tableau <code class="docutils literal notranslate"><span class="pre">np_villes_2017</span></code>.</p></li>
+<li><p>Afficher les populations des villes en 2012 et en 2017 : le classement des villes les plus peuplées de France a-t-il changé ?</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du tableau Numpy</span>
+<span class="n">np_evolution</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">evolution</span><span class="p">)</span>
+
+<span class="c1"># Copie du tableau en évitant l&#39;aliasing</span>
+<span class="n">np_villes_2017</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">np_villes</span><span class="p">)</span>
+
+<span class="c1"># Évolution de la population</span>
+<span class="n">np_villes_2017</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np_villes_2017</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np_evolution</span>
+
+<span class="c1"># Comparaison des populations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_villes_2017</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2240621.  852516.  496343.  453317.  343629.  291604.  274394.  268456.]
+[2187526.  863310.  516092.  479553.  340017.  309346.  280966.  285121.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="video-statistiques">
+<h2><strong>Vidéo</strong>: Statistiques<a class="headerlink" href="#video-statistiques" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=10b573f7-244c-4154-a36c-ae150110d206&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="statistiques">
+<h2>Statistiques<a class="headerlink" href="#statistiques" title="Permalink to this headline">#</a></h2>
+<p>Il est très facile de faire des statistiques simples avec Numpy. Voyons quelques fonctions :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>fonction</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">median()</span></code></p></td>
+<td><p>médiane</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mean()</span></code></p></td>
+<td><p>moyenne arithmétique</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code></p></td>
+<td><p>somme des éléments du tableau</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">std()</span></code></p></td>
+<td><p>écart-type</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">correlate()</span></code></p></td>
+<td><p>coefficient de correlation</p></td>
+</tr>
+</tbody>
+</table>
+<p>La <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">liste complète des fonctions</a> et de leurs arguments optionnels est dans l’aide Numpy.</p>
+<section id="id5">
+<h3>Exercice<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Comparer la moyenne et la médiane du nombre d’habitants pour les villes du tableau <code class="docutils literal notranslate"><span class="pre">np_villes</span></code></p></li>
+<li><p>Calculer l’écart-type des superficies des villes du tableau <code class="docutils literal notranslate"><span class="pre">np_villes</span></code></p></li>
+<li><p>Calculer le coefficient de corrélation entre le nombre d’habitants et la superficie. <a class="reference external" href="https://fr.wikipedia.org/wiki/Corr%C3%A9lation_(statistiques)#Estimation">On rappele que</a> :</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\hat{r}_p = \dfrac{\hat{\sigma}_{XY}}{\hat{\sigma}_X \hat{\sigma}_Y}\]</div>
+<p>avec</p>
+<div class="math notranslate nohighlight">
+\[\hat{\sigma}_{XY} =\frac{1}{N}{\sum_{i=1}^N (x_i - \bar x)\cdot(y_i - \bar y)}\]</div>
+<p>et <span class="math notranslate nohighlight">\(\hat{\sigma}_X\)</span> et <span class="math notranslate nohighlight">\(\hat{\sigma}_Y\)</span> sont les écart-types des variables <span class="math notranslate nohighlight">\(X\)</span> et <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Moyenne du nombre d&#39;habitants</span>
+<span class="n">mean_villes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np_villes</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># axis = 0 permet de faire la moyenne sur la 1ère dimension (lignes)</span>
+<span class="n">mean_hab</span> <span class="o">=</span> <span class="n">mean_villes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># ou bien</span>
+<span class="n">mean_hab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Médiane du nombre d&#39;habitants</span>
+<span class="n">med_villes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np_villes</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># axis = 0 permet de faire la médiane sur la 1ère dimension (lignes)</span>
+<span class="n">med_hab</span> <span class="o">=</span> <span class="n">med_villes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># ou bien</span>
+<span class="n">med_hab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Écart-type des superficies</span>
+<span class="n">std_villes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">np_villes</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">std_sup</span> <span class="o">=</span> <span class="n">std_villes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># ou bien</span>
+<span class="n">std_sup</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Coefficient de corrélation entre le nombre d&#39;habitants et la superficie</span>
+<span class="n">shape_ville</span> <span class="o">=</span> <span class="n">np_villes</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">shape_ville</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Nombre de villes</span>
+<span class="n">mean_sup</span> <span class="o">=</span> <span class="n">mean_villes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Moyenne de la superficie des villes</span>
+<span class="n">sigma_XY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_hab</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np_villes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_sup</span><span class="p">)</span>
+<span class="n">cor_villes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sigma_XY</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_villes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">std_villes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Affichage des résultats</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne du nombre d&#39;habitants =&quot;</span><span class="p">,</span> <span class="n">mean_hab</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Médiane du nombre d&#39;habitants =&quot;</span><span class="p">,</span> <span class="n">med_hab</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ecart-type des superficies =&#39;</span><span class="p">,</span> <span class="n">std_sup</span><span class="p">,</span> <span class="s2">&quot;km**2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient de corrélation =&#39;</span><span class="p">,</span> <span class="n">cor_villes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moyenne du nombre d&#39;habitants = 652610.0
+Médiane du nombre d&#39;habitants = 398473.0
+Ecart-type des superficies = 58.26393781748706 km**2
+Coefficient de corrélation = 0.29855441699187646
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/python-base"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="03-fonctions-modules.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fonctions et modules</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05-fonctions-numpy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Les fonctions de Numpy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

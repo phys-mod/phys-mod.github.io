@@ -1,0 +1,2700 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dictionnaires et Pandas</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Logique, structures de contrôle et filtrage" href="02-logique-filtrage.html" />
+    <link rel="prev" title="Python intermédiaire" href="../../pages/part-python-intermediaire.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-informations-generales.html">
+   Informations générales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-pedagogie.html">
+     Pédagogie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-competences.html">
+     Objectifs d’apprentissage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-deroulement.html">
+     Déroulement du cours
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-evaluation.html">
+     Évaluations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
+     Outils numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/info-licence.html">
+     Crédits et licence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-python-base.html">
+   Python base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/01-prise-en-main.html">
+     Première prise en main
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/02-listes-python.html">
+     Les listes Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/03-fonctions-modules.html">
+     Fonctions et modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/04-module-numpy.html">
+     Le module NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/05-fonctions-numpy.html">
+     Les fonctions de Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python-base/06-module-matplotlib.html">
+     Le module Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
+   Python intermédiaire
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Dictionnaires et Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-logique-filtrage.html">
+     Logique, structures de contrôle et filtrage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-iteration.html">
+     Itération
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-fonctions.html">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-entrees-sorties.html">
+     Entrées-sorties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
+   Modélisation numérique
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">
+     Modèle de l’accélération constante
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">
+     Représentation graphique d’une suite mathématique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
+     Dérivation et intégration numérique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
+     Équations différentielles ordinaires (EDO)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
+     Ajuster un modèle aux données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-exercices.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">
+     Démarche de modélisation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">
+     Suite de Fibonacci
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
+     De nouvelles méthodes numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
+     Méthodes d’Euler et de Runge-Kutta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
+     Des exemples de modèle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/part-mini-projets.html">
+   Mini-projets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">
+     Mouvement rétrograde de Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">
+     Un exemple de système chaotique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
+     Calcul des forces de pression sur une digue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
+     Le pendule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
+     Le réchauffement climatique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../pages/part-projet.html">
+   Description du projet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/python-intermediaire/01-dictionnaires-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/python-intermediaire/01-dictionnaires-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-dictionnaires">
+   <strong>
+    Vidéo
+   </strong>
+   : Dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-dictionnaires">
+   Les dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-l-objet-dataframe">
+   <strong>
+    Vidéo
+   </strong>
+   : L’objet DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframes">
+   Pandas DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-les-objets-series-et-index">
+   <strong>
+    Vidéo
+   </strong>
+   : Les objets Series et Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-objet-series">
+   L’objet
+   <em>
+    Series
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-objet-index">
+   L’objet
+   <em>
+    Index
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-manipulation-des-donnees">
+   <strong>
+    Vidéo
+   </strong>
+   : Manipulation des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceder-et-modifier-les-donnees">
+   Accéder et modifier les données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inserer-et-supprimer-des-donnees">
+   Insérer et supprimer des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-operations-tri-et-sauvegarde">
+   <strong>
+    Vidéo
+   </strong>
+   : Opérations, tri et sauvegarde
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operateurs-arithmetiques-et-fonctions">
+   Opérateurs arithmétiques et fonctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trier-un-dataframe">
+   Trier un
+   <em>
+    DataFrame
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sauvegarder-un-dataframe">
+   Sauvegarder un DataFrame
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dictionnaires et Pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-dictionnaires">
+   <strong>
+    Vidéo
+   </strong>
+   : Dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-dictionnaires">
+   Les dictionnaires
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-l-objet-dataframe">
+   <strong>
+    Vidéo
+   </strong>
+   : L’objet DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframes">
+   Pandas DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-les-objets-series-et-index">
+   <strong>
+    Vidéo
+   </strong>
+   : Les objets Series et Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-objet-series">
+   L’objet
+   <em>
+    Series
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-objet-index">
+   L’objet
+   <em>
+    Index
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-manipulation-des-donnees">
+   <strong>
+    Vidéo
+   </strong>
+   : Manipulation des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceder-et-modifier-les-donnees">
+   Accéder et modifier les données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inserer-et-supprimer-des-donnees">
+   Insérer et supprimer des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-operations-tri-et-sauvegarde">
+   <strong>
+    Vidéo
+   </strong>
+   : Opérations, tri et sauvegarde
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operateurs-arithmetiques-et-fonctions">
+   Opérateurs arithmétiques et fonctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trier-un-dataframe">
+   Trier un
+   <em>
+    DataFrame
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sauvegarder-un-dataframe">
+   Sauvegarder un DataFrame
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dictionnaires-et-pandas">
+<h1>Dictionnaires et Pandas<a class="headerlink" href="#dictionnaires-et-pandas" title="Permalink to this headline">#</a></h1>
+<section id="video-dictionnaires">
+<h2><strong>Vidéo</strong>: Dictionnaires<a class="headerlink" href="#video-dictionnaires" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=abf874a0-6e15-4fab-977c-ae1400dfa2bf&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="les-dictionnaires">
+<h2>Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permalink to this headline">#</a></h2>
+<p>Un dictionnaire ressemble à une liste mais il est plus général. Alors que les indices d’une liste doivent être des entiers, dans un dictionnaire, les indices peuvent être de types différents.</p>
+<p>Un dictionnaire contient une collection d’indices, appelés <strong>clés</strong>, et une collection de valeurs. À chaque <em>clé</em> correspond une <em>valeur</em>, ce que l’on appelle une <strong>paire clé-valeur</strong>, ou <strong>item</strong>.</p>
+<p>La syntaxe pour définir un dictionnaire est :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;key2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Définissons 2 listes nous donnant les pays européens et leur capitale :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;allemagne&#39;</span><span class="p">,</span> <span class="s1">&#39;autriche&#39;</span><span class="p">,</span> <span class="s1">&#39;belgique&#39;</span><span class="p">,</span> <span class="s1">&#39;bulgarie&#39;</span><span class="p">,</span> <span class="s1">&#39;chypre&#39;</span><span class="p">,</span> <span class="s1">&#39;croatie&#39;</span><span class="p">,</span> <span class="s1">&#39;danemark&#39;</span><span class="p">,</span> <span class="s1">&#39;espagne&#39;</span><span class="p">,</span> <span class="s1">&#39;estonie&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;finlande&#39;</span><span class="p">,</span> <span class="s1">&#39;france&#39;</span><span class="p">,</span> <span class="s1">&#39;grèce&#39;</span><span class="p">,</span> <span class="s1">&#39;hongrie&#39;</span><span class="p">,</span> <span class="s1">&#39;irlande&#39;</span><span class="p">,</span> <span class="s1">&#39;italie&#39;</span><span class="p">,</span> <span class="s1">&#39;lettonie&#39;</span><span class="p">,</span> <span class="s1">&#39;lituanie&#39;</span><span class="p">,</span> <span class="s1">&#39;luxembourg&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;malte&#39;</span><span class="p">,</span> <span class="s1">&#39;pays-bas&#39;</span><span class="p">,</span> <span class="s1">&#39;pologne&#39;</span><span class="p">,</span> <span class="s1">&#39;portugal&#39;</span><span class="p">,</span> <span class="s1">&#39;république tchèque&#39;</span><span class="p">,</span> <span class="s1">&#39;roumanie&#39;</span><span class="p">,</span> <span class="s1">&#39;slovaquie&#39;</span><span class="p">,</span> <span class="s1">&#39;slovénie&#39;</span><span class="p">,</span> <span class="s1">&#39;suède&#39;</span><span class="p">]</span>
+<span class="n">capitales</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;berlin&#39;</span><span class="p">,</span> <span class="s1">&#39;vienne&#39;</span><span class="p">,</span> <span class="s1">&#39;bruxelles&#39;</span><span class="p">,</span> <span class="s1">&#39;sofia&#39;</span><span class="p">,</span> <span class="s1">&#39;nicosie&#39;</span><span class="p">,</span> <span class="s1">&#39;zagreb&#39;</span><span class="p">,</span> <span class="s1">&#39;copenhague&#39;</span><span class="p">,</span> <span class="s1">&#39;madrid&#39;</span><span class="p">,</span> <span class="s1">&#39;tallinn&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;helsinki&#39;</span><span class="p">,</span> <span class="s1">&#39;paris&#39;</span><span class="p">,</span> <span class="s1">&#39;athènes&#39;</span><span class="p">,</span> <span class="s1">&#39;budapest&#39;</span><span class="p">,</span> <span class="s1">&#39;dublin&#39;</span><span class="p">,</span> <span class="s1">&#39;rome&#39;</span><span class="p">,</span> <span class="s1">&#39;riga&#39;</span><span class="p">,</span> <span class="s1">&#39;vilnius&#39;</span><span class="p">,</span> <span class="s1">&#39;luxembourg&#39;</span><span class="p">,</span> <span class="s1">&#39;la valette&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;amsterdam&#39;</span><span class="p">,</span> <span class="s1">&#39;varsovie&#39;</span><span class="p">,</span> <span class="s1">&#39;lisbonne&#39;</span><span class="p">,</span> <span class="s1">&#39;prague&#39;</span><span class="p">,</span> <span class="s1">&#39;bucarest&#39;</span><span class="p">,</span> <span class="s1">&#39;bratislava&#39;</span><span class="p">,</span> <span class="s1">&#39;ljubljana&#39;</span><span class="p">,</span> <span class="s1">&#39;stockholm&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous voulons trouver la capitale de la Hongrie. Nous pouvons utiliser la méthode de liste <code class="docutils literal notranslate"><span class="pre">index()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trouver l&#39;indice de &#39;hongrie&#39;</span>
+<span class="n">ind_hongrie</span> <span class="o">=</span> <span class="n">pays</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;hongrie&#39;</span><span class="p">)</span>
+
+<span class="c1"># Afficher la capitale de la Hongrie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">capitales</span><span class="p">[</span><span class="n">ind_hongrie</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Budapest
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maintenant, définissons un dictionnaire contenant les même informations :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">europe</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;allemagne&#39;</span> <span class="p">:</span> <span class="s1">&#39;berlin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autriche&#39;</span> <span class="p">:</span> <span class="s1">&#39;vienne&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;belgique&#39;</span> <span class="p">:</span> <span class="s1">&#39;bruxelles&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;bulgarie&#39;</span> <span class="p">:</span> <span class="s1">&#39;sofia&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;chypre&#39;</span> <span class="p">:</span> <span class="s1">&#39;nicosie&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;croatie&#39;</span> <span class="p">:</span> <span class="s1">&#39;zagreb&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;danemark&#39;</span> <span class="p">:</span> <span class="s1">&#39;copenhague&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;espagne&#39;</span> <span class="p">:</span> <span class="s1">&#39;madrid&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;estonie&#39;</span> <span class="p">:</span> <span class="s1">&#39;tallinn&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;finlande&#39;</span> <span class="p">:</span> <span class="s1">&#39;helsinki&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;france&#39;</span> <span class="p">:</span> <span class="s1">&#39;paris&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;grèce&#39;</span> <span class="p">:</span> <span class="s1">&#39;athènes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;hongrie&#39;</span> <span class="p">:</span> <span class="s1">&#39;budapest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;irlande&#39;</span> <span class="p">:</span> <span class="s1">&#39;dublin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;italie&#39;</span> <span class="p">:</span> <span class="s1">&#39;rome&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lettonie&#39;</span> <span class="p">:</span> <span class="s1">&#39;riga&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lituanie&#39;</span> <span class="p">:</span> <span class="s1">&#39;vilnius&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;luxembourg&#39;</span> <span class="p">:</span> <span class="s1">&#39;luxembourg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;malte&#39;</span> <span class="p">:</span> <span class="s1">&#39;la valette&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pays-bas&#39;</span> <span class="p">:</span> <span class="s1">&#39;amsterdam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pologne&#39;</span> <span class="p">:</span> <span class="s1">&#39;varsovie&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;portugal&#39;</span> <span class="p">:</span> <span class="s1">&#39;lisbonne&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;république tchèque&#39;</span> <span class="p">:</span> <span class="s1">&#39;prague&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;roumanie&#39;</span> <span class="p">:</span> <span class="s1">&#39;bucarest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;slovaquie&#39;</span> <span class="p">:</span> <span class="s1">&#39;bratislava&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;slovénie&#39;</span> <span class="p">:</span> <span class="s1">&#39;ljubljana&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;suède&#39;</span> <span class="p">:</span> <span class="s1">&#39;stockholm&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour accéder à la <em>valeur</em> associée à une <em>clé</em> donnée, il suffit alors d’utiliser la clé en indice du dictionnaire. Ainsi, pour afficher la capitale de la Hongrie :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">europe</span><span class="p">[</span><span class="s1">&#39;hongrie&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;budapest&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est facile avec un dictionnaire d’ajouter ou enlever une paire clé-valeur, ou bien de changer une valeur :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajouter la Turqie au dictionnaire</span>
+<span class="n">europe</span><span class="p">[</span><span class="s1">&#39;turquie&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;istanbul&#39;</span>
+
+<span class="c1"># Vérifier que le pays est bien contenu dans le dictionnaire</span>
+<span class="s1">&#39;turquie&#39;</span> <span class="ow">in</span> <span class="n">europe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Changer le nom de la capitale de la Turquie (et oui ce n&#39;est pas Istanbul...)</span>
+<span class="n">europe</span><span class="p">[</span><span class="s1">&#39;turquie&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ankara&#39;</span>
+
+<span class="c1"># Afficher la capitale de la Turquie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">europe</span><span class="p">[</span><span class="s1">&#39;turquie&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ankara
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enlever la paire clé-valeur du dictionnaire</span>
+<span class="k">del</span><span class="p">(</span><span class="n">europe</span><span class="p">[</span><span class="s1">&#39;turquie&#39;</span><span class="p">])</span>
+
+<span class="c1"># Vérifier que le pays n&#39;est pas contenu dans le dictionnaire</span>
+<span class="s1">&#39;turquie&#39;</span> <span class="ow">in</span> <span class="n">europe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="video-l-objet-dataframe">
+<h2><strong>Vidéo</strong>: L’objet DataFrame<a class="headerlink" href="#video-l-objet-dataframe" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c59d5c9e-97ab-45b3-b24d-adf900ff9859&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="pandas-dataframes">
+<h2>Pandas DataFrames<a class="headerlink" href="#pandas-dataframes" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a> est un module de Python pour l’analyse et la manipulation de données. L’objet de base de Pandas est le <em>DataFrame</em>, qui est un tableau similaire aux feuilles Excel ou LibreOffice que vous devez connaître. Le module Pandas fonctionne en harmonie avec les modules <a class="reference external" href="https://numpy.org/">Numpy</a> et <a class="reference external" href="https://matplotlib.org/">Matplotlib</a> vus dans les cours précédents.</p>
+<p>Voyons comment créer un DataFrame à partir d’un dictionnaire. Nous allons reprendre les listes créées plus haut sur les pays et capitales européennes, les transformer en tableaux Numpy, et y ajouter d’autres informations :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module Numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Importation du module Pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Création des tableaux Numpy à partir des listes des pays et des capitales : type string</span>
+<span class="n">np_pays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pays</span><span class="p">)</span>
+<span class="n">np_capitales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">capitales</span><span class="p">)</span>
+
+<span class="c1"># Liste avec les populations des pays européens : type integer</span>
+<span class="n">np_population</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">82162000</span><span class="p">,</span> <span class="mi">8700471</span><span class="p">,</span> <span class="mi">11289853</span><span class="p">,</span> <span class="mi">7153784</span><span class="p">,</span> <span class="mi">848319</span><span class="p">,</span> <span class="mi">4190669</span><span class="p">,</span> <span class="mi">5659715</span><span class="p">,</span> <span class="mi">46438422</span><span class="p">,</span> <span class="mi">1315944</span><span class="p">,</span> 
+                       <span class="mi">5401267</span><span class="p">,</span> <span class="mi">66661621</span><span class="p">,</span> <span class="mi">10793526</span><span class="p">,</span> <span class="mi">9830485</span><span class="p">,</span> <span class="mi">4658530</span><span class="p">,</span> <span class="mi">60665551</span><span class="p">,</span> <span class="mi">1968957</span><span class="p">,</span> <span class="mi">2888558</span><span class="p">,</span> <span class="mi">576249</span><span class="p">,</span> 
+                       <span class="mi">434403</span><span class="p">,</span> <span class="mi">16979120</span><span class="p">,</span> <span class="mi">37967209</span><span class="p">,</span> <span class="mi">10341330</span><span class="p">,</span> <span class="mi">10553853</span><span class="p">,</span> <span class="mi">19759968</span><span class="p">,</span> <span class="mi">5426252</span><span class="p">,</span> <span class="mi">2064188</span><span class="p">,</span> <span class="mi">9851017</span><span class="p">],</span>
+                       <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+
+<span class="c1"># Liste avec les dates d&#39;adhésion des pays à l&#39;UE : type datetime</span>
+<span class="n">np_date</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;1957&#39;</span><span class="p">,</span> <span class="s1">&#39;1995&#39;</span><span class="p">,</span> <span class="s1">&#39;1957&#39;</span><span class="p">,</span> <span class="s1">&#39;2007&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="s1">&#39;1973&#39;</span><span class="p">,</span> <span class="s1">&#39;1986&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;1995&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;1957&#39;</span><span class="p">,</span> <span class="s1">&#39;1981&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;1973&#39;</span><span class="p">,</span> <span class="s1">&#39;1957&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;1957&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;1957&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;1986&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;2007&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="s1">&#39;1995&#39;</span><span class="p">],</span>
+                    <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;datetime64[Y]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maintenant, créons un dictionnaire en utilisant les tableaux Numpy dans les paires clé-valeur :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic_europe</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;pays&quot;</span> <span class="p">:</span> <span class="n">np_pays</span><span class="p">,</span>
+    <span class="s2">&quot;capitale&quot;</span> <span class="p">:</span> <span class="n">np_capitales</span><span class="p">,</span>
+    <span class="s2">&quot;population&quot;</span> <span class="p">:</span> <span class="n">np_population</span><span class="p">,</span>
+    <span class="s2">&quot;date d&#39;adhésion&quot;</span> <span class="p">:</span> <span class="n">np_date</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour créer le <em>DataFrame</em> à partir du dictionnaire il suffit d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> de Pandas :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du DataFrame</span>
+<span class="n">df_europe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">dic_europe</span><span class="p">)</span>
+
+<span class="c1"># Affichage du DataFrame</span>
+<span class="n">df_europe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>autriche</td>
+      <td>vienne</td>
+      <td>8700471</td>
+      <td>1995-01-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>belgique</td>
+      <td>bruxelles</td>
+      <td>11289853</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bulgarie</td>
+      <td>sofia</td>
+      <td>7153784</td>
+      <td>2007-01-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chypre</td>
+      <td>nicosie</td>
+      <td>848319</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>croatie</td>
+      <td>zagreb</td>
+      <td>4190669</td>
+      <td>2013-01-01</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>danemark</td>
+      <td>copenhague</td>
+      <td>5659715</td>
+      <td>1973-01-01</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>espagne</td>
+      <td>madrid</td>
+      <td>46438422</td>
+      <td>1986-01-01</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>estonie</td>
+      <td>tallinn</td>
+      <td>1315944</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>finlande</td>
+      <td>helsinki</td>
+      <td>5401267</td>
+      <td>1995-01-01</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>france</td>
+      <td>paris</td>
+      <td>66661621</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>grèce</td>
+      <td>athènes</td>
+      <td>10793526</td>
+      <td>1981-01-01</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>hongrie</td>
+      <td>budapest</td>
+      <td>9830485</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>irlande</td>
+      <td>dublin</td>
+      <td>4658530</td>
+      <td>1973-01-01</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>italie</td>
+      <td>rome</td>
+      <td>60665551</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>lettonie</td>
+      <td>riga</td>
+      <td>1968957</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>lituanie</td>
+      <td>vilnius</td>
+      <td>2888558</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>luxembourg</td>
+      <td>luxembourg</td>
+      <td>576249</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>malte</td>
+      <td>la valette</td>
+      <td>434403</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>pays-bas</td>
+      <td>amsterdam</td>
+      <td>16979120</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>pologne</td>
+      <td>varsovie</td>
+      <td>37967209</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>portugal</td>
+      <td>lisbonne</td>
+      <td>10341330</td>
+      <td>1986-01-01</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>république tchèque</td>
+      <td>prague</td>
+      <td>10553853</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>roumanie</td>
+      <td>bucarest</td>
+      <td>19759968</td>
+      <td>2007-01-01</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>slovaquie</td>
+      <td>bratislava</td>
+      <td>5426252</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>slovénie</td>
+      <td>ljubljana</td>
+      <td>2064188</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>On voit que :</p>
+<ul class="simple">
+<li><p>les clés du dictionnaire ont été utilisées pour nommer les colonnes du DataFrame,</p></li>
+<li><p>les listes ont été utilisées pour remplir chaque colonne</p></li>
+<li><p>les lignes sont étiquetées, par défaut avec des entiers à partir de l’indice 0 (mais il est possible d’utiliser d’autres types pour les étiquettes, comme pour les clés d’un dictionnaire, ce que nous verrons au paragraphe sur l’objet <em>index</em>)</p></li>
+</ul>
+<p>Nous pouvons vérifier le type du DataFrame avec la fonction <code class="docutils literal notranslate"><span class="pre">type()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage du type</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_europe</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Les attributs de DataFrame sont :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attributs</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ndim</span></code></p></td>
+<td><p>nombre de dimensions</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shape</span></code></p></td>
+<td><p>forme, nombre d’éléments dans chaque dimension</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p>nombre d’éléments</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ndim :&#39;</span><span class="p">,</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;shape :&#39;</span><span class="p">,</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size :&#39;</span><span class="p">,</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndim : 2
+shape : (27, 4)
+size : 108
+</pre></div>
+</div>
+</div>
+</div>
+<p>Les DataFrame contiennent parfois beaucoup de lignes. On peut afficher seulement les premières ou dernières lignes avec les méthodes <code class="docutils literal notranslate"><span class="pre">head()</span></code> et <code class="docutils literal notranslate"><span class="pre">tail()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher les 2 premières lignes</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>autriche</td>
+      <td>vienne</td>
+      <td>8700471</td>
+      <td>1995-01-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher les 2 dernières lignes</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>slovénie</td>
+      <td>ljubljana</td>
+      <td>2064188</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="video-les-objets-series-et-index">
+<h2><strong>Vidéo</strong>: Les objets Series et Index<a class="headerlink" href="#video-les-objets-series-et-index" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1d90a0c1-5855-4a8c-91d1-ae1c00e31a7d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="l-objet-series">
+<h2>L’objet <em>Series</em><a class="headerlink" href="#l-objet-series" title="Permalink to this headline">#</a></h2>
+<p>Il est possible d’extraire une colonne en mettant en indice le nom de la colonne :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire la colonne pays du DataFrame</span>
+<span class="n">col_pays</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;pays&#39;</span><span class="p">]</span>
+
+<span class="c1"># Ou de manière similaire</span>
+<span class="n">col_pays</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">pays</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col_pays</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0              allemagne
+1               autriche
+2               belgique
+3               bulgarie
+4                 chypre
+5                croatie
+6               danemark
+7                espagne
+8                estonie
+9               finlande
+10                france
+11                 grèce
+12               hongrie
+13               irlande
+14                italie
+15              lettonie
+16              lituanie
+17            luxembourg
+18                 malte
+19              pays-bas
+20               pologne
+21              portugal
+22    république tchèque
+23              roumanie
+24             slovaquie
+25              slovénie
+26                 suède
+Name: pays, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit que l’on a extrait la colonne mais aussi les étiquettes des lignes et d’autres informations telles que l’étiquette de la colonne. Une colonne extraite de cette manière est un objet <strong>Series</strong> de Pandas :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">col_pays</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>On accède aux valeurs d’un objet <em>Series</em> de la même manière qu’un dictionnaire, c’est-à-dire en écrivant l’étiquette en indice de l’objet :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la valeur de la &quot;Series&quot; col_pays correspondant a l&#39;étiquette 23</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col_pays</span><span class="p">[</span><span class="mi">23</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roumanie
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour accéder à une ligne, il faut utiliser un <em>accesseur</em> <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire la ligne 23 du DataFrame</span>
+<span class="n">ligne_23</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ligne_23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pays                          roumanie
+capitale                      bucarest
+population                    19759968
+date d&#39;adhésion    2007-01-01 00:00:00
+Name: 23, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Une ligne extraite de cette façon est aussi un objet <em>Series</em> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ligne_23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
+</div>
+<p>Les noms des colonnes ont été utilisés pour étiqueter les lignes de ce nouvel objet, et l’étiquette de la ligne a été utilisée pour nommer l’objet.</p>
+<section id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Créer un objet <em>Series</em> contenant la colonne date d’adhésion</p></li>
+<li><p>Créer un objet <em>Series</em> contenant la ligne 12</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="n">col_adhesion</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">]</span>
+
+<span class="c1"># 2</span>
+<span class="n">ligne_12</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="l-objet-index">
+<h2>L’objet <em>Index</em><a class="headerlink" href="#l-objet-index" title="Permalink to this headline">#</a></h2>
+<p>On peut extraire les étiquettes des lignes et des colonnes avec <code class="docutils literal notranslate"><span class="pre">.index</span></code> et <code class="docutils literal notranslate"><span class="pre">.columns</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Étiquettes des lignes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=27, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Étiquette des lignes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;pays&#39;, &#39;capitale&#39;, &#39;population&#39;, &#39;date d&#39;adhésion&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ces étiquettes sont des objet Pandas appelés <strong>Index</strong>. Ce sont des tableaux Numpy <em>immuables</em>, c’est-à-dire qu’on ne peut pas modifier leurs éléments.</p>
+<p>On peut par contre changer un <em>index</em> entier :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modifier les étiquettes des lignes du DataFrame en les faisant commencer à 1</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+
+<span class="c1"># Afficher la premiere ligne</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="video-manipulation-des-donnees">
+<h2><strong>Vidéo</strong>: Manipulation des données<a class="headerlink" href="#video-manipulation-des-donnees" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=626a9544-2c01-43b5-8063-ae0c0131ffb7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="acceder-et-modifier-les-donnees">
+<h2>Accéder et modifier les données<a class="headerlink" href="#acceder-et-modifier-les-donnees" title="Permalink to this headline">#</a></h2>
+<p>On peut accéder aux données du DataFrame pour les extraire ou les modifier grâce à des <strong>accesseurs</strong> :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Accesseur</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code></p></td>
+<td><p>accepte les étiquettes des lignes ou colonnes et retourne un objet <em>Series</em> ou <em>DataFrame</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code></p></td>
+<td><p>accepte les indices des lignes ou colonnes et retourne un objet <em>Series</em> ou <em>DataFrame</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.at[]</span></code></p></td>
+<td><p>accepte les étiquettes des lignes ou colonnes et retourne une valeur unique</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.iat[]</span></code></p></td>
+<td><p>accepte les indices des lignes ou colonnes et retourne une valeur unique</p></td>
+</tr>
+</tbody>
+</table>
+<p>Comme pour les tableaux Numpy, les accesseurs supportent l’indexation et le tranchage. Voyons quelques exemples :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les capitales des 3 premiers pays</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;capitale&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1       berlin
+2       vienne
+3    bruxelles
+4        sofia
+Name: capitale, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Attention, avec <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on a utilisé les étiquettes des lignes, décalées de 1 par rapport à leur indice. Pour extraire le  même objet <em>Series</em> avec <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code>, on écrira :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les capitales des 3 premiers pays</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1       berlin
+2       vienne
+3    bruxelles
+4        sofia
+Name: capitale, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note :</p>
+<ul class="simple">
+<li><p>lorsqu’on accède par étiquettes, la notation m:n signifie <span class="math notranslate nohighlight">\([m,n]\)</span>,</p></li>
+<li><p>lorsqu’on accède par indices, la notation m:n signifie <span class="math notranslate nohighlight">\([m,n[\)</span>.</p></li>
+</ul>
+<p>Attention aux erreurs !</p>
+<p>Comme pour les tableaux Numpy, on peut trancher en fournissant une liste :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les noms et les populations des pays 3 à 7</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pays&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>belgique</td>
+      <td>11289853</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bulgarie</td>
+      <td>7153784</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chypre</td>
+      <td>848319</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>croatie</td>
+      <td>4190669</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>danemark</td>
+      <td>5659715</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Avec l’accesseur <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> on écrira :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les noms et les populations des pays 3 à 7</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>belgique</td>
+      <td>11289853</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bulgarie</td>
+      <td>7153784</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chypre</td>
+      <td>848319</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>croatie</td>
+      <td>4190669</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>danemark</td>
+      <td>5659715</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Pour accéder à une valeur en particulier :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nom du pays 23</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;pays&#39;</span><span class="p">])</span>
+
+<span class="c1"># Ou avec les indices</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>république tchèque
+république tchèque
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Extraire les date d’adhésion des pays avec les étiquettes 12 et 25</p></li>
+<li><p>Extraire la population du pays avec l’étiquette 6</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12   1981-01-01
+25   2004-01-01
+Name: date d&#39;adhésion, dtype: datetime64[ns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4190669
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="inserer-et-supprimer-des-donnees">
+<h2>Insérer et supprimer des données<a class="headerlink" href="#inserer-et-supprimer-des-donnees" title="Permalink to this headline">#</a></h2>
+<p>Pour insérer une nouvelle ligne, on peut créer un objet <em>Series</em> et l’ajouter au DataFrame avec la méthode <code class="docutils literal notranslate"><span class="pre">.append()</span></code>. Supposons que la Turquie joigne l’Union Européenne en 2026 :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de l&#39;objet Series</span>
+<span class="n">ligne_turquie</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;turquie&#39;</span><span class="p">,</span> <span class="s1">&#39;ankara&#39;</span><span class="p">,</span> <span class="mi">83154997</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2026&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">)],</span> 
+                          <span class="n">index</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">28</span><span class="p">)</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ligne_turquie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pays                turquie
+capitale             ankara
+population         83154997
+date d&#39;adhésion        2026
+Name: 28, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajout de la ligne à l&#39;objet DataFrame</span>
+<span class="n">df_europe</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ligne_turquie</span><span class="p">)</span>
+
+<span class="c1"># Affichage des 2 dernières lignes</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2259/893767574.py:2: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  df_europe = df_europe.append(ligne_turquie)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>turquie</td>
+      <td>ankara</td>
+      <td>83154997</td>
+      <td>2026-01-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Plusieurs remarques :</p>
+<ul class="simple">
+<li><p>Pour créer l’objet <em>Series</em> on a utilisé l’option <code class="docutils literal notranslate"><span class="pre">index</span></code> pour nommer les colonnes, et l’option <code class="docutils literal notranslate"><span class="pre">name</span></code> pour lui donner un nom</p></li>
+<li><p>L’étiquette de la nouvelle ligne de l’objet DataFrame est le nom de l’objet Series</p></li>
+<li><p>On aurait pu ignorer ce nom en utilisant l’option de la méthode <code class="docutils literal notranslate"><span class="pre">append()</span></code> : <code class="docutils literal notranslate"><span class="pre">ignore_index</span> <span class="pre">=</span> <span class="pre">True</span></code></p></li>
+</ul>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">.drop()</span></code> permet de supprimer des lignes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Supprimer la ligne avec l&#39;étiquette 28</span>
+<span class="n">df_europe</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">28</span><span class="p">])</span>
+
+<span class="c1"># Affichage des 2 dernières lignes</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>26</th>
+      <td>slovénie</td>
+      <td>ljubljana</td>
+      <td>2064188</td>
+      <td>2004-01-01</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Il est beaucoup plus simple d’ajouter une colonne à un DataFrame. On peut le faire de la même manière que l’on ajoute une paire clé-valeur à un dictionnaire. Par exemple, ajoutons la colonne qui donne le nombre de sièges au parlement européen pour chaque pays de l’UE :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombre de sièges au parlement</span>
+<span class="n">np_sieges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">96</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+
+<span class="c1"># Ajout de la colonne</span>
+<span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;sièges&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np_sieges</span>
+
+<span class="c1"># Affichage des 2 premières lignes</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+      <th>sièges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>autriche</td>
+      <td>vienne</td>
+      <td>8700471</td>
+      <td>1995-01-01</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="video-operations-tri-et-sauvegarde">
+<h2><strong>Vidéo</strong>: Opérations, tri et sauvegarde<a class="headerlink" href="#video-operations-tri-et-sauvegarde" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=da5793f6-a393-4f4f-afab-ae0c01320b56&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
+</div>
+</section>
+<section id="operateurs-arithmetiques-et-fonctions">
+<h2>Opérateurs arithmétiques et fonctions<a class="headerlink" href="#operateurs-arithmetiques-et-fonctions" title="Permalink to this headline">#</a></h2>
+<p>Il est possible d’utiliser les opérateurs arithmétiques usuels et les fonctions Numpy sur les colonnes d’un objet DataFrame. Par exemple, calculons le pourcentage de la population dans chaque pays par rapport à la population totale :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Population totale</span>
+<span class="n">pop_tot</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Pourcentage de la population</span>
+<span class="n">pop_pourcentage</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">pop_tot</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Affichage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pop_pourcentage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     18.480761
+2      1.957004
+3      2.539435
+4      1.609106
+5      0.190813
+6      0.942610
+7      1.273044
+8     10.445429
+9      0.295996
+10     1.214911
+11    14.994249
+12     2.427796
+13     2.211178
+14     1.047847
+15    13.645548
+16     0.442879
+17     0.649726
+18     0.129616
+19     0.097711
+20     3.819126
+21     8.539993
+22     2.326083
+23     2.373886
+24     4.444625
+25     1.220531
+26     0.464299
+27     2.215797
+Name: population, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Nous voulons connaître le poids de chaque pays au parlement par rapport à son nombre d’habitants.</p>
+<ol class="simple">
+<li><p>Calculer le nombre de sièges au parlement par habitant dans chaque pays, c’est-à-dire :</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[N_i = \frac{\text{nombre de sièges}}{\text{nombre d'habitants}}\]</div>
+<ol class="simple">
+<li><p>Normaliser le résultat et l’exprimer en pourcentage, c’est-à-dire :</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\bar{N}_i = \frac{N_i}{\sum_i N_i}\times 100\]</div>
+<ol class="simple">
+<li><p>Ajouter une nouvelle colonne au DataFrame <code class="docutils literal notranslate"><span class="pre">df_europe</span></code> avec le nom <code class="docutils literal notranslate"><span class="pre">'poids'</span></code> qui contient <span class="math notranslate nohighlight">\(\bar{N}_i\)</span></p></li>
+<li><p>Afficher les colonnes <code class="docutils literal notranslate"><span class="pre">'pays'</span></code> et <code class="docutils literal notranslate"><span class="pre">'poids'</span></code> du DataFrame <code class="docutils literal notranslate"><span class="pre">df_europe</span></code> pour les 20 premières lignes</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombre de siège par habitant</span>
+<span class="n">siege_pourcentage</span> <span class="o">=</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;sièges&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span>
+
+<span class="c1"># Normalisation</span>
+<span class="n">siege_pourcentage</span> <span class="o">=</span> <span class="n">siege_pourcentage</span> <span class="o">/</span> <span class="n">siege_pourcentage</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Ajout d&#39;une colonne poids</span>
+<span class="n">df_europe</span><span class="p">[</span><span class="s1">&#39;poids&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">siege_pourcentage</span>
+
+<span class="c1"># Affichage</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pays&#39;</span><span class="p">,</span> <span class="s1">&#39;poids&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>poids</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>1.370336</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>autriche</td>
+      <td>2.426367</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>belgique</td>
+      <td>2.181513</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bulgarie</td>
+      <td>2.787018</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chypre</td>
+      <td>8.295046</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>croatie</td>
+      <td>3.078478</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>danemark</td>
+      <td>2.693863</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>espagne</td>
+      <td>1.363776</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>estonie</td>
+      <td>5.347374</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>finlande</td>
+      <td>2.822763</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>france</td>
+      <td>1.301915</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>grèce</td>
+      <td>2.281827</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>hongrie</td>
+      <td>2.505365</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>irlande</td>
+      <td>2.769303</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>italie</td>
+      <td>1.411261</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>lettonie</td>
+      <td>4.765193</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>lituanie</td>
+      <td>4.466202</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>luxembourg</td>
+      <td>12.211466</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>malte</td>
+      <td>16.198887</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>pays-bas</td>
+      <td>1.795911</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="trier-un-dataframe">
+<h2>Trier un <em>DataFrame</em><a class="headerlink" href="#trier-un-dataframe" title="Permalink to this headline">#</a></h2>
+<p>Il est très facile de trier un objet DataFrame avec la méthode <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code>. Par exemple, on voit qu’en classant les pays d’abord par nombre de sièges croissant, puis, pour un même nombre de sièges, par poids décroissant, on déduit que plus le nombre de sièges et la population augmentent, plus le poids d’un pays au parlement diminue :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_europe</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sièges&#39;</span><span class="p">,</span> <span class="s1">&#39;poids&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+      <th>sièges</th>
+      <th>poids</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19</th>
+      <td>malte</td>
+      <td>la valette</td>
+      <td>434403</td>
+      <td>2004-01-01</td>
+      <td>6</td>
+      <td>16.198887</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>luxembourg</td>
+      <td>luxembourg</td>
+      <td>576249</td>
+      <td>1957-01-01</td>
+      <td>6</td>
+      <td>12.211466</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chypre</td>
+      <td>nicosie</td>
+      <td>848319</td>
+      <td>2004-01-01</td>
+      <td>6</td>
+      <td>8.295046</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>estonie</td>
+      <td>tallinn</td>
+      <td>1315944</td>
+      <td>2004-01-01</td>
+      <td>6</td>
+      <td>5.347374</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>lettonie</td>
+      <td>riga</td>
+      <td>1968957</td>
+      <td>2004-01-01</td>
+      <td>8</td>
+      <td>4.765193</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>slovénie</td>
+      <td>ljubljana</td>
+      <td>2064188</td>
+      <td>2004-01-01</td>
+      <td>8</td>
+      <td>4.545352</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>lituanie</td>
+      <td>vilnius</td>
+      <td>2888558</td>
+      <td>2004-01-01</td>
+      <td>11</td>
+      <td>4.466202</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>croatie</td>
+      <td>zagreb</td>
+      <td>4190669</td>
+      <td>2013-01-01</td>
+      <td>11</td>
+      <td>3.078478</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>irlande</td>
+      <td>dublin</td>
+      <td>4658530</td>
+      <td>1973-01-01</td>
+      <td>11</td>
+      <td>2.769303</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>finlande</td>
+      <td>helsinki</td>
+      <td>5401267</td>
+      <td>1995-01-01</td>
+      <td>13</td>
+      <td>2.822763</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>slovaquie</td>
+      <td>bratislava</td>
+      <td>5426252</td>
+      <td>2004-01-01</td>
+      <td>13</td>
+      <td>2.809766</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>danemark</td>
+      <td>copenhague</td>
+      <td>5659715</td>
+      <td>1973-01-01</td>
+      <td>13</td>
+      <td>2.693863</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bulgarie</td>
+      <td>sofia</td>
+      <td>7153784</td>
+      <td>2007-01-01</td>
+      <td>17</td>
+      <td>2.787018</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>autriche</td>
+      <td>vienne</td>
+      <td>8700471</td>
+      <td>1995-01-01</td>
+      <td>18</td>
+      <td>2.426367</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01</td>
+      <td>20</td>
+      <td>2.381089</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>hongrie</td>
+      <td>budapest</td>
+      <td>9830485</td>
+      <td>2004-01-01</td>
+      <td>21</td>
+      <td>2.505365</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>portugal</td>
+      <td>lisbonne</td>
+      <td>10341330</td>
+      <td>1986-01-01</td>
+      <td>21</td>
+      <td>2.381604</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>république tchèque</td>
+      <td>prague</td>
+      <td>10553853</td>
+      <td>2004-01-01</td>
+      <td>21</td>
+      <td>2.333646</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>grèce</td>
+      <td>athènes</td>
+      <td>10793526</td>
+      <td>1981-01-01</td>
+      <td>21</td>
+      <td>2.281827</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>belgique</td>
+      <td>bruxelles</td>
+      <td>11289853</td>
+      <td>1957-01-01</td>
+      <td>21</td>
+      <td>2.181513</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>pays-bas</td>
+      <td>amsterdam</td>
+      <td>16979120</td>
+      <td>1957-01-01</td>
+      <td>26</td>
+      <td>1.795911</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>roumanie</td>
+      <td>bucarest</td>
+      <td>19759968</td>
+      <td>2007-01-01</td>
+      <td>32</td>
+      <td>1.899287</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>pologne</td>
+      <td>varsovie</td>
+      <td>37967209</td>
+      <td>2004-01-01</td>
+      <td>51</td>
+      <td>1.575391</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>espagne</td>
+      <td>madrid</td>
+      <td>46438422</td>
+      <td>1986-01-01</td>
+      <td>54</td>
+      <td>1.363776</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>italie</td>
+      <td>rome</td>
+      <td>60665551</td>
+      <td>1957-01-01</td>
+      <td>73</td>
+      <td>1.411261</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>france</td>
+      <td>paris</td>
+      <td>66661621</td>
+      <td>1957-01-01</td>
+      <td>74</td>
+      <td>1.301915</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01</td>
+      <td>96</td>
+      <td>1.370336</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="sauvegarder-un-dataframe">
+<h2>Sauvegarder un DataFrame<a class="headerlink" href="#sauvegarder-un-dataframe" title="Permalink to this headline">#</a></h2>
+<p>Il est possible de sauver un objet DataFrame sous la forme d’un <a class="reference external" href="https://fr.wikipedia.org/wiki/Comma-separated_values">fichier csv</a>. C’est un format pratique qui peut être lu par la plupart des tableurs comme LibreOffice Calc ou Microsoft Excel. Il faut utiliser la métode <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_europe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;europe.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette méthode crée un fichier nommé <em>data.csv</em> dans le répertoire de travail (allez vérifier !), avec le contenu du DataFrame :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">,</span><span class="n">pays</span><span class="p">,</span><span class="n">capitale</span><span class="p">,</span><span class="n">population</span><span class="p">,</span><span class="n">date</span> <span class="n">d</span><span class="s1">&#39;adhésion,sièges,poids</span>
+<span class="mi">1</span><span class="p">,</span><span class="n">allemagne</span><span class="p">,</span><span class="n">berlin</span><span class="p">,</span><span class="mi">82162000</span><span class="p">,</span><span class="mi">1957</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mf">1.3703356988657123</span>
+<span class="mi">2</span><span class="p">,</span><span class="n">autriche</span><span class="p">,</span><span class="n">vienne</span><span class="p">,</span><span class="mi">8700471</span><span class="p">,</span><span class="mi">1995</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mf">2.4263669538020842</span>
+<span class="mi">3</span><span class="p">,</span><span class="n">belgique</span><span class="p">,</span><span class="n">bruxelles</span><span class="p">,</span><span class="mi">11289853</span><span class="p">,</span><span class="mi">1957</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mf">2.1815127149779783</span>
+<span class="mi">4</span><span class="p">,</span><span class="n">bulgarie</span><span class="p">,</span><span class="n">sofia</span><span class="p">,</span><span class="mi">7153784</span><span class="p">,</span><span class="mi">2007</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mf">2.7870184226008328</span>
+<span class="mi">5</span><span class="p">,</span><span class="n">chypre</span><span class="p">,</span><span class="n">nicosie</span><span class="p">,</span><span class="mi">848319</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">8.295045974023676</span>
+<span class="mi">6</span><span class="p">,</span><span class="n">croatie</span><span class="p">,</span><span class="n">zagreb</span><span class="p">,</span><span class="mi">4190669</span><span class="p">,</span><span class="mi">2013</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mf">3.078478088741746</span>
+<span class="mi">7</span><span class="p">,</span><span class="n">danemark</span><span class="p">,</span><span class="n">copenhague</span><span class="p">,</span><span class="mi">5659715</span><span class="p">,</span><span class="mi">1973</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mf">2.6938631589897866</span>
+<span class="mi">8</span><span class="p">,</span><span class="n">espagne</span><span class="p">,</span><span class="n">madrid</span><span class="p">,</span><span class="mi">46438422</span><span class="p">,</span><span class="mi">1986</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mf">1.363776011827881</span>
+<span class="mi">9</span><span class="p">,</span><span class="n">estonie</span><span class="p">,</span><span class="n">tallinn</span><span class="p">,</span><span class="mi">1315944</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">5.347374284648732</span>
+<span class="mi">10</span><span class="p">,</span><span class="n">finlande</span><span class="p">,</span><span class="n">helsinki</span><span class="p">,</span><span class="mi">5401267</span><span class="p">,</span><span class="mi">1995</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mf">2.822763201464005</span>
+<span class="mi">11</span><span class="p">,</span><span class="n">france</span><span class="p">,</span><span class="n">paris</span><span class="p">,</span><span class="mi">66661621</span><span class="p">,</span><span class="mi">1957</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mf">1.301914879970682</span>
+<span class="mi">12</span><span class="p">,</span><span class="n">grèce</span><span class="p">,</span><span class="n">athènes</span><span class="p">,</span><span class="mi">10793526</span><span class="p">,</span><span class="mi">1981</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mf">2.28182689046492</span>
+<span class="mi">13</span><span class="p">,</span><span class="n">hongrie</span><span class="p">,</span><span class="n">budapest</span><span class="p">,</span><span class="mi">9830485</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mf">2.5053654900782893</span>
+<span class="mi">14</span><span class="p">,</span><span class="n">irlande</span><span class="p">,</span><span class="n">dublin</span><span class="p">,</span><span class="mi">4658530</span><span class="p">,</span><span class="mi">1973</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mf">2.7693033411117423</span>
+<span class="mi">15</span><span class="p">,</span><span class="n">italie</span><span class="p">,</span><span class="n">rome</span><span class="p">,</span><span class="mi">60665551</span><span class="p">,</span><span class="mi">1957</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mf">1.4112613727889787</span>
+<span class="mi">16</span><span class="p">,</span><span class="n">lettonie</span><span class="p">,</span><span class="n">riga</span><span class="p">,</span><span class="mi">1968957</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">4.765193013788716</span>
+<span class="mi">17</span><span class="p">,</span><span class="n">lituanie</span><span class="p">,</span><span class="n">vilnius</span><span class="p">,</span><span class="mi">2888558</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mf">4.466201715066578</span>
+<span class="mi">18</span><span class="p">,</span><span class="n">luxembourg</span><span class="p">,</span><span class="n">luxembourg</span><span class="p">,</span><span class="mi">576249</span><span class="p">,</span><span class="mi">1957</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">12.211466060050068</span>
+<span class="mi">19</span><span class="p">,</span><span class="n">malte</span><span class="p">,</span><span class="n">la</span> <span class="n">valette</span><span class="p">,</span><span class="mi">434403</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">16.198886991198936</span>
+<span class="mi">20</span><span class="p">,</span><span class="n">pays</span><span class="o">-</span><span class="n">bas</span><span class="p">,</span><span class="n">amsterdam</span><span class="p">,</span><span class="mi">16979120</span><span class="p">,</span><span class="mi">1957</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mf">1.7959114169499812</span>
+<span class="mi">21</span><span class="p">,</span><span class="n">pologne</span><span class="p">,</span><span class="n">varsovie</span><span class="p">,</span><span class="mi">37967209</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mf">1.5753905797479404</span>
+<span class="mi">22</span><span class="p">,</span><span class="n">portugal</span><span class="p">,</span><span class="n">lisbonne</span><span class="p">,</span><span class="mi">10341330</span><span class="p">,</span><span class="mi">1986</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mf">2.381604481215885</span>
+<span class="mi">23</span><span class="p">,</span><span class="n">république</span> <span class="n">tchèque</span><span class="p">,</span><span class="n">prague</span><span class="p">,</span><span class="mi">10553853</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mf">2.3336460977552242</span>
+<span class="mi">24</span><span class="p">,</span><span class="n">roumanie</span><span class="p">,</span><span class="n">bucarest</span><span class="p">,</span><span class="mi">19759968</span><span class="p">,</span><span class="mi">2007</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mf">1.8992865050895604</span>
+<span class="mi">25</span><span class="p">,</span><span class="n">slovaquie</span><span class="p">,</span><span class="n">bratislava</span><span class="p">,</span><span class="mi">5426252</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mf">2.8097658805528902</span>
+<span class="mi">26</span><span class="p">,</span><span class="n">slovénie</span><span class="p">,</span><span class="n">ljubljana</span><span class="p">,</span><span class="mi">2064188</span><span class="p">,</span><span class="mi">2004</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">4.545351557537583</span>
+<span class="mi">27</span><span class="p">,</span><span class="n">suède</span><span class="p">,</span><span class="n">stockholm</span><span class="p">,</span><span class="mi">9851017</span><span class="p">,</span><span class="mi">1995</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">2.381089216689604</span>
+</pre></div>
+</div>
+<p>Il est alors possible, plus tard, de charger le contenu du fichier csv avec la méthode <code class="docutils literal notranslate"><span class="pre">.read_csv()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_europe_from_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;europe.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’option <code class="docutils literal notranslate"><span class="pre">encoding</span></code> peut être nécessaire sur certains ordinateurs, pas sur d’autres.</p>
+<p>Un problème de sauvegarder en csv est que si une des colonnes contient des objets python, il peuvent être convertis en un autre type au moment de l’écriture et de la lecture. Dans l’exemple ci-dessus, la colonne <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">d'adhésion</span></code> n’est plus un objet <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> au moment de la lecture : il a été converti en objet <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">df_europe_from_csv</span><span class="p">[</span><span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1957-01-01
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Une façon de garder toutes les propriétés des objets python est de les sauver dans un format que l’on appelle <em>pickle</em> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sauvegarde d&#39;un DataFrame dans un fichier pickle</span>
+<span class="n">df_europe</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;europe.pkl&#39;</span><span class="p">)</span>
+
+<span class="c1"># Lecture du fichier pickle</span>
+<span class="n">df_europe_from_pickle</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;./europe.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit alors que les dates sont restées des objets <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_europe_from_pickle</span><span class="p">[</span><span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1   1957-01-01
+2   1995-01-01
+Name: date d&#39;adhésion, dtype: datetime64[ns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source/notebooks/python-intermediaire"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../pages/part-python-intermediaire.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python intermédiaire</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-logique-filtrage.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Logique, structures de contrôle et filtrage</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
