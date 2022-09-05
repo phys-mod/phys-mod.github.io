@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Les listes Python</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -204,11 +218,6 @@ const thebe_selector_output = ".output, .cell_output"
      Fonctions
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
-     Entrées-sorties
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -229,11 +238,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../03-suites-relations-recurrence/03-suite-graphique.html">
      Représentation graphique d’une suite mathématique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/02-ajustement-modele.html">
-     Ajuster un modèle aux données
     </a>
    </li>
    <li class="toctree-l2">
@@ -269,11 +273,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/03-exercices.html">
-     Des exemples de modèle
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../05-derivation-integration/02-derivation-integration-exercices.html">
      De nouvelles méthodes numériques
     </a>
@@ -306,11 +305,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
-     Le réchauffement climatique
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../05-derivation-integration/03-mini-projet-digue.html">
      Calcul des forces de pression sur une digue
     </a>
@@ -330,91 +324,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/01-python-base/02-listes-python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/01-python-base/02-listes-python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/01-python-base/02-listes-python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/01-python-base/02-listes-python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#video-elements-de-base">
    <strong>
@@ -526,12 +593,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Les listes Python</h1>
@@ -659,21 +725,22 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="les-listes-python">
-<h1>Les listes Python<a class="headerlink" href="#les-listes-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="video-elements-de-base">
-<h2><strong>Vidéo</strong>: Éléments de base<a class="headerlink" href="#video-elements-de-base" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="les-listes-python">
+<h1>Les listes Python<a class="headerlink" href="#les-listes-python" title="Permalink to this headline">#</a></h1>
+<section id="video-elements-de-base">
+<h2><strong>Vidéo</strong>: Éléments de base<a class="headerlink" href="#video-elements-de-base" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3f7ad3ca-b863-42b4-ba5a-adb201017e95&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="creer-une-liste">
-<h2>Créer une liste<a class="headerlink" href="#creer-une-liste" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creer-une-liste">
+<h2>Créer une liste<a class="headerlink" href="#creer-une-liste" title="Permalink to this headline">#</a></h2>
 <p>Une <em>liste</em> est une séquence de valeurs, comme une chaîne. Dans une chaîne, ces valeurs sont des caractères. Dans une liste, les valeurs peuvent être de n’importe quel type.</p>
 <p>Les valeurs dans une liste sont appelées <em>éléments</em>.</p>
 <p>Le plus simple pour créer une liste est d’entourer les éléments par des crochets <code class="docutils literal notranslate"><span class="pre">[</span></code> et <code class="docutils literal notranslate"><span class="pre">]</span></code>. Voici une liste, nommée <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>, qui contient des valeurs des trois types que l’on a introduits dans l’activité “Première prise en main de Python”. Saurez-vous les reconnaître ?</p>
@@ -693,8 +760,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="exercice">
-<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h3>
+<section id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Créer trois variables nommées <code class="docutils literal notranslate"><span class="pre">plante1</span></code>, <code class="docutils literal notranslate"><span class="pre">plante2</span></code> et <code class="docutils literal notranslate"><span class="pre">plante3</span></code>, contenant respectivement les valeurs <code class="docutils literal notranslate"><span class="pre">&quot;gentiane&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;campanule&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;pensée&quot;</span></code>.</p></li>
 <li><p>Créer une liste nommée <code class="docutils literal notranslate"><span class="pre">plantes</span></code>, à partir des noms des 3 variables créées en 1, qui contient les noms des trois plantes.</p></li>
@@ -727,10 +794,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="liste-de-listes">
-<h2>Liste de listes<a class="headerlink" href="#liste-de-listes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="liste-de-listes">
+<h2>Liste de listes<a class="headerlink" href="#liste-de-listes" title="Permalink to this headline">#</a></h2>
 <p>Une liste peut contenir une autre liste. On dit alors que la liste est <em>imbriquée</em>. Dans l’exemple suivant, on crée une liste de trois listes imbriquées :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -741,8 +808,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Afficher le contenu de la liste <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> à l’écran.</p></li>
 <li><p>Afficher le type de la liste avec la fonction <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p></li>
@@ -767,10 +834,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="alert alert-info">
 <p><strong>Classe et type</strong></p>
 <p>On retrouve ici le mot <em>class</em>, que l’on peut traduire par classe. Dans Python 3 les concepts de classe et de type sont équivalents.</p>
-</div></div>
-</div>
-<div class="section" id="modifier-une-liste">
-<h2>Modifier une liste<a class="headerlink" href="#modifier-une-liste" title="Permalink to this headline">¶</a></h2>
+</div></section>
+</section>
+<section id="modifier-une-liste">
+<h2>Modifier une liste<a class="headerlink" href="#modifier-une-liste" title="Permalink to this headline">#</a></h2>
 <p>On peut accéder à un élément de la liste en utilisant l’opérateur <code class="docutils literal notranslate"><span class="pre">[]</span></code> d’indexation :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -866,9 +933,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="operations-sur-listes">
-<h2>Opérations sur listes<a class="headerlink" href="#operations-sur-listes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="operations-sur-listes">
+<h2>Opérations sur listes<a class="headerlink" href="#operations-sur-listes" title="Permalink to this headline">#</a></h2>
 <p>L’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> concatène 2 listes, alors que l’opérateur <code class="docutils literal notranslate"><span class="pre">*</span></code> répète une liste un certain nombre de fois :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -922,8 +989,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Après une semaine, vos plantes ont poussé. Modifier la liste <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> avec les tailles 8.3 cm, 6.4 cm et 13.2 cm pour respectivement les plantes gentiane, campanule et pensée.</p></li>
 <li><p>Afficher la liste avec <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
@@ -946,18 +1013,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="video-sous-listes-et-tranches">
-<h2><strong>Vidéo</strong>: Sous-listes et tranches<a class="headerlink" href="#video-sous-listes-et-tranches" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="video-sous-listes-et-tranches">
+<h2><strong>Vidéo</strong>: Sous-listes et tranches<a class="headerlink" href="#video-sous-listes-et-tranches" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5504058e-ba2e-49ad-a303-adb100bb4fa6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="tranches-de-liste">
-<h2>Tranches de liste<a class="headerlink" href="#tranches-de-liste" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tranches-de-liste">
+<h2>Tranches de liste<a class="headerlink" href="#tranches-de-liste" title="Permalink to this headline">#</a></h2>
 <p>Il est possible de sélectionner plusieurs éléments d’une liste en utilisant l’opérateur <em>tranche</em> <code class="docutils literal notranslate"><span class="pre">[m:n]</span></code>, où <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> sont des expression entières. L’opérateur de tranche inclut l’élément de départ, mais <strong>exclut l’élément de fin de la tranche</strong>. Ainsi, l’opérateur <code class="docutils literal notranslate"><span class="pre">[0:2]</span></code> revient à sélectionner les élements d’indice <code class="docutils literal notranslate"><span class="pre">0</span></code> et <code class="docutils literal notranslate"><span class="pre">1</span></code>. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1036,8 +1103,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>On a remplacé les deux premiers éléments de la liste par une liste de trois éléments. La taille de la liste a donc changé.</p>
-<div class="section" id="id3">
-<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
@@ -1066,10 +1133,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="indexation-et-tranche-de-liste-de-listes">
-<h2>Indexation et tranche de liste de listes<a class="headerlink" href="#indexation-et-tranche-de-liste-de-listes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="indexation-et-tranche-de-liste-de-listes">
+<h2>Indexation et tranche de liste de listes<a class="headerlink" href="#indexation-et-tranche-de-liste-de-listes" title="Permalink to this headline">#</a></h2>
 <p>On a vu qu’une liste peut contenir d’autres listes (listes imbriquées). Il est possible d’utiliser l’opérateur d’indexation sur les listes de listes. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1136,8 +1203,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>La première instruction sélectionne les listes d’indices 1 et 2 et retourne une liste de listes. La deuxième instruction sélectionne l’élément d’indice 0 dans la liste d’indice 1.</p>
-<div class="section" id="id4">
-<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<section id="id4">
+<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Quelle est la difference entre les instructions <code class="docutils literal notranslate"><span class="pre">taille_plantes[1][0]</span></code> et <code class="docutils literal notranslate"><span class="pre">taille_plantes[1][0:1]</span></code> ? Vous pouvez utiliser l’opérateur <code class="docutils literal notranslate"><span class="pre">type()</span></code> pour vérifier cette différence.</p>
 <div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1163,18 +1230,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="video-manipuler-les-listes">
-<h2><strong>Vidéo</strong>: Manipuler les listes<a class="headerlink" href="#video-manipuler-les-listes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="video-manipuler-les-listes">
+<h2><strong>Vidéo</strong>: Manipuler les listes<a class="headerlink" href="#video-manipuler-les-listes" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=74d9ddaf-66ac-4405-8b91-adb100bb6549&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="supprimer-un-element">
-<h2>Supprimer un élément<a class="headerlink" href="#supprimer-un-element" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="supprimer-un-element">
+<h2>Supprimer un élément<a class="headerlink" href="#supprimer-un-element" title="Permalink to this headline">#</a></h2>
 <p>Il existe deux possibilités pour supprimer un élément d’une liste : en utilisant l’instruction <code class="docutils literal notranslate"><span class="pre">del()</span></code> ou bien en insérant une liste vide <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1212,9 +1279,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Le point-virgule</strong></p>
 <p>Ici nous avons utilisé un point-virgule à la fin d’une instruction pour pouvoir écrire deux instructions sur la même ligne.</p>
 <p>Il est tout de même conseillé de ne pas le faire, pour que le code soit plus lisible, mais sachez que c’est possible.</p>
-</div></div>
-<div class="section" id="les-chaines">
-<h2>Les chaînes<a class="headerlink" href="#les-chaines" title="Permalink to this headline">¶</a></h2>
+</div></section>
+<section id="les-chaines">
+<h2>Les chaînes<a class="headerlink" href="#les-chaines" title="Permalink to this headline">#</a></h2>
 <p>On a vu que les chaînes sont constituées d’une séquence de caractères. Comme pour les listes, on peut utiliser les opérateurs indexation et tranche pour accéder à certains caractères de la chaîne. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1274,9 +1341,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div><div class="alert alert-info">
 <p><strong>Muable</strong></p>
 <p>Un objet muable est un objet qui peut être modifié, comme les listes. À l’inverse, un objet immuable ne peut pas être modifié, comme les chaînes.</p>
-</div></div>
-<div class="section" id="objets-et-valeurs">
-<h2>Objets et valeurs<a class="headerlink" href="#objets-et-valeurs" title="Permalink to this headline">¶</a></h2>
+</div></section>
+<section id="objets-et-valeurs">
+<h2>Objets et valeurs<a class="headerlink" href="#objets-et-valeurs" title="Permalink to this headline">#</a></h2>
 <p>Effectuons les affectations suivantes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1326,9 +1393,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="alert alert-info">
 <p><strong>Valeur d’un objet</strong></p>
 <p>Une variable se réfère à un objet, qui a une certaine valeur. En évaluant <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, on obtient un objet liste dont la valeur est une séquence d’entiers. Si une autre liste a les mêmes éléments, on dit qu’elle a la même valeur, mais ce n’est pas le même objet.</p>
-</div></div>
-<div class="section" id="aliasing">
-<h2>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this headline">¶</a></h2>
+</div></section>
+<section id="aliasing">
+<h2>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this headline">#</a></h2>
 <p>Créons une variable <code class="docutils literal notranslate"><span class="pre">plantes1</span></code> qui se réfère à un objet et écrivons <code class="docutils literal notranslate"><span class="pre">plantes2</span> <span class="pre">=</span> <span class="pre">plantes1</span></code>. Alors les 2 variable <code class="docutils literal notranslate"><span class="pre">plantes1</span></code> et <code class="docutils literal notranslate"><span class="pre">plantes2</span></code> se réfèrent au même objet. Pour le vérifier, utilisons l’opérateur <code class="docutils literal notranslate"><span class="pre">is</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1392,8 +1459,8 @@ False
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1417,9 +1484,11 @@ False
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="01-prise-en-main.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1435,24 +1504,28 @@ False
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By P. Delva<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

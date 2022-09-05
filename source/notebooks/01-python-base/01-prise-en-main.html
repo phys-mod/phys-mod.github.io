@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Première prise en main</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -204,11 +218,6 @@ const thebe_selector_output = ".output, .cell_output"
      Fonctions
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/01-entrees-sorties.html">
-     Entrées-sorties
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -229,11 +238,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../03-suites-relations-recurrence/03-suite-graphique.html">
      Représentation graphique d’une suite mathématique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/02-ajustement-modele.html">
-     Ajuster un modèle aux données
     </a>
    </li>
    <li class="toctree-l2">
@@ -269,11 +273,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/03-exercices.html">
-     Des exemples de modèle
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../05-derivation-integration/02-derivation-integration-exercices.html">
      De nouvelles méthodes numériques
     </a>
@@ -306,11 +305,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-ajustement-modele/04-mini-projet-rechauffement-climatique.html">
-     Le réchauffement climatique
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../05-derivation-integration/03-mini-projet-digue.html">
      Calcul des forces de pression sur une digue
     </a>
@@ -330,91 +324,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/source/notebooks/01-python-base/01-prise-en-main.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/01-python-base/01-prise-en-main.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/01-python-base/01-prise-en-main.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/source/notebooks/01-python-base/01-prise-en-main.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#video-presentation-du-cours-et-des-jupyter-notebooks">
    <strong>
@@ -523,12 +590,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Première prise en main</h1>
@@ -653,21 +719,22 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="premiere-prise-en-main">
-<h1>Première prise en main<a class="headerlink" href="#premiere-prise-en-main" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="video-presentation-du-cours-et-des-jupyter-notebooks">
-<h2><strong>Vidéo</strong>: Présentation du cours et des Jupyter Notebooks<a class="headerlink" href="#video-presentation-du-cours-et-des-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="premiere-prise-en-main">
+<h1>Première prise en main<a class="headerlink" href="#premiere-prise-en-main" title="Permalink to this headline">#</a></h1>
+<section id="video-presentation-du-cours-et-des-jupyter-notebooks">
+<h2><strong>Vidéo</strong>: Présentation du cours et des Jupyter Notebooks<a class="headerlink" href="#video-presentation-du-cours-et-des-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4438ddd6-bcac-4308-975e-ae0c01325e43&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="l-interface-jupyter-notebook">
-<h2>L’interface Jupyter Notebook<a class="headerlink" href="#l-interface-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="l-interface-jupyter-notebook">
+<h2>L’interface Jupyter Notebook<a class="headerlink" href="#l-interface-jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <p>Dans ce cours nous utiliserons Jupyter Notebook. Cette interface est constituée de <em>cellules</em> dans lesquelles vous pouvez écrire du langage Python (<em>code</em>) ou bien du texte.</p>
 <p>Pour <em>exécuter</em> le code Python, il faut sélectionner la cellule en cliquant dessus avec la souris, puis faire au clavier <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>. Un <em>interpréteur</em> exécute alors le code Python et envoie un résultat qui s’affiche sous la cellule. Vous pouvez alors sélectionner la cellule suivante à la souris.</p>
 <p>Vous pouvez également combiner l’exécution d’une cellule et le passage à la cellule suivante avec <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>.</p>
@@ -702,9 +769,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div><div class="alert alert-info">
 <p><strong>C’est quoi une valeur ?</strong></p>
 <p>Une <em>valeur</em> est l’une des choses fondamentales avec lesquelles fonctionne un programme, comme une lettre ou un chiffre.</p>
-</div></div>
-<div class="section" id="commentaires">
-<h2>Commentaires<a class="headerlink" href="#commentaires" title="Permalink to this headline">¶</a></h2>
+</div></section>
+<section id="commentaires">
+<h2>Commentaires<a class="headerlink" href="#commentaires" title="Permalink to this headline">#</a></h2>
 <p>Un <em>programme informatique</em> est une séquence d’<em>instructions</em> qui spécifie comment effectuer un calcul. Il peut aller de quelques lignes à plusieurs dizaines de milliers de lignes ou plus.</p>
 <p>Il est très important de <strong>toujours commenter un programme</strong> informatique que l’on écrit, quelle que soit sa longueur. Cela permet d’ajouter des informations utiles, ou bien d’expliquer ce que signifie une instruction. De plus, cela permet :</p>
 <ul class="simple">
@@ -748,18 +815,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="video-la-calculatrice-python">
-<h2><strong>Vidéo</strong>: La calculatrice Python<a class="headerlink" href="#video-la-calculatrice-python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="video-la-calculatrice-python">
+<h2><strong>Vidéo</strong>: La calculatrice Python<a class="headerlink" href="#video-la-calculatrice-python" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e15ff2db-b926-42fa-ad21-ae0c0131ffd8&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </div></div>
 </div>
 <p><br><div id="calculatrice"></div></p>
-</div>
-<div class="section" id="la-calculatrice-python">
-<h2>La calculatrice Python<a class="headerlink" href="#la-calculatrice-python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="la-calculatrice-python">
+<h2>La calculatrice Python<a class="headerlink" href="#la-calculatrice-python" title="Permalink to this headline">#</a></h2>
 <p>Le code Python permet de calculer comme sur une calculatrice. On utilise alors des <em>opérateurs</em> : addition <code class="docutils literal notranslate"><span class="pre">+</span></code>, soustraction <code class="docutils literal notranslate"><span class="pre">-</span></code>, multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>. Il existe d’autres opérateurs :</p>
 <ul class="simple">
 <li><p>la puissance <code class="docutils literal notranslate"><span class="pre">**</span></code> : le nombre à gauche des deux étoiles est élevé à la puissance du nombre à droite. Par exemple <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">5</span> <span class="pre">=</span> <span class="pre">32</span></code></p></li>
@@ -787,8 +854,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p><br><div id="bouillon"></div></p>
-<div class="section" id="exercice-bouillon-de-culture">
-<h3>Exercice : bouillon de culture<a class="headerlink" href="#exercice-bouillon-de-culture" title="Permalink to this headline">¶</a></h3>
+<section id="exercice-bouillon-de-culture">
+<h3>Exercice : bouillon de culture<a class="headerlink" href="#exercice-bouillon-de-culture" title="Permalink to this headline">#</a></h3>
 <p>La masse d’une bactérie est de l’ordre du picogramme (<code class="docutils literal notranslate"><span class="pre">1e-15</span></code> kg). Lorque l’on place une bactérie <em>escherichia coli</em> dans un bouillon de culture, le nombre de cellules double toutes les trente minutes par division cellulaire. À la première génération, on aura <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">2</span></code> cellules. À la deuxième génération, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> cellules. Quelle est la masse de l’échantillon au bout de 140 générations ? Comparer cette masse à celle de la Terre <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code> kg.</p>
 <p>Afin d’effectuer cet exercice, il faut créer une cellule sous ce texte :</p>
 <ul class="simple">
@@ -807,18 +874,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="video-variables-et-type">
-<h2><strong>Vidéo</strong>: Variables et type<a class="headerlink" href="#video-variables-et-type" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="video-variables-et-type">
+<h2><strong>Vidéo</strong>: Variables et type<a class="headerlink" href="#video-variables-et-type" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=60165160-760d-4a5e-a743-adb100bc56ad&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="affectation-d-une-variable">
-<h2>Affectation d’une variable<a class="headerlink" href="#affectation-d-une-variable" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="affectation-d-une-variable">
+<h2>Affectation d’une variable<a class="headerlink" href="#affectation-d-une-variable" title="Permalink to this headline">#</a></h2>
 <p>Une <em>variable</em> permet de donner un nom à une zone de la mémoire de l’ordinateur dans laquelle est stockée une valeur. C’est comme donner un nom à une boîte dans laquelle est rangé un nombre ou une lettre.</p>
 <p>Une variable peut représenter une <a class="reference external" href="https://fr.wikipedia.org/wiki/Grandeur_physique">grandeur physique</a>, par exemple la vitesse <code class="docutils literal notranslate"><span class="pre">v</span></code> d’un vélo. La valeur contenue dans la variable peut changer au cours du programme, mais le nom de la variable qui représente la grandeur physique reste le même.</p>
 <p>Pour ranger une valeur dans une variable, on utilise le signe <em>affectation</em> <code class="docutils literal notranslate"><span class="pre">=</span></code>. L’instruction <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">15.2</span></code> <em>affecte</em> la valeur <code class="docutils literal notranslate"><span class="pre">15.2</span></code> à la variable <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
@@ -860,8 +927,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="alert alert-info">
 <p><strong>Message d’erreur</strong></p>
 <p>Lorsque l’intérpréteur Python détecte une instruction qui n’est pas autorisée, il renvoie un <em>message d’erreur</em>. Il est important de lire et de comprendre ces messages d’erreur, car ils permettent de comprendre quel est le problème dans le programme que l’on a écrit. Ces messages d’erreur sont en anglais. Ici, l’interpréteur nous dit qu’il ne peut pas affecter (<em>assign</em>) à une valeur (<em>literal</em>).</p>
-</div><div class="section" id="exercice-masse-de-la-terre">
-<h3>Exercice : masse de la Terre<a class="headerlink" href="#exercice-masse-de-la-terre" title="Permalink to this headline">¶</a></h3>
+</div><section id="exercice-masse-de-la-terre">
+<h3>Exercice : masse de la Terre<a class="headerlink" href="#exercice-masse-de-la-terre" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Créer une variable <code class="docutils literal notranslate"><span class="pre">masse</span></code> avec la valeur <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code>, qui représente la masse de la Terre en kg.</p></li>
 <li><p>Afficher la valeur de cette variable à l’écran avec l’instruction <code class="docutils literal notranslate"><span class="pre">print(mass)</span></code></p></li>
@@ -882,10 +949,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="calculer-avec-des-variables">
-<h2>Calculer avec des variables<a class="headerlink" href="#calculer-avec-des-variables" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="calculer-avec-des-variables">
+<h2>Calculer avec des variables<a class="headerlink" href="#calculer-avec-des-variables" title="Permalink to this headline">#</a></h2>
 <p>Dans l’exercice <a class="reference external" href="#bouillon">bouillon de culture</a>, nous avons utilisé directement des valeurs pour former des expressions. Il est possible aussi de créer des variables, puis de former des expressions avec ces variables :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -914,13 +981,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>L’expression à droite du signe affectation est évaluée en remplacant le nom des variables par leur valeur.</p>
 <p>Le programme que l’on a écrit en introduisant des variables est plus long que le précédent. Il est aussi plus facile à comprendre. De plus, on peut facilement changer la valeur d’une des variables et exécuter de nouveau le même programme.</p>
-<div class="section" id="exercice-masse-de-l-echantillon">
-<h3>Exercice: masse de l’échantillon<a class="headerlink" href="#exercice-masse-de-l-echantillon" title="Permalink to this headline">¶</a></h3>
+<section id="exercice-masse-de-l-echantillon">
+<h3>Exercice: masse de l’échantillon<a class="headerlink" href="#exercice-masse-de-l-echantillon" title="Permalink to this headline">#</a></h3>
 <p>Quelle est la masse de l’échantillon pour 133 générations ? Il suffit de changer la ligne <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">140</span></code> en <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">133</span></code> et d’exécuter de nouveau la cellule.</p>
-</div>
-</div>
-<div class="section" id="les-types">
-<h2>Les types<a class="headerlink" href="#les-types" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="les-types">
+<h2>Les types<a class="headerlink" href="#les-types" title="Permalink to this headline">#</a></h2>
 <p>Dans les exemples précédents, nous avons travaillé avec deux <em>types</em> de valeurs : <code class="docutils literal notranslate"><span class="pre">140</span></code> est un <strong>entier</strong>, <code class="docutils literal notranslate"><span class="pre">5.972</span></code> est un <strong>nombre à virgule flottante</strong>.</p>
 <p>Il existe aussi des valeurs de type <strong>chaîne</strong> ou <strong>chaîne de caractères</strong> : ce sont des caractères enchaînés mis entre guillemets. Par exemple <code class="docutils literal notranslate"><span class="pre">'bonjour</span> <span class="pre">!'</span></code> ou bien <code class="docutils literal notranslate"><span class="pre">&quot;bonjour</span> <span class="pre">!&quot;</span></code>. Une chaîne est donc une séquence de caractères.</p>
 <p>Pour connaître le type d’une valeur on peut demander à l’interpréteur avec l’instruction <code class="docutils literal notranslate"><span class="pre">type()</span></code> :</p>
@@ -963,8 +1030,8 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<div class="section" id="exercice-chaine">
-<h3>Exercice: chaîne<a class="headerlink" href="#exercice-chaine" title="Permalink to this headline">¶</a></h3>
+<section id="exercice-chaine">
+<h3>Exercice: chaîne<a class="headerlink" href="#exercice-chaine" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Créer une variable appelée <code class="docutils literal notranslate"><span class="pre">annonce_resultat</span></code> qui a la valeur <code class="docutils literal notranslate"><span class="pre">&quot;masse</span> <span class="pre">du</span> <span class="pre">bouillon&quot;</span></code>, de type chaîne.</p></li>
 <li><p>Afficher la valeur de cette variable à l’écran à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
@@ -982,10 +1049,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="operations-sur-les-types">
-<h2>Opérations sur les types<a class="headerlink" href="#operations-sur-les-types" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="operations-sur-les-types">
+<h2>Opérations sur les types<a class="headerlink" href="#operations-sur-les-types" title="Permalink to this headline">#</a></h2>
 <p>Nous avons vu dans <a class="reference external" href="#calculatrice">la caculatrice Python</a> les opérations pour former des expressions avec des entiers et des nombre à virgule flottante. Résumons ces opérations ici :</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1034,8 +1101,8 @@ Salut Salut Salut
 </div>
 </div>
 </div>
-<div class="section" id="exercice-concatenation">
-<h3>Exercice: concaténation<a class="headerlink" href="#exercice-concatenation" title="Permalink to this headline">¶</a></h3>
+<section id="exercice-concatenation">
+<h3>Exercice: concaténation<a class="headerlink" href="#exercice-concatenation" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>En utilisant l’opérateur concaténation et la variable <code class="docutils literal notranslate"><span class="pre">annonce_resultat</span></code>, créer une nouvelle chaîne nommée <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> qui a la valeur <code class="docutils literal notranslate"><span class="pre">&quot;La</span> <span class="pre">masse</span> <span class="pre">du</span> <span class="pre">bouillon</span> <span class="pre">de</span> <span class="pre">culture</span> <span class="pre">est</span> <span class="pre">égale</span> <span class="pre">à</span> <span class="pre">&quot;</span></code>.</p></li>
 <li><p>Afficher la valeur de la variable <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> à l’écran.</p></li>
@@ -1053,10 +1120,10 @@ Salut Salut Salut
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="conversion-de-type">
-<h2>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="conversion-de-type">
+<h2>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this headline">#</a></h2>
 <p>La concaténation de chaîne est très pratique pour afficher à l’écran le résultat d’un calcul. Par exemple, pour reprendre l’exercice du bouillon de culture, on pourrait écrire :</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1097,8 +1164,8 @@ Salut Salut Salut
 </tr>
 </tbody>
 </table>
-<div class="section" id="exercice-conversion-de-type">
-<h3>Exercice: conversion de type<a class="headerlink" href="#exercice-conversion-de-type" title="Permalink to this headline">¶</a></h3>
+<section id="exercice-conversion-de-type">
+<h3>Exercice: conversion de type<a class="headerlink" href="#exercice-conversion-de-type" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>À l’aide de l’opérateur concaténation et des variables <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> et <code class="docutils literal notranslate"><span class="pre">masse_echantillon</span></code>, afficher le résultat de l’expérience du bouillon de culture.</p></li>
 <li><p>Comment faire pour afficher un entier et non un nombre à virgule flottante ?</p></li>
@@ -1115,9 +1182,9 @@ Salut Salut Salut
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1141,9 +1208,11 @@ Salut Salut Salut
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../pages/part-python-base.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1159,24 +1228,28 @@ Salut Salut Salut
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By P. Delva<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By P. Delva<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
