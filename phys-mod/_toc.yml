@@ -17,38 +17,38 @@ chapters:
   - file: source/pages/info-licence
 - file: source/pages/part-python-base
   sections:
-  - file: source/notebooks/01-python-base/01-prise-en-main
-  - file: source/notebooks/01-python-base/02-listes-python
-  - file: source/notebooks/01-python-base/03-fonctions-modules
-  - file: source/notebooks/01-python-base/04-module-numpy
-  - file: source/notebooks/01-python-base/05-fonctions-numpy
-  - file: source/notebooks/01-python-base/06-module-matplotlib
+  - file: source/notebooks/python-base/01-prise-en-main
+  - file: source/notebooks/python-base/02-listes-python
+  - file: source/notebooks/python-base/03-fonctions-modules
+  - file: source/notebooks/python-base/04-module-numpy
+  - file: source/notebooks/python-base/05-fonctions-numpy
+  - file: source/notebooks/python-base/06-module-matplotlib
 - file: source/pages/part-python-intermediaire
   sections:
-  - file: source/notebooks/02-demarche-de-modelisation/01-dictionnaires-pandas
-  - file: source/notebooks/02-demarche-de-modelisation/02-logique-filtrage
-  - file: source/notebooks/03-suites-relations-recurrence/01-iteration
-  - file: source/notebooks/03-suites-relations-recurrence/02-fonctions
-  - file: source/notebooks/04-ajustement-modele/01-entrees-sorties
+  - file: source/notebooks/python-intermediaire/01-dictionnaires-pandas
+  - file: source/notebooks/python-intermediaire/02-logique-filtrage
+  - file: source/notebooks/python-intermediaire/03-iteration
+  - file: source/notebooks/python-intermediaire/04-fonctions
+  - file: source/notebooks/python-intermediaire/05-entrees-sorties
 - file: source/pages/part-modelisation-numerique
   sections:
-  - file: source/notebooks/02-demarche-de-modelisation/03-acceleration-constante
-  - file: source/notebooks/03-suites-relations-recurrence/03-suite-graphique
-  - file: source/notebooks/04-ajustement-modele/02-ajustement-modele
-  - file: source/notebooks/05-derivation-integration/01-derivation-integration-cours
-  - file: source/notebooks/06-equations-differentielles/01-equations-differentielles-cours
+  - file: source/notebooks/demarche-de-modelisation/cours-acceleration-constante
+  - file: source/notebooks/suites-relations-recurrence/cours-suite-graphique
+  - file: source/notebooks/derivation-integration/cours-derivation-integration
+  - file: source/notebooks/equations-differentielles/cours-equations-differentielles
+  - file: source/notebooks/ajustement-modele/cours-ajustement-modele
 - file: source/pages/part-exercices
   sections:
-  - file: source/notebooks/02-demarche-de-modelisation/04-exercices
-  - file: source/notebooks/03-suites-relations-recurrence/04-exercices
-  - file: source/notebooks/04-ajustement-modele/03-exercices
-  - file: source/notebooks/05-derivation-integration/02-derivation-integration-exercices
-  - file: source/notebooks/06-equations-differentielles/02-equations-differentielles-exercices
+  - file: source/notebooks/demarche-de-modelisation/exercices-demarche-de-modelisation
+  - file: source/notebooks/suites-relations-recurrence/exercices-suites-relations-recurrence
+  - file: source/notebooks/derivation-integration/exercices-derivation-integration
+  - file: source/notebooks/equations-differentielles/exercices-equations-differentielles
+  - file: source/notebooks/ajustement-modele/exercices-ajustement-modele
 - file: source/pages/part-mini-projets
   sections:
-  - file: source/notebooks/02-demarche-de-modelisation/05-retrogradation-mars
-  - file: source/notebooks/03-suites-relations-recurrence/05-mini-projet-logistique
-  - file: source/notebooks/04-ajustement-modele/04-mini-projet-rechauffement-climatique
-  - file: source/notebooks/05-derivation-integration/03-mini-projet-digue
-  - file: source/notebooks/06-equations-differentielles/03-mini-projet-pendule
+  - file: source/notebooks/demarche-de-modelisation/mini-projet-retrogradation-mars
+  - file: source/notebooks/suites-relations-recurrence/mini-projet-logistique
+  - file: source/notebooks/derivation-integration/mini-projet-digue
+  - file: source/notebooks/equations-differentielles/mini-projet-pendule
+  - file: source/notebooks/ajustement-modele/mini-projet-rechauffement-climatique
 - file: source/pages/part-projet
