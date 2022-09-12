@@ -32,15 +32,16 @@ de relationnel et de communication. Vous serez autonomes aussi bien pour le choi
 
 ```{admonition} Transparents
 :class: tip
-[Transparents d'introduction au cours (PDF)](https://dropsu.sorbonne-universite.fr/)
+[Transparents d'introduction au cours (PDF)](https://dropsu.sorbonne-universite.fr/s/8TY4pWCEzFSiBqp)
 ```
 
 ..
     https://dropsu.sorbonne-universite.fr/s/4MR9PsjeFbp5NzQ
 
-```{admonition} Présentation
-:class: tip
-[Vidéo d'introduction au cours (MP4)](https://sorbonne-universite.cloud.panopto.eu/)
-```
+..
+    ```{admonition} Présentation
+    :class: tip
+    [Vidéo d'introduction au cours (MP4)](https://sorbonne-universite.cloud.panopto.eu/)
+    ```
 ..
     https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=544fb8ef-cb86-4a39-8f7c-ae29010e3a78
