@@ -559,8 +559,9 @@ title="Print to PDF"
 <section id="pile-ou-face">
 <h2>Pile ou face<a class="headerlink" href="#pile-ou-face" title="Permalink to this headline">#</a></h2>
 <p>On joue à pile ou face avec une pièce de monnaie. Connaissant les conditions initiales du lancer de la pièce, on aimerait connaître sa trajectoire.</p>
-<p>Les trois représentations du mouvement de la pièce de monnaie sont l’accélération <span class="math notranslate nohighlight">\(a\)</span>, la vitesse <span class="math notranslate nohighlight">\(v\)</span> et la position <span class="math notranslate nohighlight">\(z\)</span> selon l’axe <span class="math notranslate nohighlight">\(z\)</span> :
-$<span class="math notranslate nohighlight">\(
+<p>Les trois représentations du mouvement de la pièce de monnaie sont l’accélération <span class="math notranslate nohighlight">\(a\)</span>, la vitesse <span class="math notranslate nohighlight">\(v\)</span> et la position <span class="math notranslate nohighlight">\(z\)</span> selon l’axe <span class="math notranslate nohighlight">\(z\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left\{
     \begin{array}{lll}
         a(t) &amp;=&amp; g \\
@@ -568,7 +569,7 @@ $<span class="math notranslate nohighlight">\(
         z(t) &amp;=&amp; \dfrac{1}{2} gt^2 + v_0 t + z_0
     \end{array}
 \right.
-\)</span>$</p>
+\end{split}\]</div>
 <p>Vous choisirez pour cet exercice de représenter numériquement les fonctions par des tableaux Numpy 1D (représentation discrète). Vous choisirez vous-même l’intervalle et le pas de temps pour la représentation discrète.</p>
 <ol class="simple">
 <li><p>Représenter graphiquement, l’un au-dessous de l’autre grâce à la fonction <code class="docutils literal notranslate"><span class="pre">subplot()</span></code>, l’accélération, la vitesse et la position <span class="math notranslate nohighlight">\(z\)</span> de la pièce, pour <span class="math notranslate nohighlight">\(v_0 = -3.2 \mathrm{~m.s^{-1}}\)</span> et <span class="math notranslate nohighlight">\(z_0 = -1.5 \mathrm{~m}\)</span>. Choisir l’intervalle de temps de façon à ce que la pièce dépasse de peu la position <span class="math notranslate nohighlight">\(z=0\)</span>.</p></li>
@@ -663,37 +664,40 @@ $<span class="math notranslate nohighlight">\(
 <section id="tir-a-l-arc">
 <h2>Tir à l’arc<a class="headerlink" href="#tir-a-l-arc" title="Permalink to this headline">#</a></h2>
 <p>Pour un tir à l’arc, nous souhaitons modéliser la trajectoire de la flèche, en utilisant le modèle de l’accélération constante. Nous modélisons la flèche par une particule ponctuelle. La cible se trouve à <span class="math notranslate nohighlight">\(40 \mathrm{~m}\)</span> du tireur, à une hauteur de <span class="math notranslate nohighlight">\(1,\!5 \mathrm{~m}\)</span>, et fait <span class="math notranslate nohighlight">\(50 \mathrm{~cm}\)</span> de diamètre.</p>
-<p>Pour un mouvement à 2D suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, nous avons les équations suivantes pour les vitesses suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, respectivement :
-$<span class="math notranslate nohighlight">\(
+<p>Pour un mouvement à 2D suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, nous avons les équations suivantes pour les vitesses suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, respectivement :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left\{
     \begin{array}{lll}
         v_z(t) &amp;=&amp; gt + v_0^z\\
         v_x(t) &amp;=&amp; v_0^x
     \end{array}
 \right.
-\)</span>$</p>
-<p>et pour les positions suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, respectivement :
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>et pour les positions suivant les axes <span class="math notranslate nohighlight">\(z\)</span> et <span class="math notranslate nohighlight">\(x\)</span>, respectivement :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left\{
     \begin{array}{lll}
         z(t) &amp;=&amp; \dfrac{1}{2} gt^2 + v_0^z t + z_0\\
         x(t) &amp;=&amp; v_0^x t + x_0
     \end{array}
 \right.
-\)</span>$</p>
+\end{split}\]</div>
 <ol class="simple">
-<li><p>Créer un DataFrame Pandas pour représenter le mouvement. Vous choisirez vous-même la discrétisation des fonctions. L’index du DataFrame doit représenter le temps. Vous allez ensuite créer 5 colonnes pour le DataFrame, représentant : l’accélération, la vitesse suivant l’axe <span class="math notranslate nohighlight">\(z\)</span>, la vitesse suivant l’axe <span class="math notranslate nohighlight">\(x\)</span>, la position suivant l’axe <span class="math notranslate nohighlight">\(z\)</span>, et la position suivant l’axe <span class="math notranslate nohighlight">\(x\)</span>. Les paramètres du problème sont :
-$<span class="math notranslate nohighlight">\(
-\left\{
- \begin{array}{lll}
-     v_0^z = -1.3 \ \mathrm{m.s^{-1}}\\
-     v_0^x = 99.6 \ \mathrm{m.s^{-1}}\\
-     z_0 = -1.5 \ \mathrm{m}\\
-     x_0 = 0.0 \ \mathrm{m}
- \end{array}
-\right.
-\)</span>$</p></li>
+<li><p>Créer un DataFrame Pandas pour représenter le mouvement. Vous choisirez vous-même la discrétisation des fonctions. L’index du DataFrame doit représenter le temps. Vous allez ensuite créer 5 colonnes pour le DataFrame, représentant : l’accélération, la vitesse suivant l’axe <span class="math notranslate nohighlight">\(z\)</span>, la vitesse suivant l’axe <span class="math notranslate nohighlight">\(x\)</span>, la position suivant l’axe <span class="math notranslate nohighlight">\(z\)</span>, et la position suivant l’axe <span class="math notranslate nohighlight">\(x\)</span>. Les paramètres du problème sont :</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{
+    \begin{array}{lll}
+        v_0^z = -1.3 \ \mathrm{m.s^{-1}}\\
+        v_0^x = 99.6 \ \mathrm{m.s^{-1}}\\
+        z_0 = -1.5 \ \mathrm{m}\\
+        x_0 = 0.0 \ \mathrm{m}
+    \end{array}
+\right.
+\end{split}\]</div>
 <div class="cell tag_solution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation des modules</span>
