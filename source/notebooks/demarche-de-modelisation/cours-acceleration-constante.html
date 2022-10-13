@@ -610,15 +610,15 @@ title="Print to PDF"
 <h2>Expérience de chute libre<a class="headerlink" href="#experience-de-chute-libre" title="Permalink to this headline">#</a></h2>
 <p>Nous allons illustrer le processus de modélisation avec une expérience simple : la <strong>chute libre à une dimension</strong>. Prenons un objet et laissons-le tomber d’une certaine hauteur, sans lui donner de vitesse initiale.</p>
 <p>Afin de modéliser cette expérience, il faut d’abord choisir un système de référence. Nous choisissons un axe vertical, dirigé dans le sens du mouvement de l’objet qui tombe. Appelons-le l’axe <span class="math notranslate nohighlight">\(z\)</span>. Nous choisissons l’origine de ce repère à l’endroit où on lâche l’objet, à <span class="math notranslate nohighlight">\(z=0\)</span>. L’objet est modélisé comme une particule ponctuelle.</p>
-<p>Nous savons que l’objet est soumis au champ de pesanteur terrestre, <span class="math notranslate nohighlight">\(g \approx 9.81 \mathrm{~m.s^{-2}}\)</span>. D’après les relations fondamentales de la dynamique et la loi de la gravitation universelle, il est donc soumis à une accélération constante :
-\begin{equation}
+<p>Nous savons que l’objet est soumis au champ de pesanteur terrestre, <span class="math notranslate nohighlight">\(g \approx 9.81 \mathrm{~m.s^{-2}}\)</span>. D’après les relations fondamentales de la dynamique et la loi de la gravitation universelle, il est donc soumis à une accélération constante :</p>
+<p>\begin{equation}
 a(t) = \frac{dv}{dt}(t) = g
 \end{equation}</p>
-<p>En intégrant cette équation, on obtient la vitesse du corps en fonction du temps :
-\begin{equation}
+<p>En intégrant cette équation, on obtient la vitesse du corps en fonction du temps :</p>
+<p>\begin{equation}
 v(t) = g t
-\end{equation}
-avec la constante d’intégration égale à <span class="math notranslate nohighlight">\(0\)</span> car la vitesse initiale est nulle.</p>
+\end{equation}</p>
+<p>avec la constante d’intégration égale à <span class="math notranslate nohighlight">\(0\)</span> car la vitesse initiale est nulle.</p>
 <p>Le modèle mathématique de la vitesse physique du corps est une fonction à une variable <span class="math notranslate nohighlight">\(v:\mathbb{R}\to\mathbb{R}\)</span>. Nous pouvons représenter numériquement cette fonction de nombreuses façons différentes. Par exemple avec :</p>
 <ul class="simple">
 <li><p>deux tableaux Numpy à 1 dimension qui représentent la vitesse et le temps ;</p></li>
@@ -1072,7 +1072,7 @@ $<span class="math notranslate nohighlight">\( H = \frac{1}{2} g T^2 \)</span>$<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ff99dbfb190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0ee554aca0&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/cours-acceleration-constante_44_1.png" src="../../../_images/cours-acceleration-constante_44_1.png" />
