@@ -27,10 +27,3 @@ Nous utiliserons le langage Python qui est utilisé dans de nombreuses disciplin
 
 Dans la deuxième partie du cours vous développerez un **projet en équipe**. Cela demande des compétences d'organisation,
 de relationnel et de communication. Vous serez autonomes aussi bien pour le choix du sujet que pour sa réalisation. Cependant vous serez suivi·e et conseillé·e de près par votre enseignant·e.
-
-## Amphi de rentrée
-
-```{admonition} Transparents
-:class: tip
-[Transparents d'introduction au cours (PDF)](https://dropsu.sorbonne-universite.fr/s/8TY4pWCEzFSiBqp)
-```
