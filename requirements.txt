@@ -3,6 +3,6 @@ matplotlib
 numpy
 ghp-import
 pandas
-pygments == 2.6.1
+pygments
 simpy
 scipy
