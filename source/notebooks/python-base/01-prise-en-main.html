@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Première prise en main</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,703 +61,335 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/notebooks/python-base/01-prise-en-main';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Les listes Python" href="02-listes-python.html" />
     <link rel="prev" title="Python base" href="../../pages/part-python-base.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../_static/simu_gw.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/simu_gw.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-informations-generales.html">
-   Informations générales
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-pedagogie.html">
-     Pédagogie
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-competences.html">
-     Objectifs d’apprentissage
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-deroulement.html">
-     Déroulement du cours
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-evaluation.html">
-     Évaluations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
-     Outils numériques
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-licence.html">
-     Crédits et licence
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../pages/part-python-base.html">
-   Python base
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Première prise en main
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02-listes-python.html">
-     Les listes Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03-fonctions-modules.html">
-     Fonctions et modules
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04-module-numpy.html">
-     Le module NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05-fonctions-numpy.html">
-     Les fonctions de Numpy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06-module-matplotlib.html">
-     Le module Matplotlib
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
-   Python intermédiaire
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">
-     Dictionnaires et Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">
-     Logique, structures de contrôle et filtrage
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/03-iteration.html">
-     Itération
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/04-fonctions.html">
-     Fonctions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">
-     Entrées-sorties
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
-   Modélisation numérique
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">
-     Modèle de l’accélération constante
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">
-     Représentation graphique d’une suite mathématique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
-     Dérivation et intégration numérique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
-     Équations différentielles ordinaires (EDO)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
-     Ajuster un modèle aux données
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-exercices.html">
-   Exercices
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">
-     Démarche de modélisation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">
-     Suite de Fibonacci
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
-     De nouvelles méthodes numériques
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
-     Méthodes d’Euler et de Runge-Kutta
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
-     Ajustements de modèles
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-mini-projets.html">
-   Mini-projets
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">
-     Mouvement rétrograde de Mars
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">
-     Un exemple de système chaotique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
-     Calcul des forces de pression sur une digue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
-     Le pendule
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
-     Le réchauffement climatique
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../pages/part-projet.html">
-   Description du projet
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-informations-generales.html">Informations générales</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-pedagogie.html">Pédagogie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-competences.html">Objectifs d’apprentissage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-deroulement.html">Déroulement du cours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-evaluation.html">Évaluations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-outils-numeriques.html">Outils numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-licence.html">Crédits et licence</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../pages/part-python-base.html">Python base</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Première prise en main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-listes-python.html">Les listes Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-fonctions-modules.html">Fonctions et modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-module-numpy.html">Le module NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-fonctions-numpy.html">Les fonctions de Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-module-matplotlib.html">Le module Matplotlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-python-intermediaire.html">Python intermédiaire</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">Dictionnaires et Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">Logique, structures de contrôle et filtrage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/03-iteration.html">Itération</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/04-fonctions.html">Fonctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">Entrées-sorties</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-modelisation-numerique.html">Modélisation numérique</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">Modèle de l’accélération constante</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">Représentation graphique d’une suite mathématique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">Dérivation et intégration numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">Équations différentielles ordinaires (EDO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">Ajuster un modèle aux données</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-exercices.html">Exercices</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">Démarche de modélisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">Suite de Fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">De nouvelles méthodes numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">Méthodes d’Euler et de Runge-Kutta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">Ajustements de modèles</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-mini-projets.html">Mini-projets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">Mouvement rétrograde de Mars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">Un exemple de système chaotique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivation-integration/mini-projet-digue.html">Calcul des forces de pression sur une digue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">Le pendule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">Le réchauffement climatique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/part-projet.html">Description du projet</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/python-base/01-prise-en-main.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/source/notebooks/python-base/01-prise-en-main.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/source/notebooks/python-base/01-prise-en-main.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-presentation-du-cours-et-des-jupyter-notebooks">
-   <strong>
-    Vidéo
-   </strong>
-   : Présentation du cours et des Jupyter Notebooks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#l-interface-jupyter-notebook">
-   L’interface Jupyter Notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commentaires">
-   Commentaires
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-la-calculatrice-python">
-   <strong>
-    Vidéo
-   </strong>
-   : La calculatrice Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#la-calculatrice-python">
-   La calculatrice Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-bouillon-de-culture">
-     Exercice : bouillon de culture
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-variables-et-type">
-   <strong>
-    Vidéo
-   </strong>
-   : Variables et type
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#affectation-d-une-variable">
-   Affectation d’une variable
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-masse-de-la-terre">
-     Exercice : masse de la Terre
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculer-avec-des-variables">
-   Calculer avec des variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-masse-de-l-echantillon">
-     Exercice: masse de l’échantillon
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-types">
-   Les types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-chaine">
-     Exercice: chaîne
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-sur-les-types">
-   Opérations sur les types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-concatenation">
-     Exercice: concaténation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conversion-de-type">
-   Conversion de type
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-conversion-de-type">
-     Exercice: conversion de type
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Première prise en main</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-presentation-du-cours-et-des-jupyter-notebooks">
-   <strong>
-    Vidéo
-   </strong>
-   : Présentation du cours et des Jupyter Notebooks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#l-interface-jupyter-notebook">
-   L’interface Jupyter Notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commentaires">
-   Commentaires
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-la-calculatrice-python">
-   <strong>
-    Vidéo
-   </strong>
-   : La calculatrice Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#la-calculatrice-python">
-   La calculatrice Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-bouillon-de-culture">
-     Exercice : bouillon de culture
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-variables-et-type">
-   <strong>
-    Vidéo
-   </strong>
-   : Variables et type
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#affectation-d-une-variable">
-   Affectation d’une variable
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-masse-de-la-terre">
-     Exercice : masse de la Terre
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculer-avec-des-variables">
-   Calculer avec des variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-masse-de-l-echantillon">
-     Exercice: masse de l’échantillon
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-types">
-   Les types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-chaine">
-     Exercice: chaîne
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-sur-les-types">
-   Opérations sur les types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-concatenation">
-     Exercice: concaténation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conversion-de-type">
-   Conversion de type
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-conversion-de-type">
-     Exercice: conversion de type
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Première prise en main</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-presentation-du-cours-et-des-jupyter-notebooks"><strong>Vidéo</strong>: Présentation du cours et des Jupyter Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-interface-jupyter-notebook">L’interface Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commentaires">Commentaires</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-la-calculatrice-python"><strong>Vidéo</strong>: La calculatrice Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-calculatrice-python">La calculatrice Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-bouillon-de-culture">Exercice : bouillon de culture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-variables-et-type"><strong>Vidéo</strong>: Variables et type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affectation-d-une-variable">Affectation d’une variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-masse-de-la-terre">Exercice : masse de la Terre</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculer-avec-des-variables">Calculer avec des variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-masse-de-l-echantillon">Exercice: masse de l’échantillon</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types">Les types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-chaine">Exercice: chaîne</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-sur-les-types">Opérations sur les types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-concatenation">Exercice: concaténation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">Conversion de type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-conversion-de-type">Exercice: conversion de type</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="premiere-prise-en-main">
-<h1>Première prise en main<a class="headerlink" href="#premiere-prise-en-main" title="Permalink to this headline">#</a></h1>
+<h1>Première prise en main<a class="headerlink" href="#premiere-prise-en-main" title="Permalink to this heading">#</a></h1>
 <section id="video-presentation-du-cours-et-des-jupyter-notebooks">
-<h2><strong>Vidéo</strong>: Présentation du cours et des Jupyter Notebooks<a class="headerlink" href="#video-presentation-du-cours-et-des-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<h2><strong>Vidéo</strong>: Présentation du cours et des Jupyter Notebooks<a class="headerlink" href="#video-presentation-du-cours-et-des-jupyter-notebooks" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4438ddd6-bcac-4308-975e-ae0c01325e43&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -754,7 +397,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="l-interface-jupyter-notebook">
-<h2>L’interface Jupyter Notebook<a class="headerlink" href="#l-interface-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<h2>L’interface Jupyter Notebook<a class="headerlink" href="#l-interface-jupyter-notebook" title="Permalink to this heading">#</a></h2>
 <p>Dans ce cours nous utiliserons Jupyter Notebook. Cette interface est constituée de <em>cellules</em> dans lesquelles vous pouvez écrire du langage Python (<em>code</em>) ou bien du texte.</p>
 <p>Pour <em>exécuter</em> le code Python, il faut sélectionner la cellule en cliquant dessus avec la souris, puis faire au clavier <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>. Un <em>interpréteur</em> exécute alors le code Python et envoie un résultat qui s’affiche sous la cellule. Vous pouvez alors sélectionner la cellule suivante à la souris.</p>
 <p>Vous pouvez également combiner l’exécution d’une cellule et le passage à la cellule suivante avec <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>.</p>
@@ -791,7 +434,7 @@ title="Print to PDF"
 <p>Une <em>valeur</em> est l’une des choses fondamentales avec lesquelles fonctionne un programme, comme une lettre ou un chiffre.</p>
 </div></section>
 <section id="commentaires">
-<h2>Commentaires<a class="headerlink" href="#commentaires" title="Permalink to this headline">#</a></h2>
+<h2>Commentaires<a class="headerlink" href="#commentaires" title="Permalink to this heading">#</a></h2>
 <p>Un <em>programme informatique</em> est une séquence d’<em>instructions</em> qui spécifie comment effectuer un calcul. Il peut aller de quelques lignes à plusieurs dizaines de milliers de lignes ou plus.</p>
 <p>Il est très important de <strong>toujours commenter un programme</strong> informatique que l’on écrit, quelle que soit sa longueur. Cela permet d’ajouter des informations utiles, ou bien d’expliquer ce que signifie une instruction. De plus, cela permet :</p>
 <ul class="simple">
@@ -837,7 +480,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="video-la-calculatrice-python">
-<h2><strong>Vidéo</strong>: La calculatrice Python<a class="headerlink" href="#video-la-calculatrice-python" title="Permalink to this headline">#</a></h2>
+<h2><strong>Vidéo</strong>: La calculatrice Python<a class="headerlink" href="#video-la-calculatrice-python" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e15ff2db-b926-42fa-ad21-ae0c0131ffd8&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -846,7 +489,7 @@ title="Print to PDF"
 <p><br><div id="calculatrice"></div></p>
 </section>
 <section id="la-calculatrice-python">
-<h2>La calculatrice Python<a class="headerlink" href="#la-calculatrice-python" title="Permalink to this headline">#</a></h2>
+<h2>La calculatrice Python<a class="headerlink" href="#la-calculatrice-python" title="Permalink to this heading">#</a></h2>
 <p>Le code Python permet de calculer comme sur une calculatrice. On utilise alors des <em>opérateurs</em> : addition <code class="docutils literal notranslate"><span class="pre">+</span></code>, soustraction <code class="docutils literal notranslate"><span class="pre">-</span></code>, multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>. Il existe d’autres opérateurs :</p>
 <ul class="simple">
 <li><p>la puissance <code class="docutils literal notranslate"><span class="pre">**</span></code> : le nombre à gauche des deux étoiles est élevé à la puissance du nombre à droite. Par exemple <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">5</span> <span class="pre">=</span> <span class="pre">32</span></code></p></li>
@@ -875,7 +518,7 @@ title="Print to PDF"
 </div>
 <p><br><div id="bouillon"></div></p>
 <section id="exercice-bouillon-de-culture">
-<h3>Exercice : bouillon de culture<a class="headerlink" href="#exercice-bouillon-de-culture" title="Permalink to this headline">#</a></h3>
+<h3>Exercice : bouillon de culture<a class="headerlink" href="#exercice-bouillon-de-culture" title="Permalink to this heading">#</a></h3>
 <p>La masse d’une bactérie est de l’ordre du picogramme (<code class="docutils literal notranslate"><span class="pre">1e-15</span></code> kg). Lorque l’on place une bactérie <em>escherichia coli</em> dans un bouillon de culture, le nombre de cellules double toutes les trente minutes par division cellulaire. À la première génération, on aura <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">2</span></code> cellules. À la deuxième génération, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> cellules. Quelle est la masse de l’échantillon au bout de 140 générations ? Comparer cette masse à celle de la Terre <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code> kg.</p>
 <p>Afin d’effectuer cet exercice, il faut créer une cellule sous ce texte :</p>
 <ul class="simple">
@@ -883,11 +526,17 @@ title="Print to PDF"
 <li><p>avec <em>Jupyter Lab</em>, sélectionnez la petite icône <code class="docutils literal notranslate"><span class="pre">+</span></code> dans le menu contextuel en haut du calepin</p></li>
 </ul>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">140</span> <span class="o">*</span> <span class="mf">1e-15</span> <span class="o">//</span> <span class="mf">5.972e24</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>233.0
 </pre></div>
@@ -897,7 +546,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="video-variables-et-type">
-<h2><strong>Vidéo</strong>: Variables et type<a class="headerlink" href="#video-variables-et-type" title="Permalink to this headline">#</a></h2>
+<h2><strong>Vidéo</strong>: Variables et type<a class="headerlink" href="#video-variables-et-type" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=60165160-760d-4a5e-a743-adb100bc56ad&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -905,7 +554,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="affectation-d-une-variable">
-<h2>Affectation d’une variable<a class="headerlink" href="#affectation-d-une-variable" title="Permalink to this headline">#</a></h2>
+<h2>Affectation d’une variable<a class="headerlink" href="#affectation-d-une-variable" title="Permalink to this heading">#</a></h2>
 <p>Une <em>variable</em> permet de donner un nom à une zone de la mémoire de l’ordinateur dans laquelle est stockée une valeur. C’est comme donner un nom à une boîte dans laquelle est rangé un nombre ou une lettre.</p>
 <p>Une variable peut représenter une <a class="reference external" href="https://fr.wikipedia.org/wiki/Grandeur_physique">grandeur physique</a>, par exemple la vitesse <code class="docutils literal notranslate"><span class="pre">v</span></code> d’un vélo. La valeur contenue dans la variable peut changer au cours du programme, mais le nom de la variable qui représente la grandeur physique reste le même.</p>
 <p>Pour ranger une valeur dans une variable, on utilise le signe <em>affectation</em> <code class="docutils literal notranslate"><span class="pre">=</span></code>. L’instruction <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">15.2</span></code> <em>affecte</em> la valeur <code class="docutils literal notranslate"><span class="pre">15.2</span></code> à la variable <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
@@ -948,12 +597,17 @@ title="Print to PDF"
 <p><strong>Message d’erreur</strong></p>
 <p>Lorsque l’intérpréteur Python détecte une instruction qui n’est pas autorisée, il renvoie un <em>message d’erreur</em>. Il est important de lire et de comprendre ces messages d’erreur, car ils permettent de comprendre quel est le problème dans le programme que l’on a écrit. Ces messages d’erreur sont en anglais. Ici, l’interpréteur nous dit qu’il ne peut pas affecter (<em>assign</em>) à une valeur (<em>literal</em>).</p>
 </div><section id="exercice-masse-de-la-terre">
-<h3>Exercice : masse de la Terre<a class="headerlink" href="#exercice-masse-de-la-terre" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice : masse de la Terre<a class="headerlink" href="#exercice-masse-de-la-terre" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Créer une variable <code class="docutils literal notranslate"><span class="pre">masse</span></code> avec la valeur <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code>, qui représente la masse de la Terre en kg.</p></li>
 <li><p>Afficher la valeur de cette variable à l’écran avec l’instruction <code class="docutils literal notranslate"><span class="pre">print(mass)</span></code></p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Masse de la Terre</span>
 <span class="n">masse</span> <span class="o">=</span> <span class="mf">5.972e24</span> <span class="c1"># kg</span>
@@ -963,6 +617,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.972e+24
 </pre></div>
@@ -972,8 +627,8 @@ title="Print to PDF"
 </section>
 </section>
 <section id="calculer-avec-des-variables">
-<h2>Calculer avec des variables<a class="headerlink" href="#calculer-avec-des-variables" title="Permalink to this headline">#</a></h2>
-<p>Dans l’exercice <a class="reference external" href="#bouillon">bouillon de culture</a>, nous avons utilisé directement des valeurs pour former des expressions. Il est possible aussi de créer des variables, puis de former des expressions avec ces variables :</p>
+<h2>Calculer avec des variables<a class="headerlink" href="#calculer-avec-des-variables" title="Permalink to this heading">#</a></h2>
+<p>Dans l’exercice <span class="xref myst">bouillon de culture</span>, nous avons utilisé directement des valeurs pour former des expressions. Il est possible aussi de créer des variables, puis de former des expressions avec ces variables :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Masse d&#39;une bactérie</span>
@@ -1002,12 +657,12 @@ title="Print to PDF"
 <p>L’expression à droite du signe affectation est évaluée en remplacant le nom des variables par leur valeur.</p>
 <p>Le programme que l’on a écrit en introduisant des variables est plus long que le précédent. Il est aussi plus facile à comprendre. De plus, on peut facilement changer la valeur d’une des variables et exécuter de nouveau le même programme.</p>
 <section id="exercice-masse-de-l-echantillon">
-<h3>Exercice: masse de l’échantillon<a class="headerlink" href="#exercice-masse-de-l-echantillon" title="Permalink to this headline">#</a></h3>
+<h3>Exercice: masse de l’échantillon<a class="headerlink" href="#exercice-masse-de-l-echantillon" title="Permalink to this heading">#</a></h3>
 <p>Quelle est la masse de l’échantillon pour 133 générations ? Il suffit de changer la ligne <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">140</span></code> en <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">133</span></code> et d’exécuter de nouveau la cellule.</p>
 </section>
 </section>
 <section id="les-types">
-<h2>Les types<a class="headerlink" href="#les-types" title="Permalink to this headline">#</a></h2>
+<h2>Les types<a class="headerlink" href="#les-types" title="Permalink to this heading">#</a></h2>
 <p>Dans les exemples précédents, nous avons travaillé avec deux <em>types</em> de valeurs : <code class="docutils literal notranslate"><span class="pre">140</span></code> est un <strong>entier</strong>, <code class="docutils literal notranslate"><span class="pre">5.972</span></code> est un <strong>nombre à virgule flottante</strong>.</p>
 <p>Il existe aussi des valeurs de type <strong>chaîne</strong> ou <strong>chaîne de caractères</strong> : ce sont des caractères enchaînés mis entre guillemets. Par exemple <code class="docutils literal notranslate"><span class="pre">'bonjour</span> <span class="pre">!'</span></code> ou bien <code class="docutils literal notranslate"><span class="pre">&quot;bonjour</span> <span class="pre">!&quot;</span></code>. Une chaîne est donc une séquence de caractères.</p>
 <p>Pour connaître le type d’une valeur on peut demander à l’interpréteur avec l’instruction <code class="docutils literal notranslate"><span class="pre">type()</span></code> :</p>
@@ -1028,7 +683,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Le mot <em>class</em> indique que la valeur appartient à une certaine <em>catégorie</em>. Un type est une catégorie de valeurs. Résumons les différents types vus jusqu’ici :</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>type</p></th>
 <th class="head"><p>en anglais</p></th>
@@ -1051,18 +706,24 @@ title="Print to PDF"
 </tbody>
 </table>
 <section id="exercice-chaine">
-<h3>Exercice: chaîne<a class="headerlink" href="#exercice-chaine" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice: chaîne<a class="headerlink" href="#exercice-chaine" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Créer une variable appelée <code class="docutils literal notranslate"><span class="pre">annonce_resultat</span></code> qui a la valeur <code class="docutils literal notranslate"><span class="pre">&quot;masse</span> <span class="pre">du</span> <span class="pre">bouillon&quot;</span></code>, de type chaîne.</p></li>
 <li><p>Afficher la valeur de cette variable à l’écran à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annonce_resultat</span> <span class="o">=</span> <span class="s2">&quot;masse du bouillon&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">annonce_resultat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>masse du bouillon
 </pre></div>
@@ -1072,9 +733,9 @@ title="Print to PDF"
 </section>
 </section>
 <section id="operations-sur-les-types">
-<h2>Opérations sur les types<a class="headerlink" href="#operations-sur-les-types" title="Permalink to this headline">#</a></h2>
-<p>Nous avons vu dans <a class="reference external" href="#calculatrice">la caculatrice Python</a> les opérations pour former des expressions avec des entiers et des nombre à virgule flottante. Résumons ces opérations ici :</p>
-<table class="colwidths-auto table">
+<h2>Opérations sur les types<a class="headerlink" href="#operations-sur-les-types" title="Permalink to this heading">#</a></h2>
+<p>Nous avons vu dans <span class="xref myst">la caculatrice Python</span> les opérations pour former des expressions avec des entiers et des nombre à virgule flottante. Résumons ces opérations ici :</p>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>opération</p></th>
 <th class="head"><p>syntaxe</p></th>
@@ -1122,18 +783,24 @@ Salut Salut Salut
 </div>
 </div>
 <section id="exercice-concatenation">
-<h3>Exercice: concaténation<a class="headerlink" href="#exercice-concatenation" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice: concaténation<a class="headerlink" href="#exercice-concatenation" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>En utilisant l’opérateur concaténation et la variable <code class="docutils literal notranslate"><span class="pre">annonce_resultat</span></code>, créer une nouvelle chaîne nommée <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> qui a la valeur <code class="docutils literal notranslate"><span class="pre">&quot;La</span> <span class="pre">masse</span> <span class="pre">du</span> <span class="pre">bouillon</span> <span class="pre">de</span> <span class="pre">culture</span> <span class="pre">est</span> <span class="pre">égale</span> <span class="pre">à</span> <span class="pre">&quot;</span></code>.</p></li>
 <li><p>Afficher la valeur de la variable <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> à l’écran.</p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annonce_resultat2</span> <span class="o">=</span> <span class="s2">&quot;La &quot;</span> <span class="o">+</span> <span class="n">annonce_resultat</span> <span class="o">+</span> <span class="s2">&quot; de culture est égale à &quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">annonce_resultat2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La masse du bouillon de culture est égale à 
 </pre></div>
@@ -1143,7 +810,7 @@ Salut Salut Salut
 </section>
 </section>
 <section id="conversion-de-type">
-<h2>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this headline">#</a></h2>
+<h2>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this heading">#</a></h2>
 <p>La concaténation de chaîne est très pratique pour afficher à l’écran le résultat d’un calcul. Par exemple, pour reprendre l’exercice du bouillon de culture, on pourrait écrire :</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1166,7 +833,7 @@ Salut Salut Salut
 <p><strong>Message d’erreur</strong></p>
 <p>Le message d’erreur nous dit : “must be str, not float”, c’est-à-dire, “doit être une chaîne, et pas un nombre à virgule flottante”. En effet, on a additionné des valeurs de types différents : une chaîne avec un nombre à virgule flottante. Cela est interdit en Python : une expression cohérente doit être un enchaînement de valeurs et d’opérateurs de même type.</p>
 </div><p>Il faut pouvoir convertir une valeur en un autre type. Pour cela il existe plusieurs fonctions Python, une pour chaque type que nous avons vu jusqu’ici :</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>fonction</p></th>
 <th class="head"><p>description</p></th>
@@ -1185,17 +852,23 @@ Salut Salut Salut
 </tbody>
 </table>
 <section id="exercice-conversion-de-type">
-<h3>Exercice: conversion de type<a class="headerlink" href="#exercice-conversion-de-type" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice: conversion de type<a class="headerlink" href="#exercice-conversion-de-type" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>À l’aide de l’opérateur concaténation et des variables <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> et <code class="docutils literal notranslate"><span class="pre">masse_echantillon</span></code>, afficher le résultat de l’expérience du bouillon de culture.</p></li>
 <li><p>Comment faire pour afficher un entier et non un nombre à virgule flottante ?</p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">annonce_resultat2</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">masse_echantillon</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; fois la masse de la Terre.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La masse du bouillon de culture est égale à 233 fois la masse de la Terre.
 </pre></div>
@@ -1218,7 +891,7 @@ Salut Salut Salut
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./source/notebooks/python-base"
         },
         predefinedOutput: true
@@ -1226,50 +899,133 @@ Salut Salut Salut
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../pages/part-python-base.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python base</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../pages/part-python-base.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python base</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="02-listes-python.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="02-listes-python.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Les listes Python</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By P. Delva<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-presentation-du-cours-et-des-jupyter-notebooks"><strong>Vidéo</strong>: Présentation du cours et des Jupyter Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-interface-jupyter-notebook">L’interface Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commentaires">Commentaires</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-la-calculatrice-python"><strong>Vidéo</strong>: La calculatrice Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-calculatrice-python">La calculatrice Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-bouillon-de-culture">Exercice : bouillon de culture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-variables-et-type"><strong>Vidéo</strong>: Variables et type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affectation-d-une-variable">Affectation d’une variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-masse-de-la-terre">Exercice : masse de la Terre</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculer-avec-des-variables">Calculer avec des variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-masse-de-l-echantillon">Exercice: masse de l’échantillon</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types">Les types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-chaine">Exercice: chaîne</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-sur-les-types">Opérations sur les types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-concatenation">Exercice: concaténation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">Conversion de type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-conversion-de-type">Exercice: conversion de type</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By P. Delva
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

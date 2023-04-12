@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Les listes Python</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,709 +61,334 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/notebooks/python-base/02-listes-python';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Fonctions et modules" href="03-fonctions-modules.html" />
     <link rel="prev" title="Première prise en main" href="01-prise-en-main.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../_static/simu_gw.jpg" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../_static/simu_gw.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/simu_gw.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-informations-generales.html">
-   Informations générales
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-pedagogie.html">
-     Pédagogie
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-competences.html">
-     Objectifs d’apprentissage
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-deroulement.html">
-     Déroulement du cours
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-evaluation.html">
-     Évaluations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-outils-numeriques.html">
-     Outils numériques
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../pages/info-licence.html">
-     Crédits et licence
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../pages/part-python-base.html">
-   Python base
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01-prise-en-main.html">
-     Première prise en main
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Les listes Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03-fonctions-modules.html">
-     Fonctions et modules
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04-module-numpy.html">
-     Le module NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05-fonctions-numpy.html">
-     Les fonctions de Numpy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06-module-matplotlib.html">
-     Le module Matplotlib
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-python-intermediaire.html">
-   Python intermédiaire
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">
-     Dictionnaires et Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">
-     Logique, structures de contrôle et filtrage
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/03-iteration.html">
-     Itération
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/04-fonctions.html">
-     Fonctions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">
-     Entrées-sorties
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-modelisation-numerique.html">
-   Modélisation numérique
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">
-     Modèle de l’accélération constante
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">
-     Représentation graphique d’une suite mathématique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">
-     Dérivation et intégration numérique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">
-     Équations différentielles ordinaires (EDO)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">
-     Ajuster un modèle aux données
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-exercices.html">
-   Exercices
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">
-     Démarche de modélisation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">
-     Suite de Fibonacci
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">
-     De nouvelles méthodes numériques
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">
-     Méthodes d’Euler et de Runge-Kutta
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">
-     Ajustements de modèles
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../pages/part-mini-projets.html">
-   Mini-projets
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">
-     Mouvement rétrograde de Mars
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">
-     Un exemple de système chaotique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../derivation-integration/mini-projet-digue.html">
-     Calcul des forces de pression sur une digue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">
-     Le pendule
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">
-     Le réchauffement climatique
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../pages/part-projet.html">
-   Description du projet
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-informations-generales.html">Informations générales</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-pedagogie.html">Pédagogie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-competences.html">Objectifs d’apprentissage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-deroulement.html">Déroulement du cours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-evaluation.html">Évaluations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-outils-numeriques.html">Outils numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pages/info-licence.html">Crédits et licence</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../pages/part-python-base.html">Python base</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-prise-en-main.html">Première prise en main</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Les listes Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-fonctions-modules.html">Fonctions et modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-module-numpy.html">Le module NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-fonctions-numpy.html">Les fonctions de Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-module-matplotlib.html">Le module Matplotlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-python-intermediaire.html">Python intermédiaire</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/01-dictionnaires-pandas.html">Dictionnaires et Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/02-logique-filtrage.html">Logique, structures de contrôle et filtrage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/03-iteration.html">Itération</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/04-fonctions.html">Fonctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-intermediaire/05-entrees-sorties.html">Entrées-sorties</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-modelisation-numerique.html">Modélisation numérique</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demarche-de-modelisation/cours-acceleration-constante.html">Modèle de l’accélération constante</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suites-relations-recurrence/cours-suite-graphique.html">Représentation graphique d’une suite mathématique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivation-integration/cours-derivation-integration.html">Dérivation et intégration numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equations-differentielles/cours-equations-differentielles.html">Équations différentielles ordinaires (EDO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajustement-modele/cours-ajustement-modele.html">Ajuster un modèle aux données</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-exercices.html">Exercices</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demarche-de-modelisation/exercices-demarche-de-modelisation.html">Démarche de modélisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suites-relations-recurrence/exercices-suites-relations-recurrence.html">Suite de Fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivation-integration/exercices-derivation-integration.html">De nouvelles méthodes numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equations-differentielles/exercices-equations-differentielles.html">Méthodes d’Euler et de Runge-Kutta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajustement-modele/exercices-ajustement-modele.html">Ajustements de modèles</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/part-mini-projets.html">Mini-projets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demarche-de-modelisation/mini-projet-retrogradation-mars.html">Mouvement rétrograde de Mars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suites-relations-recurrence/mini-projet-logistique.html">Un exemple de système chaotique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivation-integration/mini-projet-digue.html">Calcul des forces de pression sur une digue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equations-differentielles/mini-projet-pendule.html">Le pendule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajustement-modele/mini-projet-rechauffement-climatique.html">Le réchauffement climatique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/part-projet.html">Description du projet</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/source/notebooks/python-base/02-listes-python.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/source/notebooks/python-base/02-listes-python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/source/notebooks/python-base/02-listes-python.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-elements-de-base">
-   <strong>
-    Vidéo
-   </strong>
-   : Éléments de base
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-une-liste">
-   Créer une liste
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#liste-de-listes">
-   Liste de listes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifier-une-liste">
-   Modifier une liste
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-sur-listes">
-   Opérations sur listes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-sous-listes-et-tranches">
-   <strong>
-    Vidéo
-   </strong>
-   : Sous-listes et tranches
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tranches-de-liste">
-   Tranches de liste
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexation-et-tranche-de-liste-de-listes">
-   Indexation et tranche de liste de listes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-manipuler-les-listes">
-   <strong>
-    Vidéo
-   </strong>
-   : Manipuler les listes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supprimer-un-element">
-   Supprimer un élément
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-chaines">
-   Les chaînes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objets-et-valeurs">
-   Objets et valeurs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aliasing">
-   Aliasing
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Les listes Python</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-elements-de-base">
-   <strong>
-    Vidéo
-   </strong>
-   : Éléments de base
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-une-liste">
-   Créer une liste
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#liste-de-listes">
-   Liste de listes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifier-une-liste">
-   Modifier une liste
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-sur-listes">
-   Opérations sur listes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-sous-listes-et-tranches">
-   <strong>
-    Vidéo
-   </strong>
-   : Sous-listes et tranches
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tranches-de-liste">
-   Tranches de liste
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexation-et-tranche-de-liste-de-listes">
-   Indexation et tranche de liste de listes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-manipuler-les-listes">
-   <strong>
-    Vidéo
-   </strong>
-   : Manipuler les listes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supprimer-un-element">
-   Supprimer un élément
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-chaines">
-   Les chaînes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objets-et-valeurs">
-   Objets et valeurs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aliasing">
-   Aliasing
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Les listes Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-elements-de-base"><strong>Vidéo</strong>: Éléments de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-une-liste">Créer une liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-de-listes">Liste de listes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifier-une-liste">Modifier une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-sur-listes">Opérations sur listes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-sous-listes-et-tranches"><strong>Vidéo</strong>: Sous-listes et tranches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tranches-de-liste">Tranches de liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexation-et-tranche-de-liste-de-listes">Indexation et tranche de liste de listes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-manipuler-les-listes"><strong>Vidéo</strong>: Manipuler les listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-un-element">Supprimer un élément</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines">Les chaînes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objets-et-valeurs">Objets et valeurs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="les-listes-python">
-<h1>Les listes Python<a class="headerlink" href="#les-listes-python" title="Permalink to this headline">#</a></h1>
+<h1>Les listes Python<a class="headerlink" href="#les-listes-python" title="Permalink to this heading">#</a></h1>
 <section id="video-elements-de-base">
-<h2><strong>Vidéo</strong>: Éléments de base<a class="headerlink" href="#video-elements-de-base" title="Permalink to this headline">#</a></h2>
+<h2><strong>Vidéo</strong>: Éléments de base<a class="headerlink" href="#video-elements-de-base" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3f7ad3ca-b863-42b4-ba5a-adb201017e95&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -760,7 +396,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creer-une-liste">
-<h2>Créer une liste<a class="headerlink" href="#creer-une-liste" title="Permalink to this headline">#</a></h2>
+<h2>Créer une liste<a class="headerlink" href="#creer-une-liste" title="Permalink to this heading">#</a></h2>
 <p>Une <em>liste</em> est une séquence de valeurs, comme une chaîne. Dans une chaîne, ces valeurs sont des caractères. Dans une liste, les valeurs peuvent être de n’importe quel type.</p>
 <p>Les valeurs dans une liste sont appelées <em>éléments</em>.</p>
 <p>Le plus simple pour créer une liste est d’entourer les éléments par des crochets <code class="docutils literal notranslate"><span class="pre">[</span></code> et <code class="docutils literal notranslate"><span class="pre">]</span></code>. Voici une liste, nommée <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>, qui contient des valeurs des trois types que l’on a introduits dans l’activité “Première prise en main de Python”. Saurez-vous les reconnaître ?</p>
@@ -781,14 +417,19 @@ title="Print to PDF"
 </div>
 </div>
 <section id="exercice">
-<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Créer trois variables nommées <code class="docutils literal notranslate"><span class="pre">plante1</span></code>, <code class="docutils literal notranslate"><span class="pre">plante2</span></code> et <code class="docutils literal notranslate"><span class="pre">plante3</span></code>, contenant respectivement les valeurs <code class="docutils literal notranslate"><span class="pre">&quot;gentiane&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;campanule&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;pensée&quot;</span></code>.</p></li>
 <li><p>Créer une liste nommée <code class="docutils literal notranslate"><span class="pre">plantes</span></code>, à partir des noms des 3 variables créées en 1, qui contient les noms des trois plantes.</p></li>
 <li><p>Vous possédez ces trois plantes chez vous, et vous voulez suivre leur croissance. Créez une nouvelle liste nommée <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> qui contient le nom des trois plantes, et juste après le nom de chaque plante, sa taille (valeur de type <em>float</em>). La gentiane fait 7.5 cm, la campanule 5.8 cm et la pensée 11.4 cm.</p></li>
 <li><p>Afficher le contenu des 2 listes à l’écran avec la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création des variables</span>
 <span class="n">plante1</span> <span class="o">=</span> <span class="s2">&quot;gentiane&quot;</span>
@@ -807,6 +448,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;campanule&#39;, &#39;pensée&#39;]
 [&#39;gentiane&#39;, 7.5, &#39;campanule&#39;, 5.8, &#39;pensée&#39;, 11.4]
@@ -817,7 +459,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="liste-de-listes">
-<h2>Liste de listes<a class="headerlink" href="#liste-de-listes" title="Permalink to this headline">#</a></h2>
+<h2>Liste de listes<a class="headerlink" href="#liste-de-listes" title="Permalink to this heading">#</a></h2>
 <p>Une liste peut contenir une autre liste. On dit alors que la liste est <em>imbriquée</em>. Dans l’exemple suivant, on crée une liste de trois listes imbriquées :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -829,12 +471,17 @@ title="Print to PDF"
 </div>
 </div>
 <section id="id1">
-<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Afficher le contenu de la liste <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> à l’écran.</p></li>
 <li><p>Afficher le type de la liste avec la fonction <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage de la liste taille_plantes</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">)</span>
@@ -844,6 +491,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;gentiane&#39;, 7.5], [&#39;campanule&#39;, 5.8], [&#39;pensée&#39;, 11.4]]
 &lt;class &#39;list&#39;&gt;
@@ -857,7 +505,7 @@ title="Print to PDF"
 </div></section>
 </section>
 <section id="modifier-une-liste">
-<h2>Modifier une liste<a class="headerlink" href="#modifier-une-liste" title="Permalink to this headline">#</a></h2>
+<h2>Modifier une liste<a class="headerlink" href="#modifier-une-liste" title="Permalink to this heading">#</a></h2>
 <p>On peut accéder à un élément de la liste en utilisant l’opérateur <code class="docutils literal notranslate"><span class="pre">[]</span></code> d’indexation :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -955,7 +603,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="operations-sur-listes">
-<h2>Opérations sur listes<a class="headerlink" href="#operations-sur-listes" title="Permalink to this headline">#</a></h2>
+<h2>Opérations sur listes<a class="headerlink" href="#operations-sur-listes" title="Permalink to this heading">#</a></h2>
 <p>L’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> concatène 2 listes, alors que l’opérateur <code class="docutils literal notranslate"><span class="pre">*</span></code> répète une liste un certain nombre de fois :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1010,12 +658,17 @@ title="Print to PDF"
 </div>
 </div>
 <section id="id2">
-<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Exercice<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Après une semaine, vos plantes ont poussé. Modifier la liste <code class="docutils literal notranslate"><span class="pre">taille_plantes</span></code> avec les tailles 8.3 cm, 6.4 cm et 13.2 cm pour respectivement les plantes gentiane, campanule et pensée.</p></li>
 <li><p>Afficher la liste avec <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modification des éléments de la liste</span>
 <span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">8.3</span>
@@ -1027,6 +680,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, 8.3, &#39;campanule&#39;, 6.4, &#39;pensée&#39;, 13.2]
 </pre></div>
@@ -1036,7 +690,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="video-sous-listes-et-tranches">
-<h2><strong>Vidéo</strong>: Sous-listes et tranches<a class="headerlink" href="#video-sous-listes-et-tranches" title="Permalink to this headline">#</a></h2>
+<h2><strong>Vidéo</strong>: Sous-listes et tranches<a class="headerlink" href="#video-sous-listes-et-tranches" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5504058e-ba2e-49ad-a303-adb100bb4fa6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -1044,7 +698,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="tranches-de-liste">
-<h2>Tranches de liste<a class="headerlink" href="#tranches-de-liste" title="Permalink to this headline">#</a></h2>
+<h2>Tranches de liste<a class="headerlink" href="#tranches-de-liste" title="Permalink to this heading">#</a></h2>
 <p>Il est possible de sélectionner plusieurs éléments d’une liste en utilisant l’opérateur <em>tranche</em> <code class="docutils literal notranslate"><span class="pre">[m:n]</span></code>, où <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> sont des expression entières. L’opérateur de tranche inclut l’élément de départ, mais <strong>exclut l’élément de fin de la tranche</strong>. Ainsi, l’opérateur <code class="docutils literal notranslate"><span class="pre">[0:2]</span></code> revient à sélectionner les élements d’indice <code class="docutils literal notranslate"><span class="pre">0</span></code> et <code class="docutils literal notranslate"><span class="pre">1</span></code>. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1124,7 +778,7 @@ title="Print to PDF"
 </div>
 <p>On a remplacé les deux premiers éléments de la liste par une liste de trois éléments. La taille de la liste a donc changé.</p>
 <section id="id3">
-<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Exercice<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la liste</span>
@@ -1133,11 +787,16 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Dans la liste <code class="docutils literal notranslate"><span class="pre">plantes</span></code> créée ci-dessus, remplacer les chaînes <code class="docutils literal notranslate"><span class="pre">&quot;campanule&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;pensée&quot;</span></code> par les chaînes <code class="docutils literal notranslate"><span class="pre">&quot;saxifrage&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;primevère&quot;</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;orchis&quot;</span></code> à l’aide de l’opérateur tranche.</p></li>
 <li><p>Afficher la liste avec <code class="docutils literal notranslate"><span class="pre">print()</span></code> pour vérifier le résultat.</p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remplacer les éléments de la liste</span>
 <span class="n">plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;saxifrage&quot;</span><span class="p">,</span> <span class="s2">&quot;primevère&quot;</span><span class="p">,</span> <span class="s2">&quot;orchis&quot;</span><span class="p">]</span>
@@ -1147,6 +806,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;gentiane&#39;, &#39;saxifrage&#39;, &#39;primevère&#39;, &#39;orchis&#39;, &#39;marguerite&#39;, &#39;oseille&#39;]
 </pre></div>
@@ -1156,7 +816,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="indexation-et-tranche-de-liste-de-listes">
-<h2>Indexation et tranche de liste de listes<a class="headerlink" href="#indexation-et-tranche-de-liste-de-listes" title="Permalink to this headline">#</a></h2>
+<h2>Indexation et tranche de liste de listes<a class="headerlink" href="#indexation-et-tranche-de-liste-de-listes" title="Permalink to this heading">#</a></h2>
 <p>On a vu qu’une liste peut contenir d’autres listes (listes imbriquées). Il est possible d’utiliser l’opérateur d’indexation sur les listes de listes. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1224,14 +884,20 @@ title="Print to PDF"
 </div>
 <p>La première instruction sélectionne les listes d’indices 1 et 2 et retourne une liste de listes. La deuxième instruction sélectionne l’élément d’indice 0 dans la liste d’indice 1.</p>
 <section id="id4">
-<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>Exercice<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Quelle est la difference entre les instructions <code class="docutils literal notranslate"><span class="pre">taille_plantes[1][0]</span></code> et <code class="docutils literal notranslate"><span class="pre">taille_plantes[1][0:1]</span></code> ? Vous pouvez utiliser l’opérateur <code class="docutils literal notranslate"><span class="pre">type()</span></code> pour vérifier cette différence.</p>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
 </pre></div>
@@ -1239,11 +905,17 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">taille_plantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
 </pre></div>
@@ -1253,7 +925,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="video-manipuler-les-listes">
-<h2><strong>Vidéo</strong>: Manipuler les listes<a class="headerlink" href="#video-manipuler-les-listes" title="Permalink to this headline">#</a></h2>
+<h2><strong>Vidéo</strong>: Manipuler les listes<a class="headerlink" href="#video-manipuler-les-listes" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=74d9ddaf-66ac-4405-8b91-adb100bb6549&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -1261,7 +933,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="supprimer-un-element">
-<h2>Supprimer un élément<a class="headerlink" href="#supprimer-un-element" title="Permalink to this headline">#</a></h2>
+<h2>Supprimer un élément<a class="headerlink" href="#supprimer-un-element" title="Permalink to this heading">#</a></h2>
 <p>Il existe deux possibilités pour supprimer un élément d’une liste : en utilisant l’instruction <code class="docutils literal notranslate"><span class="pre">del()</span></code> ou bien en insérant une liste vide <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1301,7 +973,7 @@ title="Print to PDF"
 <p>Il est tout de même conseillé de ne pas le faire, pour que le code soit plus lisible, mais sachez que c’est possible.</p>
 </div></section>
 <section id="les-chaines">
-<h2>Les chaînes<a class="headerlink" href="#les-chaines" title="Permalink to this headline">#</a></h2>
+<h2>Les chaînes<a class="headerlink" href="#les-chaines" title="Permalink to this heading">#</a></h2>
 <p>On a vu que les chaînes sont constituées d’une séquence de caractères. Comme pour les listes, on peut utiliser les opérateurs indexation et tranche pour accéder à certains caractères de la chaîne. Par exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1363,7 +1035,7 @@ title="Print to PDF"
 <p>Un objet muable est un objet qui peut être modifié, comme les listes. À l’inverse, un objet immuable ne peut pas être modifié, comme les chaînes.</p>
 </div></section>
 <section id="objets-et-valeurs">
-<h2>Objets et valeurs<a class="headerlink" href="#objets-et-valeurs" title="Permalink to this headline">#</a></h2>
+<h2>Objets et valeurs<a class="headerlink" href="#objets-et-valeurs" title="Permalink to this heading">#</a></h2>
 <p>Effectuons les affectations suivantes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1415,7 +1087,7 @@ title="Print to PDF"
 <p>Une variable se réfère à un objet, qui a une certaine valeur. En évaluant <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, on obtient un objet liste dont la valeur est une séquence d’entiers. Si une autre liste a les mêmes éléments, on dit qu’elle a la même valeur, mais ce n’est pas le même objet.</p>
 </div></section>
 <section id="aliasing">
-<h2>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this headline">#</a></h2>
+<h2>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this heading">#</a></h2>
 <p>Créons une variable <code class="docutils literal notranslate"><span class="pre">plantes1</span></code> qui se réfère à un objet et écrivons <code class="docutils literal notranslate"><span class="pre">plantes2</span> <span class="pre">=</span> <span class="pre">plantes1</span></code>. Alors les 2 variable <code class="docutils literal notranslate"><span class="pre">plantes1</span></code> et <code class="docutils literal notranslate"><span class="pre">plantes2</span></code> se réfèrent au même objet. Pour le vérifier, utilisons l’opérateur <code class="docutils literal notranslate"><span class="pre">is</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1494,7 +1166,7 @@ False
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./source/notebooks/python-base"
         },
         predefinedOutput: true
@@ -1502,50 +1174,132 @@ False
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-prise-en-main.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Première prise en main</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-prise-en-main.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Première prise en main</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="03-fonctions-modules.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="03-fonctions-modules.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Fonctions et modules</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By P. Delva<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-elements-de-base"><strong>Vidéo</strong>: Éléments de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-une-liste">Créer une liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-de-listes">Liste de listes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifier-une-liste">Modifier une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-sur-listes">Opérations sur listes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-sous-listes-et-tranches"><strong>Vidéo</strong>: Sous-listes et tranches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tranches-de-liste">Tranches de liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexation-et-tranche-de-liste-de-listes">Indexation et tranche de liste de listes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-manipuler-les-listes"><strong>Vidéo</strong>: Manipuler les listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-un-element">Supprimer un élément</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines">Les chaînes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objets-et-valeurs">Objets et valeurs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By P. Delva
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
