@@ -27,12 +27,12 @@ Pour cela il faut:
   1. Télécharger le fichier TAR contenant tous les calepins pour l'année
   2. Ouvrir JupyterHub avec le lien disponible sur la page d'accueil Moodle de l'UE (attention il faut être authentifié à Moodle pour que cela fonctionne)
   3. Cliquer sur le bouton "Start my server" si celui-ci n'est pas déjà démarré
-  4. Cliquer sur le bouton "Upload", chercher dans l'arborescence et sélectionner le fichier TAR téléchargé en 1, puis cliquer sur "téléverser"
-  5. Cliquer sur le bouton "New", puis sur "Terminal"
+  4. Cliquer sur le bouton "Upload Files" (la petite icône avec une flèche vers le haut), chercher dans l'arborescence et sélectionner le fichier TAR téléchargé en 1, puis cliquer sur "téléverser"
+  5. Cliquer sur le bouton "Terminal" dans la fenêtre principale
   6. Ecrire dans le terminal la commande "tar -xvf nom-du-fichier.tar"
   7. Fermer la fenêtre du terminal
   8. et voilà vous pouvez cliquer sur n'importe quel calepin (extension ipynb) et l'ouvrir dans une instance de Jupyter Notebook
-  9. Attention à ne pas ouvrir plusieurs calepin en même temps. Lorsque vous fermez un notebook, cliquer sur "Close and halt" dans le menu déroulant "Files" en haut. Si vous ne le faites pas, le calepin reste en mémoire et utilise les ressources des serveurs et peut le saturer. Un calepin est automatiquement "déconnecté" au bout d'une heure sans action. Vous pouvez voir vos calepins actifs avec le bouton "Running" dans la page d'accueil de JupyterHub.
+  9. Attention si vous ouvrez plusieurs calepins ou terminaux, il faut les arrêter de façon explicite, en appuyant sur "Shut Down All" de l'onglet "Running Terminals and Kernels" (icône ronde avec un carré dedans a gauche)
 
 D'autres solutions existent pour faire tourner vos calepins:
 
