@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -138,13 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="../../../_static/simu_gw.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/simu_gw.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/simu_gw.jpg" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../../_static/simu_gw.jpg" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
@@ -310,10 +321,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -321,7 +332,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -414,7 +425,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3291518b428e798b36faca85dddca28ef8c05c1e3e662de6622f0f2201475f17.png" src="../../../_images/3291518b428e798b36faca85dddca28ef8c05c1e3e662de6622f0f2201475f17.png" />
+<img alt="../../../_images/5e84ac9aee84691af978902d9475accaca28c1d65b09f794b5e4d7aa3d7e13ce.png" src="../../../_images/5e84ac9aee84691af978902d9475accaca28c1d65b09f794b5e4d7aa3d7e13ce.png" />
 </div>
 </div>
 <p>Par défaut, la fonction <code class="docutils literal notranslate"><span class="pre">plot()</span></code> relie chaque point par une droite. Cependant, il est possible d’afficher seulement les points avec :</p>
@@ -426,7 +437,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/46ef44aaddea5408ab4abe6838ec40c2d3ec39ea571658ab150aa11c026922ae.png" src="../../../_images/46ef44aaddea5408ab4abe6838ec40c2d3ec39ea571658ab150aa11c026922ae.png" />
+<img alt="../../../_images/39e1f77d0271abd85e3f5c8ad3ced01bbc5b48b7a6aab7914a5f1c7bf21d8716.png" src="../../../_images/39e1f77d0271abd85e3f5c8ad3ced01bbc5b48b7a6aab7914a5f1c7bf21d8716.png" />
 </div>
 </div>
 <section id="exercice">
@@ -449,7 +460,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d5dba0e489a8e8028a15ff156d1fe78041db47412a7612479da15953bc97431f.png" src="../../../_images/d5dba0e489a8e8028a15ff156d1fe78041db47412a7612479da15953bc97431f.png" />
+<img alt="../../../_images/5e0eb6c2bd9d27bf7c58f3b7447a6d76ad314cb7de6bf03d9c4c910aaa948933.png" src="../../../_images/5e0eb6c2bd9d27bf7c58f3b7447a6d76ad314cb7de6bf03d9c4c910aaa948933.png" />
 </div>
 </div>
 </section>
@@ -487,7 +498,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/c9a9d565e890a0622b79adb0419bd0b1b141eda32f182a99cca2471330308d01.png" src="../../../_images/c9a9d565e890a0622b79adb0419bd0b1b141eda32f182a99cca2471330308d01.png" />
+<img alt="../../../_images/98c6467419fe334a9c957784e94e9ab50a692b38c304b3ee6f2b40ef6c781f6c.png" src="../../../_images/98c6467419fe334a9c957784e94e9ab50a692b38c304b3ee6f2b40ef6c781f6c.png" />
 </div>
 </div>
 <p>Comme on a choisi un pas petit devant la période de la fonction sinus, on a l’illusion d’avoir tracé une courbe continue. Cependant, ce n’est qu’un nombre fini de points reliés par des droites. On peut s’en persuader en traçant les points sans les relier :</p>
@@ -499,7 +510,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ad9afba06f2fad6b016b34514f8c86e0ba3e5b975c19c6b5ce946ccb8f964ca5.png" src="../../../_images/ad9afba06f2fad6b016b34514f8c86e0ba3e5b975c19c6b5ce946ccb8f964ca5.png" />
+<img alt="../../../_images/1f4df120e53ead230080b5dcba3b97dea29a5a38b786d290c33f92dca4165d95.png" src="../../../_images/1f4df120e53ead230080b5dcba3b97dea29a5a38b786d290c33f92dca4165d95.png" />
 </div>
 </div>
 <p>Ainsi, si le pas de discrétisation n’est pas adapté, la représentation de la courbe sera mauvaise. Par exemple, un pas de 1.2 ne permet par de bien représenter la fonction sinus :</p>
@@ -525,7 +536,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/070769eb82b238aa079b26b107270037ec5b71fe84c2eb0d40c62eeb40e8b30a.png" src="../../../_images/070769eb82b238aa079b26b107270037ec5b71fe84c2eb0d40c62eeb40e8b30a.png" />
+<img alt="../../../_images/0a3453d60df39ed875d59cbe8fb78efa5f912066e0fe46038261329e32639e76.png" src="../../../_images/0a3453d60df39ed875d59cbe8fb78efa5f912066e0fe46038261329e32639e76.png" />
 </div>
 </div>
 <section id="id1">
@@ -563,7 +574,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../../_images/4123f988cdcc97c4a60bf436a1950ea616e4c9fb801280ac5e3c0017579c8d23.png" src="../../../_images/4123f988cdcc97c4a60bf436a1950ea616e4c9fb801280ac5e3c0017579c8d23.png" />
+<img alt="../../../_images/b2b1466e895fb8b941dbf127ffa3f27a3eacef0ccf2e82a284f71ee1e194d63b.png" src="../../../_images/b2b1466e895fb8b941dbf127ffa3f27a3eacef0ccf2e82a284f71ee1e194d63b.png" />
 </div>
 </div>
 </section>
@@ -653,7 +664,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/679ea1e9ad06bce3339ae602a42a8c9f1a515f05d49cb05c7cda3d7e4db8a522.png" src="../../../_images/679ea1e9ad06bce3339ae602a42a8c9f1a515f05d49cb05c7cda3d7e4db8a522.png" />
+<img alt="../../../_images/541bd4db409feb7e56a7312831dc58c21438c8bda9edfb9798a8dfc90550b7a1.png" src="../../../_images/541bd4db409feb7e56a7312831dc58c21438c8bda9edfb9798a8dfc90550b7a1.png" />
 </div>
 </div>
 <p>Cependant, il est d’usage d’ajouter des informations au graphe afin qu’une personne puisse correctement interpréter la signification des différentes données. Voici les commandes usuelles utilisées pour rendre un graphe plus lisible :</p>
@@ -716,7 +727,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../../_images/04e111059c88bf1fe6e99d7efd7d8933cbe0037ffa6ff9016eb6a815e8f639b5.png" src="../../../_images/04e111059c88bf1fe6e99d7efd7d8933cbe0037ffa6ff9016eb6a815e8f639b5.png" />
+<img alt="../../../_images/bd0ed2e9c89e0bdec2775e5d5b5fe2e38334038b09ac7ba5a0882bf6fb08945e.png" src="../../../_images/bd0ed2e9c89e0bdec2775e5d5b5fe2e38334038b09ac7ba5a0882bf6fb08945e.png" />
 </div>
 </div>
 </section>
@@ -811,7 +822,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/fbc5dc048922738118c315daa21c1681af032a438c5b17816d223cf222ed4aa7.png" src="../../../_images/fbc5dc048922738118c315daa21c1681af032a438c5b17816d223cf222ed4aa7.png" />
+<img alt="../../../_images/6ddb9842a5614696b91a986eefa53e35b028f6e00b46d5f33a0ebba9c515571a.png" src="../../../_images/6ddb9842a5614696b91a986eefa53e35b028f6e00b46d5f33a0ebba9c515571a.png" />
 </div>
 </div>
 <p>On a utilisé l’option <code class="docutils literal notranslate"><span class="pre">label</span></code> de la fonction <code class="docutils literal notranslate"><span class="pre">plot()</span></code> pour nommer chaque courbe, puis la fonction <code class="docutils literal notranslate"><span class="pre">legend()</span></code> afin d’afficher la légende. De manière alternative et plus compacte, on aurait pu écrire :</p>
@@ -833,7 +844,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/fbc5dc048922738118c315daa21c1681af032a438c5b17816d223cf222ed4aa7.png" src="../../../_images/fbc5dc048922738118c315daa21c1681af032a438c5b17816d223cf222ed4aa7.png" />
+<img alt="../../../_images/6ddb9842a5614696b91a986eefa53e35b028f6e00b46d5f33a0ebba9c515571a.png" src="../../../_images/6ddb9842a5614696b91a986eefa53e35b028f6e00b46d5f33a0ebba9c515571a.png" />
 </div>
 </div>
 </section>
@@ -896,7 +907,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/f73169f79daf339ea3a622fe423588101d027194bdc3077aa776b4d43c5d553b.png" src="../../../_images/f73169f79daf339ea3a622fe423588101d027194bdc3077aa776b4d43c5d553b.png" />
+<img alt="../../../_images/33a70589ac4738337ea5e78babd8b860aa768745171e0d3741841582c3ce4984.png" src="../../../_images/33a70589ac4738337ea5e78babd8b860aa768745171e0d3741841582c3ce4984.png" />
 </div>
 </div>
 <section id="id3">
@@ -975,7 +986,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../../_images/94bee5ad8330929e5005bc8001ed7b73bdfce9d47fce07e8528932de41163ab7.png" src="../../../_images/94bee5ad8330929e5005bc8001ed7b73bdfce9d47fce07e8528932de41163ab7.png" />
+<img alt="../../../_images/9329266fe6796b4894046254e65c50fef0cc9c44b98fd19e55b3ccb4626dcf2b.png" src="../../../_images/9329266fe6796b4894046254e65c50fef0cc9c44b98fd19e55b3ccb4626dcf2b.png" />
 </div>
 </div>
 </section>
@@ -1099,7 +1110,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d531dd8c0bfdeb97846ecfd4d15778e097ad6ff5d7dbe9ac0b687b2fa178d42e.png" src="../../../_images/d531dd8c0bfdeb97846ecfd4d15778e097ad6ff5d7dbe9ac0b687b2fa178d42e.png" />
+<img alt="../../../_images/8ed3d0b3460374a5683dd958dc9c7b29ce0ad29f733d0da5f19999b3a2712860.png" src="../../../_images/8ed3d0b3460374a5683dd958dc9c7b29ce0ad29f733d0da5f19999b3a2712860.png" />
 </div>
 </div>
 </section>
@@ -1130,11 +1141,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="05-fonctions-numpy.html"
@@ -1154,10 +1164,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1240,8 +1247,8 @@ By P. Delva
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>

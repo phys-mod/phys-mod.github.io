@@ -32,7 +32,7 @@ Le projet en équipe est évalué sur 60 points sur les critères suivants:
 
 .. note::
 
-    :download:`Grille d'évaluation du projet en équipe <MNP_projet_grille_eval_2021-2022.pdf>`
+    :download:`Grille d'évaluation du projet en équipe <MNP_projet_grille_eval_2022-2023.pdf>`
 
 .. warning::
 
