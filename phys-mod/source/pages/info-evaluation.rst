@@ -3,8 +3,8 @@
 Voici le tableau d'évaluation général :
 
 +----------------------+------------+---------------------------------------+
-| **Contrôle continu** | **40/100** | - Quizz final (10)                    |
-|                      |            | - Mini-projet final (30)              |
+| **Contrôle continu** | **40/100** | - Participation (10)                    |
+|                      |            | - Mini-projet évalué (30)              |
 +----------------------+------------+---------------------------------------+
 | **Projet en équipe** | **60/100** | - Organisation                        |
 |                      |            | - Relationnel                         |
@@ -12,13 +12,13 @@ Voici le tableau d'évaluation général :
 |                      |            | - Contenu                             |
 +----------------------+------------+---------------------------------------+
 
-Quizz final (10)
-----------------
-Vous serez évalué sur le langage Python avec un Quizz Moodle en temps limité. Ce quizz contient des questions provenant des quizz d'auto-positionnement.
+Participation (10)
+------------------
+Vous serez évalués sur votre participation à l'UE tout au long du semestre au travers des rendus des mini-projets et des quizz d'auto-évaluation.
 
-Mini-projet final (30)
-----------------------
-Vous serez évalué sur un mini-projet du même type que les mini-projets fait en TP.
+Mini-projet évalué (30)
+-----------------------
+Vous serez évalué sur un mini-projet en contrôle continu, en milieu de semestre, du même type que les mini-projets fait en TP.
 
 Projet en équipe (60)
 ---------------------
