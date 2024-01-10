@@ -3,7 +3,7 @@ Traceback (most recent call last):
     executenb(
   File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
   File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
     return future.result()
@@ -25,7 +25,7 @@ df_europe.tail(n = 2)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2420/893767574.py[0m in [0;36m?[0;34m()[0m
+[0;32m/tmp/ipykernel_2189/893767574.py[0m in [0;36m?[0;34m()[0m
 [0;32m----> 2[0;31m [0;31m# Ajout de la ligne à l'objet DataFrame[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mdf_europe[0m [0;34m=[0m [0mdf_europe[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mligne_turquie[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0;34m[0m[0m
