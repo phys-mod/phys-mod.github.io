@@ -768,7 +768,7 @@ float64
 <h2>Tableau à 2 dimensions<a class="headerlink" href="#tableau-a-2-dimensions" title="Permalink to this heading">#</a></h2>
 <p>Un tableau Numpy peut avoir autant de dimensions que l’on veut. Nous avons manipulé jusqu’ici des tableaux à une dimension, généralement utilisés pour contenir un type d’information. Nous avons introduit 2 tableaux Numpy :</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np_nombre_habitants</span></code> qui contient le nombre d’habitants des 8 villes de France les plus peuplées</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np_nombre_habitants</span></code> qui contient le nombre d’habitant·es des 8 villes de France les plus peuplées</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">np_superficie</span></code> qui contient les superficies de ces 8 villes</p></li>
 </ul>
 <p>Nous allons maintenant structurer ces informations en utilisant un tableau à 2 dimensions :</p>
@@ -779,7 +779,7 @@ float64
 <p>Nous allons créer le tableau Numpy à deux dimensions à partir d’une liste de listes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de liste contenant les informations : nombre d&#39;habitants et superficie (km**2)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de liste contenant les informations : nombre d&#39;habitant·es et superficie (km**2)</span>
 <span class="n">villes</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2240621</span><span class="p">,</span> <span class="mf">105.40</span><span class="p">],</span>    <span class="c1"># Paris</span>
         <span class="p">[</span><span class="mi">852516</span><span class="p">,</span> <span class="mf">240.62</span><span class="p">],</span>       <span class="c1"># Marseille</span>
         <span class="p">[</span><span class="mi">496343</span><span class="p">,</span> <span class="mf">47.87</span><span class="p">],</span>        <span class="c1"># Lyon</span>
@@ -937,7 +937,7 @@ A + B =  [[ 2 12  3]
 <ol class="arabic simple">
 <li><p>Créer un tableau Numpy <code class="docutils literal notranslate"><span class="pre">np_evolution</span></code> à partir du tableau <code class="docutils literal notranslate"><span class="pre">evolution</span></code>.</p></li>
 <li><p>Copier le tableau <code class="docutils literal notranslate"><span class="pre">np_villes</span></code> dans un tableau <code class="docutils literal notranslate"><span class="pre">np_villes_2017</span></code> avec la fonction Numpy <code class="docutils literal notranslate"><span class="pre">copy()</span></code> (pour éviter l’aliasing, voir cours sur les listes).</p></li>
-<li><p>Ajouter le tableau <code class="docutils literal notranslate"><span class="pre">evolution</span></code> à la première colonne du tableau <code class="docutils literal notranslate"><span class="pre">np_villes_2017</span></code>.</p></li>
+<li><p>Additionner les valeurs du tableau <code class="docutils literal notranslate"><span class="pre">evolution</span></code> aux valeurs de la première colonne du tableau <code class="docutils literal notranslate"><span class="pre">np_villes_2017</span></code>, qui représentent le nombre d’habitant·es en 2012, afin d’obtenir un tableau avec les nombre d’habitant·es en 2017 en première colonne</p></li>
 <li><p>Afficher les populations des villes en 2012 et en 2017 : le classement des villes les plus peuplées de France a-t-il changé ?</p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
