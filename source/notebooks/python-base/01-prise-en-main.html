@@ -389,6 +389,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-conversion-de-type">Exercice: conversion de type</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-interpolation-de-chaines">Pour aller plus loin : Interpolation de chaines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-interpolation-de-chaines">Exercice: interpolation de chaines</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -533,7 +537,7 @@ document.write(`
 <p><br><div id="bouillon"></div></p>
 <section id="exercice-bouillon-de-culture">
 <h3>Exercice : bouillon de culture<a class="headerlink" href="#exercice-bouillon-de-culture" title="Permalink to this heading">#</a></h3>
-<p>La masse d’une bactérie est de l’ordre du picogramme (<code class="docutils literal notranslate"><span class="pre">1e-15</span></code> kg). Lorque l’on place une bactérie <em>escherichia coli</em> dans un bouillon de culture, le nombre de cellules double toutes les trente minutes par division cellulaire. À la première génération, on aura <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">2</span></code> cellules. À la deuxième génération, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> cellules. Quelle est la masse de l’échantillon au bout de 140 générations ? Comparer cette masse à celle de la Terre <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code> kg.</p>
+<p>La masse d’une bactérie est de l’ordre du picogramme (<code class="docutils literal notranslate"><span class="pre">1e-15</span></code> kg). Lorque l’on place une bactérie <em>escherichia coli</em> dans un bouillon de culture, le nombre de cellules double toutes les trente minutes par division cellulaire. À la première génération, on aura <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">2</span></code> cellules. À la deuxième génération, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> cellules. Quelle est la masse de l’échantillon au bout de 140 générations ? Exprimez cette masse en nombre de masse terrestre. Masse de la Terre : <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code> kg.</p>
 <p>Afin d’effectuer cet exercice, il faut créer une cellule sous ce texte :</p>
 <ul class="simple">
 <li><p>avec <em>Jupyter Notebook</em>, aller dans le Menu “Insérer” et sélectionnez “Insérer une cellule après”</p></li>
@@ -599,10 +603,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_15708/130740625.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">2</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="o">^</span>
-<span class="ne">SyntaxError</span>: cannot assign to literal
+<span class="ne">SyntaxError</span>: cannot assign to literal here. Maybe you meant &#39;==&#39; instead of &#39;=&#39;?
 </pre></div>
 </div>
 </div>
@@ -614,7 +618,7 @@ document.write(`
 <h3>Exercice : masse de la Terre<a class="headerlink" href="#exercice-masse-de-la-terre" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Créer une variable <code class="docutils literal notranslate"><span class="pre">masse</span></code> avec la valeur <code class="docutils literal notranslate"><span class="pre">5.972e24</span></code>, qui représente la masse de la Terre en kg.</p></li>
-<li><p>Afficher la valeur de cette variable à l’écran avec l’instruction <code class="docutils literal notranslate"><span class="pre">print(mass)</span></code></p></li>
+<li><p>Afficher la valeur de cette variable à l’écran avec l’instruction <code class="docutils literal notranslate"><span class="pre">print(masse)</span></code></p></li>
 </ol>
 <div class="cell tag_solution tag_hide-input docutils container">
 <details class="hide above-input">
@@ -835,7 +839,7 @@ Salut Salut Salut
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_15708</span><span class="o">/</span><span class="mf">1647148205.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La masse de l&#39;échantillon est &quot;</span> <span class="o">+</span> <span class="n">masse_echantillon</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;float&quot;) to str
@@ -885,6 +889,76 @@ Salut Salut Salut
 </details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La masse du bouillon de culture est égale à 233 fois la masse de la Terre.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="pour-aller-plus-loin-interpolation-de-chaines">
+<h2>Pour aller plus loin : Interpolation de chaines<a class="headerlink" href="#pour-aller-plus-loin-interpolation-de-chaines" title="Permalink to this heading">#</a></h2>
+<p>L’interpolation de chaîne est une opération fréquente qui est proposée de différentes manières dans différents langages. Les exemples les plus fréquents sont :</p>
+<ul class="simple">
+<li><p>L’interpolation par placeholder (exemple %s %c %d en C)</p></li>
+<li><p>L’interpolation inline (trouvé en AngularJs, C# etc…)</p></li>
+<li><p>L’interpolation par format (dépendant de l’implémentation d’une méthode .format le plus souvent)</p></li>
+</ul>
+<p>La plupart des langages proposent au moins l’une de ces méthodes. Python offre les 3 possibilités et nous allons nous intéresser à l’interpolation inline.</p>
+<p>Cette manière de faire permet une très bonne lisibilité du code et dans les versions récentes de Python, les f-String sont très rapides pour afficher des données.
+<a class="reference external" href="https://www.scivision.dev/python-f-string-speed/">Python f-string benchmarks</a>
+<a class="reference external" href="https://bugs.python.org/issue27078">Bugtracker python</a></p>
+<p>Par exemple, l’opération a * b peut s’afficher de cette manière :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La multiplication de </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> par </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> vaut </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La multiplication de 14 par 28 vaut 392
+</pre></div>
+</div>
+</div>
+</div>
+<p>On écrit donc les variables ou les valeurs directement à leur place dans la chaîne de caractères. On voit aussi qu’il n’y a plus besoin de convertir les variables en str. Python s’en charge pour nous. On peut aussi lui indiquer comment transformer les variables en chaînes de caractères avec un format après un double point :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">3.141592654</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.333333333</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La division de </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> par </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> vaut </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La division de 3.14159 par 0.33 vaut 9.42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ici on a demandé à afficher 5 chiffres après la virgule pour a puis 2 décimales pour b et 2 décimales pour le résultat.</p>
+<section id="exercice-interpolation-de-chaines">
+<h3>Exercice: interpolation de chaines<a class="headerlink" href="#exercice-interpolation-de-chaines" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>À l’aide de l’opérateur concaténation et des variables <code class="docutils literal notranslate"><span class="pre">annonce_resultat2</span></code> et <code class="docutils literal notranslate"><span class="pre">masse_echantillon</span></code>, afficher le résultat de l’expérience du bouillon de culture en utilisant une interpolation de chaines.</p></li>
+<li><p>Comment faire pour afficher un entier et non un nombre à virgule flottante ?</p></li>
+</ol>
+<div class="cell tag_solution tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># en utilisant l&#39;interpolar (avec un format pour ne pas avoir de décimales)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La masse de l&#39;échantillon est </span><span class="si">{</span><span class="n">masse_echantillon</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La masse de l&#39;échantillon est 233
 </pre></div>
 </div>
 </div>
@@ -983,6 +1057,10 @@ Salut Salut Salut
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">Conversion de type</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-conversion-de-type">Exercice: conversion de type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-interpolation-de-chaines">Pour aller plus loin : Interpolation de chaines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-interpolation-de-chaines">Exercice: interpolation de chaines</a></li>
 </ul>
 </li>
 </ul>
