@@ -396,8 +396,8 @@ D (t) = D_0 e^{-rt}
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Paramètres</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># mn^-1</span>
@@ -410,14 +410,14 @@ D (t) = D_0 e^{-rt}
 <span class="n">D_ini</span> <span class="o">=</span> <span class="mf">65.3</span> <span class="c1"># °C</span>
 
 <span class="c1"># Loi de décroissance</span>
-<span class="k">def</span> <span class="nf">derivee_D</span> <span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">derivee_D</span> <span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Loi de décroissance dD/dt = - r D</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">D</span>
 
 <span class="c1"># Méthode d&#39;Euler</span>
-<span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Application de la méthode d&#39;Euler</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -535,7 +535,7 @@ d’où le nom de méthode de Runge-Kutta d’ordre 2.</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Méthode d&#39;Euler</span>
-<span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Application de la méthode d&#39;Euler</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -568,7 +568,7 @@ d’où le nom de méthode de Runge-Kutta d’ordre 2.</p>
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rk2</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rk2</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Application de la méthode rk2</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -674,7 +674,7 @@ d’où le nom de méthode de Runge-Kutta d’ordre 2.</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Méthode rk4</span>
-<span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rk4</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">,</span> <span class="n">ordre</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Application de la méthode rk4</span>
 <span class="sd">    &#39;&#39;&#39;</span>

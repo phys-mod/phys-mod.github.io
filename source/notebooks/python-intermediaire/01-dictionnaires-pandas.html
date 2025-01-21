@@ -556,10 +556,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation du module Numpy</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Importation du module Pandas</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Création des tableaux Numpy à partir des listes des pays et des capitales : type string</span>
 <span class="n">np_pays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pays</span><span class="p">)</span>
@@ -1240,7 +1240,7 @@ Name: 23, dtype: object
 <p>Comme pour les tableaux Numpy, les accesseurs supportent l’indexation et le tranchage. Voyons quelques exemples :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les capitales des 3 premiers pays</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les capitales des 4 premiers pays</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;capitale&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1258,7 +1258,7 @@ Name: capitale, dtype: object
 <p>Attention, avec <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> on a utilisé les étiquettes des lignes, décalées de 1 par rapport à leur indice. Pour extraire le  même objet <em>Series</em> avec <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code>, on écrira :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les capitales des 3 premiers pays</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraire les capitales des 4 premiers pays</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_europe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1488,7 +1488,7 @@ Name: 28, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajout de la ligne à l&#39;objet DataFrame</span>
-<span class="n">df_europe</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ligne_turquie</span><span class="p">)</span>
+<span class="n">df_europe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_europe</span><span class="p">,</span><span class="n">ligne_turquie</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
 
 <span class="c1"># Affichage des 2 dernières lignes</span>
 <span class="n">df_europe</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
@@ -1496,25 +1496,48 @@ Name: 28, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2133/893767574.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="c1"># Ajout de la ligne à l&#39;objet DataFrame</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_europe</span> <span class="o">=</span> <span class="n">df_europe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ligne_turquie</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Affichage des 2 dernières lignes</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5985</span>             <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
-<span class="g g-Whitespace">   </span><span class="mi">5986</span>             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5987</span>         <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">5988</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">5989</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;append&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>turquie</td>
+      <td>ankara</td>
+      <td>83154997</td>
+      <td>2026-01-01 00:00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Plusieurs remarques :</p>
 <ul class="simple">
@@ -1533,6 +1556,49 @@ Name: 28, dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>26</th>
+      <td>slovénie</td>
+      <td>ljubljana</td>
+      <td>2064188</td>
+      <td>2004-01-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01 00:00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Il est beaucoup plus simple d’ajouter une colonne à un DataFrame. On peut le faire de la même manière que l’on ajoute une paire clé-valeur à un dictionnaire. Par exemple, ajoutons la colonne qui donne le nombre de sièges au parlement européen pour chaque pays de l’UE :</p>
 <div class="cell docutils container">
@@ -1548,11 +1614,60 @@ Name: 28, dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+      <th>sièges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>autriche</td>
+      <td>vienne</td>
+      <td>8700471</td>
+      <td>1995-01-01 00:00:00</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="video-operations-tri-et-sauvegarde">
 <h2><strong>Vidéo</strong>: Opérations, tri et sauvegarde<a class="headerlink" href="#video-operations-tri-et-sauvegarde" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src="https://sorbonne-universite.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=da5793f6-a393-4f4f-afab-ae0c01320b56&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+</div></div>
 </div>
 </section>
 <section id="operateurs-arithmetiques-et-fonctions">
@@ -1568,6 +1683,38 @@ Name: 28, dtype: object
 
 <span class="c1"># Affichage</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pop_pourcentage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1     18.480761
+2      1.957004
+3      2.539435
+4      1.609106
+5      0.190813
+6       0.94261
+7      1.273044
+8     10.445429
+9      0.295996
+10     1.214911
+11    14.994249
+12     2.427796
+13     2.211178
+14     1.047847
+15    13.645548
+16     0.442879
+17     0.649726
+18     0.129616
+19     0.097711
+20     3.819126
+21     8.539993
+22     2.326083
+23     2.373886
+24     4.444625
+25     1.220531
+26     0.464299
+27     2.215797
+Name: population, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1611,6 +1758,133 @@ Name: 28, dtype: object
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>poids</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>1.370336</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>autriche</td>
+      <td>2.426367</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>belgique</td>
+      <td>2.181513</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bulgarie</td>
+      <td>2.787018</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chypre</td>
+      <td>8.295046</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>croatie</td>
+      <td>3.078478</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>danemark</td>
+      <td>2.693863</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>espagne</td>
+      <td>1.363776</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>estonie</td>
+      <td>5.347374</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>finlande</td>
+      <td>2.822763</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>france</td>
+      <td>1.301915</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>grèce</td>
+      <td>2.281827</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>hongrie</td>
+      <td>2.505365</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>irlande</td>
+      <td>2.769303</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>italie</td>
+      <td>1.411261</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>lettonie</td>
+      <td>4.765193</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>lituanie</td>
+      <td>4.466202</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>luxembourg</td>
+      <td>12.211466</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>malte</td>
+      <td>16.198887</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>pays-bas</td>
+      <td>1.795911</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1623,6 +1897,280 @@ Name: 28, dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pays</th>
+      <th>capitale</th>
+      <th>population</th>
+      <th>date d'adhésion</th>
+      <th>sièges</th>
+      <th>poids</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19</th>
+      <td>malte</td>
+      <td>la valette</td>
+      <td>434403</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>6</td>
+      <td>16.198887</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>luxembourg</td>
+      <td>luxembourg</td>
+      <td>576249</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>6</td>
+      <td>12.211466</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>chypre</td>
+      <td>nicosie</td>
+      <td>848319</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>6</td>
+      <td>8.295046</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>estonie</td>
+      <td>tallinn</td>
+      <td>1315944</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>6</td>
+      <td>5.347374</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>lettonie</td>
+      <td>riga</td>
+      <td>1968957</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>8</td>
+      <td>4.765193</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>slovénie</td>
+      <td>ljubljana</td>
+      <td>2064188</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>8</td>
+      <td>4.545352</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>lituanie</td>
+      <td>vilnius</td>
+      <td>2888558</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>11</td>
+      <td>4.466202</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>croatie</td>
+      <td>zagreb</td>
+      <td>4190669</td>
+      <td>2013-01-01 00:00:00</td>
+      <td>11</td>
+      <td>3.078478</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>irlande</td>
+      <td>dublin</td>
+      <td>4658530</td>
+      <td>1973-01-01 00:00:00</td>
+      <td>11</td>
+      <td>2.769303</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>finlande</td>
+      <td>helsinki</td>
+      <td>5401267</td>
+      <td>1995-01-01 00:00:00</td>
+      <td>13</td>
+      <td>2.822763</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>slovaquie</td>
+      <td>bratislava</td>
+      <td>5426252</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>13</td>
+      <td>2.809766</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>danemark</td>
+      <td>copenhague</td>
+      <td>5659715</td>
+      <td>1973-01-01 00:00:00</td>
+      <td>13</td>
+      <td>2.693863</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bulgarie</td>
+      <td>sofia</td>
+      <td>7153784</td>
+      <td>2007-01-01 00:00:00</td>
+      <td>17</td>
+      <td>2.787018</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>autriche</td>
+      <td>vienne</td>
+      <td>8700471</td>
+      <td>1995-01-01 00:00:00</td>
+      <td>18</td>
+      <td>2.426367</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>suède</td>
+      <td>stockholm</td>
+      <td>9851017</td>
+      <td>1995-01-01 00:00:00</td>
+      <td>20</td>
+      <td>2.381089</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>hongrie</td>
+      <td>budapest</td>
+      <td>9830485</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>21</td>
+      <td>2.505365</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>portugal</td>
+      <td>lisbonne</td>
+      <td>10341330</td>
+      <td>1986-01-01 00:00:00</td>
+      <td>21</td>
+      <td>2.381604</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>république tchèque</td>
+      <td>prague</td>
+      <td>10553853</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>21</td>
+      <td>2.333646</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>grèce</td>
+      <td>athènes</td>
+      <td>10793526</td>
+      <td>1981-01-01 00:00:00</td>
+      <td>21</td>
+      <td>2.281827</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>belgique</td>
+      <td>bruxelles</td>
+      <td>11289853</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>21</td>
+      <td>2.181513</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>pays-bas</td>
+      <td>amsterdam</td>
+      <td>16979120</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>26</td>
+      <td>1.795911</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>roumanie</td>
+      <td>bucarest</td>
+      <td>19759968</td>
+      <td>2007-01-01 00:00:00</td>
+      <td>32</td>
+      <td>1.899287</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>pologne</td>
+      <td>varsovie</td>
+      <td>37967209</td>
+      <td>2004-01-01 00:00:00</td>
+      <td>51</td>
+      <td>1.575391</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>espagne</td>
+      <td>madrid</td>
+      <td>46438422</td>
+      <td>1986-01-01 00:00:00</td>
+      <td>54</td>
+      <td>1.363776</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>italie</td>
+      <td>rome</td>
+      <td>60665551</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>73</td>
+      <td>1.411261</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>france</td>
+      <td>paris</td>
+      <td>66661621</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>74</td>
+      <td>1.301915</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>allemagne</td>
+      <td>berlin</td>
+      <td>82162000</td>
+      <td>1957-01-01 00:00:00</td>
+      <td>96</td>
+      <td>1.370336</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="sauvegarder-un-dataframe">
@@ -1684,6 +2232,12 @@ Name: 28, dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1957-01-01 00:00:00
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Une façon de garder toutes les propriétés des objets python est de les sauver dans un format que l’on appelle <em>pickle</em> :</p>
 <div class="cell docutils container">
@@ -1701,6 +2255,13 @@ Name: 28, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_europe_from_pickle</span><span class="p">[</span><span class="s2">&quot;date d&#39;adhésion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    1957-01-01 00:00:00
+2    1995-01-01 00:00:00
+Name: date d&#39;adhésion, dtype: object
 </pre></div>
 </div>
 </div>

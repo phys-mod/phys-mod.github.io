@@ -808,7 +808,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <p>Pour importer un module dans notre programme, par exemple le module <code class="docutils literal notranslate"><span class="pre">math</span></code>, il suffit d’écrire :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </pre></div>
 </div>
 </div>
@@ -841,7 +841,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <p>On peut aussi changer le nom du module dans notre programme :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">mt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mt</span>
 </pre></div>
 </div>
 </div>
@@ -885,7 +885,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import du module random</span>
-<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
 
 <span class="c1"># Affichage d&#39;un nombre aléatoire entre 0 et 1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
@@ -894,7 +894,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26073212525169076
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5426622840484991
 </pre></div>
 </div>
 </div>
@@ -906,7 +906,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 <p>Finalement, on peut importer seulement quelques fonctions d’un module en les nommant. On n’a alors pas besoin de spécifier le module quand on les utilise :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">radians</span> <span class="c1"># radians(x) convertit l&#39;angle x de degrés en radians</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">radians</span> <span class="c1"># radians(x) convertit l&#39;angle x de degrés en radians</span>
 
 <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span> <span class="c1"># degrés</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)))</span>
@@ -935,7 +935,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import des fonction mean() et median() du module statistics</span>
-<span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">mean</span><span class="p">,</span> <span class="n">median</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statistics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean</span><span class="p">,</span> <span class="n">median</span>
 
 <span class="c1"># Création de la liste</span>
 <span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mf">7.2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">9.3</span><span class="p">,</span> <span class="mf">6.9</span><span class="p">,</span> <span class="mf">14.2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">87.2</span><span class="p">]</span>

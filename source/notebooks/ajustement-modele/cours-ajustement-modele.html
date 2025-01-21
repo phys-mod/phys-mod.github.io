@@ -446,8 +446,8 @@ v(t;v_0,g) = v_0 - gt
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation des modules</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Données experimentales</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">11</span>
@@ -595,7 +595,7 @@ b_m = \frac{\mathrm{cov}(x,y)}{\mathrm{var}(x)}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fonction régression linéaire</span>
-<span class="k">def</span> <span class="nf">reglin</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">reglin</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Calcule les paramètres a et b du meilleur ajustement d&#39;un modèle linéaire</span>
 <span class="sd">        y = ax + b sur un jeu de données (xi, yi)</span>
@@ -674,7 +674,7 @@ g = 10.87 m.s**-2
 <p>Voyons comment elle fonctionne avec les données de vitesse. Il faut d’abord définir la fonction python qui représente le modèle :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modlin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">modlin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Fonction qui représente le modèle linéaire</span>
 <span class="sd">        y(x; a, b) = a + bx</span>
@@ -690,7 +690,7 @@ g = 10.87 m.s**-2
 </div><p>Nous importons ensuite la fonction <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
 </pre></div>
 </div>
 </div>
@@ -752,7 +752,7 @@ g = 10.87 m.s**-2
 <p>Grâce à la fonction <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>, on peut facilement changer de modèle. Définir un modèle quadratique de la forme <span class="math notranslate nohighlight">\(y(x;a,b,c) = a + bx + cx^2\)</span>, et ajuster les paramètres sur les données de vitesse. Calculer la somme <span class="math notranslate nohighlight">\(S\)</span> et représenter le modèle et les données.</p>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modquad</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">modquad</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Fonction qui représente le modèle quadratique</span>
 <span class="sd">        y(x; a,b,c) = a + bx + cx**2</span>

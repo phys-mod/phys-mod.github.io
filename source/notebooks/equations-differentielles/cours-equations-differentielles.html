@@ -408,7 +408,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loi de décroissance</span>
-<span class="k">def</span> <span class="nf">derivee_h</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">derivee_h</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Loi de décroissance dh/dt (t) = - h / tau</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -488,7 +488,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 <p>Pour les valeurs successives du temps <span class="math notranslate nohighlight">\(t\)</span>, nous allons utiliser un pas constant :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Paramètres</span>
 <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># s</span>
@@ -527,7 +527,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 \[ h(t) = h_0 \exp{\left(-\frac{t}{\tau}\right)} \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Solution analytique</span>
 <span class="n">t_analytique</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
@@ -554,7 +554,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 <p>Afin d’étudier l’erreur entre la solution numérique et la solution analytique, créons une fonction qui applique la méthode d’Euler pour des valeurs du pas différentes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Euler</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Application de la méthode d&#39;Euler pour un pas `step` donné</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -587,7 +587,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fonction python qui représente la solution analytique</span>
-<span class="k">def</span> <span class="nf">h_analytique</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">h_analytique</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Solution analytique pour la hauteur de la mousse</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -654,7 +654,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># EDO</span>
-<span class="k">def</span> <span class="nf">derivee_v</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">derivee_v</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Soit v = (v0, v1)</span>
 <span class="sd">        Loi vectorielle sur la vitesse : d(v0, v1)/dt = omega * (v1, -v0)</span>
@@ -674,7 +674,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 <p>On définit alors la fonction qui applique la méthode d’Euler suivante :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Euler</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">v_ini</span><span class="p">,</span> <span class="n">derivee</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Application de la méthode d&#39;Euler</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -759,7 +759,7 @@ $<span class="math notranslate nohighlight">\( h(t) \approx h_1 + (t-t_1) \times
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">kp</span> <span class="c1"># Période (s)</span>
 
 <span class="c1"># EDO</span>
-<span class="k">def</span> <span class="nf">derivee_u</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">derivee_u</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Soit u = (u0, u1)</span>
 <span class="sd">        Équation d&#39;évolution du pendule : d(u0, u1)/dt = (u1, -k ** 2 * u0)</span>
