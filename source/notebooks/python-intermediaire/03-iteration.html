@@ -998,10 +998,10 @@ jour 4 : 8.4
 </div>
 </div>
 </div>
-<p>Il est aussi possible d’itérer sur les colonnes de l’objet DataFrame avec la méthode <code class="docutils literal notranslate"><span class="pre">.iteritems()</span></code> :</p>
+<p>Il est aussi possible d’itérer sur les colonnes de l’objet DataFrame avec la méthode <code class="docutils literal notranslate"><span class="pre">.items()</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_taille_plantes</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_taille_plantes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Plante : &quot;</span> <span class="o">+</span> <span class="n">label</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
@@ -1009,22 +1009,26 @@ jour 4 : 8.4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2442/138948646.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_taille_plantes</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Plante : &quot;</span> <span class="o">+</span> <span class="n">label</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">()</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plante : gentiane
+1    7.5
+2    7.8
+3    8.3
+4    8.4
+Name: gentiane, dtype: float64
 
-<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5985</span>             <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
-<span class="g g-Whitespace">   </span><span class="mi">5986</span>             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5987</span>         <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">5988</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">5989</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+Plante : campanule
+1    5.8
+2    6.6
+3    7.4
+4    8.3
+Name: campanule, dtype: float64
 
-<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;iteritems&#39;
+Plante : pensée
+1    11.4
+2    11.6
+3    11.7
+4    11.7
+Name: pensée, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1061,6 +1065,37 @@ jour 4 : 8.4
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allemagne : Berlin
+Autriche : Vienne
+Belgique : Bruxelles
+Bulgarie : Sofia
+Chypre : Nicosie
+Croatie : Zagreb
+Danemark : Copenhague
+Espagne : Madrid
+Estonie : Tallinn
+Finlande : Helsinki
+France : Paris
+Grèce : Athènes
+Hongrie : Budapest
+Irlande : Dublin
+Italie : Rome
+Lettonie : Riga
+Lituanie : Vilnius
+Luxembourg : Luxembourg
+Malte : La valette
+Pays-bas : Amsterdam
+Pologne : Varsovie
+Portugal : Lisbonne
+République tchèque : Prague
+Roumanie : Bucarest
+Slovaquie : Bratislava
+Slovénie : Ljubljana
+Suède : Stockholm
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
