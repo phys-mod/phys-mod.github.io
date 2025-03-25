@@ -450,8 +450,8 @@ v(t;v_0,g) = v_0 - gt
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Données experimentales</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="n">t_exp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">Nexp</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">t_exp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Nexp</span><span class="p">)</span>
 <span class="n">v_exp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.338</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.509</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.301</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.404</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.967</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.229</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.279</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.266</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.847</span><span class="p">,</span> <span class="o">-</span><span class="mf">11.260</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.040</span><span class="p">])</span>
 
 <span class="c1"># Paramètres du modèle</span>
@@ -459,8 +459,9 @@ v(t;v_0,g) = v_0 - gt
 <span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Discrétisation du modèle</span>
-<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-<span class="n">v_mod</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_exp</span>
+<span class="n">Nmod</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Nmod</span><span class="p">)</span>
+<span class="n">v_mod</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_mod</span>
 
 <span class="c1"># Représentation graphique du modèle et des données</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_exp</span><span class="p">,</span> <span class="n">v_exp</span><span class="p">,</span> <span class="s1">&#39;+k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;données expérimentales&#39;</span><span class="p">)</span>
@@ -474,7 +475,7 @@ v(t;v_0,g) = v_0 - gt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/11a9f92b9a89e45a4ffa4553d1620786deae171fe14cc14f4d98bc461f8b16ac.png" src="../../../_images/11a9f92b9a89e45a4ffa4553d1620786deae171fe14cc14f4d98bc461f8b16ac.png" />
+<img alt="../../../_images/799c0926073d572ae00f225c4033f12d2c15f6111babb1fe4d8b08bf7b456e46.png" src="../../../_images/799c0926073d572ae00f225c4033f12d2c15f6111babb1fe4d8b08bf7b456e46.png" />
 </div>
 </div>
 <section id="exercice">
@@ -504,8 +505,8 @@ S(v_0,g) = \sum_{i=0}^{N-1} (v_i - (v_0 - g t_i))^2
 <span class="n">g</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="c1"># Discrétisation du modèle</span>
-<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="c1"># Discrétisation du modèle pour les points expérimentaux</span>
+<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Nexp</span><span class="p">)</span>
 <span class="n">v_mod</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_exp</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">v_mod</span><span class="p">)</span>
 
@@ -518,7 +519,7 @@ S(v_0,g) = \sum_{i=0}^{N-1} (v_i - (v_0 - g t_i))^2
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_mod</span><span class="p">,</span> <span class="n">v_mod</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;modèle&#39;</span><span class="p">)</span>
 
 <span class="c1"># représentation des écarts entre le modèle et les données</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nexp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">t_exp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t_exp</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="p">(</span><span class="n">v_exp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v_mod</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;S = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
@@ -638,8 +639,8 @@ b_m = \frac{\mathrm{cov}(x,y)}{\mathrm{var}(x)}
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;v0 = </span><span class="si">{:4.2f}</span><span class="s1"> m.s**-1&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g = </span><span class="si">{:4.2f}</span><span class="s1"> m.s**-2&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 
-<span class="c1"># Calcul du modèle</span>
-<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="c1"># Calcul du modèle pour les points expériementaux</span>
+<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Nexp</span><span class="p">)</span>
 <span class="n">v_mod</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_mod</span>
 
 <span class="c1"># Calcul de la somme S</span>
@@ -715,8 +716,8 @@ g = 10.87 m.s**-2
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;v0 = </span><span class="si">{:4.2f}</span><span class="s1"> m.s**-1&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g = </span><span class="si">{:4.2f}</span><span class="s1"> m.s**-2&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 
-<span class="c1"># Calcul du modèle</span>
-<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="c1"># Calcul du modèle pour les points expérimentaux</span>
+<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Nexp</span><span class="p">)</span>
 <span class="n">v_mod</span> <span class="o">=</span> <span class="n">modlin</span><span class="p">(</span><span class="n">t_mod</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="c1"># Calcul de la somme S</span>
@@ -772,8 +773,8 @@ g = 10.87 m.s**-2
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g = </span><span class="si">{:4.2f}</span><span class="s1"> m.s**-2&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c = </span><span class="si">{:4.2f}</span><span class="s1"> m.s**-3&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 
-<span class="c1"># Calcul du modèle</span>
-<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="c1"># Calcul du modèle pour les points expérimentaux</span>
+<span class="n">t_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Nexp</span><span class="p">)</span>
 <span class="n">v_mod</span> <span class="o">=</span> <span class="n">modquad</span><span class="p">(</span><span class="n">t_mod</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
 <span class="c1"># Calcul de la somme S</span>
